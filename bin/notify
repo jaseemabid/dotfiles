@@ -1,0 +1,54 @@
+#!/bin/bash
+# Argument = -c command -f file -v
+
+usage()
+{
+	cat << EOF
+usage: $0 options
+
+This script run "command" every time the "file" changes
+
+OPTIONS:
+		 -h      Show this message
+		 -c      Commmnd to run
+		 -f      File to watch for
+		 -v      Verbose
+EOF
+}
+
+FILE=
+COMMAND=
+VERBOSE=
+while getopts "hc:f:v" OPTION
+do
+    case $OPTION in
+        h)
+            usage
+            exit 1
+            ;;
+        c)
+            COMMAND=$OPTARG
+            ;;
+        f)
+            FILE=$OPTARG
+            ;;
+        v)
+            VERBOSE=1
+            ;;
+        ?)
+            usage
+            exit
+            ;;
+    esac
+done
+
+if [[ -z $COMMAND ]] || [[ -z $FILE ]]
+then
+    usage
+    exit 1
+fi
+
+while inotifywait -e modify $FILE ; do
+    echo `date`
+    eval $COMMAND $FILE
+done
