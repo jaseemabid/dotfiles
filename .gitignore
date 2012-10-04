@@ -1,0 +1,6 @@
+# Gitignore file
+
+# Remove backup files
+*~
+*.
+*#
