@@ -17,6 +17,9 @@ Info on dotfiles : http://dotfiles.github.com/
 Feel free to use my files if they are of any interest to you. Dotfiles as of now
 is a total mess. Use at your own risk. Will clean up someday when I get time.
 
+If you are looking for my emacs.d, its
+[here](https://github.com/jaseemabid/emacs.d)
+
 ## Other cool dotfile repos
 
 - https://github.com/StanAngeloff/dotfiles
