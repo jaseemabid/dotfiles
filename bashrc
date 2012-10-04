@@ -56,6 +56,12 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+# Color definitions.
+if [ -f ~/.bash_colors ]; then
+    . ~/.bash_colors
+fi
+
+
 # Bash completion
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
@@ -65,9 +71,16 @@ GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWUPSTREAM="auto"
 
 # Git bash completion script
-source ~/bin/git-completion.bash
 
-export PS1='\[\033[1;33m\]\w\[\033[0m\] [\T \d] $(__git_ps1 "[ %s ]" )\n ✈ '
+if [ -f  ~/bin/git-completion.bash ]; then
+	source ~/bin/git-completion.bash
+fi
+
+if [[ $EUID -ne 0 ]]; then
+	export PS1="${txtwht} \w ${txtblu} [\T \d] ${txtgrn} $(__git_ps1 "[ %s ]" )\n ${txtrst} ✈ "
+	PATH="~/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:~/.gem/ruby/1.9.1/bin"
+else
+	export PS1="${txtwht} \w ${txtblu} [\T \d] ${txtgrn} \n ${txtred}[ROOT] ${txtrst} ✈ "
+fi
+
 export GEM_HOME="~/.gem/ruby/1.9.1"
-
-PATH='~/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:~/.gem/ruby/1.9.1/bin'
