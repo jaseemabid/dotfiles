@@ -1,0 +1,17 @@
+CONNECTION='ethernet'
+DESCRIPTION='F hostel alternate network'
+INTERFACE='eth0'
+IP='static'
+ADDR='192.168.69.253'
+#ROUTES=('192.168.0.0/24 via 192.168.1.2')
+GATEWAY='192.168.69.1'
+DNS=('192.168.254.2')
+
+## For IPv6 autoconfiguration
+#IP6=stateless
+
+## For IPv6 static address configuration
+#IP6='static'
+#ADDR6=('1234:5678:9abc:def::1/64' '1234:3456::123/96')
+#ROUTES6=('abcd::1234')
+#GATEWAY6='1234:0:123::abcd'
