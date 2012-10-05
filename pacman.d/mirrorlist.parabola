@@ -1,0 +1,21 @@
+# Parabola GNU/Linux - Last Updated: Wed Mar  7 17:33:36 GMT 2012
+
+# Atlanta, GA, USA
+# Responsible: belos
+# Server = http://parabola.techno-geeks.org/$repo/os/$arch
+
+# Nuremberg, Germany
+# Responsible: johkra
+# Server = http://parabolaweb.eu/$repo/os/$arch
+
+# Location: Ulyanovsk, Russia
+# Responsible: 4096R/177A2DB9EA08BF5D Andrey Korobkov <korobkov@fryxell.info>
+# Work hours: 8.00 - 22.00 (UTC+4)
+# SHA1 03:1C:66:7D:40:3E:9B:C8:D0:65:8E:80:01:6A:A7:57:CF:67:7A:5
+Server = https://parabola.fryxell.info/$repo/os/$arch
+Server = http://parabola.fryxell.info/$repo/os/$arch
+
+# UK
+# Responsible: Parabola Project
+Server = http://repo.parabolagnulinux.org/$repo/os/$arch
+
