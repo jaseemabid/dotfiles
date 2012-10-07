@@ -77,10 +77,10 @@ if [ -f  ~/bin/git-completion.bash ]; then
 fi
 
 if [[ $EUID -ne 0 ]]; then
-	export PS1="${txtwht} \w ${txtblu} [\T \d] ${txtgrn} $(__git_ps1 "[ %s ]" )\n ${txtrst} ✈ "
+	export PS1="\w [\T \d] $(__git_ps1 "[ %s ]") \n ✈ "
 	PATH="~/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:~/.gem/ruby/1.9.1/bin"
 else
-	export PS1="${txtwht} \w ${txtblu} [\T \d] ${txtgrn} \n ${txtred}[ROOT] ${txtrst} ✈ "
+	export PS1="\w [\T \d] \n ${txtred} [ROOT] ${txtrst} ✈  "
 fi
 
 export GEM_HOME="~/.gem/ruby/1.9.1"
