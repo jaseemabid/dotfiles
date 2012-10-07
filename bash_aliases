@@ -45,7 +45,10 @@ alias log="cat /var/log/messages.log | grep $1"
 alias app="ps -e | grep $1"
 alias ec="emacsclient"
 alias record="ffmpeg -f x11grab -r 30 -s 1366x768 -i :0.0 -f alsa -ac 2 -i pulse -vcodec libx264 -acodec pcm_s16le screencast.mkv"
-alias ack=/usr/bin/vendor_perl/ack
+alias ack="/usr/bin/vendor_perl/ack"
+alias n="node-gyp"
+alias kill="xset dpms force off"
+
 
 # git aliases
 
@@ -56,7 +59,7 @@ alias git-install="sudo make prefix=/usr gitwebdir=/usr/share/gitweb install"
 
 alias vi="vim"
 alias diff="meld"
-alias rm="safe-rm -i"
+alias rm="rm -i"
 alias ls="ls -1"
 
 # pacman aliases (if applicable, replace 'pacman' with your favorite AUR helper)
