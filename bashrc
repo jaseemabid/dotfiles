@@ -42,9 +42,9 @@ if [ -n "$force_color_prompt" ]; then
 	# We have color support; assume it's compliant with Ecma-48
 	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
 	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
+		color_prompt=yes
     else
-	color_prompt=
+		color_prompt=
     fi
 fi
 
@@ -77,10 +77,11 @@ if [ -f  ~/bin/git-completion.bash ]; then
 fi
 
 if [[ $EUID -ne 0 ]]; then
-	export PS1="\w [\T \d] $(__git_ps1 "[ %s ]") \n ✈ "
+
+	export PS1="\[$bldylw\] \w \[$txtcyn\] [\T \d] \[$txtgrn\] \$(__git_ps1 '[ %s ]' )\n \[$txtrst\] ✈ "
 	PATH="~/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:~/.gem/ruby/1.9.1/bin"
 else
-	export PS1="\w [\T \d] \n ${txtred} [ROOT] ${txtrst} ✈  "
+	export PS1="\[$bldylw\] \w \[$txtcyn\] [\T \d]\[$txtrst\]\n [ROOT] ✈ "
 fi
 
 export GEM_HOME="~/.gem/ruby/1.9.1"
