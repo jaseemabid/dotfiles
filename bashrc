@@ -61,6 +61,25 @@ if [ -f ~/.bash_colors ]; then
     . ~/.bash_colors
 fi
 
+# Path
+
+PATH="~/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+
+#  Ruby stuff
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+
+
+export PATH="/usr/share/ruby-rvm/gems/ruby-1.9.3-p286/bin:/usr/share/ruby-rvm/gems/ruby-1.9.3-p286@global/bin:/usr/share/ruby-rvm/rubies/ruby-1.9.3-p286/bin:/usr/share/ruby-rvm/bin:$PATH"
+rvm_path='/usr/share/ruby-rvm' ; export rvm_path
+RUBY_VERSION='ruby-1.9.3-p286' ; export RUBY_VERSION
+GEM_HOME='/usr/share/ruby-rvm/gems/ruby-1.9.3-p286' ; export GEM_HOME
+GEM_PATH='/usr/share/ruby-rvm/gems/ruby-1.9.3-p286:/usr/share/ruby-rvm/gems/ruby-1.9.3-p286@global' ; export GEM_PATH
+MY_RUBY_HOME='/usr/share/ruby-rvm/rubies/ruby-1.9.3-p286' ; export MY_RUBY_HOME
+IRBRC='/usr/share/ruby-rvm/rubies/ruby-1.9.3-p286/.irbrc' ; export IRBRC
+rvm_ruby_string='ruby-1.9.3-p286' ; export rvm_ruby_string
+unset rvm_gemset_name
+unset MAGLEV_HOME
+unset RBXOPT
 
 # Bash completion
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
@@ -77,11 +96,11 @@ if [ -f  ~/bin/git-completion.bash ]; then
 fi
 
 if [[ $EUID -ne 0 ]]; then
-
 	export PS1="\[$bldylw\] \w \[$txtcyn\] [\T \d] \[$txtgrn\] \$(__git_ps1 '[ %s ]' )\n \[$txtrst\] ✈ "
-	PATH="~/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:~/.gem/ruby/1.9.1/bin"
 else
 	export PS1="\[$bldylw\] \w \[$txtcyn\] [\T \d]\[$txtrst\]\n [ROOT] ✈ "
 fi
 
-export GEM_HOME="~/.gem/ruby/1.9.1"
+
+
+export PATH="/usr/share/ruby-rvm/gems/ruby-1.9.3-p286/bin:/usr/share/ruby-rvm/gems/ruby-1.9.3-p286@global/bin:/usr/share/ruby-rvm/rubies/ruby-1.9.3-p286/bin:/usr/share/ruby-rvm/bin:$PATH"
