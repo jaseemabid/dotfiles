@@ -101,6 +101,6 @@ else
 	export PS1="\[$bldylw\] \w \[$txtcyn\] [\T \d]\[$txtrst\]\n [ROOT] ✈ "
 fi
 
-
-
 export PATH="/usr/share/ruby-rvm/gems/ruby-1.9.3-p286/bin:/usr/share/ruby-rvm/gems/ruby-1.9.3-p286@global/bin:/usr/share/ruby-rvm/rubies/ruby-1.9.3-p286/bin:/usr/share/ruby-rvm/bin:$PATH"
+
+export EDITOR="emacsclient"

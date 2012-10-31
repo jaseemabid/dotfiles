@@ -61,6 +61,7 @@ alias vi="vim"
 alias diff="meld"
 alias rm="rm -i"
 alias ls="ls -1"
+alias man="pinfo "
 
 # pacman aliases (if applicable, replace 'pacman' with your favorite AUR helper)
 alias pacmna="pacman"
