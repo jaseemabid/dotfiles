@@ -66,7 +66,7 @@ fi
 PATH="~/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
 #  Ruby stuff
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 
 export PATH="/usr/share/ruby-rvm/gems/ruby-1.9.3-p286/bin:/usr/share/ruby-rvm/gems/ruby-1.9.3-p286@global/bin:/usr/share/ruby-rvm/rubies/ruby-1.9.3-p286/bin:/usr/share/ruby-rvm/bin:$PATH"
