@@ -31,6 +31,9 @@ alias get='git clone '
 alias g='git '
 complete -o default -o nospace -F _git g
 
+# Data recovery is a myth
+alias dd="echo -e 'Are you fucking sure?\n'; sleep 7; dd "
+
 # Quickies
 
 alias big="stat -c %s $1"
