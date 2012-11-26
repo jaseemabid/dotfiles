@@ -68,15 +68,14 @@ PATH="~/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 #  Ruby stuff
 # [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
-
-export PATH="/usr/share/ruby-rvm/gems/ruby-1.9.3-p286/bin:/usr/share/ruby-rvm/gems/ruby-1.9.3-p286@global/bin:/usr/share/ruby-rvm/rubies/ruby-1.9.3-p286/bin:/usr/share/ruby-rvm/bin:$PATH"
+export PATH="/usr/share/ruby-rvm/gems/ruby-1.9.3-p327/bin:/usr/share/ruby-rvm/gems/ruby-1.9.3-p327@global/bin:/usr/share/ruby-rvm/rubies/ruby-1.9.3-p327/bin:/usr/share/ruby-rvm/bin:$PATH"
 rvm_path='/usr/share/ruby-rvm' ; export rvm_path
-RUBY_VERSION='ruby-1.9.3-p286' ; export RUBY_VERSION
-GEM_HOME='/usr/share/ruby-rvm/gems/ruby-1.9.3-p286' ; export GEM_HOME
-GEM_PATH='/usr/share/ruby-rvm/gems/ruby-1.9.3-p286:/usr/share/ruby-rvm/gems/ruby-1.9.3-p286@global' ; export GEM_PATH
-MY_RUBY_HOME='/usr/share/ruby-rvm/rubies/ruby-1.9.3-p286' ; export MY_RUBY_HOME
-IRBRC='/usr/share/ruby-rvm/rubies/ruby-1.9.3-p286/.irbrc' ; export IRBRC
-rvm_ruby_string='ruby-1.9.3-p286' ; export rvm_ruby_string
+RUBY_VERSION='ruby-1.9.3-p327' ; export RUBY_VERSION
+GEM_HOME='/usr/share/ruby-rvm/gems/ruby-1.9.3-p327' ; export GEM_HOME
+GEM_PATH='/usr/share/ruby-rvm/gems/ruby-1.9.3-p327:/usr/share/ruby-rvm/gems/ruby-1.9.3-p327@global' ; export GEM_PATH
+MY_RUBY_HOME='/usr/share/ruby-rvm/rubies/ruby-1.9.3-p327' ; export MY_RUBY_HOME
+IRBRC='/usr/share/ruby-rvm/rubies/ruby-1.9.3-p327/.irbrc' ; export IRBRC
+rvm_ruby_string='ruby-1.9.3-p327' ; export rvm_ruby_string
 unset rvm_gemset_name
 unset MAGLEV_HOME
 unset RBXOPT
@@ -101,6 +100,6 @@ else
 	export PS1="\[$bldylw\] \w \[$txtcyn\] [\T \d]\[$txtrst\]\n [ROOT] ✈ "
 fi
 
-export PATH="/usr/share/ruby-rvm/gems/ruby-1.9.3-p286/bin:/usr/share/ruby-rvm/gems/ruby-1.9.3-p286@global/bin:/usr/share/ruby-rvm/rubies/ruby-1.9.3-p286/bin:/usr/share/ruby-rvm/bin:$PATH"
+export PATH="/usr/share/ruby-rvm/gems/ruby-1.9.3-p327/bin:/usr/share/ruby-rvm/gems/ruby-1.9.3-p327@global/bin:/usr/share/ruby-rvm/rubies/ruby-1.9.3-p327/bin:/usr/share/ruby-rvm/bin:$PATH"
 
 export EDITOR="emacsclient"
