@@ -1,0 +1,6 @@
+[submodule "emacs.d"]
+	path = emacs.d
+	url = https://github.com/jaseemabid/emacs.d.git
+[submodule "zshrc"]
+	path = zshrc
+	url = https://github.com/jaseemabid/zshrc.git
