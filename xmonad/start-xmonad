@@ -1,0 +1,25 @@
+#!/bin/sh
+
+gnome-keyring-daemon -d
+
+syndaemon -d -t -i 5.0
+
+xcompmgr -n &
+
+nitrogen --restore &
+
+$HOME/.dropbox-dist/dropboxd &
+trayer --edge bottom --align right --SetDockType true --SetPartialStrut true --expand true --width 10 --height 18 --transparent true --tint 0x000000 &
+
+if [ -z "$(pgrep nm-applet)" ] ; then
+    nm-applet --sm-disable &
+fi
+
+pulseaudio --start &
+
+xscreensaver -no-splash &
+
+xautolock -time 15 -locker "dbus-send --print-reply --system --dest=org.freedesktop.UPower /org/freedesktop/UPower org.freedesktop.UPower.Suspend" &
+chromium-browser &
+
+exec dbus-launch --sh-syntax --exit-with-session xmonad
