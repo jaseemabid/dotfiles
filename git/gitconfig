@@ -1,0 +1,26 @@
+[user]
+	name = Jaseem Abid
+	email = jaseemabid@gmail.com
+[github]
+	username = jaseemabid
+[core]
+	editor = emacsclient
+	excludesfile = ~/.gitignore
+[color]
+	ui = true
+[push]
+	default = current
+[alias]
+	see = log --oneline --graph -7
+	s = status
+[pull]
+	rebase = true
+[credential]
+	helper = cache --timeout 36000
+[dude]
+	interval = 60
+	icon = ~/.github.png
+[url "git@github.com:jaseemabid/"]
+	insteadOf = gh:jaseemabid//
+[url "git://github.com/"]
+	insteadOf = gh:
