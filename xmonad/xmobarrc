@@ -6,7 +6,7 @@ Config { font = "-misc-fixed-*-*-*-*-14-*-*-*-*-*-*-*"
                     , Run Memory ["-t","Mem: <usedratio>%"] 10
                     , Run Swap [] 10
                     , Run Com "~/.xmonad/get-volume" [] "myvolume" 10
-                    , Run Date "%a %b %_d %l:%M %p" "date" 10
+                    , Run Date "%a %b %d %l:%M:%S %p" "date" 10
                     , Run Network "eth0" ["-L","0","-H","64","--normal","gray","--high","green"] 10
                     , Run Network "wlan0" ["-L","0","-H","32","--normal","gray","--high","green"] 10
                     , Run BatteryP ["BAT0"] ["-t", "AC: <acstatus> | Batt: <left>%",
@@ -17,5 +17,5 @@ Config { font = "-misc-fixed-*-*-*-*-14-*-*-*-*-*-*-*"
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{ %wlan0% %eth0% | %battery% | %cpu% | %memory% | Vol: %myvolume% |  <fc=#ee9a00>%date%</fc>  "
+       , template = " %StdinReader% }{ %wlan0% %eth0% | %battery% | %cpu% | %memory% | Vol: %myvolume% | <fc=#ee9a00>%date%</fc> "
        }
