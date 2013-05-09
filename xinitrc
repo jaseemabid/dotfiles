@@ -17,4 +17,7 @@ xsetroot -cursor_name left_ptr
 feh --bg-fill /home/jaseemabid/.xmonad/realartistsship2560x1440.jpg
 
 # load xmonad
-xmonad
+# xmonad
+
+# exec i3
+exec i3 -V >> ~/.i3/i3log 2>&1
