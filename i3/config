@@ -108,8 +108,11 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # [TODO] Assign apps to proper workspaces
 # assign [class="[eE]macs"] 2
 # assign [class="terminator"] 7
-# assign [class="Deluge"] 7
-# assign [class="[sS]kype"] 6
+# assign [class="Deluge"] 8
+assign [class="[sS]kype"] 5
+
+# Custom window/app configurations
+for_window [class="Skype"] floating enable
 
 # Audio shortcuts
 bindsym XF86AudioLowerVolume exec amixer -q set Master 5%-
