@@ -1,3 +1,4 @@
+-- -*- Mode: haskell -*-
 Config { font = "-misc-fixed-*-*-*-*-14-*-*-*-*-*-*-*"
         , bgColor = "#002b36"
         , fgColor = "#657b83"
