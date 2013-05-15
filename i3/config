@@ -9,7 +9,7 @@
 set $mod Mod4
 
 # Font for window titles.
-font pango:Droid Sans Mono 10
+font pango:Inconsolata 11
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -149,4 +149,5 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
+		mode dock
 }
