@@ -54,9 +54,6 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
-# libnodegit stuff
-# export LD_LIBRARY_PATH=/usr/local/lib:/usr/lib:/usr/lib32
-
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
