@@ -1,7 +1,7 @@
 # Path to your oh-my-zsh configuration.
-ZSH=~jaseemabid/.oh-my-zsh
+ZSH=~jaseem/.oh-my-zsh
 
-DEFAULT_USER="jaseemabid"
+DEFAULT_USER="jaseem"
 LC_ALL="en_US.UTF-8"
 
 pathdirs=(

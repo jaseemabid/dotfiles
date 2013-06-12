@@ -14,7 +14,7 @@ fi
 xsetroot -cursor_name left_ptr
 
 # load your wallpaper with feh
-feh --bg-fill /home/jaseemabid/.xmonad/realartistsship2560x1440.jpg
+feh --bg-fill /home/jaseem/.xmonad/realartistsship2560x1440.jpg
 
 # load xmonad
 # xmonad
