@@ -47,7 +47,7 @@ alias ec="emacsclient"
 alias record="ffmpeg -f x11grab -r 30 -s 1366x768 -i :0.0 -f alsa -ac 2 -i pulse -vcodec libx264 -acodec pcm_s16le screencast.mkv"
 alias ack="/usr/bin/vendor_perl/ack"
 alias n="node-gyp"
-alias kill="xset dpms force off"
+alias kil="xset dpms force off"
 
 # git aliases
 alias git-dep="sudo apt-get install libcurl4-gnutls-dev libexpat1-dev gettext libz-dev libssl-dev"
@@ -55,5 +55,4 @@ alias git-install="sudo make prefix=/usr gitwebdir=/usr/share/gitweb install"
 
 # Alternatives
 alias vi="emacsclient"
-alias diff="meld"
 alias rm="rm -i"

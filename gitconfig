@@ -3,7 +3,12 @@
 	email = jaseemabid@gmail.com
 [github]
 	username = jaseemabid
+[apply]
+	whitespace = fix
+[grep]
+	lineNumber = true
 [core]
+	whitespace = trailing-space,space-before-tab
 	editor = emacsclient
 	excludesfile = ~/.gitignore
 [color]
