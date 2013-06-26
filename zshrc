@@ -55,7 +55,7 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 
 # Load RVM into a shell session *as a function*
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" && source "$HOME/.rvm/environments/ruby-1.9.3-p392"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # This loads NVM
 [[ -s /home/jaseemabid/.nvm/nvm.sh ]] && . /home/jaseemabid/.nvm/nvm.sh
