@@ -4,19 +4,6 @@ ZSH=~jaseem/.oh-my-zsh
 DEFAULT_USER="jaseem"
 LC_ALL="en_US.UTF-8"
 
-pathdirs=(
-    /usr/local/mysql/bin
-    ~/bin
-    ~/.cabal/bin
-	~/.rvm/bin
-)
-
-for dir in $pathdirs; do
-    if [ -d $dir ]; then
-        path+=$dir
-    fi
-done
-
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -69,3 +56,5 @@ dual () {
 single () {
     xrandr --output VGA-0 --off
 }
+
+PATH=$HOME/bin:$PATH
