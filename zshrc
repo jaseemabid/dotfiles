@@ -49,7 +49,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Dual monitors
 dual () {
-	xrandr --output LVDS --primary --left-of VGA-0 --output VGA-0 --auto
+	xrandr --output LVDS --primary --right-of VGA-0 --output VGA-0 --auto
 }
 
 # Single monitor
