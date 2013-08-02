@@ -47,14 +47,4 @@ source $ZSH/oh-my-zsh.sh
 # This loads NVM
 [[  -s "$HOME/.nvm/nvm.sh" ]] && source "$HOME/.nvm/nvm.sh"
 
-# Dual monitors
-dual () {
-	xrandr --output LVDS --primary --right-of VGA-0 --output VGA-0 --auto
-}
-
-# Single monitor
-single () {
-    xrandr --output VGA-0 --off
-}
-
 PATH=$HOME/bin:$PATH
