@@ -19,11 +19,11 @@ ln -fs "dotfiles/zprofile"				"${HOME}/.zprofile"
 ln -fs "dotfiles/zshrc"					"${HOME}/.zshrc"
 
 # Link in directories, removing whatever's already there first.
-[[ -e "${HOME}/.newsbeuter" ]] && rm -r "${HOME}/.newsbeuter"
-ln -fs ".dotfiles/newsbeuter" "${HOME}/.newsbeuter"
+# [[ -e "${HOME}/.newsbeuter" ]] && rm -r "${HOME}/.newsbeuter"
+# ln -fs ".dotfiles/newsbeuter" "${HOME}/.newsbeuter"
 
-[[ -e "${HOME}/.terminfo" ]] && rm -r "${HOME}/.terminfo"
-ln -fs ".dotfiles/terminfo" "${HOME}/.terminfo"
+# [[ -e "${HOME}/.terminfo" ]] && rm -r "${HOME}/.terminfo"
+# ln -fs ".dotfiles/terminfo" "${HOME}/.terminfo"
 
 # Optionally link in X and Awesome stuff.
 # if [[ $1 == "-X" ]]; then
