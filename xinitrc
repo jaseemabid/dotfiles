@@ -13,6 +13,9 @@ fi
 # set the cursor -- xmonad has none by default
 xsetroot -cursor_name left_ptr
 
+# Fix screen layout on boot
+source ~/.screenlayout/dual.sh
+
 # load your wallpaper with feh
 feh --bg-fill /home/jaseem/dotfiles/xmonad/archblue.png
 
