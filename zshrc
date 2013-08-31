@@ -47,4 +47,4 @@ source $ZSH/oh-my-zsh.sh
 # This loads NVM
 [[  -s "$HOME/.nvm/nvm.sh" ]] && source "$HOME/.nvm/nvm.sh"
 
-PATH=$HOME/bin:$PATH
+PATH=$HOME/bin:$HOME/Builds/elixir/bin:$PATH
