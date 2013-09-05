@@ -106,13 +106,17 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # [TODO] Assign apps to proper workspaces
-# assign [class="[eE]macs"] 2
-# assign [class="terminator"] 7
-# assign [class="Deluge"] 8
+assign [class="[gG]oogle-chrome"] 1
+assign [class="[eE]macs"] 2
+assign [class="[tT]erminator"] 3
+assign [class="[tT]hunar"] 4
 assign [class="[sS]kype"] 5
+assign [class="[cC]lementine"] 9
+assign [class="[dD]eluge"] 0
 
 # Custom window/app configurations
 for_window [class="Skype"] floating enable
+for_window [class="Gimp"] floating enable
 
 # Audio shortcuts
 bindsym XF86AudioLowerVolume exec amixer -q set Master 5%-
