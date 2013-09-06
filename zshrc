@@ -2,7 +2,7 @@
 ZSH=~jaseem/.oh-my-zsh
 
 DEFAULT_USER="jaseem"
-LC_ALL="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
