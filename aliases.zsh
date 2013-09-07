@@ -9,9 +9,10 @@ alias c='xsel --clipboard --input'
 alias p='xsel --clipboard --output'
 
 # Listing
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
+alias l='ranger'
+alias la='ranger'
+alias ll='ranger'
+alias ls='ranger'
 
 # git
 alias gs='git status '
