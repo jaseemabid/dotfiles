@@ -1,0 +1,27 @@
+#!/usr/bin/python
+
+import sqlite3
+from urllib import parse as u
+import shutil
+
+DB = sqlite3.connect('/home/jaseem/.config/Clementine/clementine.db')
+SQL = 'select filename from songs order by rating desc limit 100'
+
+cursor = DB.cursor()
+data = cursor.execute(SQL).fetchall()
+
+destination = "/home/jaseem/Media/Player"
+
+for file in data:
+    # Find a way to do this clean
+    # last ' is messing up
+    # b'file:// <path> ' => path
+    path = u.unquote(str(file[0])).replace('b\'file://','').replace('\'','')
+
+    try:
+        open(path)
+        print("Copy  => ", path)
+        shutil.copy(path, destination)
+
+    except IOError as err:
+        print("Error : ", path)
