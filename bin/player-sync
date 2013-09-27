@@ -17,32 +17,37 @@ import sqlite3
 import urllib.parse as lib
 import shutil
 
-DB = sqlite3.connect('/home/jaseem/.config/Clementine/clementine.db')
-SQL = 'select filename from songs order by rating desc limit 100'
+def main():
 
-cursor = DB.cursor()
-data = cursor.execute(SQL).fetchall()
+    DB = sqlite3.connect('/home/jaseem/.config/Clementine/clementine.db')
+    SQL = 'select filename from songs order by rating desc limit 100'
 
-log = "/home/jaseem/player-sync.log"
-# destination = "/tmp/music/"
-destination = "/home/jaseem/t/Internal storage/Music/"
+    cursor = DB.cursor()
+    data = cursor.execute(SQL).fetchall()
 
-f = open(log,'w')
+    log = "/home/jaseem/player-sync.log"
+    # destination = "/tmp/music/"
+    destination = "/home/jaseem/t/Internal storage/Music/"
 
-for file in data:
-    # Decode binary to UTF-8 string, and parse for path
-    parse = lib.urlparse(file[0].decode("utf-8"))
-    path = lib.unquote(parse.path)
+    f = open(log,'w')
 
-    try:
-        open(path)
-        shutil.copy2(path, destination)
-        f.write("[✓] " + path + '\n')
+    for file in data:
+        # Decode binary to UTF-8 string, and parse for path
+        parse = lib.urlparse(file[0].decode("utf-8"))
+        path = lib.unquote(parse.path)
 
-    except OSError as err:
-        f.write("[✗] Unable to find phone \n")
+        try:
+            open(path)
+            shutil.copy2(path, destination)
+            f.write("[✓] " + path + '\n')
 
-    except IOError as err:
-        f.write("[✗] " + err + path + '\n')
+        except OSError as err:
+            f.write("[✗] Unable to find phone \n")
 
-f.close()
+        except IOError as err:
+            f.write("[✗] " + err + path + '\n')
+
+    f.close()
+
+if __name__ == "__main__":
+    main()
