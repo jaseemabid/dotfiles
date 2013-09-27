@@ -5,9 +5,11 @@ A simple script to get the top 100 songs from Clementine DB and copy it to
 my phone.
 
 TODO:
-	1. Handle phone unmount properly. MTPFS suck!
-	2.
-
+    1. Handle phone unmount properly. MTPFS suck!
+    2. Dont copy files already there
+    3. Delete old files?
+    4. Remove hard links
+    5. Mount with python
 
 '''
 
