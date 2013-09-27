@@ -1,5 +1,16 @@
 #!/usr/bin/python
 
+'''
+A simple script to get the top 100 songs from Clementine DB and copy it to
+my phone.
+
+TODO:
+	1. Handle phone unmount properly. MTPFS suck!
+	2.
+
+
+'''
+
 import sqlite3
 import urllib.parse as lib
 import shutil
