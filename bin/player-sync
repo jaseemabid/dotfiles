@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 import sqlite3
-from urllib import parse as u
+import urllib.parse as lib
 import shutil
 
 DB = sqlite3.connect('/home/jaseem/.config/Clementine/clementine.db')
@@ -10,18 +10,26 @@ SQL = 'select filename from songs order by rating desc limit 100'
 cursor = DB.cursor()
 data = cursor.execute(SQL).fetchall()
 
-destination = "/home/jaseem/Media/Player"
+log = "/home/jaseem/player-sync.log"
+# destination = "/tmp/music/"
+destination = "/home/jaseem/t/Internal storage/Music/"
+
+f = open(log,'w')
 
 for file in data:
-    # Find a way to do this clean
-    # last ' is messing up
-    # b'file:// <path> ' => path
-    path = u.unquote(str(file[0])).replace('b\'file://','').replace('\'','')
+    # Decode binary to UTF-8 string, and parse for path
+    parse = lib.urlparse(file[0].decode("utf-8"))
+    path = lib.unquote(parse.path)
 
     try:
         open(path)
-        print("Copy  => ", path)
-        shutil.copy(path, destination)
+        shutil.copy2(path, destination)
+        f.write("[✓] " + path + '\n')
+
+    except OSError as err:
+        f.write("[✗] Unable to find phone \n")
 
     except IOError as err:
-        print("Error : ", path)
+        f.write("[✗] " + err + path + '\n')
+
+f.close()
