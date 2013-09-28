@@ -106,8 +106,8 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # [TODO] Assign apps to proper workspaces
-assign [class="[gG]oogle-chrome"] 1
-assign [class="[eE]macs"] 2
+assign [class="[eE]macs"] 1
+assign [class="[gG]oogle-chrome"] 2
 assign [class="[tT]erminator"] 3
 assign [class="[tT]hunar"] 4
 assign [class="[sS]kype"] 5
