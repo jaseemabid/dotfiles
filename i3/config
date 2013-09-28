@@ -111,6 +111,7 @@ assign [class="[gG]oogle-chrome"] 2
 assign [class="[tT]erminator"] 3
 assign [class="[tT]hunar"] 4
 assign [class="[sS]kype"] 5
+assign [class="[xX]chat"] 8
 assign [class="[cC]lementine"] 9
 assign [class="[dD]eluge"] 10
 
