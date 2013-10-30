@@ -151,6 +151,11 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 bindsym $mod+x exec xfce4-screenshooter
 
+# Move the current workspace to the next output
+# (effectively toggles when you only have two outputs)
+bindsym $mod+z move workspace to output right
+
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
