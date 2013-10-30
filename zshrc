@@ -35,7 +35,8 @@ ZSH_THEME="agnoster"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git rails archlinux bundler coffee screen command-not-found cp gem github npm systemd)
+plugins=(git rails archlinux bundler coffee screen command-not-found cp gem
+github npm systemd virtualenv virtualenvwrapper)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -43,6 +44,9 @@ source $ZSH/oh-my-zsh.sh
 
 export HISTSIZE=999999
 export HISTFILESIZE=999999
+
+# load virtualenvwrapper.sh
+source /usr/bin/virtualenvwrapper.sh
 
 # Load RVM into a shell session *as a function*
 [[  -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
