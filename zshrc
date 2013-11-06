@@ -38,10 +38,7 @@ ZSH_THEME="agnoster"
 plugins=(git rails archlinux bundler coffee screen command-not-found cp gem
 github npm systemd virtualenv virtualenvwrapper)
 
-source $ZSH/oh-my-zsh.sh
-
 # Customize to your needs...
-
 export HISTSIZE=999999
 export HISTFILESIZE=999999
 
@@ -55,3 +52,5 @@ source /usr/bin/virtualenvwrapper.sh
 [[  -s "$HOME/.nvm/nvm.sh" ]] && source "$HOME/.nvm/nvm.sh"
 
 PATH=$HOME/bin:$HOME/Builds/elixir/bin:/usr/local/heroku/bin:$PATH
+
+source $ZSH/oh-my-zsh.sh
