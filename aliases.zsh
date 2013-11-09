@@ -49,6 +49,9 @@ alias ack="/usr/bin/vendor_perl/ack"
 alias n="node-gyp"
 alias kil="xset dpms force off"
 
+alias open="xdg-open"
+alias o="xdg-open"
+
 # git aliases
 alias git-dep="sudo apt-get install libcurl4-gnutls-dev libexpat1-dev gettext libz-dev libssl-dev"
 alias git-install="sudo make prefix=/usr gitwebdir=/usr/share/gitweb install"
