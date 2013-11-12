@@ -5,3 +5,9 @@ hardstatus string "screen (%n: %t)"
 caption string "%{= kw}%Y-%m-%d;%c %{= kw}%-Lw%{= kG}%{+b}[%n %t]%{-b}%{= kw}%+Lw%1`"
 caption always
 termcapinfo xterm* ti@:te@
+
+# Start numbering at 1
+bind c screen 1
+bind ^c screen 1
+bind 0 select 10
+screen 1
