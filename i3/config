@@ -167,7 +167,7 @@ bar {
 # exec --no-startup-id dropbox start
 exec --no-startup-id clementine
 exec --no-startup-id emacs
-exec --no-startup-id google-chrome
+exec --no-startup-id google-chrome-stable
 exec --no-startup-id nm-applet
 exec --no-startup-id skype
 exec --no-startup-id terminator
