@@ -43,6 +43,9 @@ export HISTSIZE=999999
 export HISTFILESIZE=999999
 
 # load virtualenvwrapper.sh
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Projects
 source /usr/bin/virtualenvwrapper.sh
 
 # Load RVM into a shell session *as a function*
