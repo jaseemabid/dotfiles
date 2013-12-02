@@ -16,8 +16,8 @@ xsetroot -cursor_name left_ptr
 # Fix screen layout on boot
 source ~/.screenlayout/dual.sh
 
-# load your wallpaper with feh
-feh --bg-fill /home/jaseem/dotfiles/xmonad/archblue.png
+# load generic wallpaper with feh
+feh --bg-fill /home/jaseem/.wallpaper*
 
 # load xmonad
 # xmonad
