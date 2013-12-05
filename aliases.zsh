@@ -29,6 +29,8 @@ alias gits='git status '
 alias get='git clone '
 alias g='git '
 
+alias t='tmux'
+
 # Data recovery is a myth
 alias dd="echo -e '★★★★★★★★★★★★★★★★★★★★★'; echo -e 'Are you fucking sure?\n'; sleep 7; dd "
 
