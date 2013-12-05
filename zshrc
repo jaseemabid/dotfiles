@@ -4,6 +4,8 @@ ZSH=~jaseem/.oh-my-zsh
 DEFAULT_USER="jaseem"
 export LC_ALL="en_US.UTF-8"
 
+export EDITOR='emacsclient'
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
