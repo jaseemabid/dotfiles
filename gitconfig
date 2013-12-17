@@ -32,3 +32,5 @@
 	insteadOf = gh:jaseemabid//
 [url "git://github.com/"]
 	insteadOf = gh:
+[merge]
+	tool = meld
