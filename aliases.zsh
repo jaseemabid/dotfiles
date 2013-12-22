@@ -3,10 +3,22 @@
 # Move this file to .oh-my-zsh/custom, not tracked there.
 # Author: Jaseem Abid
 
-# Copy & paste from shell
 
-alias c='xsel --clipboard --input'
-alias p='xsel --clipboard --output'
+# System specific aliases
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+
+    # Copy & paste from shell
+    alias c='xsel --clipboard --input'
+    alias p='xsel --clipboard --output'
+
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    alias c='pbcopy'
+    alias p='pbpaste'
+
+else
+    # Unknown, or  cygwin/win32/freebsd*
+    echo "GET A LIFE, USE A SENSIBLE OS"
+fi
 
 # Listing
 alias l='/usr/bin/ls'
