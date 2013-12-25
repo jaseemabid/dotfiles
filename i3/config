@@ -117,6 +117,7 @@ assign [class="[dD]eluge"] 10
 
 # Custom window/app configurations
 for_window [class="Skype"] floating enable
+for_window [class="[gG]color2"] floating enable
 # Gimp in single window mode works well with floating disabled
 # for_window [class="Gimp"] floating enable
 
