@@ -1,7 +1,7 @@
 # Path to your oh-my-zsh configuration.
-ZSH=~jaseem/.oh-my-zsh
+ZSH=$HOME/.oh-my-zsh
 
-DEFAULT_USER="jaseem"
+DEFAULT_USER=$(whoami)
 export LC_ALL="en_US.UTF-8"
 
 export EDITOR='emacsclient'
