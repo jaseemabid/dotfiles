@@ -57,6 +57,15 @@ else
 	[[  -s "$HOME/.nvm/nvm.sh" ]] && source "$HOME/.nvm/nvm.sh"
 fi
 
+# A bunch of helpers
+
+# Alt-S inserts "sudo " at the start of line:
+insert_sudo () {
+	zle beginning-of-line; zle -U "sudo "
+}
+zle -N insert-sudo insert_sudo
+bindkey "^[s" insert-sudo
+
 PATH=$HOME/bin:$HOME/Builds/elixir/bin:/usr/local/heroku/bin:$PATH
 
 source $ZSH/oh-my-zsh.sh
