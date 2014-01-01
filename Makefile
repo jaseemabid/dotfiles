@@ -37,6 +37,13 @@ dotfiles:
 	$(LN) ~/dotfiles/xscreensaver ~/.xscreensaver
 	$(LN) ~/dotfiles/zprofile ~/.zprofile
 
+	$(LN) ~/dotfiles/bin/git-cal ~/bin
+	$(LN) ~/dotfiles/bin/imdbtool.py ~/bin
+	$(LN) ~/dotfiles/bin/notify ~/bin
+	$(LN) ~/dotfiles/bin/player-sync ~/bin
+	$(LN) ~/dotfiles/bin/today ~/bin
+	$(LN) ~/dotfiles/bin/wireless.sh ~/bin
+
 update:
 	git pull --verbose
 
