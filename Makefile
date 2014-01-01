@@ -35,8 +35,11 @@ dotfiles:
 	$(LN) ~/dotfiles/gitignore ~/.gitignore
 	$(LN) ~/dotfiles/i3 ~/.i3
 	$(LN) ~/dotfiles/i3/i3status.conf ~/.i3status.conf
+	$(LN) ~/dotfiles/jsbeautifyrc ~/.jsbeautifyrc
 	$(LN) ~/dotfiles/latexmkrc ~/.latexmkrc
 	$(LN) ~/dotfiles/rvmrc ~/.rvmrc
+	$(LN) ~/dotfiles/screenrc ~/.screenrc
+	$(LN) ~/dotfiles/tmux.conf ~/.tmux.conf
 	$(LN) ~/dotfiles/xinitrc ~/.xinitrc
 	$(LN) ~/dotfiles/xscreensaver ~/.xscreensaver
 	$(LN) ~/dotfiles/zprofile ~/.zprofile
