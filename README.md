@@ -20,6 +20,17 @@ is a total mess. Use at your own risk. Will clean up someday when I get time.
 If you are looking for my emacs.d, its
 [here](https://github.com/jaseemabid/emacs.d)
 
+## Installation
+
+*This will override existing files, you have been warned*
+
+The `Makefile` is a mess, but will do its job. Known issues are listed in the
+file as a TODO. Please read the file before continuing.
+
+    $ git clone https://github.com/jaseemabid/dotfiles.git ~/dotfiles
+	$ cd ~/dotfiles
+	$ make
+
 ## Other cool dotfile repos
 
 - https://github.com/StanAngeloff/dotfiles
