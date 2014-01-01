@@ -24,6 +24,7 @@ all:
 
 # Link in files, replacing whatever's already there.
 dotfiles:
+	$(LN) ~/dotfiles/aliases.zsh  ~/.oh-my-zsh/custom/aliases.zsh
 	$(LN) ~/dotfiles/curlrc ~/.curlrc
 	$(LN) ~/dotfiles/gemrc ~/.gemrc
 	$(LN) ~/dotfiles/gitconfig ~/.gitconfig
