@@ -10,22 +10,33 @@
 
 
 RM = /bin/rm -r
-LN = /bin/ln -r
+LN = /usr/bin/ln -fs
 CP = /bin/cp -r
 
 all:
 	@echo ""
 	@echo "usage:"
 	@echo ""
-	@echo "* make dotfiles		-- to install dotfiles"
-	@echo "* make clean			-- to clean up dotfiles"
+	@echo "* make dotfiles -- to install dotfiles"
+	@echo "* make clean    -- to clean up dotfiles"
+	@echo "* make update   -- get latest version from github, install manually"
 	@echo ""
 
+# Link in files, replacing whatever's already there.
 dotfiles:
-	$(CP) bash_aliases ~/.bash_aliases
-	$(CP) bash_colors ~/.bash_colors
-	$(CP) bash_logout ~/.bash_logout
-	$(CP) bashrc ~/.bashrc
+	$(LN) ~/dotfiles/curlrc ~/.curlrc
+	$(LN) ~/dotfiles/gemrc ~/.gemrc
+	$(LN) ~/dotfiles/gitconfig ~/.gitconfig
+	$(LN) ~/dotfiles/gitignore ~/.gitignore
+	$(LN) ~/dotfiles/i3 ~/.i3
+	$(LN) ~/dotfiles/i3/i3status.conf ~/.i3status.conf
+	$(LN) ~/dotfiles/latexmkrc ~/.latexmkrc
+	$(LN) ~/dotfiles/rvmrc ~/.rvmrc
+	$(LN) ~/dotfiles/xinitrc ~/.xinitrc
+	$(LN) ~/dotfiles/xscreensaver ~/.xscreensaver
+	$(LN) ~/dotfiles/zprofile ~/.zprofile
 
+update:
+	git pull --verbose
 
 .PHONY : all dotfiles clean
