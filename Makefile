@@ -37,6 +37,9 @@ dotfiles:
 	$(LN) ~/dotfiles/xscreensaver ~/.xscreensaver
 	$(LN) ~/dotfiles/zprofile ~/.zprofile
 
+	# Link executable to ~/bin
+	mkdir -p ~/bin
+
 	$(LN) ~/dotfiles/bin/git-cal ~/bin
 	$(LN) ~/dotfiles/bin/imdbtool.py ~/bin
 	$(LN) ~/dotfiles/bin/notify ~/bin
