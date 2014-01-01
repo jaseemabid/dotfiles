@@ -8,6 +8,10 @@
 #  _/ |
 # |__/
 
+# TODO
+# 	1. Fix dependency on `~/dotfiles` path
+# 	2. Install dependencies, like oh-my-zsh before installation
+#	3. Reduce redundancy. Loop over an array?
 
 RM = /bin/rm -r
 LN = /usr/bin/ln -fs
@@ -22,7 +26,7 @@ all:
 	@echo "* make update   -- get latest version from github, install manually"
 	@echo ""
 
-# Link in files, replacing whatever's already there.
+# Link in files, replacing whatever is already there.
 dotfiles:
 	$(LN) ~/dotfiles/aliases.zsh  ~/.oh-my-zsh/custom/aliases.zsh
 	$(LN) ~/dotfiles/curlrc ~/.curlrc
