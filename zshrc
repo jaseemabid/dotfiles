@@ -41,20 +41,31 @@ then
 	plugins=(git archlinux command-not-found cp systemd )
 else
 	# Non root users
-	plugins=(git rails archlinux bundler coffee screen command-not-found cp gem
-		github npm systemd virtualenv virtualenvwrapper)
+	# Different config for linux and mac
+	if [[ "$OSTYPE" == "linux-gnu" ]]; then
+		plugins=(git rails archlinux bundler coffee screen command-not-found cp
+			gem github npm systemd virtualenv virtualenvwrapper)
 
-	# load virtualenvwrapper.sh
-	export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2
-	export WORKON_HOME=$HOME/.virtualenvs
-	export PROJECT_HOME=$HOME/Projects
-	source /usr/bin/virtualenvwrapper.sh
+		# load virtualenvwrapper.sh
+		export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2
+		export WORKON_HOME=$HOME/.virtualenvs
+		export PROJECT_HOME=$HOME/Projects
+		source /usr/bin/virtualenvwrapper.sh
+
+
+	elif [[ "$OSTYPE" == "darwin"* ]]; then
+		plugins=(git rails coffee screen command-not-found cp gem github npm)
+
+	else
+		# Unknown, or  cygwin/win32/freebsd*
+		echo "GET A LIFE, USE A SENSIBLE OS"
+	fi
 
 	# Load RVM into a shell session *as a function*
-	[[  -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+	[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 	# This loads NVM
-	[[  -s "$HOME/.nvm/nvm.sh" ]] && source "$HOME/.nvm/nvm.sh"
+	[[ -s "$HOME/.nvm/nvm.sh" ]] && source "$HOME/.nvm/nvm.sh"
 fi
 
 # A bunch of helpers
