@@ -28,7 +28,8 @@ DISABLE_AUTO_UPDATE="true"
 # Uncomment following line if you want to disable autosetting terminal title.
 # DISABLE_AUTO_TITLE="true"
 
-# Uncomment following line if you want red dots to be displayed while waiting for completion
+# Uncomment following line if you want red dots to be displayed while waiting
+# for completion
 # COMPLETION_WAITING_DOTS="true"
 
 export HISTSIZE=999999
@@ -37,42 +38,42 @@ export HISTFILESIZE=999999
 # Configure a minimal shell for root user
 if [[ $UID = '0' ]]
 then
-	# Root user
-	plugins=(git archlinux command-not-found cp systemd )
+    # Root user
+    plugins=(git archlinux command-not-found cp systemd )
 else
-	# Non root users
-	# Different config for linux and mac
-	if [[ "$OSTYPE" == "linux-gnu" ]]; then
-		plugins=(git rails archlinux bundler coffee screen command-not-found cp
-			gem github npm systemd virtualenv virtualenvwrapper)
+    # Non root users
+    # Different config for linux and mac
+    if [[ "$OSTYPE" == "linux-gnu" ]]; then
+        plugins=(git rails archlinux bundler coffee screen command-not-found cp
+            gem github npm systemd virtualenv virtualenvwrapper)
 
-		# load virtualenvwrapper.sh
-		export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2
-		export WORKON_HOME=$HOME/.virtualenvs
-		export PROJECT_HOME=$HOME/Projects
-		source /usr/bin/virtualenvwrapper.sh
+        # load virtualenvwrapper.sh
+        export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2
+        export WORKON_HOME=$HOME/.virtualenvs
+        export PROJECT_HOME=$HOME/Projects
+        source /usr/bin/virtualenvwrapper.sh
 
 
-	elif [[ "$OSTYPE" == "darwin"* ]]; then
-		plugins=(git rails coffee screen command-not-found cp gem github npm)
+    elif [[ "$OSTYPE" == "darwin"* ]]; then
+        plugins=(git rails coffee screen command-not-found cp gem github npm)
 
-	else
-		# Unknown, or  cygwin/win32/freebsd*
-		echo "GET A LIFE, USE A SENSIBLE OS"
-	fi
+    else
+        # Unknown, or  cygwin/win32/freebsd*
+        echo "GET A LIFE, USE A SENSIBLE OS"
+    fi
 
-	# Load RVM into a shell session *as a function*
-	[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+    # Load RVM into a shell session *as a function*
+    [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
-	# This loads NVM
-	[[ -s "$HOME/.nvm/nvm.sh" ]] && source "$HOME/.nvm/nvm.sh"
+    # This loads NVM
+    [[ -s "$HOME/.nvm/nvm.sh" ]] && source "$HOME/.nvm/nvm.sh"
 fi
 
 # A bunch of helpers
 
 # Alt-S inserts "sudo " at the start of line:
 insert_sudo () {
-	zle beginning-of-line; zle -U "sudo "
+    zle beginning-of-line; zle -U "sudo "
 }
 zle -N insert-sudo insert_sudo
 bindkey "^[s" insert-sudo
