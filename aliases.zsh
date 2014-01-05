@@ -21,7 +21,7 @@ else
 fi
 
 # Listing
-alias l='/usr/bin/ls'
+alias l='ls'
 alias la='ranger'
 alias ll='ranger'
 
