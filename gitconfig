@@ -16,7 +16,7 @@
 [push]
 	default = current
 [alias]
-	see = log --oneline --graph -7
+	see = !"git --no-pager log --oneline --graph -10"
 	s = status
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 [format]
