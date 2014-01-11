@@ -48,27 +48,18 @@ alias dd="echo -e '★★★★★★★★★★★★★★★★★★★★�
 
 # Quickies
 alias big="stat -c %s $1"
-alias athena="ssh b090264cs@athena"
 alias die="xset dpms force off"
 alias yt="youtube-dl -twci --console-title"
 alias ty="yt"
-alias hist="cat ~/.bash_history | grep $1"
 alias untar="tar -zxvf $1"
 alias backup="rsync -avuiWP --delete"
-alias log="cat /var/log/messages.log | grep $1"
-alias app="ps -e | grep $1"
 alias ec="emacsclient"
 alias record="ffmpeg -f x11grab -r 30 -s 1366x768 -i :0.0 -f alsa -ac 2 -i pulse -vcodec libx264 -acodec pcm_s16le screencast.mkv"
 alias ack="/usr/bin/vendor_perl/ack"
-alias n="node-gyp"
 alias kil="xset dpms force off"
 
 alias open="xdg-open"
 alias o="xdg-open"
-
-# git aliases
-alias git-dep="sudo apt-get install libcurl4-gnutls-dev libexpat1-dev gettext libz-dev libssl-dev"
-alias git-install="sudo make prefix=/usr gitwebdir=/usr/share/gitweb install"
 
 # Alternatives
 alias vi="emacsclient"
