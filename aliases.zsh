@@ -3,13 +3,15 @@
 # Move this file to .oh-my-zsh/custom, not tracked there.
 # Author: Jaseem Abid
 
-
 # System specific aliases
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
 
     # Copy & paste from shell
     alias c='xsel --clipboard --input'
     alias p='xsel --clipboard --output'
+
+	alias open="xdg-open"
+	alias o="xdg-open"
 
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     alias c='pbcopy'
@@ -57,9 +59,6 @@ alias ec="emacsclient"
 alias record="ffmpeg -f x11grab -r 30 -s 1366x768 -i :0.0 -f alsa -ac 2 -i pulse -vcodec libx264 -acodec pcm_s16le screencast.mkv"
 alias ack="/usr/bin/vendor_perl/ack"
 alias kil="xset dpms force off"
-
-alias open="xdg-open"
-alias o="xdg-open"
 
 # Alternatives
 alias vi="emacsclient"
