@@ -41,6 +41,7 @@ alias got='git '
 alias get='git '
 alias gits='git status '
 alias get='git clone '
+alias gt='git '
 alias g='git '
 
 alias t='tmux'
