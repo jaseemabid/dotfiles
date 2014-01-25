@@ -17,7 +17,7 @@ xsetroot -cursor_name left_ptr
 source ~/.screenlayout/dual.sh
 
 # load generic wallpaper with feh
-feh --bg-fill /home/jaseem/.wallpaper*
+feh --bg-fill ~/.wallpaper*
 
 # load xmonad
 # xmonad
