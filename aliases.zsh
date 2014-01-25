@@ -67,6 +67,6 @@ alias rm="rm -i"
 
 # Remove trailing whitespace
 # http://stackoverflow.com/questions/4438306/removing-trailing-whitespace-with-sed
-ws='sed -i '\''s/[ \t]*$//'\'' '
+alias ws='sed -i '\''s/[ \t]*$//'\'' '
 
 alias mousefix='sudo modprobe -r psmouse && sudo modprobe psmouse'
