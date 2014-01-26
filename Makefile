@@ -10,8 +10,10 @@
 
 # TODO
 # 	1. Fix dependency on `~/dotfiles` path
-# 	2. Install dependencies, like oh-my-zsh before installation
+# 	2. Install dependencies, like oh-my-zsh, emacs.d before installation
 #	3. Reduce redundancy. Loop over an array?
+#	4. Copy fonts
+# 	5. Get rm, ln .. paths from env
 
 RM = /bin/rm -r
 LN = /usr/bin/ln -fs
