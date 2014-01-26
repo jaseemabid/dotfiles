@@ -25,7 +25,7 @@
 
 1. Necessary _free_ fonts to get started
 
-1. Super charged [emacs.d](github.com/jaseemabid/emacs.d)
+1. Supercharged [emacs.d](github.com/jaseemabid/emacs.d)
 
 ## Installation
 

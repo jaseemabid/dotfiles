@@ -1,0 +1,33 @@
+# watson rc
+# watson - inline issue manager
+# [goosecode] labs
+
+# Directories
+[dirs]
+./
+
+[show_type]
+dirty
+
+# Tags
+[tags]
+fix
+review
+todo
+
+# Ignores
+[ignore]
+bin
+emacs.d
+fonts
+gemrc
+github.png
+gitignore
+i3
+LICENSE.txt
+network.d
+oh-my-zsh
+packages.txt
+pacman.d
+ranger
+zsh_history

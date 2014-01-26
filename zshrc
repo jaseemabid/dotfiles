@@ -49,7 +49,7 @@ else
         plugins=(git rails archlinux bundler coffee screen command-not-found cp
             gem github npm systemd virtualenv virtualenvwrapper)
 
-        # load virtualenvwrapper.sh
+        # [todo] - load virtualenvwrapper only if required
         export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2
         export WORKON_HOME=$HOME/.virtualenvs
         export PROJECT_HOME=$HOME/Projects

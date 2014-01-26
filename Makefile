@@ -8,12 +8,11 @@
 #  _/ |
 # |__/
 
-# TODO
-# 	1. Fix dependency on `~/dotfiles` path
-# 	2. Install dependencies, like oh-my-zsh, emacs.d before installation
-#	3. Reduce redundancy. Loop over an array?
-#	4. Copy fonts
-# 	5. Get rm, ln .. paths from env
+
+# [todo] - Install dependencies, like oh-my-zsh, emacs.d before installation
+# [todo] - Reduce redundancy. Loop over an array?
+# [todo] - Copy fonts
+# [todo] - Get rm, ln .. paths from env
 
 RM = /bin/rm -r
 LN = /usr/bin/ln -fs
@@ -29,6 +28,7 @@ all:
 	@echo ""
 
 # Link in files, replacing whatever is already there.
+# [todo] - Fix dependency on `~/dotfiles` path
 dotfiles: bin-files oh-my-zsh emacs.d
 	$(LN) ~/dotfiles/aliases.zsh  ~/.oh-my-zsh/custom/aliases.zsh
 	$(LN) ~/dotfiles/curlrc ~/.curlrc
