@@ -46,3 +46,11 @@
 - https://github.com/twerth/dotfiles
 - https://github.com/rtomayko/dotfiles
 - https://github.com/holman/dotfiles
+
+## TODO
+
+    $ watson
+
+## License
+
+The MIT License (MIT)
