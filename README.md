@@ -10,28 +10,34 @@
 ```
 
 
-## Dotfiles dotfiles, my dotfiles
+## Configuration files for most used apps
 
-Info on dotfiles : http://dotfiles.github.com/
+> Read about dotfiles, and configuration with plain text files here
+> _[here](http://dotfiles.github.com/)_
 
-Feel free to use my files if they are of any interest to you. Dotfiles as of now
-is a total mess. Use at your own risk. Will clean up someday when I get time.
+## What's included
 
-If you are looking for my emacs.d, its
-[here](https://github.com/jaseemabid/emacs.d)
+1. ZSH with [Oh My ZSH](https://github.com/robbyrussell/oh-my-zsh) and
+   [agnoster](https://gist.github.com/agnoster/3712874) theme.
+
+1. Consistently [solarized dark](http://ethanschoonover.com/solarized)
+   everywhere
+
+1. Necessary _free_ fonts to get started
+
+1. Super charged [emacs.d](github.com/jaseemabid/emacs.d)
 
 ## Installation
 
-*This will override existing files, you have been warned*
+> _This will override existing files, you have been warned_
 
-The `Makefile` is a mess, but will do its job. Known issues are listed in the
-file as a TODO. Please read the file before continuing.
+```sh
+    git clone https://github.com/jaseemabid/dotfiles.git ~/dotfiles
+    cd ~/dotfiles
+    make
+```
 
-    $ git clone https://github.com/jaseemabid/dotfiles.git ~/dotfiles
-	$ cd ~/dotfiles
-	$ make
-
-## Other cool dotfile repos
+## Other dotfile repos for reference
 
 - https://github.com/StanAngeloff/dotfiles
 - https://github.com/ryanb/dotfiles
