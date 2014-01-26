@@ -29,7 +29,7 @@ all:
 	@echo ""
 
 # Link in files, replacing whatever is already there.
-dotfiles:
+dotfiles: oh-my-zsh
 	$(LN) ~/dotfiles/aliases.zsh  ~/.oh-my-zsh/custom/aliases.zsh
 	$(LN) ~/dotfiles/curlrc ~/.curlrc
 	$(LN) ~/dotfiles/gemrc ~/.gemrc
@@ -56,6 +56,10 @@ dotfiles:
 	$(LN) ~/dotfiles/bin/player-sync ~/bin
 	$(LN) ~/dotfiles/bin/today ~/bin
 	$(LN) ~/dotfiles/bin/wireless.sh ~/bin
+
+oh-my-zsh:
+	git clone https://github.com/robbyrussell/oh-my-zsh.git
+	$(LN) ~/dotfiles/oh-my-zsh ~/.oh-my-zsh
 
 update:
 	git pull --verbose
