@@ -47,7 +47,6 @@ dotfiles: oh-my-zsh emacs.d
 	$(LN) ~/dotfiles/zshrc ~/.zshrc
 	$(LN) ~/dotfiles/zprofile ~/.zprofile
 
-	# Link executable to ~/bin
 	mkdir -p ~/bin
 
 	$(LN) ~/dotfiles/bin/git-cal ~/bin
@@ -57,7 +56,7 @@ dotfiles: oh-my-zsh emacs.d
 	$(LN) ~/dotfiles/bin/today ~/bin
 	$(LN) ~/dotfiles/bin/wireless.sh ~/bin
 
-oh-my-zsh: oh-my-zsh
+oh-my-zsh:
 	git clone https://github.com/robbyrussell/oh-my-zsh.git
 	$(LN) ~/dotfiles/oh-my-zsh ~/.oh-my-zsh
 
