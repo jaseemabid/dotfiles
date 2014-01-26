@@ -44,6 +44,7 @@ dotfiles:
 	$(LN) ~/dotfiles/tmux.conf ~/.tmux.conf
 	$(LN) ~/dotfiles/xinitrc ~/.xinitrc
 	$(LN) ~/dotfiles/xscreensaver ~/.xscreensaver
+	$(LN) ~/dotfiles/zshrc ~/.zshrc
 	$(LN) ~/dotfiles/zprofile ~/.zprofile
 
 	# Link executable to ~/bin
