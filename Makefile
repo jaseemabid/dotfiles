@@ -29,7 +29,7 @@ all:
 	@echo ""
 
 # Link in files, replacing whatever is already there.
-dotfiles: oh-my-zsh emacs.d
+dotfiles: bin-files oh-my-zsh emacs.d
 	$(LN) ~/dotfiles/aliases.zsh  ~/.oh-my-zsh/custom/aliases.zsh
 	$(LN) ~/dotfiles/curlrc ~/.curlrc
 	$(LN) ~/dotfiles/gemrc ~/.gemrc
@@ -47,8 +47,8 @@ dotfiles: oh-my-zsh emacs.d
 	$(LN) ~/dotfiles/zshrc ~/.zshrc
 	$(LN) ~/dotfiles/zprofile ~/.zprofile
 
+bin-files:
 	mkdir -p ~/bin
-
 	$(LN) ~/dotfiles/bin/git-cal ~/bin
 	$(LN) ~/dotfiles/bin/imdbtool.py ~/bin
 	$(LN) ~/dotfiles/bin/notify ~/bin
