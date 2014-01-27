@@ -119,6 +119,10 @@ assign [class="[dD]eluge"] 10
 for_window [class="Skype"] floating enable
 for_window [class="[fF]eh"] floating enable
 for_window [class="[gG]color2"] floating enable
+
+# Float Any.DO
+for_window [window_role="pop-up"] floating enable, border normal
+
 # Gimp in single window mode works well with floating disabled
 # for_window [class="Gimp"] floating enable
 
