@@ -45,6 +45,7 @@ then
 else
     # Non root users
     # Different config for linux and mac
+
     if [[ "$OSTYPE" == "linux-gnu" ]]; then
         plugins=(git rails archlinux bundler coffee screen command-not-found cp
             gem github npm systemd virtualenv virtualenvwrapper)
@@ -55,9 +56,14 @@ else
         export PROJECT_HOME=$HOME/Projects
         source /usr/bin/virtualenvwrapper.sh
 
-
     elif [[ "$OSTYPE" == "darwin"* ]]; then
         plugins=(git rails coffee screen command-not-found cp gem github npm)
+
+        # [todo] - load virtualenvwrapper only if required
+        export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+        export WORKON_HOME=$HOME/.virtualenvs
+        export PROJECT_HOME=$HOME/Projects
+        source /usr/local/bin/virtualenvwrapper.sh
 
     else
         # Unknown, or  cygwin/win32/freebsd*
