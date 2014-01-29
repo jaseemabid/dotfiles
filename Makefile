@@ -10,12 +10,13 @@
 
 
 # [todo] - Install dependencies, like oh-my-zsh, emacs.d before installation
+# [fix] - Nested links for i3, emacs.d etc on subsequent runs
 # [todo] - Reduce redundancy. Loop over an array?
 # [todo] - Copy fonts
 # [todo] - Get rm, ln .. paths from env
 
 RM = /bin/rm -r
-LN = /usr/bin/ln -fs
+LN = /bin/ln -fs
 CP = /bin/cp -r
 
 all:
