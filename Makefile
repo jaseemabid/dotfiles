@@ -15,7 +15,7 @@
 # [todo] - Copy fonts
 # [todo] - Get rm, ln .. paths from env
 
-RM = /bin/rm -r
+RM = /bin/rm -rf
 LN = /bin/ln -fs
 CP = /bin/cp -r
 
@@ -71,4 +71,4 @@ emacs.d:
 update:
 	git pull --verbose
 
-.PHONY : all dotfiles clean
+.PHONY : all bin-files i3 dotfiles clean
