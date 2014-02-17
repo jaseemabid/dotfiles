@@ -45,29 +45,29 @@ then
 else
     # Non root users
     # Different config for linux and mac
-
     if [[ "$OSTYPE" == "linux-gnu" ]]; then
         plugins=(git rails archlinux bundler coffee screen command-not-found cp
             gem github npm systemd virtualenv virtualenvwrapper)
-
-        # [todo] - load virtualenvwrapper only if required
-        export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2
-        export WORKON_HOME=$HOME/.virtualenvs
-        export PROJECT_HOME=$HOME/Projects
-        source /usr/bin/virtualenvwrapper.sh
-
     elif [[ "$OSTYPE" == "darwin"* ]]; then
         plugins=(git rails coffee screen command-not-found cp gem github npm)
-
-        # [todo] - load virtualenvwrapper only if required
-        export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
-        export WORKON_HOME=$HOME/.virtualenvs
-        export PROJECT_HOME=$HOME/Projects
-        source /usr/local/bin/virtualenvwrapper.sh
-
     else
         # Unknown, or  cygwin/win32/freebsd*
         echo "GET A LIFE, USE A SENSIBLE OS"
+    fi
+
+    # Load virtualenvwrapper only if available
+    if [[ -s $(which virtualenvwrapper.sh) ]] ; then
+
+        # Its called python2 on archlinux, python on mac
+        if [[ -s $(which python2) ]] ; then
+            export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2
+        else
+            export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+        fi
+
+        export WORKON_HOME=$HOME/.virtualenvs
+        export PROJECT_HOME=$HOME/Projects
+        source $(which virtualenvwrapper.sh)
     fi
 
     # Load RVM into a shell session *as a function*
