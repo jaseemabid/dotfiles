@@ -30,14 +30,12 @@ all:
 
 # Link in files, replacing whatever is already there.
 # [todo] - Fix dependency on `~/dotfiles` path
-dotfiles: bin-files oh-my-zsh emacs.d
+dotfiles: bin-files i3 oh-my-zsh emacs.d
 	$(LN) ~/dotfiles/aliases.zsh  ~/.oh-my-zsh/custom/aliases.zsh
 	$(LN) ~/dotfiles/curlrc ~/.curlrc
 	$(LN) ~/dotfiles/gemrc ~/.gemrc
 	$(LN) ~/dotfiles/gitconfig ~/.gitconfig
 	$(LN) ~/dotfiles/gitignore ~/.gitignore
-	$(LN) ~/dotfiles/i3 ~/.i3
-	$(LN) ~/dotfiles/i3/i3status.conf ~/.i3status.conf
 	$(LN) ~/dotfiles/jsbeautifyrc ~/.jsbeautifyrc
 	$(LN) ~/dotfiles/latexmkrc ~/.latexmkrc
 	$(LN) ~/dotfiles/rvmrc ~/.rvmrc
@@ -60,6 +58,11 @@ bin-files:
 oh-my-zsh:
 	git clone https://github.com/robbyrussell/oh-my-zsh.git
 	$(LN) ~/dotfiles/oh-my-zsh ~/.oh-my-zsh
+
+i3:
+	$(RM) ~/dotfiles/i3
+	$(LN) ~/dotfiles/i3 ~/.i3
+	$(LN) ~/dotfiles/i3/i3status.conf ~/.i3status.conf
 
 emacs.d:
 	git clone https://github.com/jaseemabid/emacs.d.git
