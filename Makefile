@@ -56,7 +56,11 @@ bin-files:
 	$(LN) ~/dotfiles/bin/wireless.sh ~/bin
 
 oh-my-zsh:
+	# [fix] - Don't lock down OMZ to old revision
 	git clone https://github.com/robbyrussell/oh-my-zsh.git
+	cd oh-my-zsh
+	git reset --hard d6a36b175646fa2a79466f050b07d47c2342b75e
+	cd ..
 	$(LN) ~/dotfiles/oh-my-zsh ~/.oh-my-zsh
 
 i3:
