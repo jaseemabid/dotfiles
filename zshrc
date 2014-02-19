@@ -89,3 +89,6 @@ bindkey "^[s" insert-sudo
 PATH=$HOME/bin:$HOME/Builds/elixir/bin:/usr/local/heroku/bin:$PATH
 
 source $ZSH/oh-my-zsh.sh
+
+# Make sure tramp wont blow up
+[[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ '
