@@ -39,6 +39,7 @@ dotfiles: bin-files i3 oh-my-zsh emacs.d
 	$(LN) ~/dotfiles/jsbeautifyrc ~/.jsbeautifyrc
 	$(LN) ~/dotfiles/latexmkrc ~/.latexmkrc
 	$(LN) ~/dotfiles/rvmrc ~/.rvmrc
+	$(LN) ~/dotfiles/slate ~/.slate
 	$(LN) ~/dotfiles/screenrc ~/.screenrc
 	$(LN) ~/dotfiles/tmux.conf ~/.tmux.conf
 	$(LN) ~/dotfiles/xinitrc ~/.xinitrc

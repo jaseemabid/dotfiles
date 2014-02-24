@@ -1,0 +1,104 @@
+#-----------------------------------------------
+# Jeryn's slate template file.
+#
+# Usage:
+# Copy this into your home folder as ~/.slate
+# Reload and load slate with this config
+# (... by right-click on slate icon on top)
+#-----------------------------------------------
+
+
+config defaultToCurrentScreen           true
+config nudgePercentOf                   screenSize
+config resizePercentOf                  screenSize
+
+config secondsBetweenRepeat             0.1
+config checkDefaultsOnLoad              true
+config focusCheckWidthMax               3000
+#config keyboardLayout                  dvorak
+config windowHintsShowIcons             true
+config windowHintsIgnoreHiddenWindows   false
+#config windowHintsDuration             5
+config windowHintsSpread                true
+#config windowHintsOrder                persist
+
+# Abstract positions
+alias full              move screenOriginX;screenOriginY                                  screenSizeX;screenSizeY
+alias tophalf           move screenOriginX;screenOriginY                                  screenSizeX;screenSizeY/2
+alias bottomhalf        move screenOriginX;screenOriginY+screenSizeY/2                    screenSizeX;screenSizeY
+alias lefthalf          move screenOriginX;screenOriginY                                  screenSizeX/2;screenSizeY
+alias lefttophalf       move screenOriginX;screenOriginY                                  screenSizeX/2;screenSizeY/2
+alias leftbottomhalf    move screenOriginX;screenOriginY+screenSizeY/2                    screenSizeX/2;screenSizeY/2
+alias righthalf         move screenOriginX+screenSizeX/2;screenOriginY                    screenSizeX/2;screenSizeY
+alias righttophalf      move screenOriginX+screenSizeX/2;screenOriginY/2                  screenSizeX/2;screenSizeY/2
+alias rightbottomhalf   move screenOriginX+screenSizeX/2;screenOriginY/2+screenSizeY/2    screenSizeX;screenSizeY
+alias rightmost         move screenOriginX+screenSizeX*0.4;screenOriginY                  screenSizeX*0.6;screenSizeY
+alias rightless         move screenOriginX+screenSizeX*0.6;screenOriginY                  screenSizeX*0.4;screenSizeY
+alias leftmost          move screenOriginX;screenOriginY                                  screenSizeX*0.6;screenSizeY
+alias leftless          move screenOriginX;screenOriginY
+
+###########################################
+# HYPER KEY - You can set your own combo  #
+###########################################
+alias hyper ctrl;alt;cmd
+
+
+# Location bindings
+bind q:${hyper} ${lefttophalf}
+bind w:${hyper} ${tophalf}
+bind e:${hyper} ${righttophalf}
+
+bind a:${hyper} ${lefthalf}
+bind s:${hyper} ${full}
+bind d:${hyper} ${righthalf}
+
+bind z:${hyper} ${leftbottomhalf}
+bind x:${hyper} ${bottomhalf}
+bind c:${hyper} ${rightbottomhalf}
+
+
+##########################################
+# DEFAULT SETTINGS - Disable as u see fit
+##########################################
+
+# Resize Bindings
+bind right:alt       resize +10% +0
+bind left:alt        resize -10% +0
+bind up:alt          resize +0   -10%
+bind down:alt        resize +0   +10%
+bind right:ctrl;alt  resize -10% +0 bottom-right
+bind left:ctrl;alt   resize +10% +0 bottom-right
+bind up:ctrl;alt     resize +0   +10% bottom-right
+bind down:ctrl;alt   resize +0   -10% bottom-right
+
+# Push Bindings
+bind right:ctrl;cmd  push right bar-resize:screenSizeX/3
+bind left:ctrl;cmd   push left  bar-resize:screenSizeX/3
+bind up:ctrl;cmd     push up    bar-resize:screenSizeY/2
+bind down:ctrl;cmd   push down  bar-resize:screenSizeY/2
+
+# Nudge Bindings
+bind right:shift;alt nudge +10% +0
+bind left:shift;alt  nudge -10% +0
+bind up:shift;alt    nudge +0   -10%
+bind down:shift;alt  nudge +0   +10%
+
+# Throw Bindings
+bind 1:ctrl;alt         throw 0 resize
+bind 2:ctrl;alt         throw 1 resize
+bind 3:ctrl;alt         throw 2 resize
+bind right:${hyper}     throw right resize
+bind left:${hyper}      throw left  resize
+bind up:${hyper}        throw up    resize
+bind down:${hyper}      throw down  resize
+
+# Focus Bindings
+# bind right:cmd    focus right
+# bind left:cmd     focus left
+# bind up:cmd       focus up
+# bind down:cmd     focus down
+# bind up:cmd;alt   focus behind
+# bind down:cmd;alt focus behind
+
+# Window Hints
+bind esc:cmd hint
