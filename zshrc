@@ -60,9 +60,9 @@ else
 
         # Its called python2 on archlinux, python on mac
         if [[ -s $(which python2) ]] ; then
-            export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2
+            export VIRTUALENVWRAPPER_PYTHON=$(which python2)
         else
-            export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+            export VIRTUALENVWRAPPER_PYTHON=$(which python)
         fi
 
         export WORKON_HOME=$HOME/.virtualenvs
