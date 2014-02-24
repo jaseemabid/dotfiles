@@ -1,10 +1,8 @@
 #-----------------------------------------------
-# Jeryn's slate template file.
+# Slate template file, thanks to Jeryn
 #
-# Usage:
-# Copy this into your home folder as ~/.slate
-# Reload and load slate with this config
-# (... by right-click on slate icon on top)
+# Usage: Copy this into your home folder as ~/.slate
+# Reload and load slate with # this config (... by right-click on slate icon on top)
 #-----------------------------------------------
 
 
