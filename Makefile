@@ -64,7 +64,7 @@ oh-my-zsh:
 	$(LN) ~/dotfiles/oh-my-zsh ~/.oh-my-zsh
 
 i3:
-	$(RM) ~/dotfiles/i3
+	$(RM) ~/.i3
 	$(LN) ~/dotfiles/i3 ~/.i3
 	$(LN) ~/dotfiles/i3/i3status.conf ~/.i3status.conf
 
