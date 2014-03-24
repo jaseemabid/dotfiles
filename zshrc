@@ -86,9 +86,15 @@ insert_sudo () {
 zle -N insert-sudo insert_sudo
 bindkey "^[s" insert-sudo
 
-PATH=$HOME/bin:$HOME/Builds/elixir/bin:/usr/local/heroku/bin:$PATH
-
 source $ZSH/oh-my-zsh.sh
+
+# Add ~/bin to path
+PATH=$HOME/bin:$PATH
+
+[[ -s "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
 
 # Make sure tramp wont blow up
 [[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ '
+
+# Return success if everything went right
+return 0
