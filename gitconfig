@@ -11,7 +11,7 @@
 	whitespace = trailing-space,space-before-tab
 	editor = emacsclient
 	excludesfile = ~/.gitignore
-	pager = cat
+	pager = less -F -X
 [color]
 	ui = true
 [push]
