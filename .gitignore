@@ -4,10 +4,11 @@
 *~
 *.
 *#
-/i3/i3log
-/ranger/tagged
+.DS_Store
 /emacs.d
+/i3/i3log
 /oh-my-zsh/
-/zsh_history
+/ranger/tagged
 /zprofile.local
+/zsh_history
 /zshrc.local
