@@ -35,3 +35,10 @@
 	insteadOf = gh:
 [merge]
 	tool = meld
+[tig]
+    line-number-interval = 1
+    show-date = relative
+    show-line-numbers = yes
+    show-rev-graph = yes
+    tab-size = 4
+    vertical-split = yes
