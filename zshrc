@@ -46,10 +46,9 @@ else
     # Non root users
     # Different config for linux and mac
     if [[ "$OSTYPE" == "linux-gnu" ]]; then
-        plugins=(git rails archlinux bundler coffee screen command-not-found cp
-            gem github npm systemd virtualenv virtualenvwrapper)
+        plugins=(git virtualenv virtualenvwrapper)
     elif [[ "$OSTYPE" == "darwin"* ]]; then
-        plugins=(git rails coffee screen command-not-found cp gem github npm)
+        plugins=(git)
     else
         # Unknown, or  cygwin/win32/freebsd*
         echo "GET A LIFE, USE A SENSIBLE OS"
@@ -89,7 +88,16 @@ bindkey "^[s" insert-sudo
 source $ZSH/oh-my-zsh.sh
 
 # Add ~/bin to path
-PATH=$HOME/bin:$PATH
+path=($HOME/bin $path)
+
+# Prepend Cabal per user directories to PATH/MANPATH.
+if [[ "$OSTYPE" == darwin* ]]; then
+  path=($HOME/Library/Haskell/bin(/N) $path)
+  manpath=($HOME/Library/Haskell/man(/N) $manpath)
+else
+  path=($HOME/.cabal/bin(/N) $path)
+  manpath=($HOME/.cabal/man(/N) $path)
+fi
 
 [[ -s "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
 
