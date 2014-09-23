@@ -37,35 +37,39 @@ DISABLE_AUTO_UPDATE="true"
 export HISTSIZE=999999
 export HISTFILESIZE=999999
 
+# Add more to path
+path=($HOME/bin ~/.local/bin ~/Library/Python/2.7/bin $path)
+
 # Configure a minimal shell for root user
 if [[ $UID = '0' ]]
 then
     # Root user
-    plugins=(git archlinux command-not-found cp systemd )
+    plugins=(git)
 else
     # Non root users
     # Different config for linux and mac
     if [[ "$OSTYPE" == "linux-gnu" ]]; then
-        plugins=(git virtualenv virtualenvwrapper)
+        plugins=(git cabal virtualenv virtualenvwrapper)
     elif [[ "$OSTYPE" == "darwin"* ]]; then
-        plugins=(git)
+        plugins=(git brew cabal virtualenv virtualenvwrapper)
     else
         # Unknown, or  cygwin/win32/freebsd*
         echo "GET A LIFE, USE A SENSIBLE OS"
+        exit 42
     fi
+
+    # Its called python2 on archlinux, python on mac
+    if [[ -s $(which python2) ]] ; then
+        export VIRTUALENVWRAPPER_PYTHON=$(which python2)
+    else
+        export VIRTUALENVWRAPPER_PYTHON=$(which python)
+    fi
+
+    export WORKON_HOME=$HOME/.virtualenvs
+    export PROJECT_HOME=$HOME/Projects
 
     # Load virtualenvwrapper only if available
     if [[ -s $(which virtualenvwrapper.sh) ]] ; then
-
-        # Its called python2 on archlinux, python on mac
-        if [[ -s $(which python2) ]] ; then
-            export VIRTUALENVWRAPPER_PYTHON=$(which python2)
-        else
-            export VIRTUALENVWRAPPER_PYTHON=$(which python)
-        fi
-
-        export WORKON_HOME=$HOME/.virtualenvs
-        export PROJECT_HOME=$HOME/Projects
         source $(which virtualenvwrapper.sh)
     fi
 
@@ -86,9 +90,6 @@ zle -N insert-sudo insert_sudo
 bindkey "^[s" insert-sudo
 
 source $ZSH/oh-my-zsh.sh
-
-# Add ~/bin to path
-path=($HOME/bin $path)
 
 # Prepend Cabal per user directories to PATH/MANPATH.
 if [[ "$OSTYPE" == darwin* ]]; then
