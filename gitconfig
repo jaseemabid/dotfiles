@@ -17,9 +17,20 @@
 [push]
 	default = current
 [alias]
-	see = !"git --no-pager log --oneline --graph -10"
-	s = status
+	authors = shortlog -sn
+	b = branch
+	c = commit
+	cp = cherry-pick
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	meh = commit --amend
+	ours = "!f() { git checkout --ours -- $@ && git add -- $@; }; f"
+	pill = pull
+	s = status
+	see = !"git --no-pager log --oneline --graph -10"
+	sync = !git pull --rebase && git push
+	theirs = "!f() { git checkout --theirs -- $@ && git add -- $@; }; f"
+	today = diff @{yesterday}.. --stat
+    lasttag = describe --tags --abbrev=0
 [format]
 	signoff = true
 [pull]
