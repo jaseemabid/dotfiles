@@ -17,8 +17,12 @@
 
 ## What's included
 
+1. Works on Mac, Linux.
+
 1. ZSH with [Oh My ZSH](https://github.com/robbyrussell/oh-my-zsh) and
    [agnoster](https://gist.github.com/agnoster/3712874) theme.
+
+1. Tmux, with sane defaults, bars and key bindings
 
 1. Consistently [solarized dark](http://ethanschoonover.com/solarized)
    everywhere
@@ -34,10 +38,12 @@
 ```sh
     git clone https://github.com/jaseemabid/dotfiles.git ~/dotfiles
     cd ~/dotfiles
+    git submodule init
+    git submodule fetch
     make
 ```
 
-## Other dotfile repos for reference
+## Other dotfile repositories for reference
 
 - https://github.com/StanAngeloff/dotfiles
 - https://github.com/ryanb/dotfiles
