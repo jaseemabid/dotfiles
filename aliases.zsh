@@ -69,3 +69,10 @@ alias rm="rm -i"
 alias ws='sed -i '\''s/[ \t]*$//'\'' '
 
 alias mousefix='sudo modprobe -r psmouse && sudo modprobe psmouse'
+
+# http://hamberg.no/erlend/posts/2013-01-18-mkcd.html
+mkcd () {
+    mkdir -p "${1}"
+    cd "${1}"
+}
+alias mkdir="echo Did you mean mkcd\?"
