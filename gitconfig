@@ -54,3 +54,5 @@
     show-rev-graph = yes
     tab-size = 4
     vertical-split = yes
+[help]
+	autocorrect = 1
