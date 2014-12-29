@@ -59,6 +59,8 @@ else
     # Different config for linux and mac
     if [[ "$OSTYPE" == "linux-gnu" ]]; then
         plugins=(git cabal virtualenv virtualenvwrapper)
+    elif [[ "$OSTYPE" == "linux-gnueabi" ]]; then
+        plugins=(git)
     elif [[ "$OSTYPE" == "darwin"* ]]; then
         plugins=(git brew cabal virtualenv virtualenvwrapper)
     else

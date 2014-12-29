@@ -4,7 +4,7 @@
 # Author: Jaseem Abid
 
 # System specific aliases
-if [[ "$OSTYPE" == "linux-gnu" ]]; then
+if [[ $OSTYPE == linux-* ]]; then
 
     # Copy & paste from shell
     alias c='xsel --clipboard --input'
