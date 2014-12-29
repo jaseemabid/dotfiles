@@ -104,6 +104,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Make sure tramp wont blow up
 [[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ '
+[[ $EMACS = t ]] && unsetopt zle && PS1='$ '
 
 # Return success if everything went right
 return 0
