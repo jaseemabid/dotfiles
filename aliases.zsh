@@ -75,3 +75,6 @@ mkcd () {
     mkdir -p "${1}"
     cd "${1}"
 }
+
+# cp with progress
+alias cp='rsync -aP'
