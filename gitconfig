@@ -1,3 +1,4 @@
+# -*- conf -*-
 [user]
 	name = Jaseem Abid
 	email = jaseemabid@gmail.com
@@ -30,7 +31,7 @@
 	sync = !git pull --rebase && git push
 	theirs = "!f() { git checkout --theirs -- $@ && git add -- $@; }; f"
 	today = diff @{yesterday}.. --stat
-    XXX = !git reset --hard HEAD && git clean -f
+    XXX = !git reset --hard HEAD && git clean -xfd
     lasttag = describe --tags --abbrev=0
 [format]
 	signoff = true
