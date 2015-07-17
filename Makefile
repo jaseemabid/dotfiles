@@ -16,7 +16,7 @@
 # [todo] - Get rm, ln .. paths from env
 
 RM = /bin/rm -rf
-LN = /bin/ln -fs
+LN = /bin/ln -Tfs
 CP = /bin/cp -r
 
 all:
@@ -31,38 +31,35 @@ all:
 # Link in files, replacing whatever is already there.
 # [todo] - Fix dependency on `~/dotfiles` path
 dotfiles: bin-files i3 oh-my-zsh emacs.d
-	$(LN) ~/dotfiles/aliases.zsh  ~/.oh-my-zsh/custom/aliases.zsh
 	$(LN) ~/dotfiles/curlrc ~/.curlrc
+	$(LN) ~/dotfiles/emacs.d ~/.emacs.d
 	$(LN) ~/dotfiles/gemrc ~/.gemrc
 	$(LN) ~/dotfiles/gitconfig ~/.gitconfig
 	$(LN) ~/dotfiles/gitignore ~/.gitignore
 	$(LN) ~/dotfiles/jsbeautifyrc ~/.jsbeautifyrc
 	$(LN) ~/dotfiles/latexmkrc ~/.latexmkrc
+	$(LN) ~/dotfiles/oh-my-zsh ~/.oh-my-zsh
+	$(LN) ~/dotfiles/aliases.zsh  ~/.oh-my-zsh/custom/aliases.zsh
 	$(LN) ~/dotfiles/rvmrc ~/.rvmrc
-	$(LN) ~/dotfiles/slate ~/.slate
 	$(LN) ~/dotfiles/screenrc ~/.screenrc
+	$(LN) ~/dotfiles/slate ~/.slate
 	$(LN) ~/dotfiles/tmux.conf ~/.tmux.conf
 	$(LN) ~/dotfiles/xinitrc ~/.xinitrc
 	$(LN) ~/dotfiles/xscreensaver ~/.xscreensaver
-	$(LN) ~/dotfiles/zshrc ~/.zshrc
 	$(LN) ~/dotfiles/zprofile ~/.zprofile
+	$(LN) ~/dotfiles/zshrc ~/.zshrc
 
 bin-files:
 	mkdir -p ~/bin
-	$(LN) ~/dotfiles/bin/git-cal ~/bin
-	$(LN) ~/dotfiles/bin/imdbtool.py ~/bin
-	$(LN) ~/dotfiles/bin/notify ~/bin
-	$(LN) ~/dotfiles/bin/player-sync ~/bin
-	$(LN) ~/dotfiles/bin/today ~/bin
-	$(LN) ~/dotfiles/bin/wireless.sh ~/bin
+	$(LN) ~/dotfiles/bin/git-cal ~/bin/git-cal
+	$(LN) ~/dotfiles/bin/imdbtool.py ~/bin/imdbtool.py
+	$(LN) ~/dotfiles/bin/notify ~/bin/notify
+	$(LN) ~/dotfiles/bin/player-sync ~/bin/player-sync
+	$(LN) ~/dotfiles/bin/today ~/bin/today
+	$(LN) ~/dotfiles/bin/wireless.sh ~/bin/wireless.sh
 
 oh-my-zsh:
-	# [fix] - Own OMZ
 	git clone https://github.com/jaseemabid/oh-my-zsh.git
-	cd oh-my-zsh
-	git checkout jaseem
-	cd ..
-	$(LN) ~/dotfiles/oh-my-zsh ~/.oh-my-zsh
 
 i3:
 	$(RM) ~/.i3
@@ -71,7 +68,6 @@ i3:
 
 emacs.d:
 	git clone https://github.com/jaseemabid/emacs.d.git
-	$(LN) ~/dotfiles/emacs.d ~/.emacs.d
 
 update:
 	git pull --verbose
