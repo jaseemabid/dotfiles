@@ -1,0 +1,6 @@
+currentProjectIncluded: true
+hackagePath: /home/j/.cabal/packages/hackage.haskell.org/
+tagsFileHeader: false
+tagsFileName: TAGS
+tagsFileSorted: false
+tagsCmd: hasktags --etags --output="$TAGS" "$SOURCES"
