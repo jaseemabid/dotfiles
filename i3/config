@@ -109,10 +109,12 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 assign [class="[eE]macs"] 1
 assign [class="[gG]oogle-chrome"] 2
 assign [class="[tT]erminator"] 3
+assign [class="[tT]erminal"] 3
 assign [class="[tT]hunar"] 4
-assign [class="[sS]kype"] 5
+assign [class="[nN]emo"] 4
 assign [class="[xX]chat"] 8
 assign [class="[cC]lementine"] 9
+assign [class="[bB]anshee"] 9
 assign [class="[dD]eluge"] 10
 
 # Custom window/app configurations
@@ -157,6 +159,9 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 bindsym $mod+x exec xfce4-screenshooter
+# Run nemo with --no-dekstop or
+# $ gsettings set org.nemo.desktop show-desktop-icons false
+bindsym $mod+t exec nemo
 
 # Move the current workspace to the next output
 # (effectively toggles when you only have two outputs)
@@ -170,13 +175,10 @@ bar {
 		mode dock
 }
 
-# Autostart applications after i3
-# exec --no-startup-id dropbox start
-exec --no-startup-id clementine
+# Autostart applicativeTreeions after i3
+exec --no-startup-id banshee
 exec --no-startup-id emacs
 exec --no-startup-id google-chrome-stable
 exec --no-startup-id nm-applet
-exec --no-startup-id skype
-exec --no-startup-id terminator
-exec --no-startup-id thunar
-exec --no-startup-id xchat
+exec --no-startup-id gnome-terminal
+exec --no-startup-id nemo
