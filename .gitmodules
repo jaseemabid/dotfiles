@@ -4,6 +4,3 @@
 [submodule "zshrc"]
 	path = zshrc
 	url = https://github.com/jaseemabid/zshrc.git
-[submodule "tpm"]
-	path = tpm
-	url = https://github.com/tmux-plugins/tpm
