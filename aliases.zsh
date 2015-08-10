@@ -74,6 +74,3 @@ mkcd () {
     mkdir -p "${1}"
     cd "${1}"
 }
-
-# Because ocaml shell is pretty bad
-alias ocaml='ledit -x -h ~/.ocaml_history ocaml'
