@@ -118,6 +118,7 @@ assign [class="[bB]anshee"] 9
 assign [class="[dD]eluge"] 10
 
 # Custom window/app configurations
+for_window [class="(?i)vlc"] floating enable; border normal
 for_window [class="Skype"] floating enable
 for_window [class="[fF]eh"] floating enable
 for_window [class="[gG]color2"] floating enable
