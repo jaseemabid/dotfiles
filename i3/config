@@ -164,11 +164,12 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
+bindsym $mod+q exec xset dpms force off
 bindsym $mod+r mode "resize"
-bindsym $mod+x exec xfce4-screenshooter
 # Run nemo with --no-dekstop or
 # $ gsettings set org.nemo.desktop show-desktop-icons false
 bindsym $mod+t exec nemo
+bindsym $mod+x exec xfce4-screenshooter
 
 # Move the current workspace to the next output
 # (effectively toggles when you only have two outputs)
