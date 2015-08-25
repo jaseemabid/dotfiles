@@ -117,6 +117,9 @@ assign [class="[cC]lementine"] 9
 assign [class="[bB]anshee"] 9
 assign [class="[dD]eluge"] 10
 
+# Float moving/copying windows
+for_window [class="[nN]emo" instance="file_progress"] floating enable
+
 # Custom window/app configurations
 for_window [class="Skype"] floating enable
 for_window [class="[fF]eh"] floating enable
