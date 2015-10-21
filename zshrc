@@ -62,33 +62,12 @@ else
     elif [[ "$OSTYPE" == "linux-gnueabi" ]]; then
         plugins=(git)
     elif [[ "$OSTYPE" == "darwin"* ]]; then
-        plugins=(git brew cabal virtualenv virtualenvwrapper)
+        plugins=(git brew cabal)
     else
         # Unknown, or  cygwin/win32/freebsd*
         echo "GET A LIFE, USE A SENSIBLE OS"
         exit 42
     fi
-
-    # Its called python2 on archlinux, python on mac
-    if [[ -s $(which python2) ]] ; then
-        export VIRTUALENVWRAPPER_PYTHON=$(which python2)
-    else
-        export VIRTUALENVWRAPPER_PYTHON=$(which python)
-    fi
-
-    export WORKON_HOME=$HOME/.virtualenvs
-    export PROJECT_HOME=$HOME/Projects
-
-    # Load virtualenvwrapper only if available
-    if [[ -s $(which virtualenvwrapper.sh) ]] ; then
-        source $(which virtualenvwrapper.sh)
-    fi
-
-    # Load RVM into a shell session *as a function*
-    [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
-    # This loads NVM
-    [[ -s "$HOME/.nvm/nvm.sh" ]] && source "$HOME/.nvm/nvm.sh"
 fi
 
 # A bunch of helpers
