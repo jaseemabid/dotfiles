@@ -5,9 +5,7 @@
 *.
 *#
 .DS_Store
-/emacs.d
 /i3/i3log
-/oh-my-zsh/
 /ranger/tagged
 /zprofile.local
 /zsh_history

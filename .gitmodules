@@ -1,6 +1,9 @@
 [submodule "emacs.d"]
 	path = emacs.d
-	url = https://github.com/jaseemabid/emacs.d.git
-[submodule "zshrc"]
-	path = zshrc
-	url = https://github.com/jaseemabid/zshrc.git
+	url = https://github.com/jaseemabid/emacs.d/
+[submodule "fonts"]
+	path = fonts
+	url = https://github.com/powerline/fonts
+[submodule "oh-my-zsh"]
+	path = oh-my-zsh
+	url = https://github.com/robbyrussell/oh-my-zsh

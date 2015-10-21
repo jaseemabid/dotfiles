@@ -8,13 +8,6 @@
 #  _/ |
 # |__/
 
-
-# [todo] - Install dependencies, like oh-my-zsh, emacs.d before installation
-# [fix] - Nested links for i3, emacs.d etc on subsequent runs
-# [todo] - Reduce redundancy. Loop over an array?
-# [todo] - Copy fonts
-# [todo] - Get rm, ln .. paths from env
-
 RM = /bin/rm -rf
 LN = /bin/ln -Tfs
 CP = /bin/cp -r
@@ -58,16 +51,14 @@ bin-files:
 	$(LN) ~/dotfiles/bin/today ~/bin/today
 	$(LN) ~/dotfiles/bin/wireless.sh ~/bin/wireless.sh
 
-oh-my-zsh:
-	git clone https://github.com/jaseemabid/oh-my-zsh.git
-
 i3:
 	$(RM) ~/.i3
 	$(LN) ~/dotfiles/i3 ~/.i3
 	$(LN) ~/dotfiles/i3/i3status.conf ~/.i3status.conf
 
-emacs.d:
-	git clone https://github.com/jaseemabid/emacs.d.git
+fonts:
+	cd fonts
+	./install.sh
 
 update:
 	git pull --verbose
