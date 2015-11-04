@@ -1,2 +1,13 @@
+:set prompt "λ: "
+
+:set -XOverloadedStrings
+
 :def hoogle \x -> return $ ":!hoogle -c -n 10 \"" ++ x ++ "\""
 :def doc \x -> return $ ":!hoogle --info \"" ++ x ++ "\""
+
+import               System.IO
+import               System.Process (readProcess)
+import               Data.List
+import               Text.Parsec (runParser)
+import qualified     Data.ByteString as B
+import qualified     Data.ByteString.Lazy.Char8 as LB
