@@ -1,6 +1,8 @@
-.jira-url
-.DS_Store
-TAGS
 #*
 *#
 .#*
+.DS_Store
+.jira-url
+.stack-work
+.vagrant
+TAGS
