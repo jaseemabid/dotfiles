@@ -49,10 +49,10 @@
 [merge]
 	tool = meld
 [tig]
-    line-number-interval = 1
-    show-date = relative
-    show-line-numbers = yes
-    show-rev-graph = yes
+    diff-context = 5
+    line-graphics = utf-8
+    main-view-date = relative
+    show-changes = true
     tab-size = 4
     vertical-split = yes
 [help]
