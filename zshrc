@@ -37,18 +37,6 @@ DISABLE_AUTO_UPDATE="true"
 export HISTSIZE=999999
 export HISTFILESIZE=999999
 
-# Add more to path
-path=($HOME/bin ~/.local/bin ~/Library/Python/2.7/bin $path)
-
-# Prepend Cabal per user directories to PATH/MANPATH.
-if [[ "$OSTYPE" == darwin* ]]; then
-  path=($HOME/Library/Haskell/bin(/N) $path)
-  manpath=($HOME/Library/Haskell/man(/N) $manpath)
-else
-  path=($HOME/.cabal/bin(/N) $path)
-  manpath=($HOME/.cabal/man(/N) $path)
-fi
-
 # Configure a minimal shell for root user
 if [[ $UID = '0' ]]
 then
