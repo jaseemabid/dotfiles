@@ -1,4 +1,4 @@
-:set prompt "λ: "
+:set prompt "λ "
 
 :set -XOverloadedStrings
 
