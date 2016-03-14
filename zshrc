@@ -75,5 +75,8 @@ source $ZSH/oh-my-zsh.sh
 [[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ '
 [[ $EMACS = t ]] && unsetopt zle && PS1='$ '
 
+# Source .zshenv. Not sure why its not loaded automatically
+source ~/.zshenv
+
 # Return success if everything went right
 return 0
