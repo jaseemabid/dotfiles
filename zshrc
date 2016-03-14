@@ -41,16 +41,16 @@ export HISTFILESIZE=999999
 if [[ $UID = '0' ]]
 then
     # Root user
-    plugins=(git)
+    plugins=()
 else
     # Non root users
     # Different config for linux and mac
     if [[ "$OSTYPE" == "linux-gnu" ]]; then
-        plugins=(git cabal virtualenv virtualenvwrapper)
+        plugins=(git)
     elif [[ "$OSTYPE" == "linux-gnueabi" ]]; then
         plugins=(git)
     elif [[ "$OSTYPE" == "darwin"* ]]; then
-        plugins=(git brew cabal)
+        plugins=(git brew brew-cask z)
     else
         # Unknown, or  cygwin/win32/freebsd*
         echo "GET A LIFE, USE A SENSIBLE OS"
