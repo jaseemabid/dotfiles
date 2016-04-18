@@ -40,6 +40,7 @@
     cd ~/dotfiles
     git submodule init
     git submodule fetch
+    brew install stow
     make
 ```
 
