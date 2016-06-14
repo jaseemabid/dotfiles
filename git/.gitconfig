@@ -12,7 +12,7 @@
     whitespace = trailing-space,space-before-tab
     editor = emacsclient
     excludesfile = ~/.gitignore
-    pager = less -F -X
+    pager = diff-so-fancy | less --tabs=4 -RFX
 [color]
     ui = true
 [push]
