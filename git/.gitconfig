@@ -52,3 +52,5 @@
     vertical-split = yes
 [help]
     autocorrect = 1
+[diff]
+	compactionHeuristic = true
