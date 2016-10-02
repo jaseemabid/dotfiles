@@ -1,9 +1,9 @@
 [submodule "emacs.d"]
-	path = emacs.d
+	path = emacs/.emacs.d
 	url = https://github.com/jaseemabid/emacs.d/
 [submodule "fonts"]
 	path = fonts
 	url = https://github.com/powerline/fonts
 [submodule "oh-my-zsh"]
-	path = oh-my-zsh
+	path = zsh/.oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh
