@@ -1,2 +1,4 @@
-# Add more to path
-path=(~/bin ~/.local/bin ~/N2T/tools $path)
+# Set env variables here
+
+path=(~/bin ~/.local/bin /usr/local/bin /usr/local/sbin $path)
+cdpath=(~/Work ~/Projects)
