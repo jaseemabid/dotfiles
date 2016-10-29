@@ -50,7 +50,7 @@ else
     elif [[ "$OSTYPE" == "linux-gnueabi" ]]; then
         plugins=(git)
     elif [[ "$OSTYPE" == "darwin"* ]]; then
-        plugins=(git brew brew-cask z)
+        plugins=(git z)
     else
         # Unknown, or  cygwin/win32/freebsd*
         echo "GET A LIFE, USE A SENSIBLE OS"
