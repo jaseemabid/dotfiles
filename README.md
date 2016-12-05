@@ -39,7 +39,7 @@
     git clone https://github.com/jaseemabid/dotfiles.git ~/dotfiles
     cd ~/dotfiles
     git submodule init
-    git submodule fetch
+    git submodule update
     brew install stow
     make
 ```
