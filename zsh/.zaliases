@@ -56,6 +56,7 @@ alias record="ffmpeg -f x11grab -r 30 -s 1366x768 -i :0.0 -f alsa -ac 2 -i pulse
 alias ty="yt"
 alias untar="tar -zxvf $1"
 alias yt="youtube-dl -twci --console-title"
+alias hl="highlight -O ansi"
 
 # Alternatives
 alias vi="emacsclient -n"
