@@ -51,12 +51,12 @@ alias dd="echo -e '★★★★★★★★★★★★★★★★★★★★�
 # Quickies
 alias backup="rsync -avuiWP --delete"
 alias die="xset dpms force off"
-alias pass="openssl rand -base64 12"
+alias genpass="openssl rand -base64 12"
+alias hl="highlight -O ansi"
 alias record="ffmpeg -f x11grab -r 30 -s 1366x768 -i :0.0 -f alsa -ac 2 -i pulse -vcodec libx264 -acodec pcm_s16le screencast.mkv"
 alias ty="yt"
 alias untar="tar -zxvf $1"
 alias yt="youtube-dl -twci --console-title"
-alias hl="highlight -O ansi"
 
 # Alternatives
 alias vi="emacsclient -n"
