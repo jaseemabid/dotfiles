@@ -187,7 +187,7 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>269 122 796 473 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 25 1278 752 0 0 1280 777 </string>
+	<string>0 9 1277 768 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>0 9 640 768 0 0 1280 777 </string>
 	<key>NeverWarnAboutShortLivedSessions_E65698C8-8F34-428E-8B79-A0311675FC41</key>
@@ -778,7 +778,7 @@
 			<key>Right Option Key Sends</key>
 			<integer>2</integer>
 			<key>Rows</key>
-			<integer>47</integer>
+			<integer>60</integer>
 			<key>Screen</key>
 			<integer>-1</integer>
 			<key>Scrollback Lines</key>
@@ -876,12 +876,18 @@
 	</dict>
 	<key>PrefsCustomFolder</key>
 	<string>/Users/j/dotfiles/iterm2</string>
+	<key>SUEnableAutomaticChecks</key>
+	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
 	<string>https://iterm2.com/appcasts/final.xml?shard=51</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
+	<key>SULastCheckTime</key>
+	<date>2017-01-26T06:06:49Z</date>
+	<key>SUSendProfileInfo</key>
+	<false/>
 	<key>ShowBookmarkName</key>
 	<false/>
 	<key>SplitPaneDimmingAmount</key>
