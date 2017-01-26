@@ -1,10 +1,11 @@
 # Gitignore file
 
 # Remove backup files
-*~
-*.
 *#
+*.
+*~
 .DS_Store
+/bin/bin/idea
 /i3/i3log
 /ranger/tagged
 /zprofile.local
