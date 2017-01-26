@@ -27,9 +27,11 @@ dotfiles: fonts
 	stow curl
 	stow emacs
 	stow git
+	stow gpg
 	stow haskell
 	stow i3
 	stow latex
+	stow ranger
 	stow slate
 	stow tmux
 	stow zsh
