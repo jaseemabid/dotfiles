@@ -21,6 +21,7 @@ brew install gnupg2
 brew install haskell-stack
 brew install highlight
 brew install htop
+brew install jq
 brew install mtr
 brew install pinentry-mac # So that emacs can ask for pass phrase on mac
 brew install python
@@ -34,4 +35,6 @@ brew install wget
 brew install youtube-dl
 brew install zsh
 
+brew upgrade
 brew linkapps
+brew cleanup
