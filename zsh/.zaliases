@@ -16,6 +16,7 @@ if [[ $OSTYPE == linux-* ]]; then
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     alias c='pbcopy'
     alias p='pbpaste'
+    alias o='open'
 
 else
     # Unknown, or  cygwin/win32/freebsd*
@@ -32,17 +33,19 @@ alias get='git clone '
 alias gg='git checkout'
 alias gl='git log --oneline --decorate'
 alias got='git'
+alias gr='git rebase'
 alias gs='git status'
 alias gt='git'
 alias gx='git checkout'
 
+alias big="gstat -c %s $1"
 alias t='tmux'
 
 # Data recovery is a myth
 alias dd="echo -e '★★★★★★★★★★★★★★★★★★★★★'; echo -e 'Are you fucking sure?\n'; sleep 7; dd "
 
 # Quickies
-alias backup="rsync -avuiWP --delete"
+alias backup="rsync -v --archive --itemize-changes --partial --progress --compress --delete"
 alias die="xset dpms force off"
 alias genpass="openssl rand -base64 12"
 alias hl="highlight -O ansi"
