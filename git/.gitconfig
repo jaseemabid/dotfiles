@@ -22,16 +22,18 @@
     b = branch
     c = commit
     cp = cherry-pick
-    meh = commit --amend -C HEAD
+    l = log --oneline --graph --decorate -15
+    lasttag = describe --tags --abbrev=0
+    meh = commit --amend --no-edit
     ours = "!f() { git checkout --ours -- $@ && git add -- $@; }; f"
     pill = pull
+    r = rebase
     s = status
-    see = !"git --no-pager log --oneline --graph -10"
     sync = !git pull --rebase && git push
     theirs = "!f() { git checkout --theirs -- $@ && git add -- $@; }; f"
     today = diff @{yesterday}.. --stat
+    x = commit --amend --no-edit
     xxx = !git reset --hard HEAD && git clean -xfd
-    lasttag = describe --tags --abbrev=0
 [format]
     signoff = true
 [pull]
@@ -53,4 +55,4 @@
 [help]
     autocorrect = 1
 [diff]
-	compactionHeuristic = true
+    compactionHeuristic = true

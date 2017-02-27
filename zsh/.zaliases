@@ -31,12 +31,12 @@ alias ll='ranger'
 # git; lot more provided by git plugin
 alias get='git clone '
 alias gg='git checkout'
-alias gl='git log --oneline --decorate'
+alias gl='git l'
 alias got='git'
 alias gr='git rebase'
 alias gs='git status'
 alias gt='git'
-alias gx='git commit --amend --no-edit'
+alias gx='git commit --amend'
 
 alias big="gstat -c %s $1"
 alias t='tmux'
