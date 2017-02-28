@@ -36,7 +36,7 @@ alias got='git'
 alias gr='git rebase'
 alias gs='git status'
 alias gt='git'
-alias gx='git commit --amend'
+alias gx='git commit --amend --no-edit'
 
 alias big="gstat -c %s $1"
 alias t='tmux'
