@@ -1,4 +1,4 @@
 git log --author="Jaseem" --pretty=tformat: --numstat --since "yesterday" \
-| gawk '{ add += $1 ; subs += $2 ; loc += $1 - $2 } END { printf "added lines: %s removed lines : %s total lines: %s\n",add,subs,loc }' -
+| awk '{ add += $1 ; subs += $2 ; loc += $1 - $2 } END { printf "added lines: %s removed lines : %s total lines: %s\n",add,subs,loc }' -
 
 # git diff $(git log -1 --before="1 days ago" --format=%H).. --stat
