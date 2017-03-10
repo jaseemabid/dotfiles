@@ -23,6 +23,7 @@
     c = commit
     cp = cherry-pick
     l = log --oneline --graph --decorate -15
+    last = log -1 -p
     lasttag = describe --tags --abbrev=0
     meh = commit --amend --no-edit
     ours = "!f() { git checkout --ours -- $@ && git add -- $@; }; f"
