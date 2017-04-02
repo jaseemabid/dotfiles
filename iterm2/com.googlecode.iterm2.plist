@@ -24,6 +24,8 @@
 	<false/>
 	<key>DisableFullscreenTransparency</key>
 	<true/>
+	<key>DisableWindowSizeSnap</key>
+	<true/>
 	<key>EnableRendezvous</key>
 	<false/>
 	<key>GlobalKeyMap</key>
@@ -195,7 +197,7 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>330 289 620 392 0 0 1280 777 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>254 271 1018 447 0 0 1280 777 </string>
+	<string>254 247 1018 447 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 36 1274 741 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
@@ -926,9 +928,11 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-02-27T11:31:39Z</date>
+	<date>2017-03-31T07:11:03Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
+	<key>SUSkippedVersion</key>
+	<string>3.0.15</string>
 	<key>ShowBookmarkName</key>
 	<false/>
 	<key>SmartPlacement</key>
