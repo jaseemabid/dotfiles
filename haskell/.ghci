@@ -4,7 +4,7 @@
 :set +m   -- Allow multi line input
 :set -XOverloadedStrings
 
-:def hoogle \x -> return $ ":!hoogle -c -n 10 \"" ++ x ++ "\""
+:def hoogle \x -> return $ ":!hoogle -n 10 \"" ++ x ++ "\""
 :def doc \x -> return $ ":!hoogle --info \"" ++ x ++ "\""
 
 
