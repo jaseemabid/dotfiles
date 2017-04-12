@@ -17,7 +17,7 @@ brew install diff-so-fancy
 brew install erlang
 brew install ffmpeg
 brew install git
-brew install gnupg2
+brew install gnupg
 brew install haskell-stack
 brew install highlight
 brew install htop
