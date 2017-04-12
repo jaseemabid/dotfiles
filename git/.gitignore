@@ -1,5 +1,6 @@
 #*
 *#
+*.rest
 .#*
 .DS_Store
 .agignore
