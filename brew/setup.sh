@@ -13,6 +13,7 @@ brew cask install font-fira-code
 brew install aspell
 brew install automake     # Tool for generating GNU compliant Makefiles
 brew install coreutils    # File, shell and text manipulation utilities
+brew install cowsay
 brew install diff-so-fancy
 brew install erlang
 brew install ffmpeg
