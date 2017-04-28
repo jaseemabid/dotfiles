@@ -52,7 +52,7 @@ alias hl="highlight -O ansi"
 alias record="ffmpeg -f x11grab -r 30 -s 1366x768 -i :0.0 -f alsa -ac 2 -i pulse -vcodec libx264 -acodec pcm_s16le screencast.mkv"
 alias ty="yt"
 alias untar="tar -zxvf $1"
-alias yt="youtube-dl -twci --console-title"
+alias yt="youtube-dl -wci -o '%(title)s-%(id)s.%(ext)s'"
 
 # Alternatives
 alias vi="emacsclient -n"
