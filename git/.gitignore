@@ -6,5 +6,6 @@
 .agignore
 .dir-locals.el
 .projectile
+.watsonresults
 TAGS
 refile.org
