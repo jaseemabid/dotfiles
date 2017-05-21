@@ -5,9 +5,9 @@ import XMonad.Actions.SpawnOn
 import XMonad.Config.Desktop
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
-import XMonad.Hooks.ManageHelpers (composeOne, isFullscreen, isDialog,  doFullFloat, doCenterFloat)
+import XMonad.Hooks.ManageHelpers (isFullscreen, isDialog,  doFullFloat, doCenterFloat)
 import XMonad.Layout.NoBorders
-import XMonad.Util.EZConfig(additionalKeys)
+import XMonad.Util.EZConfig (additionalKeys)
 import XMonad.Util.Run (spawnPipe)
 import Data.Monoid
 
@@ -32,5 +32,5 @@ main = do
             , ppTitle = xmobarColor "green" "" . shorten 50
             }
       , manageHook = manageDocks <+> myManageHook <+> manageHook desktopConfig
-      , layoutHook = avoidStruts $ smartBorders $ layoutHook defaultConfig
+      , layoutHook = avoidStruts $ smartBorders $ layoutHook desktopConfig
       }
