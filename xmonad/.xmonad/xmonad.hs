@@ -22,15 +22,17 @@ myManageHook = composeAll
    , isDialog                     --> doCenterFloat
    ]
 
+myConfig xmproc = xmonad desktopConfig {
+    terminal = "terminator"
+  , modMask  = mod4Mask
+  , logHook = dynamicLogWithPP xmobarPP {
+          ppOutput = hPutStrLn xmproc
+        , ppTitle = xmobarColor "green" "" . shorten 50
+        }
+  , manageHook = manageDocks <+> myManageHook <+> manageHook desktopConfig
+  , layoutHook = avoidStruts $ smartBorders $ layoutHook defaultConfig
+  }
+
 main = do
     xmproc <- spawnPipe "xmobar ~/.xmonad/xmobarrc"
-    xmonad desktopConfig {
-        terminal = "terminator"
-      , modMask  = mod4Mask
-      , logHook = dynamicLogWithPP xmobarPP {
-              ppOutput = hPutStrLn xmproc
-            , ppTitle = xmobarColor "green" "" . shorten 50
-            }
-      , manageHook = manageDocks <+> myManageHook <+> manageHook desktopConfig
-      , layoutHook = avoidStruts $ smartBorders $ layoutHook defaultConfig
-      }
+    myConfig xmproc
