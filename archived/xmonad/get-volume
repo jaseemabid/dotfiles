@@ -3,10 +3,10 @@
 # get-volume script returns the current volume status of your system in a
 # format suitable for use in xmobar. I found this script on this page:
 #   http://karuppuswamy.com/wordpress/2011/09/03/how-to-get-a-productive-desktop-based-on-xmonad-and-xmobar/
-# 
+#
 # Original author unknown -- credited to "a nice guy online".  :-)
 #
-# Note that if this is not working for your hardware, it may be because 
+# Note that if this is not working for your hardware, it may be because
 # you have more than one sound card. In that case you may be able to make
 # it work by adding arguments to the amixer command in the first line.
 # For example, the "-c N" argument makes it choose the card identified by
