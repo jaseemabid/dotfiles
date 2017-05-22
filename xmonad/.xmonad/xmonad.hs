@@ -24,7 +24,7 @@ myManageHook = composeAll
    ]
 
 main = do
-    xmproc <- spawnPipe "xmobar ~/.xmonad/xmobarrc"
+    xmproc <- spawnPipe "xmobar ~/.xmonad/xmobar.hs"
     xmonad $ desktopConfig {
         terminal = "terminator"
       , modMask  = mod4Mask
