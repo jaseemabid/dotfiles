@@ -17,7 +17,7 @@ myManageHook = composeAll
    [ className =? "Google-chrome" --> doShift "1"
    , className =? "Emacs"         --> doShift "2"
    , className =? "Terminator"    --> doShift "3"
-   , className =? "Thunar"        --> doShift "4"
+   , className =? "Nemo"          --> doShift "4"
    , className =? "Xfce4-notifyd" --> doIgnore
    , isFullscreen                 --> doFullFloat
    , isDialog                     --> doCenterFloat
@@ -36,6 +36,8 @@ main = do
       , layoutHook = avoidStruts $ smartBorders $ layoutHook desktopConfig
       } `additionalKeysP` [
 
+        -- Key codes: https://hackage.haskell.org/package/xmonad-contrib-0.13/docs/XMonad-Util-EZConfig.html
+
         ("<XF86MonBrightnessDown>", spawn "xbacklight -dec 5")
       , ("<XF86MonBrightnessUp>", spawn "xbacklight -inc 5")
 
@@ -43,6 +45,6 @@ main = do
       , ("<XF86AudioMute>", spawn "amixer -q set Master toggle")
       , ("<XF86AudioRaiseVolume>", spawn "amixer -q set Master 5%+")
 
-      , ("s-<right>", nextWS)
-      , ("s-<left>", prevWS)
+      , ("M-l", spawn "i3lock -i ~/.images/archblue.png")
+      , ("M-t", spawn "nemo")
       ]
