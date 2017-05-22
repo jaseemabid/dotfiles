@@ -22,8 +22,12 @@
     background_color = "#002b36"
     copy_on_selection = True
     cursor_color = "#eee8d5"
+    custom_command = tmux attach
     font = Droid Sans Mono Dotted for Powerline 13
-    foreground_color = "#fff"
+    foreground_color = "#ffffff"
     palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
+    scroll_on_output = True
     scrollback_infinite = True
+    scrollbar_position = hidden
+    use_custom_command = True
     use_system_font = False
