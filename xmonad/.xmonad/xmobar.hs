@@ -1,5 +1,5 @@
 Config {
-    font = "xft:Fira Code Mono:size=12:antialias=true"
+    font = "xft:Fira Code Mono:size=16:antialias=true"
   , bgColor = "#002b36"
   , fgColor = "#657b83"
   , position = Bottom x
