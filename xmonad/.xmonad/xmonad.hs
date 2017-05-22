@@ -1,15 +1,16 @@
+import Data.Monoid
 import System.IO
 
 import XMonad
-import XMonad.Actions.SpawnOn
-import XMonad.Config.Desktop
-import XMonad.Hooks.DynamicLog
+import XMonad.Actions.CycleWS (nextWS, prevWS)
+import XMonad.Config.Desktop (desktopConfig)
+import XMonad.Hooks.DynamicLog hiding (xmobar)
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers (isFullscreen, isDialog,  doFullFloat, doCenterFloat)
-import XMonad.Layout.NoBorders
-import XMonad.Util.EZConfig (additionalKeys)
+import XMonad.Layout.NoBorders (smartBorders)
+import XMonad.Util.EZConfig (additionalKeysP)
 import XMonad.Util.Run (spawnPipe)
-import Data.Monoid
+
 
 myManageHook :: Query (Data.Monoid.Endo WindowSet)
 myManageHook = composeAll
@@ -24,7 +25,7 @@ myManageHook = composeAll
 
 main = do
     xmproc <- spawnPipe "xmobar ~/.xmonad/xmobarrc"
-    xmonad desktopConfig {
+    xmonad $ desktopConfig {
         terminal = "terminator"
       , modMask  = mod4Mask
       , logHook = dynamicLogWithPP xmobarPP {
@@ -33,4 +34,15 @@ main = do
             }
       , manageHook = manageDocks <+> myManageHook <+> manageHook desktopConfig
       , layoutHook = avoidStruts $ smartBorders $ layoutHook desktopConfig
-      }
+      } `additionalKeysP` [
+
+        ("<XF86MonBrightnessDown>", spawn "xbacklight -dec 5")
+      , ("<XF86MonBrightnessUp>", spawn "xbacklight -inc 5")
+
+      , ("<XF86AudioLowerVolume>", spawn "amixer -q set Master 5%-")
+      , ("<XF86AudioMute>", spawn "amixer -q set Master toggle")
+      , ("<XF86AudioRaiseVolume>", spawn "amixer -q set Master 5%+")
+
+      , ("s-<right>", nextWS)
+      , ("s-<left>", prevWS)
+      ]
