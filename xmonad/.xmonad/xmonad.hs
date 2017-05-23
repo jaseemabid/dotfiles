@@ -46,5 +46,5 @@ main = do
       , ("<XF86AudioRaiseVolume>", spawn "amixer -q set Master 5%+")
 
       , ("M-l", spawn "i3lock -i ~/.images/archblue.png")
-      , ("M-t", spawn "nemo")
+      , ("M-f", spawn "nemo")
       ]
