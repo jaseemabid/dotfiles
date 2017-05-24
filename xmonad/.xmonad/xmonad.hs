@@ -14,9 +14,9 @@ import XMonad.Util.Run (spawnPipe)
 
 myManageHook :: Query (Data.Monoid.Endo WindowSet)
 myManageHook = composeAll
-   [ className =? "Google-chrome" --> doShift "1"
+   [ className =? "Terminator"    --> doShift "1"
    , className =? "Emacs"         --> doShift "2"
-   , className =? "Terminator"    --> doShift "3"
+   , className =? "Google-chrome" --> doShift "3"
    , className =? "Nemo"          --> doShift "4"
    , className =? "Xfce4-notifyd" --> doIgnore
    , isFullscreen                 --> doFullFloat
