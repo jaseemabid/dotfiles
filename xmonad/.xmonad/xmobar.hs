@@ -5,7 +5,7 @@ Config {
   , position = Bottom x
   , sepChar = "%"
   , alignSep = "}{"
-  , template = " %StdinReader% }{ %multicpu%    %memory%   %coretemp%   %dynnetwork%  %battery%  %date% "
+  , template = " %StdinReader% }{ %multicpu%   %memory%   %coretemp%   %dynnetwork%   %battery%   %date% "
   , commands = [
     -- battery monitor
     Run Battery      [ "--template" , " <acstatus>"
@@ -17,11 +17,11 @@ Config {
                      , "--"
                      -- battery specific options
                      -- discharging status
-                     , "-o"         , "<left>%"
+                     , "-o"         ,"<left>%"
                      -- AC "on" status
-                     , "-O"	       , "<fc=#dAA520>Charging</fc>"
+                     , "-O"	    , "<fc=#dAA520>Charging</fc>"
                      -- charged status
-                     , "-i"	, "<fc=#006000>Charged</fc>"
+                     , "-i"	    , "<fc=#006000>Charged</fc>"
                      ] 50
 
     -- network activity monitor (dynamic interface resolution)
@@ -34,7 +34,7 @@ Config {
                      ] 10
 
     -- cpu activity monitor
-    , Run MultiCpu   [ "--template" , " [<total0>, <total1>, <total2>, <total3>]%"
+    , Run MultiCpu   [ "--template" , " [<total0> <total1> <total2> <total3>]%"
                      , "--Low"      , "50"         -- units: %
                      , "--High"     , "85"         -- units: %
                      , "--low"      , "darkgreen"
