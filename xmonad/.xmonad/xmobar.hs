@@ -61,6 +61,6 @@ Config {
                      ] 10
 
     -- , Run Com "~/.xmonad/get-volume" [] "myvolume" 10
-    , Run Date " %a %b %d    %l:%M:%S %p " "date" 10
+    , Run Date " %a %b %d   %l:%M:%S %p " "date" 10
     , Run StdinReader]
 }
