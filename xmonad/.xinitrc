@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set a wallpaper
-feh --bg-scale .images/realartistsship2560x1440.jpg
+feh --bg-scale .images/night.jpg
 
 # Fire up apps
 terminator &
