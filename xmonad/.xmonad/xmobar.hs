@@ -13,7 +13,7 @@ Config {
                      , "--device"   ,  "intel_backlight"] 100
 
     -- battery monitor
-  , Run Battery      [ "--template" , " <acstatus>"
+  , Run Battery      [ "--template" , " <acstatus>"
                      , "--Low"      , "10"        -- units: %
                      , "--High"     , "80"        -- units: %
                      , "--low"      , "darkred"
@@ -26,7 +26,7 @@ Config {
                      -- AC "on" status
                      , "-O"	    , "<fc=#dAA520></fc>"
                      -- charged status
-                     , "-i"	    , "<fc=#006000></fc>"
+                     , "-i"	    , "<fc=#006000></fc>"
                      ] 50
 
     -- network activity monitor (dynamic interface resolution)
