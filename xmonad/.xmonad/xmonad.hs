@@ -17,7 +17,7 @@ myManageHook = composeAll
    [ className =? "Terminator"    --> doShift "1"
    , className =? "Emacs"         --> doShift "2"
    , className =? "Google-chrome" --> doShift "3"
-   , className =? "Nemo"          --> doShift "4"
+   , className =? "Thunar"        --> doShift "4"
    , className =? "Xfce4-notifyd" --> doIgnore
    , isFullscreen                 --> doFullFloat
    , isDialog                     --> doCenterFloat
@@ -46,5 +46,5 @@ main = do
       , ("<XF86AudioRaiseVolume>", spawn "amixer -q set Master 5%+")
 
       , ("M-l", spawn "i3lock -i ~/.images/archblue.png")
-      , ("M-f", spawn "nemo")
+      , ("M-f", spawn "thunar")
       ]
