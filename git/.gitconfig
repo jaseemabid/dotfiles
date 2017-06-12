@@ -10,7 +10,6 @@
     lineNumber = true
 [core]
     whitespace = trailing-space,space-before-tab
-    editor = emacsclient
     excludesfile = ~/.gitignore
     pager = diff-so-fancy | less --tabs=4 -RFX
 [color]
