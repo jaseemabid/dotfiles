@@ -54,7 +54,7 @@ alias untar="tar -zxvf $1"
 alias yt="youtube-dl -wci -o '%(title)s-%(id)s.%(ext)s'"
 
 # Alternatives
-alias vi="emacsclient -n"
+alias vi="emacsclient -t"
 alias rm="rm -i"
 
 # Remove trailing whitespace
