@@ -8,7 +8,6 @@ brew tap caskroom/fonts
 brew tap railwaycat/emacsmacport
 
 brew cask install emacs-mac
-brew cask install font-fira-code
 
 brew install aspell
 brew install automake     # Tool for generating GNU compliant Makefiles
