@@ -1,12 +1,11 @@
 [global_config]
   borderless = True
-  enabled_plugins = APTURLHandler,
+  enabled_plugins = ,
   handle_size = 2
   sticky = True
-  title_font = Sans 11
+  title_font = Droid Sans Mono 14
   title_hide_sizetext = True
   title_transmit_bg_color = "#839496"
-  title_use_system_font = False
 [keybindings]
 [layouts]
   [[default]]
@@ -23,7 +22,7 @@
     copy_on_selection = True
     cursor_color = "#eee8d5"
     custom_command = tmux attach
-    font = Droid Sans Mono Dotted for Powerline 14
+    font = Droid Sans Mono 14
     foreground_color = "#ffffff"
     palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
     scroll_on_output = True
