@@ -4,8 +4,5 @@ keycode  37 = NoSymbol
 !Disable left alt
 keycode  64 = NoSymbol
 
-!Make insert a window key
-keycode 118 = Super_L NoSymbol Super_L NoSymbol Super_L
-
-!Disable regular windows key
-keycode 133 = NoSymbol
+!Make delete a window key
+keycode 119 = Super_L NoSymbol Super_L NoSymbol Super_L
