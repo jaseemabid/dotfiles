@@ -6,3 +6,10 @@ keycode  64 = NoSymbol
 
 !Make delete a window key
 keycode 119 = Super_L NoSymbol Super_L NoSymbol Super_L
+
+!Clear lock and map to escape
+clear lock
+keycode 66 = Escape
+
+!Set end to esc for kinesis
+keycode 115 = Escape
