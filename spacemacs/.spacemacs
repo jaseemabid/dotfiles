@@ -141,7 +141,7 @@ values."
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Inconsolata"
-                               :size 20 
+                               :size 20
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -318,6 +318,15 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
+  ;; Font setup
+  (when (window-system)
+    (set-frame-font "Inconsolata-15"))
+
+  ;; A bunch of personal key bindings
+  (spacemacs/set-leader-keys
+    "bx" 'bury-buffer
+    "w1" 'spacemacs/toggle-maximize-buffer)
+
   (use-package files
     :init
     (add-hook 'find-file-hook 'j/find-file-large-hook)
@@ -328,14 +337,9 @@ you should place your code here."
       (when (> (buffer-size) (* 1024 1024))
         (setq buffer-read-only t)
         (buffer-disable-undo)
-        (fundamental-mode))))
+        (fundamental-mode)))))
 
-  ;; Font setup
-  (when (window-system)
-    (set-frame-font "Inconsolata-15")))
-
-;; Do not write anything past this comment. This is where Emacs will
-
+ ;; Do not write anything past this comment. This is where Emacs will
 
 ;; auto-generate custom variable definitions.
 (custom-set-variables
