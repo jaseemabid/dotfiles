@@ -337,7 +337,16 @@ you should place your code here."
       (when (> (buffer-size) (* 1024 1024))
         (setq buffer-read-only t)
         (buffer-disable-undo)
-        (fundamental-mode)))))
+        (fundamental-mode))))
+
+  (use-package uniquify
+    :config
+    (setq uniquify-buffer-name-style 'forward
+          uniquify-min-dir-content 1))
+
+  t)
+
+
 
  ;; Do not write anything past this comment. This is where Emacs will
 
