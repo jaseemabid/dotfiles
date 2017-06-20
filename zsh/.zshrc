@@ -46,7 +46,7 @@ else
     # Non root users
     # Different config for linux and mac
     if [[ "$OSTYPE" == "linux-gnu" ]]; then
-        plugins=(git)
+        plugins=(git tmux tmuxinator)
     elif [[ "$OSTYPE" == "linux-gnueabi" ]]; then
         plugins=(git)
     elif [[ "$OSTYPE" == "darwin"* ]]; then
