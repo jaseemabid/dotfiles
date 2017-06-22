@@ -324,7 +324,11 @@ you should place your code here."
 
   ;; A bunch of personal key bindings
   (spacemacs/set-leader-keys
+    ;; Default behavior of switch is pretty fucked up
+    "eL" 'j/fly-error-buf
+    "el" 'j/fly-error-buf
     "bx" 'bury-buffer
+    "fq" 'unfill-toggle
     "w1" 'spacemacs/toggle-maximize-buffer)
 
   (use-package files
@@ -339,13 +343,17 @@ you should place your code here."
         (buffer-disable-undo)
         (fundamental-mode))))
 
+  (use-package flycheck
+    :config
+    (defun j/fly-error-buf ()
+      (interactive)
+      (switch-to-buffer "*Flycheck errors*")))
+
   (use-package uniquify
     :config
     (setq uniquify-buffer-name-style 'forward
           uniquify-min-dir-content 1))
-
   t)
-
 
 
  ;; Do not write anything past this comment. This is where Emacs will
