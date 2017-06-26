@@ -336,6 +336,10 @@ you should place your code here."
     "fq" 'unfill-toggle
     "w1" 'spacemacs/toggle-maximize-buffer)
 
+  ;; A whole bunch of config vars
+  (setq-default dotspacemacs-line-numbers t
+                powerline-default-separator 'arrow)
+
   (use-package files
     :init
     (add-hook 'find-file-hook 'j/find-file-large-hook)
