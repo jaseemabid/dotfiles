@@ -34,6 +34,7 @@ values."
      auto-completion
      better-defaults
      emacs-lisp
+     finance
      git
      haskell
      helm
@@ -63,6 +64,10 @@ values."
      fancy-battery
      lorem-ipsum
      neotree
+     org-plus-contrib
+     org-present
+     orgit
+     smartparens
      version-control
      yapf-mode
      yasnippet
