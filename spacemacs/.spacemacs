@@ -33,6 +33,7 @@ values."
    '(
      auto-completion
      better-defaults
+     (c-c++ :variables c-c++-enable-clang-support t)
      emacs-lisp
      finance
      git
@@ -41,19 +42,19 @@ values."
      markdown
      org
      python
-     yaml
      (shell :variables
             shell-default-shell 'eshell
             shell-default-height 30
             shell-default-position 'bottom)
      spell-checking
      syntax-checking
+     yaml
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(llvm-mode)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -326,9 +327,6 @@ you should place your code here."
 
   ;; A bunch of personal key bindings
   (spacemacs/set-leader-keys
-    ;; Default behavior of switch is pretty fucked up
-    "eL" 'j/fly-error-buf
-    "el" 'j/fly-error-buf
     "bx" 'bury-buffer
     "fq" 'unfill-toggle
     "w1" 'spacemacs/toggle-maximize-buffer)
