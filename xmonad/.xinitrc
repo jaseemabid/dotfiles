@@ -4,7 +4,7 @@
 [[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
 
 # Set a wallpaper
-feh --bg-scale .images/night.jpg
+xsetroot -solid '#002b36'
 
 # Fire up apps
 terminator &
