@@ -25,7 +25,7 @@ fi
 
 # Listing
 alias l='ls'
-alias la='ranger'
+alias la='ls -al'
 alias ll='ranger'
 
 # git; lot more provided by git plugin
