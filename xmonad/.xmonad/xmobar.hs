@@ -1,12 +1,12 @@
 Config {
-    font = "xft:Fira Code Mono:size=16,FontAwesome:size=15:antialias=true"
+    font = "xft:Droid Sans Mono:size=16,FontAwesome:size=15:antialias=true"
   , bgColor = "#002b36"
   , fgColor = "#657b83"
   , position = Bottom x
   , sepChar = "%"
   , allDesktops = True
   , alignSep = "}{"
-  , template = " %StdinReader% }{ %dynnetwork%   %multicpu%   %memory%   %bright%   %volume%   %coretemp%   %battery%   %date% "
+  , template = " %StdinReader% }{ %dynnetwork% %multicpu% %memory% %bright% %volume% %coretemp% %battery% %date% "
   , commands = [
     Run Brightness   ["--template"  , " <percent>%"
                      , "--"
