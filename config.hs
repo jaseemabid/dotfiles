@@ -45,6 +45,7 @@ main = do
       , ("<XF86AudioLowerVolume>", spawn "amixer -q set Master 5%-")
       , ("<XF86AudioMute>", spawn "amixer -q set Master toggle")
       , ("<XF86AudioRaiseVolume>", spawn "amixer -q set Master 5%+")
+      , ("<XF86PowerOff>", spawn "i3lock -c 002b36 && systemctl suspend")
 
       , ("M-l", spawn "i3lock -c 002b36")
       , ("M-f", spawn "thunar")
