@@ -26,7 +26,7 @@ myManageHook = composeAll
 main = do
     xmproc <- spawnPipe "xmobar ~/.xmonad/xmobar.hs"
     xmonad $ desktopConfig {
-        terminal = "alacrity"
+        terminal = "alacritty"
       , modMask  = mod4Mask
       , logHook = dynamicLogWithPP xmobarPP {
               ppOutput = hPutStrLn xmproc
