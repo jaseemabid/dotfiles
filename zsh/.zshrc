@@ -44,17 +44,13 @@ then
     plugins=()
 else
     # Non root users
-    # Different config for linux and mac
     if [[ "$OSTYPE" == "linux-gnu" ]]; then
-        plugins=(git tmux tmuxinator)
-    elif [[ "$OSTYPE" == "linux-gnueabi" ]]; then
-        plugins=(git)
+        plugins=(git tmux tmuxinator z)
     elif [[ "$OSTYPE" == "darwin"* ]]; then
         plugins=(boot2docker docker git stack z)
     else
-        # Unknown, or  cygwin/win32/freebsd*
-        echo "GET A LIFE, USE A SENSIBLE OS"
-        exit 42
+        echo "Unknown OS"
+        exit 1
     fi
 fi
 
