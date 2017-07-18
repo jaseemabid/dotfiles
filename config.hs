@@ -2,14 +2,15 @@ import Data.Monoid
 import System.IO
 
 import XMonad
+import XMonad.Actions.CycleWS (toggleWS)
 import XMonad.Config.Desktop (desktopConfig)
 import XMonad.Hooks.DynamicLog hiding (xmobar)
+import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers (isFullscreen, isDialog,  doFullFloat, doCenterFloat)
 import XMonad.Layout.NoBorders (smartBorders)
 import XMonad.Util.EZConfig (additionalKeysP)
 import XMonad.Util.Run (spawnPipe)
-import XMonad.Hooks.EwmhDesktops
 
 myManageHook :: Query (Data.Monoid.Endo WindowSet)
 myManageHook = composeAll
@@ -45,7 +46,10 @@ main = do
       , ("<XF86AudioLowerVolume>", spawn "amixer -q set Master 5%-")
       , ("<XF86AudioMute>", spawn "amixer -q set Master toggle")
       , ("<XF86AudioRaiseVolume>", spawn "amixer -q set Master 5%+")
+
       , ("<XF86PowerOff>", spawn "i3lock -c 002b36 && systemctl suspend")
+
+      , ("<Insert>", toggleWS)
 
       , ("M-l", spawn "i3lock -c 002b36")
       , ("M-f", spawn "thunar")
