@@ -65,16 +65,10 @@ bindkey "^[s" insert-sudo
 
 source $ZSH/oh-my-zsh.sh
 
-# Source .zshenv. Not sure why its not loaded automatically
-source ~/.zshenv
-
 # Move aliases to custom file. Its hard to track aliases.zsh inside oh-my-zsh
 source ~/.zaliases
 
 [[ -s "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
-
-# Start gpg agent
-# gpg-agent --daemon
 
 # Make sure tramp wont blow up
 [[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ '
