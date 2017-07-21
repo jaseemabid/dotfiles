@@ -11,6 +11,7 @@ import XMonad.Hooks.ManageHelpers (isFullscreen, isDialog,  doFullFloat, doCente
 import XMonad.Layout.NoBorders (smartBorders)
 import XMonad.Util.EZConfig (additionalKeysP)
 import XMonad.Util.Run (spawnPipe)
+import qualified XMonad.StackSet as W
 
 myManageHook :: Query (Data.Monoid.Endo WindowSet)
 myManageHook = composeAll
@@ -51,6 +52,7 @@ main = do
       , ("<XF86PowerOff>", spawn "i3lock -c 002b36 && systemctl suspend")
 
       , ("<Insert>", toggleWS)
+      , ("M-<Insert>", windows W.focusDown)
 
       , ("M-l", spawn "i3lock -c 002b36")
       , ("M-f", spawn "thunar")
