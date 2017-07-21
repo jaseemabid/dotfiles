@@ -54,6 +54,8 @@ main = do
       , ("<Insert>", toggleWS)
       , ("M-<Insert>", windows W.focusDown)
 
+      , ("M-p", spawn "yegonesh -x")
+
       , ("M-l", spawn "i3lock -c 002b36")
       , ("M-f", spawn "thunar")
       ]
