@@ -14,7 +14,8 @@ import XMonad.Util.Run (spawnPipe)
 
 myManageHook :: Query (Data.Monoid.Endo WindowSet)
 myManageHook = composeAll
-   [ className =? "Terminator"    --> doShift "1"
+   [ className =? "Alacritty"     --> doShift "1"
+   , className =? "Terminator"    --> doShift "1"
    , className =? "Emacs"         --> doShift "2"
    , className =? "Google-chrome" --> doShift "3"
    , className =? "Thunar"        --> doShift "4"
