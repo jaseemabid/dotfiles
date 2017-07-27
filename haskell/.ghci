@@ -1,8 +1,10 @@
+import Protolude
+
 :set prompt  "λ "
 :set prompt2 "| "
 
 :set -XOverloadedStrings
 
-:def hoogle \x -> return $ ":!hoogle -n 10 \"" ++ x ++ "\""
-:def doc \x -> return $ ":!hoogle --info \"" ++ x ++ "\""
+:def hoogle \x -> return $ ":!hoogle -n 10 \"" <> x <> "\""
+:def doc \x -> return $ ":!hoogle --info \"" <> x <> "\""
 
