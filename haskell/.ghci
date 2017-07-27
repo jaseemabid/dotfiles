@@ -1,10 +1,8 @@
-:set prompt "λ "
+:set prompt  "λ "
 :set prompt2 "| "
 
-:set +m   -- Allow multi line input
 :set -XOverloadedStrings
 
 :def hoogle \x -> return $ ":!hoogle -n 10 \"" ++ x ++ "\""
 :def doc \x -> return $ ":!hoogle --info \"" ++ x ++ "\""
 
-import Protolude
