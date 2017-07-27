@@ -6,7 +6,6 @@
 # Set a wallpaper
 xsetroot -solid '#002b36'
 
-# Fire up apps
-terminator &
+alacritty &
 
 exec xmonad
