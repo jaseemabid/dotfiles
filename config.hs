@@ -9,7 +9,7 @@ import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers (isFullscreen, isDialog,  doFullFloat, doCenterFloat)
 import XMonad.Layout.NoBorders (smartBorders)
-import XMonad.Util.EZConfig (additionalKeysP)
+import XMonad.Util.EZConfig (additionalKeysP, removeKeysP)
 import XMonad.Util.Run (spawnPipe)
 import qualified XMonad.StackSet as W
 
@@ -29,7 +29,7 @@ main = do
     xmproc <- spawnPipe "xmobar ~/.xmonad/xmobar.hs"
     xmonad $ desktopConfig {
         terminal = "alacritty"
-      , modMask  = mod4Mask
+      , modMask  = mod1Mask
       , logHook = dynamicLogWithPP xmobarPP {
               ppOutput = hPutStrLn xmproc
             , ppTitle = xmobarColor "green" "" . shorten 50
@@ -38,10 +38,14 @@ main = do
       , layoutHook = avoidStruts $ smartBorders $ layoutHook desktopConfig
       , handleEventHook = fullscreenEventHook
 
-      } `additionalKeysP` [
+      } `additionalKeysP` additional `removeKeysP` removed
 
-        -- Key codes: https://hackage.haskell.org/package/xmonad-contrib-0.13/docs/XMonad-Util-EZConfig.html
+  where
 
+    removed = ["M-p"]
+
+    -- Key codes: https://hackage.haskell.org/package/xmonad-contrib-0.13/docs/XMonad-Util-EZConfig.html
+    additional = [
         ("<XF86MonBrightnessDown>", spawn "xbacklight -dec 5")
       , ("<XF86MonBrightnessUp>", spawn "xbacklight -inc 5")
 
@@ -54,7 +58,11 @@ main = do
       , ("<Insert>", toggleWS)
       , ("M-<Insert>", windows W.focusDown)
 
-      , ("M-p", spawn "yegonesh -x")
+      , ("<Print>", spawn "yegonesh -x")
+
+      , ("<F1>", windows $ W.greedyView "1")
+      , ("<F2>", windows $ W.greedyView "2")
+      , ("<F3>", windows $ W.greedyView "3")
 
       , ("M-l", spawn "i3lock -c 002b36")
       , ("M-f", spawn "thunar")
