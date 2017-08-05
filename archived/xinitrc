@@ -1,8 +1,0 @@
-#!/bin/sh
-#
-# ~/.xinitrc
-
-# load generic wallpaper with feh
-feh --bg-fill ~/.wallpaper*
-
-xmonad

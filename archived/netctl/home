@@ -1,9 +1,0 @@
-Description='A static ethernet home'
-Interface=eth0
-Connection=ethernet
-IP=static
-Address=('192.168.2.6/24')
-#Routes=('192.168.0.0/24 via 192.168.1.2')
-Gateway='192.168.2.1'
-DNS=('202.88.231.10' '202.88.231.2')
-
