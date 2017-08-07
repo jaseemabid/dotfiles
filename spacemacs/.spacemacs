@@ -346,6 +346,10 @@ you should place your code here."
     (setq exec-path-from-shell-check-startup-files nil)
     (exec-path-from-shell-initialize))
 
+  (use-package magit
+    :config
+    (setq-default magit-revision-show-gravatars nil))
+
   (use-package uniquify
     :config
     (setq uniquify-buffer-name-style 'forward
