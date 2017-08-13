@@ -58,7 +58,7 @@ main = do
       , ("<Insert>", toggleWS)
       , ("M-<Insert>", windows W.focusDown)
 
-      , ("<Print>", spawn "yegonesh -x")
+      , ("<Print>", spawn "yeganesh -x")
 
       , ("<F1>", windows $ W.greedyView "1")
       , ("<F2>", windows $ W.greedyView "2")
