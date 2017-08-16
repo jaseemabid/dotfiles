@@ -39,7 +39,7 @@ main = do
       , layoutHook = avoidStruts $ smartBorders $ layoutHook desktopConfig
       , handleEventHook = fullscreenEventHook
 
-      } `additionalKeysP` additional `removeKeysP` removed
+      } `additionalKeysP` (additional ++ switch) `removeKeysP` removed
 
   where
 
@@ -61,10 +61,9 @@ main = do
 
       , ("<Print>", spawn "yeganesh -x")
 
-      , ("<F1>", windows $ W.greedyView "1")
-      , ("<F2>", windows $ W.greedyView "2")
-      , ("<F3>", windows $ W.greedyView "3")
-
       , ("M-l", spawn "i3lock -c 002b36")
       , ("M-f", spawn "thunar")
       ]
+
+    switch = [("<F" ++ x ++ ">", windows $ W.greedyView x) |
+               x <- map show ([1..9] :: [Int])]
