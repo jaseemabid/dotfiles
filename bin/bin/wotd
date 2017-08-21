@@ -1,3 +1,0 @@
-#!/bin/sh
-
-gshuf ~/.words.txt | head -1 | sed 's/, /,/' | awk -F',' '{print $1 "\n" $2}' | cowsay -n
