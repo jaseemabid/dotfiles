@@ -54,6 +54,8 @@ else
     fi
 fi
 
+source $ZSH/oh-my-zsh.sh
+
 # A bunch of helpers
 
 # Alt-S inserts "sudo " at the start of line:
@@ -63,16 +65,19 @@ insert_sudo () {
 zle -N insert-sudo insert_sudo
 bindkey "^[s" insert-sudo
 
-source $ZSH/oh-my-zsh.sh
-
 # Move aliases to custom file. Its hard to track aliases.zsh inside oh-my-zsh
 source ~/.zaliases
-
-[[ -s "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
 
 # Make sure tramp wont blow up
 [[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ '
 [[ $EMACS = t ]] && unsetopt zle && PS1='$ '
+
+[[ -s "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
+
+if [ -z "$TMUX" ]
+then
+    tmux attach
+fi
 
 # Return success if everything went right
 return 0
