@@ -20,8 +20,10 @@ myManageHook = composeAll
    , className =? "Emacs"         --> doShift "2"
    , className =? "Google-chrome" --> doShift "3"
    , className =? "Thunar"        --> doShift "4"
+   , className =? "Evince"        --> doShift "5"
    , className =? "Hexchat"       --> doShift "9"
    , className =? "Xfce4-notifyd" --> doIgnore
+   , className =? "Pinentry"      --> doCenterFloat
    , isFullscreen                 --> doFullFloat
    , isDialog                     --> doCenterFloat
    ]
