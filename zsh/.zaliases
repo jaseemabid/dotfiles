@@ -55,7 +55,7 @@ alias yt="youtube-dl -wci -o '%(title)s-%(id)s.%(ext)s'"
 
 # Alternatives
 alias vi="emacsclient -t"
-alias rm="rm -i"
+alias rm="trash"
 alias acroread="open"
 
 # Remove trailing whitespace
