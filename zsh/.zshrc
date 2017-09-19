@@ -80,4 +80,4 @@ then
 fi
 
 # Return success if everything went right
-return 0
+true
