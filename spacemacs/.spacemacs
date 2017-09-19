@@ -327,7 +327,9 @@ you should place your code here."
     "w1" 'spacemacs/toggle-maximize-buffer)
 
   ;; A whole bunch of config vars
-  (setq-default powerline-default-separator 'arrow
+  (setq-default exec-path-from-shell-arguments t
+                spaceline-minor-modes-p nil
+                powerline-default-separator 'arrow
                 vc-follow-symlinks t)
 
   (use-package files
