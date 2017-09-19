@@ -42,12 +42,15 @@ values."
      erlang
      finance
      git
+     gtags
      haskell
      helm
+     html
      markdown
      org
      python
      rust
+     scheme
      spacemacs-layouts
      spell-checking
      syntax-checking
@@ -347,6 +350,11 @@ you should place your code here."
     :config
     (setq exec-path-from-shell-check-startup-files nil)
     (exec-path-from-shell-initialize))
+
+  (use-package geiser
+    :config
+    (setq geiser-chez-binary "petite"
+          geiser-active-implementations '(chez)))
 
   (use-package magit
     :config
