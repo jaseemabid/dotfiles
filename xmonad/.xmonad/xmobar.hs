@@ -6,11 +6,11 @@ Config {
   , sepChar = "%"
   , allDesktops = True
   , alignSep = "}{"
-  , template = " %StdinReader% }{ %dynnetwork% %multicpu% %memory% %bright% %volume% %coretemp% %battery% %date% "
+  , template = " %StdinReader% }{ %dynnetwork% %multicpu% %memory% %bright% %volume% %coretemp% %battery% %date%      "
   , commands = [
     Run Brightness   ["--template"  , " <percent>%"
                      , "--"
-                     , "--device"   ,  "intel_backlight"] 100
+                     , "--device"   ,  "intel_backlight"] 10
 
     -- battery monitor
   , Run Battery      [ "--template" , " <acstatus>"
@@ -27,7 +27,7 @@ Config {
                      , "-O"	    , "<fc=#dAA520></fc>"
                      -- charged status
                      , "-i"	    , "<fc=#006000></fc>"
-                     ] 50
+                     ] 10
 
     -- network activity monitor (dynamic interface resolution)
     , Run DynNetwork [ "--template" , " [<rx> <tx>] kB/s"
