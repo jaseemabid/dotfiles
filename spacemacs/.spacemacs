@@ -368,4 +368,11 @@ you should place your code here."
   (add-hook 'c++-mode-hook
             (lambda () (setq flycheck-gcc-language-standard "c++11")))
 
+  (defun stop-using-minibuffer ()
+    "kill the minibuffer"
+    (when (and (>= (recursion-depth) 1) (active-minibuffer-window))
+      (abort-recursive-edit)))
+
+  (add-hook 'mouse-leave-buffer-hook 'stop-using-minibuffer)
+
   t)
