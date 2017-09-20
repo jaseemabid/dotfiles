@@ -323,17 +323,66 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
-  ;; A bunch of personal key bindings
-  (spacemacs/set-leader-keys
-    "bx" 'bury-buffer
-    "fq" 'unfill-toggle
-    "w1" 'spacemacs/toggle-maximize-buffer)
+  (setq init-file-user "jaseem"
+        user-full-name "Jaseem Abid"
+        user-nick "jaseemabid"
+        user-mail-address "jaseemabid@gmail.com")
 
   ;; A whole bunch of config vars
-  (setq-default exec-path-from-shell-arguments t
-                spaceline-minor-modes-p nil
+  (setq-default c-basic-indent 4
+                c-basic-offset 4
+                c-default-style nil
+                case-fold-search t
+                fill-column 80
+                indent-tabs-mode nil
+                major-mode 'org-mode
                 powerline-default-separator 'arrow
+                require-final-newline t
+                sentence-end-double-space nil
+                spaceline-minor-modes-p nil
+                tab-width 4
+                truncate-lines t
+                vc-follow-symlinks t
+                visible-bell t
                 vc-follow-symlinks t)
+
+  (use-package abbrev
+    :diminish abbrev-mode
+
+    :config
+    ;; stop asking whether to save newly added abbrev when quitting emacs
+    (setq save-abbrevs nil)
+    (setq-default abbrev-mode t)
+
+    (define-abbrev-table 'global-abbrev-table
+      '(
+        ;; math/unicode symbols
+        ("8n" "ℕ")
+        ("8r" "ℝ")
+        ("8sig" "σ")
+        ("8bot" "⟂")
+        ("8gam" "γ")
+        ("8in" "∈")
+        ("8inf" "∞")
+        ("8inr" "₹")
+        ("8lam" "λ")
+        ("8lar" "←")
+        ("8luv" "♥")
+        ("8meh" "¯\\_(ツ)_/¯")
+        ("8nin" "∉")
+        ("8no" "❌")
+        ("8ok" "✓")
+        ("8rar" "→")
+        ("8rs" "₹")
+        ("8sig" "σ")
+        ("8smly" "☺")
+        ("8star" "★")
+        ("8t" "#+title:")
+        ("8tau" "τ")
+
+        ;; email
+        ("8me" user-mail-address)
+        ("8i"  user-full-name))))
 
   (use-package files
     :init
@@ -365,6 +414,13 @@ you should place your code here."
     (setq uniquify-buffer-name-style 'forward
           uniquify-min-dir-content 1))
 
+  ;; A bunch of personal key bindings
+  (spacemacs/set-leader-keys
+    "bx" 'bury-buffer
+    "fq" 'unfill-toggle
+    "w1" 'spacemacs/toggle-maximize-buffer)
+
+  ;; A bunch of hooks
   (add-hook 'c++-mode-hook
             (lambda () (setq flycheck-gcc-language-standard "c++11")))
 
