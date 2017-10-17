@@ -1,0 +1,10 @@
+set diff-context = 5
+set line-graphics = utf-8
+set main-view-date = relative
+set show-changes = true
+set tab-size = 4
+set vertical-split = yes
+
+bind generic 9 !@sh -c "echo -n %(commit) | xclip -selection c"
+bind generic x !git checkout %(commit)
+bind generic P !git push
