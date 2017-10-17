@@ -420,17 +420,30 @@ you should place your code here."
   (spacemacs/set-leader-keys
     "bx" 'bury-buffer
     "fq" 'unfill-toggle
-    "w1" 'spacemacs/toggle-maximize-buffer)
+    "w1" 'spacemacs/toggle-maximize-buffer
+    "yw" 'copy-word)
 
   ;; A bunch of hooks
-  (add-hook 'c++-mode-hook
-            (lambda () (setq flycheck-gcc-language-standard "c++11")))
+  (add-hook 'mouse-leave-buffer-hook 'stop-using-minibuffer)
+  (add-hook 'c++-mode-hook 'pick-cpp)
+
+  ;; Functions
+
+  ;; https://www.emacswiki.org/emacs/CopyWithoutSelection
+  (defun copy-word (&optional arg)
+    "Copy words at point into kill-ring"
+    (interactive "P")
+    (save-excursion
+      (let ((beg (progn (backward-word 1) (point)))
+            (end (progn (forward-word arg) (point))))
+        (copy-region-as-kill beg end))))
 
   (defun stop-using-minibuffer ()
     "kill the minibuffer"
     (when (and (>= (recursion-depth) 1) (active-minibuffer-window))
       (abort-recursive-edit)))
 
-  (add-hook 'mouse-leave-buffer-hook 'stop-using-minibuffer)
+  (defun pick-cpp ()
+    (setq flycheck-gcc-language-standard "c++11"))
 
   t)
