@@ -404,7 +404,7 @@ you should place your code here."
 
   (use-package geiser
     :config
-    (setq geiser-chez-binary "petite"
+    (setq geiser-chez-binary "scheme"
           geiser-active-implementations '(chez)))
 
   (use-package magit
