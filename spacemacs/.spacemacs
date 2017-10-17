@@ -42,6 +42,7 @@ values."
      erlang
      finance
      git
+     go
      gtags
      haskell
      helm
@@ -53,6 +54,7 @@ values."
      scheme
      spacemacs-layouts
      spell-checking
+     sql
      syntax-checking
      yaml)
    ;; List of additional packages that will be installed without being
