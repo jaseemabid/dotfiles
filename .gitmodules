@@ -7,3 +7,6 @@
 [submodule "oh-my-zsh"]
 	path = zsh/.oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh
+[submodule "spacemacs/.emacs.d"]
+	path = spacemacs/.emacs.d
+	url = https://github.com/syl20bnr/spacemacs
