@@ -30,7 +30,8 @@ values."
    dotspacemacs-configuration-layer-path '()
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '((c-c++ :variables c-c++-enable-clang-support t)
+   '(asciidoc
+     (c-c++ :variables c-c++-enable-clang-support t)
      (shell :variables
             shell-default-shell 'eshell
             shell-default-height 30
@@ -142,7 +143,7 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '()
+   dotspacemacs-themes '(default solarized solarized-light)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
@@ -411,8 +412,44 @@ you should place your code here."
     :config
     (setq-default magit-revision-show-gravatars nil))
 
-  (use-package uniquify
+  (use-package org
+    :bind (("C-c a" . org-agenda)
+           ("C-c k" . org-store-link)
+           ("C-c r" . org-capture)
+           :map org-mode-map
+           ("C-c l" . j/org-insert-link))
     :config
+    (setq org-agenda-files `("~/Notes")
+          org-agenda-timegrid-use-ampm t ;; 12hr format for agenda view
+          org-completion-use-ido t
+          org-default-notes-file "~/Notes/todo.org"
+          org-directory "~/Notes"
+          org-log-done 'time
+          org-return-follows-link t
+          org-src-fontify-natively t
+          org-startup-folded nil
+          org-capture-templates
+          '(("t" "Add personal todo" entry (file+headline "~/Notes/todo.org" "Tasks")
+             "* TODO %?\n  %i"
+             :kill-buffer t
+             :empty-lines 1)
+            ("w" "Add a work todo" entry (file+headline "~/Notes/work.org" "Tasks")
+             "* TODO %?\n  %i"
+             :kill-buffer t)
+            ("r" "Refile" plain (file "~/Notes/refile.org")
+             "%?\n %i"
+             :kill-buffer t)
+            ("b" "Reading" entry (file+headline "~/Notes/reading.org" "Reading")
+             "** %^{title}\n   %T\n\n%?"
+             :kill-buffer t)
+            ("j" "Journal" plain (file (format "%s%s.org" "~/Notes/Journal/"
+                                               (format-time-string "%Y %m %d")))
+             "%U\n\n%?%i"
+             :kill-buffer t
+             :unnarrowed t))))
+
+  (use-package uniquify
+    :init
     (setq uniquify-buffer-name-style 'forward
           uniquify-min-dir-content 1))
 
@@ -447,3 +484,36 @@ you should place your code here."
     (setq flycheck-gcc-language-standard "c++11"))
 
   t)
+
+(defun syntax-checking/post-init-popwin ()
+  (push '("^\\*Flycheck.+\\*$"
+          :regexp t
+          :dedicated nil
+          :width 0.5
+          :position right
+          :stick t
+          :noselect t)
+        popwin:special-display-config))
+
+(defun dotspacemacs/emacs-custom-settings ()
+  "Emacs custom settings.
+This is an auto-generated function, do not modify its content directly, use
+Emacs customize menu instead.
+This function is called at the very end of Spacemacs initialization."
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(evil-want-Y-yank-to-eol nil)
+ '(package-selected-packages
+   (quote
+    (adoc-mode markup-faces powerline anaconda-mode smartparens goto-chg window-purpose godoctor go-rename go-guru go-eldoc flycheck-gometalinter company-go go-mode sqlup-mode sql-indent cmake-ide levenshtein dash-functional iedit alert web-mode tagedit slim-mode scss-mode sass-mode pug-mode less-css-mode impatient-mode simple-httpd helm-css-scss haml-mode emmet-mode company-web web-completion-data helm-gtags ggtags org-category-capture evil flycheck haskell-mode yasnippet company projectile helm helm-core avy markdown-mode org-plus-contrib magit magit-popup with-editor async hydra rust-mode dash solarized-theme geiser neotree lorem-ipsum fancy-battery auto-compile packed yapfify yaml-mode xterm-color ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package unfill toml-mode toc-org symon string-inflection spaceline smeargle shell-pop restart-emacs realgud rainbow-delimiters racer pyvenv pytest pyenv-mode py-isort popwin pip-requirements persp-mode pcre2el password-generator paradox orgit org-projectile org-present org-pomodoro org-download org-bullets org-brain open-junk-file mwim multi-term move-text mmm-mode material-theme markdown-toc magit-gitflow macrostep llvm-mode live-py-mode linum-relative link-hint ledger-mode intero info+ indent-guide hy-mode hungry-delete htmlize hlint-refactor hl-todo hindent highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-pydoc helm-purpose helm-projectile helm-mode-manager helm-make helm-hoogle helm-gitignore helm-flx helm-descbinds helm-company helm-c-yasnippet helm-ag haskell-snippets google-translate golden-ratio gnuplot gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md fuzzy flyspell-correct-helm flycheck-rust flycheck-pos-tip flycheck-ledger flycheck-haskell flx-ido fill-column-indicator eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help erlang elisp-slime-nav editorconfig dumb-jump disaster define-word dante cython-mode csv-mode company-statistics company-ghci company-ghc company-cabal company-c-headers company-anaconda column-enforce-mode cmm-mode cmake-mode clean-aindent-mode clang-format cargo auto-yasnippet auto-highlight-symbol auto-dictionary aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell)))
+ '(popwin:popup-window-position (quote right)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+)
