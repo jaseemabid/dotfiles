@@ -532,4 +532,9 @@ This function is called at the very end of Spacemacs initialization."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(markup-attribute-face ((t (:inherit markup-meta-face :slant italic))))
+ '(markup-meta-face ((t (:stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 1.0 :width normal :foundry "unknown" :family "Monospace"))))
+ '(markup-title-0-face ((t (:inherit markup-gen-face :height 1.4))))
+ '(markup-title-1-face ((t (:inherit markup-gen-face :height 1.2))))
+ '(markup-title-2-face ((t (:inherit markup-gen-face :height 1.2))))
+ '(markup-title-3-face ((t (:inherit markup-gen-face :weight bold :height 1.2)))))
