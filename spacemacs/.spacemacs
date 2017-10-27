@@ -447,6 +447,18 @@ you should place your code here."
              :kill-buffer t
              :unnarrowed t))))
 
+  (use-package popwin
+    :init
+    (defun syntax-checking/post-init-popwin ()
+      (push '("^\\*Flycheck.+\\*$"
+              :regexp t
+              :dedicated nil
+              :width 0.5
+              :position right
+              :stick t
+              :noselect t)
+            popwin:special-display-config)))
+
   (use-package uniquify
     :init
     (setq uniquify-buffer-name-style 'forward
@@ -484,15 +496,6 @@ you should place your code here."
 
   t)
 
-(defun syntax-checking/post-init-popwin ()
-  (push '("^\\*Flycheck.+\\*$"
-          :regexp t
-          :dedicated nil
-          :width 0.5
-          :position right
-          :stick t
-          :noselect t)
-        popwin:special-display-config))
 
 (defun dotspacemacs/emacs-custom-settings ()
   "Emacs custom settings.
@@ -521,18 +524,16 @@ This function is called at the very end of Spacemacs initialization."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ansi-color-names-vector
-   ["#0a0814" "#f2241f" "#67b11d" "#b1951d" "#4f97d7" "#a31db1" "#28def0" "#b2b2b2"])
+ '(evil-want-Y-yank-to-eol nil)
  '(package-selected-packages
    (quote
-    (yapfify yaml-mode xterm-color ws-butler winum which-key web-mode volatile-highlights vi-tilde-fringe uuidgen use-package unfill toml-mode toc-org tagedit sql-indent spaceline powerline smeargle slim-mode shell-pop scss-mode sass-mode restart-emacs rainbow-delimiters racer pyvenv pytest pyenv-mode py-isort pug-mode popwin pip-requirements persp-mode pcre2el paradox spinner orgit org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-plus-contrib org-download org-bullets open-junk-file mwim multi-term move-text mmm-mode markdown-toc markdown-mode magit-gitflow macrostep llvm-mode live-py-mode linum-relative link-hint less-css-mode ledger-mode intero info+ indent-guide hydra hy-mode dash-functional hungry-delete htmlize hlint-refactor hl-todo hindent highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-pydoc helm-projectile helm-mode-manager helm-make projectile helm-hoogle helm-gtags helm-gitignore request helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag haskell-snippets haml-mode google-translate golden-ratio go-guru go-eldoc gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md ggtags geiser fuzzy flyspell-correct-helm flyspell-correct flycheck-rust seq flycheck-pos-tip pos-tip flycheck-ledger flycheck-haskell flycheck pkg-info epl flx-ido flx fill-column-indicator eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit magit magit-popup git-commit with-editor evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight eshell-z eshell-prompt-extras esh-help erlang emmet-mode elisp-slime-nav dumb-jump disaster diminish define-word cython-mode csv-mode company-web web-completion-data company-statistics company-go go-mode company-ghci company-ghc ghc haskell-mode company-cabal company-c-headers company-anaconda anaconda-mode pythonic f dash s company column-enforce-mode cmm-mode cmake-mode clean-aindent-mode clang-format cargo rust-mode bind-map bind-key auto-yasnippet yasnippet auto-highlight-symbol auto-dictionary aggressive-indent adoc-mode markup-faces adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core async ac-ispell auto-complete popup))))
+    (material-theme yapfify yaml-mode xterm-color ws-butler winum which-key web-mode volatile-highlights vi-tilde-fringe uuidgen use-package unfill toml-mode toc-org tagedit sql-indent spaceline powerline smeargle slim-mode shell-pop scss-mode sass-mode restart-emacs rainbow-delimiters racer pyvenv pytest pyenv-mode py-isort pug-mode popwin pip-requirements persp-mode pcre2el paradox spinner orgit org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-plus-contrib org-download org-bullets open-junk-file mwim multi-term move-text mmm-mode markdown-toc markdown-mode magit-gitflow macrostep llvm-mode live-py-mode linum-relative link-hint less-css-mode ledger-mode intero info+ indent-guide hydra hy-mode dash-functional hungry-delete htmlize hlint-refactor hl-todo hindent highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-pydoc helm-projectile helm-mode-manager helm-make projectile helm-hoogle helm-gtags helm-gitignore request helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag haskell-snippets haml-mode google-translate golden-ratio go-guru go-eldoc gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md ggtags geiser fuzzy flyspell-correct-helm flyspell-correct flycheck-rust seq flycheck-pos-tip pos-tip flycheck-ledger flycheck-haskell flycheck pkg-info epl flx-ido flx fill-column-indicator eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit magit magit-popup git-commit with-editor evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight eshell-z eshell-prompt-extras esh-help erlang emmet-mode elisp-slime-nav dumb-jump disaster diminish define-word cython-mode csv-mode company-web web-completion-data company-statistics company-go go-mode company-ghci company-ghc ghc haskell-mode company-cabal company-c-headers company-anaconda anaconda-mode pythonic f dash s company column-enforce-mode cmm-mode cmake-mode clean-aindent-mode clang-format cargo rust-mode bind-map bind-key auto-yasnippet yasnippet auto-highlight-symbol auto-dictionary aggressive-indent adoc-mode markup-faces adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core async ac-ispell auto-complete popup))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(markup-attribute-face ((t (:inherit markup-meta-face :slant italic))))
- '(markup-meta-face ((t (:stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 1.0 :width normal :foundry "unknown" :family "Monospace"))))
  '(markup-title-0-face ((t (:inherit markup-gen-face :height 1.4))))
  '(markup-title-1-face ((t (:inherit markup-gen-face :height 1.2))))
  '(markup-title-2-face ((t (:inherit markup-gen-face :height 1.2))))
