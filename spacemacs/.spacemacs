@@ -69,10 +69,17 @@ values."
    ;; A list of packages that will not be installed and loaded.
    dotspacemacs-excluded-packages
    '(anaconda-mode
+     anzu
      auto-compile
+     csv-mode
      fancy-battery
+     git-timemachine
+     gnuplot
+     golden-ratio
      lorem-ipsum
      neotree
+     org-download
+     org-projectile
      smartparens
      version-control
      yapf-mode
