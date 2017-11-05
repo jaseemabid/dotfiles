@@ -348,7 +348,8 @@ you should place your code here."
                 truncate-lines t
                 vc-follow-symlinks t
                 visible-bell t
-                vc-follow-symlinks t)
+                vc-follow-symlinks t
+                winum-scope 'frame-local)
 
   (use-package abbrev
     :diminish abbrev-mode
