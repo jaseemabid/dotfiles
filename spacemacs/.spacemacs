@@ -79,6 +79,9 @@ values."
      lorem-ipsum
      neotree
      org-download
+     neotree
+     fancy-battery
+     golden-ratio
      org-projectile
      smartparens
      version-control
