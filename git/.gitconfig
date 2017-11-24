@@ -49,3 +49,8 @@
     autocorrect = 1
 [diff]
     compactionHeuristic = true
+[sendemail]
+	smtpuser = jaseemabid@gmail.com
+	smtpserver = smtp.googlemail.com
+	smtpencryption = tls
+	smtpserverport = 587
