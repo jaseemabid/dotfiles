@@ -45,7 +45,7 @@ then
 else
     # Non root users
     if [[ "$OSTYPE" == "linux-gnu" ]]; then
-        plugins=(git stack tmux z)
+        plugins=(git docker stack tmux virtualenv virtualenvwrapper z)
     elif [[ "$OSTYPE" == "darwin"* ]]; then
         plugins=(boot2docker docker git stack tmux z)
     else
