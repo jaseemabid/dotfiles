@@ -6,7 +6,7 @@ ZSH=$HOME/.oh-my-zsh
 DEFAULT_USER=$(whoami)
 export LC_ALL="en_US.UTF-8"
 
-export EDITOR='nvim'
+export EDITOR='emacsclient'
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
