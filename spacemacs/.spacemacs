@@ -337,6 +337,7 @@ you should place your code here."
                 c-default-style nil
                 case-fold-search t
                 fill-column 80
+                go-tab-width 4
                 indent-tabs-mode nil
                 major-mode 'org-mode
                 powerline-default-separator 'arrow
