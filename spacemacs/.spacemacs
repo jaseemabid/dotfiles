@@ -385,7 +385,7 @@ you should place your code here."
         ("8luv" "♥")
         ("8meh" "¯\\_(ツ)_/¯")
         ("8nin" "∉")
-        ("8no" "❌")
+        ("8no" "✗")
         ("8ok" "✓")
         ("8rar" "→")
         ("8rs" "₹")
