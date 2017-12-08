@@ -1,6 +1,7 @@
 #!/bin/bash
 
-rsync --archive --xattrs --acls -v \
+rsync --archive --xattrs --acls -v  \
     --delete --itemize-changes --partial --progress \
-    --include-from=.backup --exclude={".","/*"} \
+    --exclude=".[!.]*" \
+    --exclude={go,tmp,dotfiles,Downloads,Projects} \
     ~/ /run/media/j/One
