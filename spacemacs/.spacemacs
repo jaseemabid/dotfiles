@@ -504,6 +504,7 @@ you should place your code here."
 
   ;; A bunch of personal key bindings
   (spacemacs/set-leader-keys
+    ","  'replace-string
     "bx" 'bury-buffer
     "fq" 'unfill-toggle
     "w1" 'spacemacs/toggle-maximize-buffer
