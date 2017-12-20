@@ -25,6 +25,7 @@ dotfiles: fonts
 	stow codex
 	stow ctags
 	stow curl
+	# sudo stow -t / docker
 	stow emacs
 	stow git
 	stow gpg
