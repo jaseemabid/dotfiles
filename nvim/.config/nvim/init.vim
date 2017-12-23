@@ -35,6 +35,11 @@ set smartcase           " ... unless the query has capital letters.
 set gdefault            " Use 'g' flag by default with :s/foo/bar/.
 set magic               " Use 'magic' patterns (extended regular expressions).
 
+" Highlight long lines and whitespace
+match ErrorMsg '\%>120v.\+'
+match ErrorMsg '\s\+$'
+
+
 set clipboard=unnamedplus,unnamed
 
 " Fix tabs
