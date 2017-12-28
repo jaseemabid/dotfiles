@@ -398,6 +398,16 @@ you should place your code here."
         ("8t" "#+title:")
         ("8tau" "τ")
 
+        ("8a1" "❶")
+        ("8a2" "❷")
+        ("8a3" "❸")
+        ("8a4" "❹")
+        ("8a5" "❺")
+        ("8a6" "❻")
+        ("8a7" "❼")
+        ("8a8" "❽")
+        ("8a9" "❾")
+
         ;; email
         ("8me" user-mail-address)
         ("8i"  user-full-name))))
