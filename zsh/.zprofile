@@ -1,6 +1,7 @@
 # Set env variables here
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
-    path=(~/bin ~/.local/bin ~/.cargo/bin $path)
+    export GOPATH=~/go
+    path=(~/bin ~/.local/bin ~/.cargo/bin ~/go/bin $path)
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     path=(~/bin ~/.local/bin ~/.cargo/bin
           /Applications/Emacs.app/Contents/MacOS/bin
