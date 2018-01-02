@@ -365,6 +365,13 @@ you should place your code here."
                 vc-follow-symlinks t
                 winum-scope 'frame-local)
 
+  ;; Always split horizontally
+  (setq-default split-height-threshold nil
+                split-width-threshold  0)
+
+  ;; Enable auto fill
+  (auto-fill-mode)
+
   (use-package abbrev
     :diminish abbrev-mode
 
