@@ -49,6 +49,7 @@ values."
      haskell
      helm
      html
+     idris
      markdown
      org
      python
