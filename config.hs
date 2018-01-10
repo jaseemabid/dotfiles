@@ -23,7 +23,8 @@ myManageHook = composeAll
    , className =? "Thunar"        --> doShift "4"
    , className =? "Nautilus"      --> doShift "4"
    , className =? "Evince"        --> doShift "5"
-   , className =? "Hexchat"       --> doShift "9"
+   , className =? "Mattermost"    --> doShift "6"
+   , className =? "Hexchat"       --> doShift "7"
    , className =? "Xfce4-notifyd" --> doIgnore
    , className =? "Pinentry"      --> doCenterFloat
    , isFullscreen                 --> doFullFloat
@@ -42,12 +43,14 @@ main = do
       , manageHook = manageDocks <+> myManageHook <+> manageHook desktopConfig
       , layoutHook = avoidStruts $ smartBorders $ layoutHook desktopConfig
       , handleEventHook = fullscreenEventHook
-
+      , workspaces = ws
       } `additionalKeysP` (additional ++ switch ++ kinesis) `removeKeysP` removed
 
   where
 
-    removed = ["M-p"]
+    ws = map show ([1..9] :: [Int])
+
+    removed = [] --["M-p"]
 
     -- Key codes: https://hackage.haskell.org/package/xmonad-contrib-0.13/docs/XMonad-Util-EZConfig.html
     additional = [
@@ -67,11 +70,12 @@ main = do
       , ("<Print>", spawn "$(yeganesh -x)")
       ]
 
-    switch = [("<F" ++ x ++ ">", windows $ W.greedyView x) |
-               x <- map show ([1..9] :: [Int])]
+    switch = [("<F" ++ x ++ ">", windows $ W.greedyView x) | x <- ws]
 
-    -- Switch on kinesis with asdf and jkl; because numbers are far away
-    kinesis = [("M-" ++ key, windows $ W.greedyView index) |
-               (key, index) <- [("a", "1"), ("s", "2"), ("d", "3"), ("f", "4")]]
+    -- Switch on kinesis with asdf because numbers are far away
+    kkeys = ["a", "s", "d", "f"]
+
+    kinesis = [("M-" ++ key, windows $ W.greedyView space) |
+               (key, space) <- zip kkeys ws]
 
     lock = "i3lock -c 002b36 && systemctl suspend"
