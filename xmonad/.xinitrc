@@ -6,9 +6,4 @@
 # Set a wallpaper
 xsetroot -solid '#002b36'
 
-# Increase mouse scrolling speed
-imwheel -k -b "45"
-
-alacritty &
-
-exec xmonad
+exec xmonad-testing >> .xmonad/logs 2>&1

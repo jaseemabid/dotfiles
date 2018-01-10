@@ -1,17 +1,14 @@
 #!/bin/sh -exu
 
-# The directory holding your source code and stack.yaml file:
-SRC_DIR=~/Projects/xmonad-testing
-
-# The name of the executable produced by stack.
-EXE_NAME=xmonad-testing
-
 # This script will be given a single argument, the path to the executable it
-# should produce.
-output_file=$1; shift
+# should produce. This is usually `/home/j/.xmonad/xmonad-x86_64-linux`
+# output_file=$1; shift
 
-cd $SRC_DIR
+cd ~/Projects/xmonad-testing
+echo "Rebuilding xmonad config"
 stack build
 
-unlink $output_file || true
-ln `stack path --local-install-root`/bin/$EXE_NAME $output_file
+echo "Relinking $1"
+
+unlink $1 || true
+ln `stack path --local-install-root`/bin/xmonad-testing $1
