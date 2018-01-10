@@ -34,7 +34,7 @@ main = do
     xmproc <- spawnPipe "xmobar ~/.xmonad/xmobar.hs"
     xmonad $ desktopConfig {
         terminal = "alacritty"
-      , modMask  = mod1Mask
+      , modMask  = mod4Mask
       , logHook = dynamicLogWithPP xmobarPP {
               ppOutput = hPutStrLn xmproc
             , ppTitle = xmobarColor "green" "" . shorten 50
