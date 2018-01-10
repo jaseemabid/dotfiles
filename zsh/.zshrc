@@ -74,6 +74,10 @@ source ~/.zaliases
 
 [[ -s "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
 
+if [[ -o login ]]; then
+    startx
+fi
+
 if [ -z "$TMUX" ]
 then
     tmux attach
