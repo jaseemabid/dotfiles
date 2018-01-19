@@ -6,4 +6,16 @@
 # Set a wallpaper
 xsetroot -solid '#002b36'
 
+# Disable nm-applet and trayer. This doesnt work well at all.
+#
+# if [ -z "$(pgrep nm-applet)" ] ; then
+#    nm-applet &
+# fi
+#
+# Looks like trayer needs to be started after nm-applet etc.
+# trayer --align right  --SetPartialStrut true --width 4 --height 30 \
+#       --transparent true --tint 0x002b36 --alpha 0 &
+
+redshift &
+
 exec xmonad-testing > .xmonad/logs 2>&1
