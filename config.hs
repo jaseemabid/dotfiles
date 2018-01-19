@@ -27,6 +27,8 @@ myManageHook = composeAll
    , className =? "Mattermost"    --> doShift "6"
    , className =? "Hexchat"       --> doShift "7"
    , className =? "Xfce4-notifyd" --> doIgnore
+   , className =? "Blueberry.py"  --> doCenterFloat
+   , className =? "Pavucontrol"   --> doCenterFloat
    , className =? "Pinentry"      --> doCenterFloat
    , isFullscreen                 --> doFullFloat
    , isDialog                     --> doCenterFloat
