@@ -8,6 +8,7 @@ import XMonad.Hooks.DynamicLog hiding (xmobar)
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers (isFullscreen, isDialog,  doFullFloat, doCenterFloat)
+import XMonad.Hooks.SetWMName
 import XMonad.Layout.NoBorders (smartBorders)
 import XMonad.Util.EZConfig (additionalKeysP, removeKeysP)
 import XMonad.Util.Run (spawnPipe)
@@ -44,6 +45,7 @@ main = do
       , layoutHook = avoidStruts $ smartBorders $ layoutHook desktopConfig
       , handleEventHook = fullscreenEventHook
       , workspaces = ws
+      , startupHook = setWMName "LG3D"
       } `additionalKeysP` (additional ++ switch ++ kinesis) `removeKeysP` removed
 
   where
