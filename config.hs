@@ -74,6 +74,8 @@ main = do
       , ("M-<Insert>", windows W.focusDown)
 
       , ("<Print>", spawn "$(yeganesh -x)")
+
+      , ("M-n", spawn "nautilus")
       ]
 
     switch = [("<F" ++ x ++ ">", windows $ W.greedyView x) | x <- ws]
