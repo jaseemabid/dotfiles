@@ -79,7 +79,7 @@ if [[ -z $DISPLAY ]]; then
 fi
 
 if [[ -z $TMUX ]]; then
-    tmux attach
+    exec tmux attach
 fi
 
 # Return success if everything went right
