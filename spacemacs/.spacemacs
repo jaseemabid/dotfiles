@@ -552,6 +552,16 @@ you should place your code here."
               :noselect t)
             popwin:special-display-config)))
 
+  (use-package spaceline
+    :init
+    (spaceline-toggle-buffer-encoding-abbrev-off)
+    (spaceline-toggle-buffer-position-off)
+    (spaceline-toggle-flycheck-warning-off)
+    (spaceline-toggle-hud)
+    (spaceline-toggle-input-method-off)
+    (spaceline-toggle-major-mode-off)
+    (spaceline-toggle-version-control-off))
+
   (use-package uniquify
     :init
     (setq uniquify-buffer-name-style 'forward
