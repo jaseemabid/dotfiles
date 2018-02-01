@@ -287,6 +287,8 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-show-transient-state-color-guide t
    ;; If non-nil unicode symbols are displayed in the mode line. (default t)
    dotspacemacs-mode-line-unicode-symbols t
+   ;; Mode line config required by tests
+   dotspacemacs-mode-line-theme 'spacemacs
    ;; If non-nil smooth scrolling (native-scrolling) is enabled. Smooth
    ;; scrolling overrides the default behavior of Emacs which recenters point
    ;; when it reaches the top or bottom of the screen. (default t)
