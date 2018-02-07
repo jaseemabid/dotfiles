@@ -29,6 +29,7 @@
     pill = pull
     r = rebase
     s = status
+    serve = !git daemon --base-path=. --export-all --reuseaddr --informative-errors --verbose
     sync = !git pull --rebase && git push
     theirs = "!f() { git checkout --theirs -- $@ && git add -- $@; }; f"
     today = diff @{yesterday}.. --stat
