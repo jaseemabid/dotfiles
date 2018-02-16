@@ -8,7 +8,7 @@ Config {
   , sepChar = "%"
   , allDesktops = True
   , alignSep = "}{"
-  , template = " %StdinReader% }{ %dynnetwork% %multicpu% %memory% %bright% %volume% %coretemp% %battery% %date%      "
+  , template = " %StdinReader% }{ %dynnetwork% %multicpu% %memory% %bright% %volume% %coretemp% %battery% %date%"
   , commands = [
     Run Brightness   ["--template"  , " <percent>%"
                      , "--"
@@ -32,7 +32,10 @@ Config {
                      ] 10
 
     -- network activity monitor (dynamic interface resolution)
-    , Run DynNetwork [ "--template" , " [<rx> <tx>] kB/s"
+    --
+    -- Fontawesome uses unicode points OxF062 and OxF063 for the arrows but the
+    -- chars are invalid.
+    , Run DynNetwork [ "--template" , "  <rx>  <tx> kB/s"
                      , "--Low"      , "1000"       -- units: B/s
                      , "--High"     , "5000"       -- units: B/s
                      , "--low"      , "darkgreen"
@@ -41,7 +44,7 @@ Config {
                      ] 10
 
     -- cpu activity monitor
-    , Run MultiCpu   [ "--template" , " [<autototal>]%"
+    , Run MultiCpu   [ "--template" , " <total>%"
                      , "--Low"      , "50"         -- units: %
                      , "--High"     , "85"         -- units: %
                      , "--low"      , "darkgreen"
@@ -69,6 +72,6 @@ Config {
                      ] 10
 
     , Run Com "volume" [] "" 10
-    , Run Date " %a %b %d   %l:%M:%S %p " "date" 10
+    , Run Date " %a %b %d  %l:%M:%S %p " "date" 10
     , Run StdinReader]
 }
