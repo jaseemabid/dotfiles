@@ -66,8 +66,8 @@ main = do
       , ("<XF86AudioRaiseVolume>", spawn "amixer -q set Master 5%+")
 
       -- On the Thinkpad, I'm unable to map to the power button, but Fn+Power is
-      -- handled as XF86WakeUp.
-      , ("<XF86WakeUp>", spawn suspend)
+      -- handled as XF86WakeUp. Disabled because unreliable
+      -- , ("<XF86WakeUp>", spawn suspend)
       , ("M-l", spawn lock)
 
       , ("<Insert>", toggleWS)
@@ -87,4 +87,4 @@ main = do
                (key, space) <- zip kkeys ws]
 
     lock = "i3lock -c 002b36"
-    suspend = lock ++ " && systemctl suspend"
+    -- suspend = lock ++ " && systemctl suspend"
