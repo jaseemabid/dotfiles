@@ -469,11 +469,6 @@ you should place your code here."
   (use-package flyspell
     :bind (("<f6>" . flyspell-correct-previous-word-generic)))
 
-  (use-package exec-path-from-shell
-    :config
-    (setq exec-path-from-shell-check-startup-files nil)
-    (exec-path-from-shell-initialize))
-
   (use-package geiser
     :config
     (setq geiser-chez-binary "scheme"
