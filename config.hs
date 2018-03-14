@@ -16,18 +16,17 @@ import qualified XMonad.StackSet as W
 
 myManageHook :: Query (Data.Monoid.Endo WindowSet)
 myManageHook = composeAll
-   [ className =? "Alacritty"     --> doShift "1"
+   [ title =? "Any.do"            --> (doShift "5" <+> doCenterFloat)
+   , className =? "Alacritty"     --> doShift "1"
    , className =? "Terminator"    --> doShift "1"
    , className =? "Emacs"         --> doShift "2"
    , className =? "Google-chrome" --> doShift "3"
    , className =? "Firefox"       --> doShift "3"
    , className =? "Thunar"        --> doShift "4"
    , className =? "Nautilus"      --> doShift "4"
-   -- , className =? "Evince"        --> doShift "5"
    , className =? "Mattermost"    --> doShift "6"
    , className =? "Hexchat"       --> doShift "7"
    , className =? "Xfce4-notifyd" --> doIgnore
-   , className =? "Blueberry.py"  --> doCenterFloat
    , className =? "Pavucontrol"   --> doCenterFloat
    , className =? "Pinentry"      --> doCenterFloat
    , isFullscreen                 --> doFullFloat
