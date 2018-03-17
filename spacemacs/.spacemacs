@@ -357,7 +357,7 @@ It should only modify the values of Spacemacs settings."
    ;; `trailing' to delete only the whitespace at end of lines, `changed' to
    ;; delete only whitespace for changed lines or `nil' to disable cleanup.
    ;; (default nil)
-   dotspacemacs-whitespace-cleanup 'trailing))
+   dotspacemacs-whitespace-cleanup 'all))
 
 (defun dotspacemacs/user-init ()
   "Initialization for user code:
