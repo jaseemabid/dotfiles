@@ -4,7 +4,7 @@ import System.IO
 import XMonad
 import XMonad.Actions.CycleWS (toggleWS)
 import XMonad.Config.Desktop (desktopConfig)
-import XMonad.Hooks.DynamicLog hiding (xmobar)
+import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers (isFullscreen, isDialog,  doFullFloat, doCenterFloat)
