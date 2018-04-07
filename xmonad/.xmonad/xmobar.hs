@@ -24,11 +24,11 @@ Config {
                      , "--"
                      -- battery specific options
                      -- discharging status
-                     , "-o"         ,"<left>%"
+                     , "-o"         , "<left>%"
                      -- AC "on" status
-                     , "-O"	    , "<fc=#dAA520></fc>"
+                     , "-O"         , "<left>% <fc=#dAA520></fc>"
                      -- charged status
-                     , "-i"	    , "<fc=#006000></fc>"
+                     , "-i"         , "<fc=#006000></fc>"
                      ] 10
 
     -- network activity monitor (dynamic interface resolution)
