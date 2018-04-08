@@ -28,7 +28,7 @@ Config {
                      -- AC "on" status
                      , "-O"         , "<left>% <fc=#dAA520></fc>"
                      -- charged status
-                     , "-i"         , "<fc=#006000></fc>"
+                     , "-i"         , "<left>% <fc=#006000></fc>"
                      ] 10
 
     -- network activity monitor (dynamic interface resolution)
