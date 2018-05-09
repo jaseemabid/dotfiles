@@ -45,7 +45,10 @@ This function should only modify configuration layer settings."
      git
      go
      gtags
-     haskell
+     (haskell :variables
+              haskell-completion-backend 'intero
+              haskell-enable-hindent t
+              haskell-enable-hindent-style "johan-tibell")
      helm
      html
      idris
