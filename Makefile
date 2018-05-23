@@ -21,6 +21,7 @@ all:
 # fonts, iterm2, solarized
 
 dotfiles: fonts
+	sudo stow -t / arch
 	stow bin
 	stow codex
 	stow ctags

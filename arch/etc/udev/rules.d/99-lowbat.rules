@@ -1,0 +1,2 @@
+# Suspend the system when battery level drop triggers an event
+SUBSYSTEM=="power_supply", ATTR{status}=="Discharging", RUN+="/usr/bin/systemctl suspend"
