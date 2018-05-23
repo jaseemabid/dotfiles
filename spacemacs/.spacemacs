@@ -571,6 +571,7 @@ you should place your code here."
   (spacemacs/set-leader-keys
     ","  'replace-string
     "<"  'highlight-symbol-prev
+    "."  'flyspell-correct-previous
     ">"  'highlight-symbol-next
     "bk" 'spacemacs/kill-other-buffers
     "bx" 'bury-buffer
