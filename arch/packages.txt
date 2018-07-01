@@ -1,0 +1,9 @@
+emacs
+git
+neovim
+ranger
+stow
+the_silver_searcher
+tmux
+trash-cli
+youtube-dl
