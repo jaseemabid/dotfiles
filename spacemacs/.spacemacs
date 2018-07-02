@@ -76,16 +76,17 @@ This function should only modify configuration layer settings."
      anzu
      auto-compile
      csv-mode
+     evil-ediff
+     fancy-battery
      fancy-battery
      git-timemachine
      gnuplot
      golden-ratio
+     golden-ratio
      lorem-ipsum
      neotree
-     org-download
      neotree
-     fancy-battery
-     golden-ratio
+     org-download
      org-projectile
      smartparens
      version-control
