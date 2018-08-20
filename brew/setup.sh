@@ -37,5 +37,4 @@ brew install youtube-dl
 brew install zsh
 
 brew upgrade
-brew linkapps
 brew cleanup
