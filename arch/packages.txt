@@ -1,4 +1,7 @@
 emacs
+gdb
+budgie-desktop
+i3lock
 git
 neovim
 ranger
