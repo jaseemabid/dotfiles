@@ -55,6 +55,7 @@ This function should only modify configuration layer settings."
      markdown
      org
      python
+     racket
      rust
      scheme
      spacemacs-layouts
@@ -482,7 +483,7 @@ you should place your code here."
   (use-package geiser
     :config
     (setq geiser-chez-binary "scheme"
-          geiser-active-implementations '(chez)))
+          geiser-active-implementations '(chez racket)))
 
   (use-package magit
     :config
