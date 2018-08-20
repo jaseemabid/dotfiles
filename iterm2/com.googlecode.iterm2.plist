@@ -57,6 +57,10 @@
 	<string>282 333 796 486 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 80 1440 797 0 0 1440 877 </string>
+	<key>NeverWarnAboutShortLivedSessions_BFB5423B-7D5F-443B-BA2C-BFA007D22019</key>
+	<true/>
+	<key>NeverWarnAboutShortLivedSessions_BFB5423B-7D5F-443B-BA2C-BFA007D22019_selection</key>
+	<integer>0</integer>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
