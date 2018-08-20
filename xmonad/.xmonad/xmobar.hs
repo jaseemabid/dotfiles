@@ -38,9 +38,9 @@ Config {
     , Run DynNetwork [ "--template" , "  <rx>  <tx> kB/s"
                      , "--Low"      , "1000"       -- units: B/s
                      , "--High"     , "5000"       -- units: B/s
-                     , "--low"      , "darkgreen"
+                     , "--low"      , "darkred"
                      , "--normal"   , "darkorange"
-                     , "--high"     , "darkred"
+                     , "--high"     , "darkgreen"
                      ] 10
 
     -- cpu activity monitor
