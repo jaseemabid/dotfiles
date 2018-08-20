@@ -74,7 +74,7 @@ source ~/.zaliases
 
 [[ -s "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
 
-if [[ -z $DISPLAY ]]; then
+if [[ "$OSTYPE" == "linux-gnu" && -z $DISPLAY ]]; then
     exec startx
 fi
 
