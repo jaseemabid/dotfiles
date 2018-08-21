@@ -18,6 +18,7 @@ brew "git"
 brew "git-lfs"
 brew "gnupg", link: false
 brew "go"
+brew "fd"
 brew "haskell-stack"
 brew "highlight"
 brew "htop"
