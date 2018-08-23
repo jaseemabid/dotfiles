@@ -38,6 +38,7 @@ This function should only modify configuration layer settings."
      auto-completion
      better-defaults
      csv
+     protobuf
      docker
      emacs-lisp
      erlang
@@ -69,6 +70,7 @@ This function should only modify configuration layer settings."
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '(ag
+                                      cql-mode
                                       edit-indirect
                                       groovy-mode
                                       highlight-symbol
