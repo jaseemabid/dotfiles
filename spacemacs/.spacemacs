@@ -43,7 +43,8 @@ This function should only modify configuration layer settings."
      erlang
      finance
      git
-     go
+     (go :variables go-use-gometalinter t
+                    go-format-before-save t)
      gtags
      (haskell :variables
               haskell-completion-backend 'intero
