@@ -589,6 +589,10 @@ you should place your code here."
     "w1" 'spacemacs/toggle-maximize-buffer
     "yw" 'copy-word)
 
+  ;; Move around with the special keys on Logitech M510 mouse
+  (global-set-key (kbd "<mouse-5>") 'backward-paragraph)
+  (global-set-key (kbd "<mouse-4>") 'forward-paragraph)
+
   ;; A bunch of hooks
   (add-hook 'mouse-leave-buffer-hook 'stop-using-minibuffer)
   (add-hook 'c++-mode-hook 'pick-cpp)
