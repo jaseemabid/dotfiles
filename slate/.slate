@@ -13,7 +13,7 @@ alias lefthalf          move screenOriginX;screenOriginY                screenSi
 alias righthalf         move screenOriginX+screenSizeX/2;screenOriginY  screenSizeX/2;screenSizeY
 
 # HYPER KEY
-alias hyper ctrl;alt;cmd
+alias hyper cmd
 
 # Location bindings
 bind down:${hyper} ${full}
