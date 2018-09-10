@@ -52,11 +52,13 @@ alias record="ffmpeg -f x11grab -r 30 -s 1366x768 -i :0.0 -f alsa -ac 2 -i pulse
 alias ty="yt"
 alias untar="tar -zxvf $1"
 alias yt="youtube-dl -wci -o '%(title)s-%(id)s.%(ext)s'"
+alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
 
 # Alternatives
 alias vi="emacsclient"
 alias rm="trash"
 alias acroread="open"
+alias ls='exa --long --header --git --tree --level=2'
 
 # Screensetup
 alias horizontal='xrandr --output VIRTUAL1 --off --output eDP1 --primary --mode 1920x1080 --pos 1920x0 --rotate normal --output DP1 --off --output DP2-1 --off --output DP2-2 --mode 1920x1080 --pos 0x0 --rotate normal --output DP2-3 --off --output HDMI2 --off --output HDMI1 --off --output DP2 --off'
@@ -72,3 +74,5 @@ mkcd () {
     mkdir -p "${1}"
     cd "${1}"
 }
+
+alias mux=tmuxinator
