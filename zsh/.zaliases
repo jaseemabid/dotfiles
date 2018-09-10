@@ -24,8 +24,8 @@ else
 fi
 
 # Listing
-alias l='ls'
-alias la='ls -al'
+alias ls='exa --long --header --git --tree --level=1'
+alias le='exa --long --header --git --tree --level=2'
 alias ll='ranger'
 
 # git; lot more provided by git plugin
@@ -58,7 +58,6 @@ alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
 alias vi="emacsclient"
 alias rm="trash"
 alias acroread="open"
-alias ls='exa --long --header --git --tree --level=2'
 
 # Screensetup
 alias horizontal='xrandr --output VIRTUAL1 --off --output eDP1 --primary --mode 1920x1080 --pos 1920x0 --rotate normal --output DP1 --off --output DP2-1 --off --output DP2-2 --mode 1920x1080 --pos 0x0 --rotate normal --output DP2-3 --off --output HDMI2 --off --output HDMI1 --off --output DP2 --off'
