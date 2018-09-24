@@ -1,7 +1,7 @@
 # -*- conf -*-
 [user]
     name = Jaseem Abid
-    email = jaseemabid@gmail.com
+    email = jaseemabid@monzo.com
 [github]
     username = jaseemabid
 [apply]
@@ -51,9 +51,9 @@
 [diff]
     compactionHeuristic = true
 [sendemail]
-	smtpuser = jaseemabid@gmail.com
-	smtpserver = smtp.googlemail.com
-	smtpencryption = tls
-	smtpserverport = 587
+    smtpuser = jaseemabid@gmail.com
+    smtpserver = smtp.googlemail.com
+    smtpencryption = tls
+    smtpserverport = 587
 [url "ssh://git@github.com/monzo/"]
-	insteadOf = https://github.com/monzo/
+    insteadOf = https://github.com/monzo/
