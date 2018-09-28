@@ -88,18 +88,16 @@ This function should only modify configuration layer settings."
      csv-mode
      evil-ediff
      fancy-battery
-     fancy-battery
      git-timemachine
      gnuplot
      golden-ratio
-     golden-ratio
      lorem-ipsum
-     neotree
      neotree
      org-download
      org-projectile
      smartparens
      version-control
+     winum
      yapf-mode
      yasnippet)
    ;; Defines the behaviour of Spacemacs when installing packages.
