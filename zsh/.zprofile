@@ -3,10 +3,11 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     export GOPATH=~/go
     path=(~/bin ~/.local/bin ~/.cargo/bin ~/go/bin $path)
 elif [[ "$OSTYPE" == "darwin"* ]]; then
-    path=(~/bin ~/.local/bin ~/.cargo/bin
-          /Applications/Emacs.app/Contents/MacOS/bin
-          /Applications/TeX/TeXShop.app/Contents/Resources/TeXShop/bin/tslatexmk
-          /Library/TeX/Distributions/.DefaultTeX/Contents/Programs/texbin
+    path=(~/bin
+          ~/.local/bin
+          ~/.cargo/bin
+          /usr/local/sbin
+          /usr/local/opt/texinfo/bin
           $path)
 else
     echo "Unknown OS"
