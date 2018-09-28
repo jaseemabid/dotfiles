@@ -87,14 +87,17 @@ This function should only modify configuration layer settings."
      auto-compile
      csv-mode
      evil-ediff
+     eyebrowse
      fancy-battery
      git-timemachine
      gnuplot
      golden-ratio
+     google-translate
      lorem-ipsum
      neotree
      org-download
      org-projectile
+     persp-mode
      smartparens
      version-control
      winum
