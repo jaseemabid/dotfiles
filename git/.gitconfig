@@ -57,3 +57,5 @@
     smtpserverport = 587
 [url "ssh://git@github.com/monzo/"]
     insteadOf = https://github.com/monzo/
+[remote "origin"]
+	prune = true
