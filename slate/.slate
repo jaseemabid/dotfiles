@@ -22,7 +22,7 @@ bind right:${hyper} ${righthalf}
 bind up:${hyper} ${full}
 
 # Send active window to second monitor
-bind space:${hyper} throw next resize
+# bind space:${hyper} throw next resize
 
 # Application aliases
 alias browser  'Google Chrome'
