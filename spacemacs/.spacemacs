@@ -561,6 +561,11 @@ you should place your code here."
               :noselect t)
             popwin:special-display-config)))
 
+  (use-package projectile
+    :init
+    (setq projectile-indexing-method 'alien
+          projectile-enable-caching t))
+
   (use-package spaceline
     :init
     (spaceline-toggle-buffer-encoding-abbrev-off)
