@@ -597,6 +597,11 @@ you should place your code here."
   (global-set-key (kbd "<mouse-5>") 'backward-paragraph)
   (global-set-key (kbd "<mouse-4>") 'forward-paragraph)
 
+  ;; The British keyboard maps M-3 to #; I need the key to just self insert
+  ;; rather than become some prefix. This is such a mess.
+  (global-set-key (kbd "M-3") '(lambda ()
+                                 (interactive)
+                                 (insert-char ?#)))
   ;; A bunch of hooks
   (add-hook 'mouse-leave-buffer-hook 'stop-using-minibuffer)
   (add-hook 'c++-mode-hook 'pick-cpp)
