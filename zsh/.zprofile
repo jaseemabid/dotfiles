@@ -5,6 +5,7 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     path=(~/bin
           ~/.local/bin
+          ~/.cabal/bin
           ~/.cargo/bin
           /usr/local/sbin
           /usr/local/opt/texinfo/bin
