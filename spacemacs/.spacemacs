@@ -30,7 +30,7 @@ This function should only modify configuration layer settings."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(asciidoc
-     (c-c++ :variables c-c++-enable-clang-support t)
+     (c-c++)
      (shell :variables
             shell-default-shell 'eshell
             shell-default-height 30
