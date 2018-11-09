@@ -44,8 +44,13 @@ This function should only modify configuration layer settings."
      erlang
      finance
      git
-     (go :variables go-use-gometalinter t
-                    go-format-before-save t)
+     (go :variables
+         go-use-gometalinter t
+         go-format-before-save t
+         flycheck-gometalinter-vendor t
+         flycheck-gometalinter-fast t
+         flycheck-gometalinter-test t
+         flycheck-gometalinter-deadline "10s")
      gtags
      (haskell :variables
               haskell-completion-backend 'intero
