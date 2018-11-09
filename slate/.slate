@@ -28,8 +28,10 @@ bind up:${hyper} ${full}
 alias browser  'Google Chrome'
 alias editor   'Emacs'
 alias terminal 'iTerm2'
+alias slack    'Slack'
 
 # App bindings
 bind 1:${hyper} focus ${browser}
 bind 2:${hyper} focus ${editor}
 bind 3:${hyper} focus ${terminal}
+bind 4:${hyper} focus ${slack}
