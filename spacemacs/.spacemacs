@@ -418,6 +418,9 @@ you should place your code here."
                 vc-follow-symlinks t
                 winum-scope 'frame-local)
 
+  ;; Start emacs server
+  (server-start)
+
   ;; Always split horizontally
   (setq-default split-height-threshold nil
                 split-width-threshold  0)
