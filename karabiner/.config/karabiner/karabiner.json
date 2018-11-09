@@ -42,6 +42,28 @@
             ]
           },
           {
+            "description": "Anti-RSI - disable left_command + tab",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "tab",
+                  "modifiers": {
+                    "mandatory": [
+                      "left_command"
+                    ],
+                    "optional": [
+                      "caps_lock"
+                    ]
+                  }
+                },
+                "to": {
+                    "key_code": "escape"
+                },
+                "type": "basic"
+              }
+            ]
+          },
+          {
             "description": "Better Finder - Return as Open, Fn+Return as Rename",
             "manipulators": [
               {
