@@ -78,7 +78,8 @@ if [[ "$OSTYPE" == "linux-gnu" && -z $DISPLAY ]]; then
     exec startx
 fi
 
-if [[ -z $TMUX ]]; then
+# Tmux attach by default only local sessions, not for remote ssh
+if [[ -z $TMUX && -z "$SSH_CLIENT" ]]; then
     tmux attach
 fi
 
