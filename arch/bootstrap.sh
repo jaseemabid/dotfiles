@@ -8,7 +8,11 @@ if [ -x "$(which yaourt)" ]; then
 else
     echo "Installing yaourt"
 
-    rm -rf /tmp/yaourt
+    rm -rf /tmp/yaourt /tmp/package-query
+
+    cd /tmp && git clone https://aur.archlinux.org/package-query.git
+    cd package-query && makepkg -si
+
     cd /tmp && git clone https://aur.archlinux.org/yaourt.git
     cd /tmp/yaourt && makepkg -si
 fi
