@@ -51,7 +51,6 @@ This function should only modify configuration layer settings."
          flycheck-gometalinter-fast t
          flycheck-gometalinter-test t
          flycheck-gometalinter-deadline "10s")
-     gtags
      (haskell :variables
               haskell-completion-backend 'intero
               haskell-enable-hindent t
@@ -427,6 +426,10 @@ you should place your code here."
 
   ;; Enable auto fill
   (auto-fill-mode)
+
+  ;; Jumping with the tags pretty much never works, disable
+  (setq spacemacs-default-jump-handlers
+        (remove 'evil-goto-definition spacemacs-default-jump-handlers))
 
   (use-package abbrev
     :diminish abbrev-mode
