@@ -63,6 +63,7 @@ This function should only modify configuration layer settings."
      racket
      rust
      scheme
+     systemd
      spacemacs-layouts
      spell-checking
      sql
