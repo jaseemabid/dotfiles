@@ -2,7 +2,7 @@ Config {
     -- Needs font awesome version 4.7.0 for all the glyphs. v5 changed name of
     -- the font and only contains some of the glyphs.
     font = "xft:Droid Sans Mono:size=16,FontAwesome:size=15:antialias=true"
-  , bgColor = "#002b36"
+  , bgColor = "#00000"
   , fgColor = "#657b83"
   , position = Bottom x
   , sepChar = "%"
