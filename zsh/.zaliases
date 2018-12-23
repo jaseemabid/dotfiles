@@ -55,7 +55,7 @@ alias yt="youtube-dl -wci -o '%(title)s-%(id)s.%(ext)s'"
 alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
 
 # Alternatives
-alias vi="emacsclient"
+alias vi="emacsclient -n"
 alias rm="trash"
 alias acroread="open"
 
