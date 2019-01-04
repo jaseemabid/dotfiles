@@ -25,3 +25,6 @@
 [submodule "tmux/.tmux/plugins/tmux-pain-control"]
 	path = tmux/.tmux/plugins/tmux-pain-control
 	url = https://github.com/tmux-plugins/tmux-pain-control
+[submodule "tmux/.tmux/plugins/tmux-fzf-url"]
+	path = tmux/.tmux/plugins/tmux-fzf-url
+	url = https://github.com/wfxr/tmux-fzf-url
