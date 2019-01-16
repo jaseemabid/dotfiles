@@ -7,6 +7,8 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
           ~/.local/bin
           ~/.cabal/bin
           ~/.cargo/bin
+          /usr/local/opt/ruby/bin
+          ~/.gem/ruby/2.6.0/bin
           /usr/local/sbin
           /usr/local/opt/texinfo/bin
           $path)
