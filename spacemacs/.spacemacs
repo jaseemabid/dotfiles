@@ -41,12 +41,11 @@ This function should only modify configuration layer settings."
      protobuf
      docker
      emacs-lisp
-     lsp
      erlang
      finance
      git
      (go :variables
-         go-backend 'lsp
+         go-backend 'go-mode
          go-use-gometalinter t
          go-format-before-save t)
      (haskell :variables
