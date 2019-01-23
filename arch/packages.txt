@@ -3,7 +3,6 @@ alsa-utils
 aspell-en
 base
 base-devel
-base-devel
 bc
 budgie-desktop
 budgie-extras
@@ -14,6 +13,7 @@ emacs
 eog
 evince
 fd
+fzf
 gdb
 git
 grub
@@ -23,6 +23,7 @@ intel-ucode
 jq
 libxss
 mplayer
+mtr
 nautilus
 neovim
 networkmanager
@@ -35,6 +36,8 @@ ranger
 seahorse
 seahorse-nautilus
 stow
+strace
+syncthing
 terraform
 the_silver_searcher
 tig
