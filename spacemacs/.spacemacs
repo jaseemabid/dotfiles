@@ -496,6 +496,10 @@ you should place your code here."
     (setq geiser-chez-binary "scheme"
           geiser-active-implementations '(chez racket)))
 
+  (use-package make-mode
+    :init
+    (setq-local indent-tabs-mode t))
+
   (use-package magit
     :config
     (setq-default magit-revision-show-gravatars nil))
