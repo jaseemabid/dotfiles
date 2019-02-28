@@ -16,13 +16,12 @@ alias righthalf         move screenOriginX+screenSizeX/2;screenOriginY  screenSi
 alias hyper cmd
 
 # Location bindings
-bind down:${hyper} ${full}
 bind left:${hyper} ${lefthalf}
 bind right:${hyper} ${righthalf}
 bind up:${hyper} ${full}
 
 # Send active window to second monitor
-# bind space:${hyper} throw next resize
+bind down:${hyper} throw next resize
 
 # Application aliases
 alias browser  'Google Chrome'
