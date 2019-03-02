@@ -24,8 +24,11 @@ else
 fi
 
 # Listing
-alias ls='exa --long --header --git --tree --level=1'
-alias le='exa --long --header --git --tree --level=2'
+if [ -x "$(command -v exa)" ]; then
+    alias ls='exa --long --header --git --tree --level=1'
+    alias le='exa --long --header --git --tree --level=2'
+fi
+
 alias ll='ranger'
 
 # git; lot more provided by git plugin
