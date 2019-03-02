@@ -13,7 +13,7 @@ export EDITOR='emacsclient'
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status dir vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status context dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 POWERLEVEL9K_SHORTEN_STRATEGY=truncate_with_package_name
