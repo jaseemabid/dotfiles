@@ -1,5 +1,5 @@
 # Set env variables here
-if [[ "$OSTYPE" == "linux-gnu" ]]; then
+if [[ "$OSTYPE" == "linux"* ]]; then
     export GOPATH=~/
     path=(~/bin ~/.local/bin ~/.cargo/bin ~/go/bin $path)
 elif [[ "$OSTYPE" == "darwin"* ]]; then
