@@ -76,6 +76,7 @@ This function should only modify configuration layer settings."
    dotspacemacs-additional-packages '(ag
                                       cql-mode
                                       edit-indirect
+                                      emojify
                                       groovy-mode
                                       highlight-symbol
                                       rainbow-mode)
@@ -476,6 +477,9 @@ you should place your code here."
         ;; email
         ("8me" user-mail-address)
         ("8i"  user-full-name))))
+
+  (use-package emojify
+    :init (add-hook 'after-init-hook 'global-emojify-mode))
 
   (use-package files
     :init
