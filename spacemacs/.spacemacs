@@ -46,7 +46,7 @@ This function should only modify configuration layer settings."
      git
      (go :variables
          go-backend 'go-mode
-         go-use-gometalinter t
+         go-use-golangci-lint t
          go-format-before-save t)
      (haskell :variables
               haskell-completion-backend 'intero
