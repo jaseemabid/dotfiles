@@ -598,6 +598,11 @@ you should place your code here."
     (setq uniquify-buffer-name-style 'forward
           uniquify-min-dir-content 1))
 
+  (use-package highlight-indentation
+    :custom-face
+    (highlight-indentation-current-column-face ((t (:background "#d7dfff"))))
+    :hook (yaml-mode . highlight-indentation-current-column-mode))
+
   ;; A bunch of personal key bindings
   (spacemacs/set-leader-keys
     ","  'replace-string
