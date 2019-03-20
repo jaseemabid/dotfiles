@@ -5,6 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 
 DEFAULT_USER=$(whoami)
 export LC_ALL="en_US.UTF-8"
+export LANG="en_US.UTF-8"
 
 export EDITOR='emacsclient'
 
