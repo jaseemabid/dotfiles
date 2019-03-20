@@ -16,7 +16,7 @@ common: fonts
 	stow alacritty
 	stow bin
 	stow curl
-	stow emacs
+	stow spacemacs
 	stow git
 	stow gpg
 	stow haskell
