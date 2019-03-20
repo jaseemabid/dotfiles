@@ -1,0 +1,24 @@
+# Monzo specific shell setup
+
+export WORK=true
+
+export SSH_AUTH_SOCK=$HOME/.gnupg/S.gpg-agent.ssh
+if [ -z $(pgrep gpg-agent) ]; then gpg-agent --daemon; fi
+
+# K8s context and namespace with trias
+prompt_triascontext() {
+    if [[ -n "$TRIAS_LOADED" ]]; then
+
+        # Get the current Kuberenetes namespace
+        cur_namespace="$(kubectl config view -o=jsonpath="{.contexts[?(@.name==\"${TRIAS_PROFILE}\")].context.namespace}")"
+
+        # If the namespace comes back empty set it default.
+        if [[ -z "${cur_namespace}" ]]; then
+            cur_namespace="default"
+        fi
+
+        "$1_prompt_segment" "$0" "$2" "magenta" "white" "$TRIAS_PROFILE/$cur_namespace" "KUBERNETES_ICON"
+    fi
+}
+
+[ -f $HOME/src/github.com/monzo/starter-pack/zshrc ] && source $HOME/src/github.com/monzo/starter-pack/zshrc

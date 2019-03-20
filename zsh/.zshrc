@@ -9,12 +9,8 @@ export LANG="en_US.UTF-8"
 
 export EDITOR='emacsclient'
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status context dir vcs)
+# Theme setup
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status context dir vcs triascontext)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 POWERLEVEL9K_SHORTEN_STRATEGY=truncate_with_package_name
@@ -82,6 +78,7 @@ source ~/.zaliases
 [[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ '
 [[ $EMACS = t ]] && unsetopt zle && PS1='$ '
 
+[[ -s "$HOME/.zshrc.work" ]] && source "$HOME/.zshrc.work"
 [[ -s "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
 
 if [[ "$OSTYPE" == "linux-gnu" && -z $DISPLAY && -z "$SSH_CLIENT" ]]; then
