@@ -1,0 +1,15 @@
+# Enable this target to automatically lock the machine while it suspends
+# sudo systemctl enable suspend@j.service
+[Unit]
+Description=User suspend actions
+Before=sleep.target
+
+[Service]
+User=%I
+Type=forking
+Environment=DISPLAY=:0
+ExecStart=i3lock -c 002b36
+ExecStartPost=/usr/bin/sleep 1
+
+[Install]
+WantedBy=sleep.target
