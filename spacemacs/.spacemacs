@@ -479,7 +479,7 @@ you should place your code here."
         ("8i"  user-full-name))))
 
   (use-package emojify
-    :init (global-emojify-mode))
+    :hook (markdown-mode . emojify-mode))
 
   (use-package files
     :init
