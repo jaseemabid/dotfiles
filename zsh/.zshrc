@@ -1,13 +1,14 @@
 # -*-sh-*-
 
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
-
 DEFAULT_USER=$(whoami)
+
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US.UTF-8"
-
+export TERM="xterm-256color"
 export EDITOR='emacsclient'
+
+# Path to your oh-my-zsh configuration.
+ZSH=$HOME/.oh-my-zsh
 
 # Theme setup
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status context dir vcs triascontext)
