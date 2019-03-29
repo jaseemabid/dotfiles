@@ -11,7 +11,7 @@ export EDITOR='emacsclient'
 ZSH=$HOME/.oh-my-zsh
 
 # Theme setup
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status context dir vcs triascontext)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status context dir vcs kubecontext)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 POWERLEVEL9K_SHORTEN_STRATEGY=truncate_with_package_name
