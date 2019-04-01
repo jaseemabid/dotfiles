@@ -88,7 +88,7 @@ fi
 
 # Tmux attach by default only local sessions, not for remote ssh
 if [[ -z $TMUX && -z "$SSH_CLIENT" ]]; then
-    tmux attach
+    exec tmux attach
 fi
 
 # Return success if everything went right
