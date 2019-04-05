@@ -49,9 +49,9 @@ then
 else
     # Non root users
     if [[ "$OSTYPE" == "linux"* ]]; then
-        plugins=(sudo fzf git go stack tmux z rust)
+        plugins=(docker fzf git kubectl rust stack sudo tmux z)
     elif [[ "$OSTYPE" == "darwin"* ]]; then
-        plugins=(boot2docker fzf docker kubectl git stack tmux z)
+        plugins=(docker fzf git kubectl rust stack tmux z)
     else
         echo "Unknown OS"
         exit 1
