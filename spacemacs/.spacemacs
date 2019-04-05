@@ -47,6 +47,7 @@ This function should only modify configuration layer settings."
      (go :variables
          go-backend 'go-mode
          go-use-golangci-lint t
+         gofmt-command "goimports"
          go-format-before-save t)
      (haskell :variables
               haskell-completion-backend 'intero
@@ -473,6 +474,9 @@ you should place your code here."
         ("8a7" "❼")
         ("8a8" "❽")
         ("8a9" "❾")
+
+        ;; Go
+        ("8nil" "if err != nil { return err }")
 
         ;; email
         ("8me" user-mail-address)
