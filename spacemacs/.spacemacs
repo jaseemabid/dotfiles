@@ -651,6 +651,15 @@ you should place your code here."
   (defun pick-cpp ()
     (setq flycheck-gcc-language-standard "c++11"))
 
+
+  ;; Automatically close the compilation buffer after a successful compilation
+  (defun compilation-exit-autoclose (status code msg)
+    (when (and (eq status 'exit) (zerop code))
+      (bury-buffer)
+      (delete-window (get-buffer-window (get-buffer "*compilation*"))))
+    (cons msg code))
+  (setq compilation-exit-message-function 'compilation-exit-autoclose)
+
   t)
 
 ;; Load customized config
