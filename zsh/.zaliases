@@ -27,6 +27,8 @@ fi
 if [ -x "$(command -v exa)" ]; then
     alias ls='exa --long --header --git --tree --level=1'
     alias le='exa --long --header --git --tree --level=2'
+    alias lee='exa --long --header --git --tree --level=3'
+    alias leee='exa --long --header --git --tree --level=4'
 fi
 
 alias ll='ranger'
