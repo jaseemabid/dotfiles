@@ -58,6 +58,8 @@ else
     fi
 fi
 
+[[ -s "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
+
 source $ZSH/oh-my-zsh.sh
 
 # A bunch of helpers
@@ -75,8 +77,6 @@ source ~/.zaliases
 # Make sure tramp wont blow up
 [[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ '
 [[ $EMACS = t ]] && unsetopt zle && PS1='$ '
-
-[[ -s "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
 
 if [[ "$OSTYPE" == "linux-gnu" && -z $DISPLAY && -z "$SSH_CLIENT" ]]; then
     exec startx
