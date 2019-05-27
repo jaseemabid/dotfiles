@@ -48,6 +48,7 @@ This function should only modify configuration layer settings."
          go-backend 'go-mode
          go-use-golangci-lint t
          gofmt-command "goimports"
+         gofmt-args '("-local" "github.com/monzo")
          go-format-before-save t)
      (haskell :variables
               haskell-completion-backend 'intero
@@ -665,3 +666,4 @@ you should place your code here."
 ;; Load customized config
 (setq custom-file "~/.emacs.d/private/custom.el")
 (load custom-file 'noerror)
+
