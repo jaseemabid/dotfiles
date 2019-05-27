@@ -1,8 +1,0 @@
-# Monzo specific shell setup
-
-export WORK=true
-
-export SSH_AUTH_SOCK=$HOME/.gnupg/S.gpg-agent.ssh
-if [ -z $(pgrep gpg-agent) ]; then gpg-agent --daemon; fi
-
-[ -f $HOME/src/github.com/monzo/starter-pack/zshrc ] && source $HOME/src/github.com/monzo/starter-pack/zshrc

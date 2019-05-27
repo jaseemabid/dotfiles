@@ -76,7 +76,6 @@ source ~/.zaliases
 [[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ '
 [[ $EMACS = t ]] && unsetopt zle && PS1='$ '
 
-[[ -s "$HOME/.zshrc.work" ]] && source "$HOME/.zshrc.work"
 [[ -s "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
 
 if [[ "$OSTYPE" == "linux-gnu" && -z $DISPLAY && -z "$SSH_CLIENT" ]]; then
