@@ -58,4 +58,6 @@
 [url "ssh://git@github.com/monzo/"]
     insteadOf = https://github.com/monzo/
 [remote "origin"]
-	prune = true
+    prune = true
+[commit]
+    verbose = true
