@@ -51,7 +51,7 @@ This function should only modify configuration layer settings."
          gofmt-args '("-local" "github.com/monzo")
          go-format-before-save t)
      (haskell :variables
-              haskell-completion-backend 'intero
+              haskell-completion-backend 'ghci
               haskell-enable-hindent t
               haskell-enable-hindent-style "johan-tibell")
      helm
