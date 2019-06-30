@@ -61,3 +61,5 @@
     prune = true
 [commit]
     verbose = true
+[tig]
+	mailmap = yes
