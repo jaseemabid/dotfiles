@@ -653,6 +653,9 @@ you should place your code here."
   (defun pick-cpp ()
     (setq flycheck-gcc-language-standard "c++11"))
 
+  (use-package flycheck
+    :init (setq flycheck-puppet-lint-executable
+                "/usr/local/lib/ruby/gems/2.6.0/bin/puppet-lint"))
 
   ;; Automatically close the compilation buffer after a successful compilation
   (defun compilation-exit-autoclose (status code msg)
