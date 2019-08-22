@@ -581,8 +581,8 @@ you should place your code here."
       (push '("^\\*Flycheck.+\\*$"
               :regexp t
               :dedicated nil
-              :width 0.5
-              :position right
+              :height 0.2
+              :position bottom
               :stick t
               :noselect t)
             popwin:special-display-config)))
