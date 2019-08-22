@@ -657,8 +657,18 @@ you should place your code here."
     (setq flycheck-gcc-language-standard "c++11"))
 
   (use-package flycheck
-    :init (setq flycheck-puppet-lint-executable
-                "/usr/local/lib/ruby/gems/2.6.0/bin/puppet-lint"))
+    :init
+    (setq flycheck-puppet-lint-executable
+          "/usr/local/lib/ruby/gems/2.6.0/bin/puppet-lint")
+
+    (add-hook 'flycheck-after-syntax-check-hook
+              (lambda ()
+                (if flycheck-current-errors
+                    (flycheck-list-errors)
+                  (when (get-buffer "*Flycheck errors*")
+                    (switch-to-buffer "*Flycheck errors*")
+                    (kill-buffer (current-buffer))
+                    (delete-window))))))
 
   ;; Automatically close the compilation buffer after a successful compilation
   (defun compilation-exit-autoclose (status code msg)
@@ -673,4 +683,3 @@ you should place your code here."
 ;; Load customized config
 (setq custom-file "~/.emacs.d/private/custom.el")
 (load custom-file 'noerror)
-
