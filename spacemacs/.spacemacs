@@ -45,7 +45,7 @@ This function should only modify configuration layer settings."
      finance
      git
      (go :variables
-         go-backend 'go-mode
+         go-backend 'lsp
          go-use-golangci-lint t
          gofmt-command "goimports"
          gofmt-args '("-local" "github.com/monzo")
@@ -57,6 +57,9 @@ This function should only modify configuration layer settings."
      helm
      html
      idris
+     (lsp :variables
+          lsp-ui-doc-enable nil
+          lsp-ui-sideline-enable nil)
      markdown
      org
      puppet
