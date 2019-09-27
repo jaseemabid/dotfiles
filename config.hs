@@ -21,6 +21,7 @@ myManageHook = composeAll
    , className =? "Terminator"    --> doShift "1"
    , className =? "Emacs"         --> doShift "2"
    , className =? "Google-chrome" --> doShift "3"
+   , className =? "firefox"       --> doShift "4"
    , className =? "Firefox"       --> doShift "4"
    , className =? "Firefox Beta"  --> doShift "4"
    , className =? "Thunar"        --> doShift "5"
