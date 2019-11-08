@@ -28,3 +28,6 @@
 [submodule "tmux/.tmux/plugins/tmux-fzf-url"]
 	path = tmux/.tmux/plugins/tmux-fzf-url
 	url = https://github.com/wfxr/tmux-fzf-url
+[submodule "tmux/.tmux/plugins/nord-tmux"]
+	path = tmux/.tmux/plugins/nord-tmux
+	url = https://git::@github.com/arcticicestudio/nord-tmux
