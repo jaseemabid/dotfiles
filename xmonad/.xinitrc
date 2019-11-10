@@ -4,7 +4,7 @@
 [[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
 
 # Set a wallpaper and mouse pointer
-xsetroot -solid 'black'
+xsetroot -solid '#2e3440'
 xsetroot -cursor_name left_ptr
 
 # Disable nm-applet and trayer. This doesnt work well at all.
