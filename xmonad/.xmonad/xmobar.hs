@@ -18,38 +18,32 @@ Config {
   , Run Battery      [ "--template" , " <acstatus>"
                      , "--Low"      , "10"        -- units: %
                      , "--High"     , "80"        -- units: %
-                     , "--low"      , "darkred"
-                     , "--normal"   , "darkorange"
-                     , "--high"     , "darkgreen"
+                     , "--low"      , "#bf616a"
+                     , "--normal"   , "#d08770"
+                     , "--high"     , "#a3be8c"
                      , "--"
                      -- battery specific options
                      -- discharging status
                      , "-o"         , "<left>%"
                      -- AC "on" status
-                     , "-O"         , "<left>% <fc=#dAA520></fc>"
+                     , "-O"         , "<left>% <fc=#5e81ac></fc>"
                      -- charged status
-                     , "-i"         , "<left>% <fc=#006000></fc>"
+                     , "-i"         , "<left>% <fc=#8fbcbb></fc>"
                      ] 10
 
     -- network activity monitor (dynamic interface resolution)
     --
     -- Fontawesome uses unicode points OxF062 and OxF063 for the arrows but the
     -- chars are invalid.
-    , Run DynNetwork [ "--template" , "  <rx>  <tx> kB/s"
-                     , "--Low"      , "1000"       -- units: B/s
-                     , "--High"     , "5000"       -- units: B/s
-                     , "--low"      , "darkred"
-                     , "--normal"   , "darkorange"
-                     , "--high"     , "darkgreen"
-                     ] 10
+    , Run DynNetwork [ "--template" , "  <rx>  <tx> kB/s"] 10
 
     -- cpu activity monitor
     , Run MultiCpu   [ "--template" , " <total>%"
                      , "--Low"      , "50"         -- units: %
                      , "--High"     , "85"         -- units: %
-                     , "--low"      , "darkgreen"
-                     , "--normal"   , "darkorange"
-                     , "--high"     , "darkred"
+                     , "--low"      , "#a3be8c"
+                     , "--normal"   , "#d08770"
+                     , "--high"     , "#bf616a"
                      , "-p"         , "2"
                      ] 10
 
@@ -57,18 +51,18 @@ Config {
     , Run CoreTemp   [ "--template" , " <core0>°C"
                      , "--Low"      , "70"        -- units: °C
                      , "--High"     , "80"        -- units: °C
-                     , "--low"      , "darkgreen"
-                     , "--normal"   , "darkorange"
-                     , "--high"     , "darkred"
+                     , "--low"      , "#a3be8c"
+                     , "--normal"   , "#d08770"
+                     , "--high"     , "#bf616a"
                      ] 100
 
     -- memory usage monitor
     , Run Memory     [ "--template" ," <usedratio>%"
                      , "--Low"      , "20"        -- units: %
                      , "--High"     , "90"        -- units: %
-                     , "--low"      , "darkgreen"
-                     , "--normal"   , "darkorange"
-                     , "--high"     , "darkred"
+                     , "--low"      , "#a3be8c"
+                     , "--normal"   , "#d08770"
+                     , "--high"     , "#bf616a"
                      ] 10
 
     , Run Com "volume" [] "" 10
