@@ -49,7 +49,7 @@ then
 else
     # Non root users
     if [[ "$OSTYPE" == "linux"* ]]; then
-        plugins=(docker fzf git kubectl rust stack sudo tmux z)
+        plugins=(cargo docker fzf git kubectl rust stack sudo tmux z)
     elif [[ "$OSTYPE" == "darwin"* ]]; then
         plugins=(docker fzf git kubectl rust stack tmux z)
     else
