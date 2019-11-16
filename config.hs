@@ -92,5 +92,5 @@ main = do
     kinesis = [("M-" ++ key, windows $ W.greedyView space) |
                (key, space) <- zip kkeys ws]
 
-    lock = "i3lock -c 002b36"
+    lock = "i3lock -c 2e3440"
     -- suspend = lock ++ " && systemctl suspend"
