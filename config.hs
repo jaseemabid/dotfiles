@@ -76,6 +76,9 @@ main = do
       -- , ("<XF86WakeUp>", spawn suspend)
       , ("M-l", spawn lock)
 
+      -- "Type" clipboard into password fields to deal with crappy banking websites
+      , ("M-v", spawn "xdotool type --clearmodifiers -- $(xsel --clipboard --output)")
+
       , ("<Insert>", toggleWS)
       , ("M-<Insert>", windows W.focusDown)
 
