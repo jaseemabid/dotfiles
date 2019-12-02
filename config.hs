@@ -47,7 +47,7 @@ main = do
       , modMask  = mod4Mask
       , logHook = dynamicLogWithPP xmobarPP {
               ppOutput = hPutStrLn xmproc
-            , ppTitle = xmobarColor "green" "" . shorten 50
+            , ppTitle = xmobarColor "#d8dee9" "" . shorten 50
             }
       , manageHook = manageDocks <+> myManageHook <+> manageHook desktopConfig
       , layoutHook = avoidStruts $ smartBorders $ layoutHook desktopConfig
