@@ -517,6 +517,12 @@ you should place your code here."
     :config
     (setq-default magit-revision-show-gravatars nil))
 
+  (use-package nord-theme
+    :custom-face
+    (font-lock-comment-face ((t (:foreground "#D08770"))))
+    (font-lock-comment-delimiter-face ((t (:foreground "#D08770"))))
+    (font-lock-doc-face ((t (:foreground "#A3BE8C")))))
+
   (use-package org
     :bind (("C-c a" . org-agenda)
            ("C-c k" . org-store-link)
