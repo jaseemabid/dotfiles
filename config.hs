@@ -64,8 +64,8 @@ main = do
 
     -- Key codes: https://hackage.haskell.org/package/xmonad-contrib-0.13/docs/XMonad-Util-EZConfig.html
     additional = [
-        ("<XF86MonBrightnessDown>", spawn "xbacklight -dec 5")
-      , ("<XF86MonBrightnessUp>", spawn "xbacklight -inc 5")
+        ("<XF86MonBrightnessDown>", spawn "brightness -")
+      , ("<XF86MonBrightnessUp>", spawn "brightness +")
 
       , ("<XF86AudioLowerVolume>", spawn "amixer -q set Master 5%-")
       , ("<XF86AudioMute>", spawn "amixer -q set Master toggle")
