@@ -1,6 +1,5 @@
-use std::cmp;
-use std::env;
-use std::fs;
+#![feature(clamp)]
+use std::{env, fs};
 
 fn main() {
     let uid = unsafe { geteuid() };
@@ -41,8 +40,7 @@ fn percent() -> i64 {
 }
 
 fn set(p: i64) {
-    let p = cmp::max(5, cmp::min(100, p));
-    println!("Set to {}%", p);
+    let p = p.clamp(5, 100);
     write(p * max() / 100)
 }
 
@@ -65,7 +63,6 @@ fn write(b: i64) {
 #[link(name = "c")]
 extern "C" {
     fn geteuid() -> u32;
-// fn getegid() -> u32;
 }
 
 #[cfg(test)]
