@@ -1,0 +1,6 @@
+[package]
+name = "brightness"
+version = "0.1.0"
+authors = ["Jaseem Abid <jaseemabid@gmail.com>"]
+edition = "2018"
+description = "Brightness controller for Linux"
