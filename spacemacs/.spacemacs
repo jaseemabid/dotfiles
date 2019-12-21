@@ -487,6 +487,11 @@ you should place your code here."
         ("8me" user-mail-address)
         ("8i"  user-full-name))))
 
+
+  (use-package asm-mode
+    :config
+    (setq-default asm-comment-char ?\#))
+
   (use-package emojify
     :hook (markdown-mode . emojify-mode))
 
