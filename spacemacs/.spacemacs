@@ -45,7 +45,6 @@ This function should only modify configuration layer settings."
      finance
      git
      (go :variables
-         go-backend 'lsp
          go-use-golangci-lint t
          gofmt-command "goimports"
          gofmt-args '("-local" "github.com/monzo")
