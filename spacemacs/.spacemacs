@@ -106,6 +106,7 @@ This function should only modify configuration layer settings."
      org-download
      org-projectile
      persp-mode
+     treemacs
      smartparens
      version-control
      winum
