@@ -29,20 +29,13 @@ This function should only modify configuration layer settings."
    dotspacemacs-configuration-layer-path '()
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(asciidoc
-     (c-c++)
-     (shell :variables
-            shell-default-shell 'eshell
-            shell-default-height 30
-            shell-default-position 'bottom)
-     auto-completion
+   '(auto-completion
      better-defaults
+     c-c++
      csv
-     protobuf
      docker
      emacs-lisp
      erlang
-     finance
      git
      (go :variables
          go-use-golangci-lint nil
@@ -56,20 +49,19 @@ This function should only modify configuration layer settings."
      helm
      html
      idris
-     (lsp :variables
-          lsp-ui-doc-enable nil
-          lsp-ui-sideline-enable nil)
      markdown
      org
+     protobuf
      puppet
      python
-     racket
      (rust :variables rust-backend 'racer)
      scheme
+     (shell :variables
+            shell-default-shell 'eshell
+            shell-default-height 30
+            shell-default-position 'bottom)
      systemd
-     spacemacs-layouts
      spell-checking
-     sql
      syntax-checking
      (terraform :variables
                 terraform-auto-format-on-save t)
@@ -94,6 +86,7 @@ This function should only modify configuration layer settings."
      anzu
      auto-compile
      csv-mode
+     dumb-jump
      evil-ediff
      eyebrowse
      fancy-battery
@@ -102,12 +95,14 @@ This function should only modify configuration layer settings."
      golden-ratio
      google-translate
      lorem-ipsum
+     lsp
      neotree
      org-download
      org-projectile
      persp-mode
-     treemacs
+     request
      smartparens
+     treemacs
      version-control
      winum
      yapf-mode
