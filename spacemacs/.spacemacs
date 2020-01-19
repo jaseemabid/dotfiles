@@ -64,7 +64,7 @@ This function should only modify configuration layer settings."
      puppet
      python
      racket
-     rust
+     (rust :variables rust-backend 'racer)
      scheme
      systemd
      spacemacs-layouts
