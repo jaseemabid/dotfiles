@@ -17,4 +17,4 @@ xsetroot -cursor_name left_ptr
 # trayer --align right  --SetPartialStrut true --width 4 --height 30 \
 #       --transparent true --tint 0x002b36 --alpha 0 &
 
-exec xmonad-testing > .xmonad/logs 2>&1
+exec xmonad-testing
