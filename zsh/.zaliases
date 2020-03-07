@@ -5,18 +5,17 @@
 
 # System specific aliases
 if [[ $OSTYPE == linux-* ]]; then
-
     # Copy & paste from shell
     alias c='xsel --clipboard --input'
     alias p='xsel --clipboard --output'
-
-	alias open="xdg-open"
-	alias o="xdg-open"
-
+    alias open="xdg-open"
+    alias o="xdg-open"
+    alias vi="emacsclient -n"
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     alias c='pbcopy'
     alias p='pbpaste'
     alias o='open'
+    alias vi="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n"
 
 else
     # Unknown, or  cygwin/win32/freebsd*
@@ -60,7 +59,6 @@ alias yt="youtube-dl -wci -o '%(title)s-%(id)s.%(ext)s'"
 alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
 
 # Alternatives
-alias vi="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n"
 alias rm="trash"
 alias acroread="open"
 
