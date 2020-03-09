@@ -29,12 +29,14 @@ This function should only modify configuration layer settings."
    dotspacemacs-configuration-layer-path '()
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(auto-completion
+   '((auto-completion
+      :variables spacemacs-default-company-backends '(company-emoji))
      better-defaults
      c-c++
      csv
      docker
      emacs-lisp
+     emoji
      erlang
      git
      (go :variables
@@ -73,7 +75,6 @@ This function should only modify configuration layer settings."
    dotspacemacs-additional-packages '(ag
                                       cql-mode
                                       edit-indirect
-                                      emojify
                                       groovy-mode
                                       highlight-symbol
                                       rainbow-mode)
@@ -417,6 +418,7 @@ you should place your code here."
                 vc-follow-symlinks t
                 winum-scope 'frame-local)
 
+
   ;; Start emacs server
   (server-start)
 
@@ -487,9 +489,6 @@ you should place your code here."
   (use-package asm-mode
     :config
     (setq-default asm-comment-char ?\#))
-
-  (use-package emojify
-    :hook (markdown-mode . emojify-mode))
 
   (use-package files
     :init
