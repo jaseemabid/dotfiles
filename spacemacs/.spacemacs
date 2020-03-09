@@ -490,6 +490,10 @@ you should place your code here."
     :config
     (setq-default asm-comment-char ?\#))
 
+  (use-package company
+    :config
+    (global-company-mode))
+
   (use-package files
     :init
     (add-hook 'find-file-hook 'j/find-file-large-hook)
@@ -508,6 +512,11 @@ you should place your code here."
     :config
     (setq geiser-chez-binary "scheme"
           geiser-active-implementations '(chez racket)))
+
+  ;; The default list is long and useless, just override locally
+  (use-package git-commit
+    :config
+    (setq-default company-backends '(company-emoji)))
 
   (use-package make-mode
     :init
