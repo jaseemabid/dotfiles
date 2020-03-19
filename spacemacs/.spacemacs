@@ -622,10 +622,14 @@ you should place your code here."
     (setq uniquify-buffer-name-style 'forward
           uniquify-min-dir-content 1))
 
-  (use-package highlight-indentation
-    :custom-face
-    (highlight-indentation-current-column-face ((t (:background "#d7dfff"))))
-    :hook (yaml-mode . highlight-indentation-current-column-mode))
+  (use-package yaml
+    :init
+    (defun yaml-prettier ()
+      "Autoformat yaml files on save with prettier"
+      (when (eq major-mode 'yaml-mode)
+        (shell-command-to-string (format "prettier --write %s" buffer-file-name))))
+
+    (add-hook 'after-save-hook #'yaml-prettier))
 
   ;; A bunch of personal key bindings
   (spacemacs/set-leader-keys
