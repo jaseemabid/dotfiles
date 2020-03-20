@@ -23,14 +23,9 @@ bind up:${hyper} ${full}
 # Send active window to second monitor
 bind down:${hyper} throw next resize
 
-# Application aliases
-alias browser  'Google Chrome'
-alias editor   'Emacs'
-alias terminal 'iTerm2'
-alias slack    'Slack'
-
 # App bindings
-bind 1:${hyper} focus ${browser}
-bind 2:${hyper} focus ${editor}
-bind 3:${hyper} focus ${terminal}
-bind 4:${hyper} focus ${slack}
+bind 1:${hyper} focus 'iTerm2'
+bind 2:${hyper} focus 'Emacs'
+bind 3:${hyper} focus 'Google Chrome'
+bind 4:${hyper} focus 'Slack'
+bind 7:${hyper} focus 'Spotify'
