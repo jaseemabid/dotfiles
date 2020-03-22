@@ -622,7 +622,7 @@ you should place your code here."
     (setq uniquify-buffer-name-style 'forward
           uniquify-min-dir-content 1))
 
-  (use-package yaml
+  (use-package yaml-mode
     :init
     (defun yaml-prettier ()
       "Autoformat yaml files on save with prettier"
