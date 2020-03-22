@@ -1,0 +1,10 @@
+[Unit]
+Description=Prometheus
+
+[Service]  
+DynamicUser=yes 
+StateDirectory=prometheus
+ExecStart=/usr/local/bin/prometheus --config.file=/etc/prometheus/prometheus.yml --storage.tsdb.path=/var/lib/prometheus
+
+[Install]
+WantedBy=multi-user.target
