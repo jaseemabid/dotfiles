@@ -1,7 +1,7 @@
 # -*- conf -*-
 [user]
     name = Jaseem Abid
-    email = jaseemabid@monzo.com
+    email = jaseemabid@gmail.com
 [github]
     username = jaseemabid
 [apply]
@@ -62,4 +62,4 @@
 [commit]
     verbose = true
 [tig]
-	mailmap = yes
+    mailmap = yes
