@@ -1,0 +1,9 @@
+[Unit]
+Description=Backup data folder to local drive again for redundandcy
+
+[Service]  
+Type=oneshot
+User=j 
+Environment=BORG_REPO=/home/j/backup/Borg
+ExecStart=borg create -v ::'{hostname}-{now}' /home/j/backup/Data
+

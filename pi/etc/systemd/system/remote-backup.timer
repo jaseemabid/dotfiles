@@ -1,0 +1,9 @@
+[Unit]
+Description=Backup daily at 3am to rsync.net
+
+[Timer]
+OnCalendar=*-*-* 03:00:00
+Persistent=True
+
+[Install]
+WantedBy=basic.target

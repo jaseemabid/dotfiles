@@ -1,0 +1,13 @@
+[Unit]
+Description=Backup data to rsync.net
+
+[Service]  
+Type=oneshot
+User=j 
+
+Environment=BORG_REPO=19594@rsync.net:Archive
+Environment=BORG_REMOTE_PATH=borg1
+Environment=BORG_PASSCOMMAND='cat /home/j/.borg'
+
+ExecStart=borg create -v ::'{hostname}-{now}' /home/j/backup/Data/Documents
+
