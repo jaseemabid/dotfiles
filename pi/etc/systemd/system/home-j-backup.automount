@@ -1,0 +1,11 @@
+[Unit] 
+Description=Mount Transcend data volume in home
+
+[Mount]
+What=/dev/disk/by-uuid/f239f5d0-7868-4147-b36a-b23d537d4fb1 
+Where=/home/j/backup
+Type=ext4
+Options=defaults
+
+[Install]
+WantedBy=multi-user.target
