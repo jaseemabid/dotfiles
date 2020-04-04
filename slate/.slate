@@ -24,7 +24,7 @@ bind up:${hyper} ${full}
 bind down:${hyper} throw next resize
 
 # App bindings
-bind 1:${hyper} focus 'iTerm2'
+bind 1:${hyper} focus 'Terminal'
 bind 2:${hyper} focus 'Emacs'
 bind 3:${hyper} focus 'Google Chrome'
 bind 4:${hyper} focus 'Slack'
