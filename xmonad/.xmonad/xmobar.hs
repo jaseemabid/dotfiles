@@ -4,7 +4,7 @@ Config {
     font = "xft:Droid Sans Mono:size=16,FontAwesome:size=15:antialias=true"
   , bgColor = "#2E3440"
   , fgColor = "#D8DEE9"
-  , position = Bottom x
+  , position = OnScreen 1 Bottom
   , sepChar = "%"
   , allDesktops = True
   , alignSep = "}{"
