@@ -4,6 +4,7 @@ alsa-utils
 aspell-en
 base
 base-devel
+bat
 bc
 budgie-desktop
 budgie-extras
@@ -14,15 +15,19 @@ emacs
 eog
 evince
 fd
+feh
+firefox
 fzf
 gdb
 git
+gnome-screenshot
 grub
 gvfs-mtp
 i3lock
 intel-ucode
 jq
 libxss
+lxrandr
 mplayer
 mtr
 nautilus
@@ -34,6 +39,8 @@ pass
 python-llfuse
 qrencode
 ranger
+ripgrep
+rustup
 seahorse
 seahorse-nautilus
 stow
@@ -42,6 +49,7 @@ syncthing
 terraform
 the_silver_searcher
 tig
+tldr
 tmux
 trash-cli
 ttf-dejavu
@@ -55,5 +63,8 @@ wireguard-dkms
 wireguard-tools
 wireless_tools
 xorg
+xorg-xinit
+xsel
+xterm
 youtube-dl
 zsh
