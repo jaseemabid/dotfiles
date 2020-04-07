@@ -11,12 +11,15 @@ export EDITOR='emacsclient'
 ZSH=$HOME/.oh-my-zsh
 
 # Theme setup
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status context dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
-POWERLEVEL9K_STATUS_CROSS=true
-
-ZSH_THEME="powerlevel10k/powerlevel10k"
+if [[ "$OSTYPE" == "linux-gnueabihf" ]]; then
+    ZSH_THEME="robbyrussell"
+else
+    POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status context dir vcs)
+    POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
+    POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
+    POWERLEVEL9K_STATUS_CROSS=true
+    ZSH_THEME="powerlevel10k/powerlevel10k"
+fi
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -48,7 +51,9 @@ then
     plugins=()
 else
     # Non root users
-    if [[ "$OSTYPE" == "linux"* ]]; then
+    if [[ "$OSTYPE" == "linux-gnueabihf" ]]; then
+        plugins=(sudo tmux z)
+    elif [[ "$OSTYPE" == "linux-gnu" ]]; then
         plugins=(cargo docker fzf git kubectl rust stack sudo tmux z)
     elif [[ "$OSTYPE" == "darwin"* ]]; then
         plugins=(docker fzf git kubectl rust stack tmux z)
