@@ -82,7 +82,7 @@ main = do
       , ("<Insert>", toggleWS)
       , ("M-<Insert>", windows W.focusDown)
 
-      , ("<Print>", spawn "budgie-run-dialog")
+      , ("M-p", spawn "budgie-run-dialog")
 
       , ("M-n", spawn "nautilus")
       ]
