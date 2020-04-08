@@ -81,6 +81,7 @@ main = do
 
       , ("M-p", spawn "budgie-run-dialog")
 
+      , ("<Print>", spawn "gnome-screenshot -i")
       , ("M-n", spawn "nautilus")
       ]
 
