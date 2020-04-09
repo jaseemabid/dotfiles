@@ -7,6 +7,8 @@
 xsetroot -solid '#2e3440'
 xsetroot -cursor_name left_ptr
 
+feh --bg-scale ~/Pictures/wp.jpg || true
+
 # Disable nm-applet and trayer. This doesnt work well at all.
 #
 # if [ -z "$(pgrep nm-applet)" ] ; then
