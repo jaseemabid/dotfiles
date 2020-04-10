@@ -71,7 +71,7 @@ main = do
       -- On the Thinkpad, I'm unable to map to the power button, but Fn+Power is
       -- handled as XF86WakeUp. Disabled because unreliable
       -- , ("<XF86WakeUp>", spawn suspend)
-      , ("M-l", spawn lock)
+      , ("M-S-l", spawn lock)
 
       -- "Type" clipboard into password fields to deal with crappy banking websites
       , ("M-v", spawn "xdotool type --clearmodifiers -- $(xsel --clipboard --output)")
