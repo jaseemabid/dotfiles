@@ -79,7 +79,7 @@ main = do
       , ("<Insert>", toggleWS)
       , ("M-<Insert>", windows W.focusDown)
 
-      , ("M-p", spawn "budgie-run-dialog")
+      , ("M-S-p", spawn "budgie-run-dialog")
 
       , ("<Print>", spawn "gnome-screenshot -i")
       , ("M-n", spawn "nautilus")
