@@ -18,6 +18,7 @@ myManageHook :: Query (Data.Monoid.Endo WindowSet)
 myManageHook = composeAll
    [ title =? "Any.do"            --> (doShift "9" <+> doCenterFloat)
    , className =? "Alacritty"     --> doShift "1"
+   , className =? "kitty"         --> doShift "1"
    , className =? "Terminator"    --> doShift "1"
    , className =? "Emacs"         --> doShift "2"
    , className =? "Google-chrome" --> doShift "3"
@@ -40,7 +41,7 @@ myManageHook = composeAll
 main = do
     xmproc <- spawnPipe "xmobar ~/.xmonad/xmobar.hs"
     xmonad $ docks desktopConfig {
-        terminal = "alacritty"
+        terminal = "kitty"
       , modMask  = mod4Mask
       , logHook = dynamicLogWithPP xmobarPP {
               ppOutput = hPutStrLn xmproc
