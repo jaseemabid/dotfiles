@@ -44,6 +44,9 @@ DISABLE_AUTO_UPDATE="true"
 export HISTSIZE=999999
 export HISTFILESIZE=999999
 
+cdpath=(~/Work ~/Projects)
+path=(~/bin ~/.local/bin ~/.cabal/bin ~/.cargo/bin ~/.gem/ruby/*/bin $path)
+
 # Configure a minimal shell for root user
 if [[ $UID = '0' ]]
 then
@@ -57,6 +60,7 @@ else
         plugins=(cargo docker fzf git kubectl rust stack sudo tmux z)
     elif [[ "$OSTYPE" == "darwin"* ]]; then
         plugins=(docker fzf git kubectl rust stack tmux z)
+        path=(/usr/local/opt/ruby/bin /usr/local/lib/ruby/gems/*/bin /usr/local/sbin /usr/local/opt/texinfo/bin $path)
     else
         echo "Unknown OS"
         exit 1
