@@ -89,6 +89,7 @@ This function should only modify configuration layer settings."
      csv-mode
      dumb-jump
      evil-ediff
+     evil-search-highlight-persist
      eyebrowse
      fancy-battery
      git-timemachine
