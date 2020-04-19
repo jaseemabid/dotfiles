@@ -6,6 +6,6 @@ status=`amixer sget Master,0`
 if [[ $status == *"off"* ]]; then
     echo " "
 else
-    p=`amixer sget Master,0 | grep Mono\: | awk '{print $4}' | tr '\[\]' ' '`
+    p=`amixer sget Master,0 | grep Right\: | awk '{print $5}' | tr '\[\]' ' '`
     echo "" $p
 fi
