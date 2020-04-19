@@ -59,7 +59,9 @@ ttf-droid
 ttf-inconsolata
 ttf-roboto
 ttf-ubuntu-font-family
+udisks2
 unzip
+usbutils
 vlc
 wireguard-dkms
 wireguard-tools
