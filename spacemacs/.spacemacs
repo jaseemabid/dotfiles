@@ -645,8 +645,8 @@ you should place your code here."
     "yw" 'copy-word)
 
   ;; Move around with the special keys on Logitech M510 mouse
-  (global-set-key (kbd "<mouse-5>") 'backward-paragraph)
-  (global-set-key (kbd "<mouse-4>") 'forward-paragraph)
+  ;; (global-set-key (kbd "<mouse-5>") 'backward-paragraph)
+  ;; (global-set-key (kbd "<mouse-4>") 'forward-paragraph)
 
   ;; The British keyboard maps M-3 to #; I need the key to just self insert
   ;; rather than become some prefix. This is such a mess.
