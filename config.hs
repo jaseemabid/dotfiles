@@ -52,7 +52,7 @@ main = do
       , handleEventHook = fullscreenEventHook
       , workspaces = ws
       , startupHook = setWMName "LG3D"
-      } `additionalKeysP` (additional ++ switch ++ kinesis) `removeKeysP` removed
+      } `additionalKeysP` (additional ++ kinesis) `removeKeysP` removed
 
   where
 
@@ -85,8 +85,6 @@ main = do
       , ("<Print>", spawn "gnome-screenshot -i")
       , ("M-n", spawn "nautilus")
       ]
-
-    switch = [("<F" ++ x ++ ">", windows $ W.greedyView x) | x <- ws]
 
     -- Switch on kinesis with asdf because numbers are far away
     kkeys = ["a", "s", "d", "f"]
