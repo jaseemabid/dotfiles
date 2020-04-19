@@ -2,6 +2,7 @@ adobe-source-code-pro-fonts
 alacritty
 alsa-utils
 aspell-en
+autorandr
 base
 base-devel
 bat
