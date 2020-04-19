@@ -648,6 +648,11 @@ you should place your code here."
   ;; (global-set-key (kbd "<mouse-5>") 'backward-paragraph)
   ;; (global-set-key (kbd "<mouse-4>") 'forward-paragraph)
 
+  ;; Scale text quickly with Ctrl + Mouse wheel. This is what happens after
+  ;; frequent pairing with other people over video calls.
+  (global-set-key (kbd "<C-mouse-5>") 'text-scale-decrease)
+  (global-set-key (kbd "<C-mouse-4>") 'text-scale-increase)
+
   ;; The British keyboard maps M-3 to #; I need the key to just self insert
   ;; rather than become some prefix. This is such a mess.
   (global-set-key (kbd "M-3") '(lambda ()
