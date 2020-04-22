@@ -1,0 +1,4 @@
+#!/bin/sh
+
+xmonad --restart
+feh --bg-scale ~/Pictures/wp.jpg || true
