@@ -1,0 +1,15 @@
+# thumb wheel up => increase volume and unmute
+"amixer -D pulse set Master 4000+ unmute"
+   b:7
+
+# thumb wheel down => lower volume
+"amixer -D pulse set Master 4000-"
+   b:6
+
+# backward button => previous song
+"xte 'key XF86AudioPrev'"
+   b:8
+
+# forward button => next song
+"xte 'key XF86AudioNext'"
+   b:9
