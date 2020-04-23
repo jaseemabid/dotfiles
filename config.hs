@@ -83,7 +83,7 @@ main = do
       , ("M-S-p", spawn "budgie-run-dialog")
 
       , ("<Print>", spawn "gnome-screenshot -i")
-      , ("M-n", spawn "nautilus")
+      , ("M-S-n", spawn "nautilus")
       ]
 
     -- Switch on kinesis with asdf because numbers are far away
