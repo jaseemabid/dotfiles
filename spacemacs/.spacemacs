@@ -635,8 +635,8 @@ you should place your code here."
   ;; A bunch of personal key bindings
   (spacemacs/set-leader-keys
     ","  'replace-string
-    "<"  'highlight-symbol-prev
     "."  'flyspell-correct-previous
+    "<"  'highlight-symbol-prev
     ">"  'highlight-symbol-next
     "bk" 'spacemacs/kill-other-buffers
     "bx" 'bury-buffer
