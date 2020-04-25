@@ -599,9 +599,16 @@ you should place your code here."
               :regexp t
               :dedicated nil
               :height 0.2
-              :position bottom
               :stick t
               :noselect t)
+            popwin:special-display-config)
+
+      (push '("^\\*Cargo Test\\*$"
+              :regexp t
+              :dedicated nil
+              :height 0.4
+              :stick t
+              :noselect nil)
             popwin:special-display-config)))
 
   (use-package projectile
