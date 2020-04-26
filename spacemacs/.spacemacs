@@ -496,6 +496,10 @@ you should place your code here."
     :config
     (global-company-mode))
 
+  (use-package electric
+    :init
+    (electric-pair-mode))
+
   (use-package files
     :init
     (add-hook 'find-file-hook 'j/find-file-large-hook)
