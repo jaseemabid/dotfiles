@@ -30,6 +30,8 @@ intel-ucode
 jq
 libxss
 lxrandr
+man-pages
+moreutils
 mplayer
 mtr
 nautilus
@@ -41,6 +43,7 @@ pass
 python-llfuse
 qrencode
 ranger
+redshift
 ripgrep
 rustup
 seahorse
