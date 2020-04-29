@@ -56,7 +56,9 @@ This function should only modify configuration layer settings."
      protobuf
      puppet
      python
-     (rust :variables rust-backend 'racer)
+     (rust :variables
+           rust-backend 'racer
+           rust-format-on-save t)
      scheme
      (shell :variables
             shell-default-shell 'eshell
