@@ -449,11 +449,7 @@ you should place your code here."
     (setq-default abbrev-mode t)
 
     (define-abbrev-table 'global-abbrev-table
-      '(
-        ;; math/unicode symbols
-        ("8n" "ℕ")
-        ("8r" "ℝ")
-        ("8sig" "σ")
+      '(("8Sig" "Σ")
         ("8bot" "⟂")
         ("8gam" "γ")
         ("8in" "∈")
@@ -461,36 +457,22 @@ you should place your code here."
         ("8inr" "₹")
         ("8lam" "λ")
         ("8lar" "←")
-        ("8luv" "♥")
+        ("8love" "♥")
         ("8meh" "¯\\_(ツ)_/¯")
+        ("8n" "ℕ")
         ("8nin" "∉")
-        ("8no" "✗")
+        ("8x" "✗")
         ("8ok" "✓")
+        ("8r" "ℝ")
         ("8rar" "→")
         ("8rs" "₹")
         ("8sig" "σ")
-        ("8smly" "☺")
-        ("8star" "★")
+        ("8*" "★")
         ("8t" "#+title:")
         ("8tau" "τ")
 
-        ("8a1" "❶")
-        ("8a2" "❷")
-        ("8a3" "❸")
-        ("8a4" "❹")
-        ("8a5" "❺")
-        ("8a6" "❻")
-        ("8a7" "❼")
-        ("8a8" "❽")
-        ("8a9" "❾")
-
-        ;; Go
         ("8nil" "if err != nil { return err }")
-
-        ;; email
-        ("8me" user-mail-address)
-        ("8i"  user-full-name))))
-
+        ("8ne" "!="))))
 
   (use-package asm-mode
     :config
