@@ -74,10 +74,8 @@ This function should only modify configuration layer settings."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(ag
-                                      cql-mode
+   dotspacemacs-additional-packages '(cql-mode
                                       edit-indirect
-                                      groovy-mode
                                       highlight-symbol
                                       rainbow-mode)
 
