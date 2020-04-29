@@ -104,10 +104,12 @@ This function should only modify configuration layer settings."
      org-download
      org-projectile
      persp-mode
+     purpose-mode
      request
      smartparens
      treemacs
      version-control
+     window-purpose
      winum
      yapf-mode
      yasnippet)
