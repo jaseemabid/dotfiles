@@ -582,6 +582,7 @@ you should place your code here."
 
   (use-package popwin
     :init
+    ;; Override flycheck config hard coded in lib
     (defun syntax-checking/post-init-popwin ()
       (push '("^\\*Flycheck.+\\*$"
               :regexp t
@@ -589,15 +590,14 @@ you should place your code here."
               :height 0.2
               :stick t
               :noselect t)
-            popwin:special-display-config)
+            popwin:special-display-config))
 
-      (push '("^\\*Cargo Test\\*$"
-              :regexp t
-              :dedicated nil
-              :height 0.4
-              :stick t
-              :noselect nil)
-            popwin:special-display-config)))
+    (push '("*Cargo Test*"
+            :regexp nil
+            :dedicated nil
+            :height 0.4
+            :noselect nil)
+          popwin:special-display-config))
 
   (use-package projectile
     :init
