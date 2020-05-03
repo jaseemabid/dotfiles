@@ -7,7 +7,7 @@
 xsetroot -solid '#2e3440'
 xsetroot -cursor_name left_ptr
 
-feh --bg-scale ~/Pictures/wp.jpg || true
+feh --bg-fill ~/Pictures/wp.jpg || true
 
 # Disable nm-applet and trayer. This doesnt work well at all.
 #
@@ -19,4 +19,4 @@ feh --bg-scale ~/Pictures/wp.jpg || true
 # trayer --align right  --SetPartialStrut true --width 4 --height 30 \
 #       --transparent true --tint 0x002b36 --alpha 0 &
 
-exec xmonad-testing
+exec xmonad
