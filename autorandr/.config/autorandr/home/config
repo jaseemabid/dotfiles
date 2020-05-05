@@ -17,6 +17,6 @@ rotate right
 output DP-1-8
 crtc 0
 mode 2560x1440
-pos 1440x0
+pos 1440x560
 primary
 rate 59.95
