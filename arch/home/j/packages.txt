@@ -48,6 +48,7 @@ ripgrep
 rustup
 seahorse
 seahorse-nautilus
+solaar
 stow
 strace
 syncthing
