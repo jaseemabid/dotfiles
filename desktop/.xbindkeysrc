@@ -1,9 +1,9 @@
 # thumb wheel up => increase volume and unmute
-"amixer -D pulse set Master 4000+ unmute"
+"amixer -D pulse sset Master 5%+ unmute"
    b:7
 
 # thumb wheel down => lower volume
-"amixer -D pulse set Master 4000-"
+"amixer -D pulse sset Master 5%-"
    b:6
 
 # backward button => previous song
