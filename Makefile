@@ -24,11 +24,11 @@ common: fonts
 	stow tmux
 	stow zsh
 
-linux: fonts
+arch: fonts
 	mkdir -p ~/.config
 
 	sudo stow -t / arch
-	sudo stow -t / docker
+	stow desktop
 	stow codex
 	stow ctags
 	stow i3
