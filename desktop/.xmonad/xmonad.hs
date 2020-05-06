@@ -34,10 +34,7 @@ myManageHook = composeAll
    , isDialog                     --> doCenterFloat
    ]
 
---
--- Firefox wont go fullscreen for some reason, so use Mod-b to toggle the xmobar
--- visibility.
-
+main :: IO ()
 main = do
     xmproc <- spawnPipe "xmobar ~/.xmonad/xmobar.hs"
     xmonad $ docks desktopConfig {
