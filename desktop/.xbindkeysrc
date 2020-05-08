@@ -1,9 +1,9 @@
 # thumb wheel up => increase volume and unmute
-"amixer -D pulse sset Master 5%+ unmute"
+sh -c "pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +5%"
    b:7
 
 # thumb wheel down => lower volume
-"amixer -D pulse sset Master 5%-"
+sh -c "pactl set-sink-mute 0 false ; pactl set-sink-volume 0 -5%"
    b:6
 
 # backward button => previous song
