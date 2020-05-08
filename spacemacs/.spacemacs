@@ -55,7 +55,6 @@ This function should only modify configuration layer settings."
      org
      protobuf
      puppet
-     python
      (rust :variables
            rust-backend 'racer
            rust-format-on-save t)
