@@ -39,6 +39,7 @@ networkmanager
 noto-fonts-extra
 openssh
 pass
+playerctl
 python-llfuse
 qrencode
 ranger

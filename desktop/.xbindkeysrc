@@ -6,10 +6,14 @@ sh -c "pactl set-sink-mute @DEFAULT_SINK@ false ; pactl set-sink-volume @DEFAULT
 sh -c "pactl set-sink-mute  @DEFAULT_SINK@ false ; pactl set-sink-volume @DEFAULT_SINK@ -5%"
    b:6
 
-# backward button => previous song
-"xte 'key XF86AudioPrev'"
-   b:8
+"playerctl next"
+   XF86AudioNext
 
-# forward button => next song
-"xte 'key XF86AudioNext'"
-   b:9
+"playerctl previous"
+   XF86AudioPrev
+
+"playerctl play"
+    XF86AudioPlay
+
+"playerctl pause"
+    XF86AudioPause
