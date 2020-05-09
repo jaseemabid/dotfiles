@@ -1,3 +1,0 @@
-cabal-static
-shellcheck-static
-stack-static

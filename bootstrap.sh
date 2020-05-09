@@ -1,21 +1,21 @@
 #!/bin/env bash
 
-echo "Installing $(wc -l < packages.txt) packages from core"
-sudo pacman --noconfirm -S - < packages.txt
-
-if [ -x "$(which yaourt)" ]; then
-    echo "Yaourt installed already"
+if [ -x "$(which yay)" ]; then
+    echo "Yay installed already"
 else
-    echo "Installing yaourt"
+    echo "Installing yay"
+    sudo pacman --noconfirm -S git
 
-    rm -rf /tmp/yaourt /tmp/package-query
+    sudo pacman --noconfirm -S - < packages.txt
+    rm -rf /tmp/yay /tmp/package-query
 
     cd /tmp && git clone https://aur.archlinux.org/package-query.git
     cd package-query && makepkg -si
 
-    cd /tmp && git clone https://aur.archlinux.org/yaourt.git
-    cd /tmp/yaourt && makepkg -si
+    cd /tmp && git clone https://aur.archlinux.org/yay.git
+    cd /tmp/yay && makepkg -si
 fi
 
-echo "Installing $(wc -l < aur.txt) packages from aur"
-yaourt --noconfirm -S - < aur.txt
+echo "Installing $(wc -l < packages.txt) packages"
+yay --noconfirm -S - < packages.txt
+
