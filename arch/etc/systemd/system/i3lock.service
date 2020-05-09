@@ -1,0 +1,16 @@
+# It is very important that this is a system service instead of user service
+# because as of now there is no sleep.target per user.
+
+[Unit]
+Description=Lock screen before suspend or sleep
+Before=sleep.target
+
+[Service]
+User=j
+Type=forking
+Environment=DISPLAY=:0
+ExecStart=i3lock -c 002b36
+ExecStartPost=/usr/bin/sleep 1
+
+[Install]
+WantedBy=sleep.target
