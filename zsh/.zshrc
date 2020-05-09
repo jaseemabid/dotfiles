@@ -87,7 +87,7 @@ source ~/.zaliases
 [[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ '
 [[ $EMACS = t ]] && unsetopt zle && PS1='$ '
 
-if [[ -z $DISPLAY && -z "$SSH_CLIENT" && -x "$(command -v startx)" ]]; then
+if [[ $TTY == /dev/tty1 && -z $DISPLAY && -z "$SSH_CLIENT" && -x "$(command -v startx)" ]]; then
     exec startx
 fi
 
