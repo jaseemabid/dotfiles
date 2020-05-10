@@ -1,13 +1,13 @@
 import Data.Monoid
+import Data.Ratio
 import System.IO
-
 import XMonad
 import XMonad.Actions.CycleWS (toggleWS)
 import XMonad.Config.Desktop (desktopConfig)
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ManageDocks
-import XMonad.Hooks.ManageHelpers (isFullscreen, isDialog,  doFullFloat, doCenterFloat)
+import XMonad.Hooks.ManageHelpers (isFullscreen, isDialog,  doFullFloat, doCenterFloat, doRectFloat)
 import XMonad.Hooks.SetWMName
 import XMonad.Layout.NoBorders (smartBorders)
 import XMonad.Util.EZConfig (additionalKeysP, removeKeysP)
@@ -25,15 +25,20 @@ myManageHook = composeAll
    , className =? "Firefox"       --> doShift "4"
    , className =? "Firefox Beta"  --> doShift "4"
    , className =? "Spotify"       --> doShift "9"
-   , className =? "Arandr"        --> doCenterFloat
-   , className =? "Blueberry.py"  --> doCenterFloat
-   , className =? "Display"       --> doCenterFloat
-   , className =? "Pavucontrol"   --> doCenterFloat
+   , className =? "Arandr"        --> doCenterSizedFloat
+   , className =? "Blueberry.py"  --> doCenterSizedFloat
+   , className =? "Pavucontrol"   --> doCenterSizedFloat
    , className =? "Pinentry"      --> doCenterFloat
    , className =? "Xfce4-notifyd" --> doIgnore
    , isFullscreen                 --> doFullFloat
    , isDialog                     --> doCenterFloat
    ]
+   where
+     -- Force a window to be in the middle of the screen with half the screen
+     -- size. This is necessary for all apps that start with wrong window size
+     -- hints.
+     middle = (W.RationalRect (1 % 4) (1 % 4) (1 % 2) (1 % 2))
+     doCenterSizedFloat = doRectFloat middle
 
 main :: IO ()
 main = do
