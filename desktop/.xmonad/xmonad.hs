@@ -72,28 +72,18 @@ main = do
       , ("<XF86AudioMute>", spawn "amixer -q set Master toggle")
       , ("<XF86AudioRaiseVolume>", spawn "amixer -q set Master 5%+")
 
-      -- On the Thinkpad, I'm unable to map to the power button, but Fn+Power is
-      -- handled as XF86WakeUp. Disabled because unreliable
-      -- , ("<XF86WakeUp>", spawn suspend)
+      , ("<Insert>", toggleWS)
+      , ("<Print>", spawn "gnome-screenshot -i")
+      , ("M-<Insert>", windows W.focusDown)
       , ("M-S-l", spawn lock)
-
+      , ("M-S-n", spawn "nautilus")
+      , ("M-S-p", spawn "budgie-run-dialog")
       -- "Type" clipboard into password fields to deal with crappy banking websites
       , ("M-v", spawn "xdotool type --clearmodifiers -- $(xsel --clipboard --output)")
-
-      , ("<Insert>", toggleWS)
-      , ("M-<Insert>", windows W.focusDown)
-
-      , ("M-S-p", spawn "budgie-run-dialog")
-
-      , ("<Print>", spawn "gnome-screenshot -i")
-      , ("M-S-n", spawn "nautilus")
       ]
 
-    -- Switch on kinesis with asdf because numbers are far away
-    kkeys = ["a", "s", "d", "f"]
-
+    -- Switch on Kinesis with asdf because numbers are far away
     kinesis = [("M-" ++ key, windows $ W.greedyView space) |
-               (key, space) <- zip kkeys ws]
+                (key, space) <- zip ["a", "s", "d", "f"] ws]
 
     lock = "i3lock -c 2e3440"
-    -- suspend = lock ++ " && systemctl suspend"
