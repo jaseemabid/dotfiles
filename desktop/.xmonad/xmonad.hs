@@ -16,8 +16,8 @@ import qualified XMonad.StackSet as W
 
 myManageHook :: Query (Data.Monoid.Endo WindowSet)
 myManageHook = composeAll
-   [ className =? "Alacritty"     --> doShift "1" ,
-     className =? "kitty"         --> doShift "1"
+   [ className =? "Alacritty"     --> doShift "1"
+   , className =? "kitty"         --> doShift "1"
    , className =? "Terminator"    --> doShift "1"
    , className =? "Emacs"         --> doShift "2"
    , className =? "Google-chrome" --> doShift "3"
