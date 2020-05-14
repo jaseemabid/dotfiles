@@ -1,0 +1,16 @@
+# This service depends on X and would fail the first time it starts up. A dirty
+# hack is to always restart (default is No) with a reasonable gap in between
+# (default is 100ms).
+
+[Unit]
+Description=XFCE Power manager
+
+[Service]
+Type=simple
+Environment=DISPLAY=:0
+ExecStart=xfce4-power-manager --no-daemon
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target
