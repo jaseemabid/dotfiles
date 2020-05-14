@@ -117,7 +117,6 @@ which
 wireguard-dkms
 wireguard-tools
 wireless_tools
-xbindkeys
 xf86-video-vesa
 xfce4-power-manager
 xorg-bdftopcf

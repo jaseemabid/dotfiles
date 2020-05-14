@@ -10,7 +10,7 @@ import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers (isFullscreen, isDialog,  doFullFloat, doCenterFloat, doRectFloat)
 import XMonad.Hooks.SetWMName
 import XMonad.Layout.NoBorders (smartBorders)
-import XMonad.Util.EZConfig (additionalKeysP, removeKeysP)
+import XMonad.Util.EZConfig
 import XMonad.Util.Run (spawnPipe)
 import qualified XMonad.StackSet as W
 
@@ -55,35 +55,37 @@ main = do
       , handleEventHook = fullscreenEventHook
       , workspaces = ws
       , startupHook = setWMName "LG3D"
-      } `additionalKeysP` (additional ++ kinesis) `removeKeysP` removed
+      } `additionalKeysP` (additional ++ kinesis) `additionalMouseBindings` mouse `removeKeysP` removed
 
   where
-
     ws = map show ([1..9] :: [Int])
 
     removed = [] --["M-p"]
 
     -- Key codes: https://hackage.haskell.org/package/xmonad-contrib-0.13/docs/XMonad-Util-EZConfig.html
     additional = [
-        ("<XF86MonBrightnessDown>", spawn "brightness -")
-      , ("<XF86MonBrightnessUp>", spawn "brightness +")
-
-      , ("<XF86AudioLowerVolume>", spawn "amixer -q set Master 5%-")
-      , ("<XF86AudioMute>", spawn "amixer -q set Master toggle")
-      , ("<XF86AudioRaiseVolume>", spawn "amixer -q set Master 5%+")
-
-      , ("<Insert>", toggleWS)
+        ("<Insert>", toggleWS)
       , ("<Print>", spawn "gnome-screenshot -i")
+      , ("<XF86AudioLowerVolume>", spawn "pactl set-sink-mute  @DEFAULT_SINK@ false ; pactl set-sink-volume @DEFAULT_SINK@ -5%")
+      , ("<XF86AudioMute>", spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")
+      , ("<XF86AudioNext>", spawn "playerctl next")
+      , ("<XF86AudioPause>", spawn "playerctl pause")
+      , ("<XF86AudioPlay>", spawn "playerctl play")
+      , ("<XF86AudioPrev>", spawn "playerctl previous")
+      , ("<XF86AudioRaiseVolume>", spawn "pactl set-sink-mute  @DEFAULT_SINK@ false ; pactl set-sink-volume @DEFAULT_SINK@ +5%")
+      , ("<XF86AudioStop>", spawn "playerctl stop")
+      , ("<XF86MonBrightnessDown>", spawn "brightness -")
+      , ("<XF86MonBrightnessUp>", spawn "brightness +")
       , ("M-<Insert>", windows W.focusDown)
-      , ("M-S-l", spawn lock)
+      , ("M-S-l", spawn "i3lock -c 2e3440")
       , ("M-S-n", spawn "nautilus")
       , ("M-S-p", spawn "budgie-run-dialog")
-      -- "Type" clipboard into password fields to deal with crappy banking websites
-      , ("M-v", spawn "xdotool type --clearmodifiers -- $(xsel --clipboard --output)")
-      ]
+      , ("M-v", spawn "xdotool type --clearmodifiers -- $(xsel --clipboard --output)")]
 
     -- Switch on Kinesis with asdf because numbers are far away
     kinesis = [("M-" ++ key, windows $ W.greedyView space) |
                 (key, space) <- zip ["a", "s", "d", "f"] ws]
 
-    lock = "i3lock -c 2e3440"
+    mouse = [
+      ((0, 6), const $ spawn "pactl set-sink-mute @DEFAULT_SINK@ false ; pactl set-sink-volume @DEFAULT_SINK@ -5%"),
+      ((0, 7), const $ spawn "pactl set-sink-mute @DEFAULT_SINK@ false ; pactl set-sink-volume @DEFAULT_SINK@ +5%")]
