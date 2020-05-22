@@ -36,7 +36,6 @@ This function should only modify configuration layer settings."
      csv
      docker
      emacs-lisp
-     emoji
      erlang
      git
      (go :variables
