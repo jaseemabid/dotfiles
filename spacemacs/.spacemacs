@@ -56,7 +56,7 @@ This function should only modify configuration layer settings."
      puppet
      (rust :variables
            rust-backend 'racer
-           rust-format-on-save t)
+           rust-format-on-save nil)
      scheme
      (shell :variables
             shell-default-shell 'eshell
