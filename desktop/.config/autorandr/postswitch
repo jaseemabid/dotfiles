@@ -1,4 +1,4 @@
 #!/bin/sh
 
-xmonad --restart
+~/.cabal/bin/xmonad --restart
 feh --bg-fill ~/Pictures/wp.jpg || true
