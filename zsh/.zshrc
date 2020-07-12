@@ -8,6 +8,7 @@ export TERM="xterm-256color"
 export EDITOR='emacsclient'
 
 # Path to your oh-my-zsh configuration.
+ZSH_DISABLE_COMPFIX="true"
 ZSH=$HOME/.oh-my-zsh
 
 # Theme setup
