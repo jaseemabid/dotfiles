@@ -46,7 +46,7 @@ export HISTSIZE=999999
 export HISTFILESIZE=999999
 
 cdpath=(~/Work ~/Projects)
-path=(~/bin ~/.local/bin ~/.cabal/bin ~/.cargo/bin ~/.gem/ruby/*/bin $path)
+path=(~/bin ~/.local/bin ~/.cabal/bin ~/.cargo/bin $path)
 
 # Configure a minimal shell for root user
 if [[ $UID = '0' ]]
