@@ -41,7 +41,6 @@ This function should only modify configuration layer settings."
      (go :variables
          go-use-golangci-lint nil
          gofmt-command "goimports"
-         gofmt-args '("-local" "github.com/monzo")
          go-format-before-save t)
      (haskell :variables
               haskell-completion-backend 'ghci
