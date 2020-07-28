@@ -31,3 +31,6 @@
 [submodule "tmux/.tmux/plugins/nord-tmux"]
 	path = tmux/.tmux/plugins/nord-tmux
 	url = https://git::@github.com/arcticicestudio/nord-tmux
+[submodule "p10k/.oh-my-zsh/custom/themes/powerlevel10k"]
+	path = p10k/.oh-my-zsh/custom/themes/powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k.git
