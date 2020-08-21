@@ -33,6 +33,7 @@ This function should only modify configuration layer settings."
       :variables spacemacs-default-company-backends '(company-emoji))
      better-defaults
      c-c++
+     cmake
      csv
      docker
      emacs-lisp
