@@ -46,7 +46,7 @@ DISABLE_AUTO_UPDATE="true"
 export HISTSIZE=999999
 export HISTFILESIZE=999999
 
-cdpath=(~/Work ~/Projects)
+cdpath=(~/src)
 path=(~/bin ~/.local/bin ~/.cabal/bin ~/.cargo/bin $path)
 
 # Configure a minimal shell for root user
