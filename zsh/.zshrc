@@ -6,6 +6,7 @@ export LC_ALL="en_US.UTF-8"
 export LANG="en_US.UTF-8"
 export TERM="xterm-256color"
 export EDITOR='emacsclient'
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # Path to your oh-my-zsh configuration.
 ZSH_DISABLE_COMPFIX="true"
