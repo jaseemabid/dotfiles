@@ -61,8 +61,8 @@ else
     elif [[ "$OSTYPE" == "linux-gnu" ]]; then
         plugins=(cargo docker fzf git kubectl rust stack sudo tmux z)
     elif [[ "$OSTYPE" == "darwin"* ]]; then
-        plugins=(docker fzf git kubectl rust stack tmux z)
-        path=(/usr/local/opt/ruby/bin /usr/local/sbin /usr/local/opt/texinfo/bin $path)
+        plugins=(cargo docker fzf git kubectl rust stack tmux z)
+        path=(/opt/brew/bin /usr/local/opt/ruby/bin /usr/local/sbin /usr/local/opt/texinfo/bin $path)
         [[ -d /opt/brew/share/zsh/site-functions/ ]] && fpath+=(/opt/brew/share/zsh/site-functions/)
     else
         echo "Unknown OS"
