@@ -77,3 +77,11 @@ mkcd () {
 }
 
 alias mux=tmuxinator
+
+# https://github.com/aykamko/tag
+if (( $+commands[tag] )); then
+    export TAG_CMD_FMT_STRING="emacsclient -n -c +{{.LineNumber}}:{{.ColumnNumber}} '{{.Filename}}'"
+    export TAG_SEARCH_PROG=rg
+    tag() { command tag "$@"; source ${TAG_ALIAS_FILE:-/tmp/tag_aliases} 2>/dev/null }
+    alias rg=tag
+fi
