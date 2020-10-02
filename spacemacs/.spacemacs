@@ -429,7 +429,6 @@ you should place your code here."
                 split-width-threshold  0)
 
   ;; Enable auto fill
-  (add-hook 'markdown-mode-hook 'auto-fill-mode)
   (add-hook 'org-mode-hook 'auto-fill-mode)
 
   ;; Jumping with the tags pretty much never works, disable
