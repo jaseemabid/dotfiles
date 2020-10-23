@@ -34,6 +34,7 @@ This function should only modify configuration layer settings."
      better-defaults
      c-c++
      cmake
+     cscope
      csv
      docker
      emacs-lisp
@@ -62,6 +63,7 @@ This function should only modify configuration layer settings."
             shell-default-shell 'eshell
             shell-default-height 30
             shell-default-position 'bottom)
+     shell-scripts
      systemd
      spell-checking
      syntax-checking
