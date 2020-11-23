@@ -57,6 +57,8 @@ This function should only modify configuration layer settings."
      puppet
      (rust :variables
            rust-backend 'racer
+           ;; https://github.com/racer-rust/emacs-racer/issues/142
+           racer-rust-src-path "/Users/j/.rustup/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/src/rust/library"
            rust-format-on-save nil)
      scheme
      (shell :variables
