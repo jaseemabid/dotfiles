@@ -15,20 +15,16 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     alias c='pbcopy'
     alias p='pbpaste'
     alias o='open'
-else
-    # Unknown, or  cygwin/win32/freebsd*
-    echo "GET A LIFE, USE A SENSIBLE OS"
 fi
 
-# Listing
 if [ -x "$(command -v exa)" ]; then
-    alias ls='exa --long --header --tree --level=1'
-    alias le='exa --long --header --tree --level=2'
-    alias lee='exa --long --header --tree --level=3'
-    alias leee='exa --long --header --tree --level=4'
+    alias ls='exa --colour=always --long --tree --level=1'
+    alias le='exa --colour=always --long --tree --level=2'
 fi
 
-alias ll='ranger'
+if [ -x "$(command -v bat)" ]; then
+    alias cat='bat'
+fi
 
 # git; lot more provided by git plugin
 alias get='git clone '
@@ -40,30 +36,27 @@ alias gs='git status'
 alias gt='git'
 alias gx='git commit --amend --no-edit'
 
-alias big="gstat -c %s $1"
-alias t='tmux'
-
 # Data recovery is a myth
 alias dd="echo -e '★★★★★★★★★★★★★★★★★★★★★'; echo -e 'Are you fucking sure?\n'; sleep 7; dd "
 
-# Quickies
+alias acroread="open"
+alias big="gstat -c %s $1"
 alias die="xset dpms force off"
+alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
 alias genpass="openssl rand -base64 12"
 alias hl="highlight -O ansi"
+alias ll='ranger'
+alias mux="tmuxinator"
 alias record="ffmpeg -f x11grab -r 30 -s 1366x768 -i :0.0 -f alsa -ac 2 -i pulse -vcodec libx264 -acodec pcm_s16le screencast.mkv"
+alias rm="trash"
+alias t='tmux'
 alias ty="yt"
 alias untar="tar -zxvf $1"
-alias yt="youtube-dl -wci -o '%(title)s-%(id)s.%(ext)s'"
-alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
-
-# Alternatives
-alias rm="trash"
-alias acroread="open"
 alias vi="emacsclient -n"
+alias yt="youtube-dl -wci -o '%(title)s-%(id)s.%(ext)s'"
 
 # Screensetup
 alias horizontal='xrandr --output VIRTUAL1 --off --output eDP1 --primary --mode 1920x1080 --pos 1920x0 --rotate normal --output DP1 --off --output DP2-1 --off --output DP2-2 --mode 1920x1080 --pos 0x0 --rotate normal --output DP2-3 --off --output HDMI2 --off --output HDMI1 --off --output DP2 --off'
-
 alias vertical='xrandr --output VIRTUAL1 --off --output eDP1 --primary --mode 1920x1080 --pos 1080x0 --rotate normal --output DP1 --off --output DP2-1 --off --output DP2-2 --mode 1920x1080 --pos 0x0 --rotate right --output DP2-3 --off --output HDMI2 --off --output HDMI1 --off --output DP2 --off'
 
 # Remove trailing whitespace
@@ -76,12 +69,10 @@ mkcd () {
     cd "${1}"
 }
 
-alias mux=tmuxinator
-
 # https://github.com/aykamko/tag
 if (( $+commands[tag] )); then
     export TAG_CMD_FMT_STRING="emacsclient -n -c +{{.LineNumber}}:{{.ColumnNumber}} '{{.Filename}}'"
     export TAG_SEARCH_PROG=rg
     tag() { command tag "$@"; source ${TAG_ALIAS_FILE:-/tmp/tag_aliases} 2>/dev/null }
-    alias rg=tag
+    alias rg='tag --color=always '
 fi
