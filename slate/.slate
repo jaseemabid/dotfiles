@@ -22,6 +22,10 @@ bind left:${hyper} ${lefthalf}
 bind right:${hyper} ${righthalf}
 bind up:${hyper} ${full}
 
+# Nudge left and right
+bind left:cmd,ctrl nudge -100 +0
+bind right:cmd,ctrl nudge +100 +0
+
 # Send active window to second monitor
 bind down:${hyper} throw next resize
 
