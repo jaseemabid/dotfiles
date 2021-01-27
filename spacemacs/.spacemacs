@@ -29,8 +29,7 @@ This function should only modify configuration layer settings."
    dotspacemacs-configuration-layer-path '()
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '((auto-completion
-      :variables spacemacs-default-company-backends '(company-emoji))
+   '(auto-completion
      better-defaults
      c-c++
      cmake
@@ -503,11 +502,6 @@ you should place your code here."
     :config
     (setq geiser-chez-binary "scheme"
           geiser-active-implementations '(chez racket)))
-
-  ;; The default list is long and useless, just override locally
-  (use-package git-commit
-    :config
-    (setq-default company-backends '(company-emoji)))
 
   (use-package make-mode
     :init
