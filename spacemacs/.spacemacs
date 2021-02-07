@@ -54,6 +54,8 @@ This function should only modify configuration layer settings."
      org
      protobuf
      puppet
+     (python :variables
+             python-backend 'anaconda)
      (rust :variables
            rust-backend 'racer
            ;; https://github.com/racer-rust/emacs-racer/issues/142
@@ -76,6 +78,7 @@ This function should only modify configuration layer settings."
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '(cql-mode
+                                      bazel-mode
                                       edit-indirect
                                       highlight-symbol
                                       rainbow-mode)
