@@ -1,0 +1,11 @@
+[Match]
+Name=eno2
+
+[Network]
+Address=192.168.8.2/24
+Gateway=192.168.8.1
+DNS=1.1.1.1
+IPv6AcceptRA=yes
+
+[DHCP]
+RouteMetric=10

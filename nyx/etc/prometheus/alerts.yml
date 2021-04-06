@@ -1,0 +1,12 @@
+groups:
+- name: network
+  rules:
+  - alert: Machine Offline
+    expr: ping_loss_percent{job="ping_exporter",  target="192.168.8.1"} != 0
+    for: 2m
+    labels:
+      severity: page
+    annotations:
+      summary: Lost connection to router
+
+

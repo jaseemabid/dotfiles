@@ -1,0 +1,31 @@
+{
+	auto_https off
+}
+
+http://pi.hole {
+	reverse_proxy localhost:8081
+}
+
+http://monica.nyx.jabid.in {
+	reverse_proxy localhost:8082
+}
+
+http://nyx.jaseemabid.gmail.com.beta.tailscale.net {
+	reverse_proxy localhost:8083
+}
+
+http://journal.nyx.jabid.in {
+	reverse_proxy localhost:8083
+}
+
+http://prometheus.nyx.jabid.in {
+	reverse_proxy localhost:9090
+}
+
+http://grafana.nyx.jabid.in {
+	reverse_proxy localhost:3000
+}
+
+http://*.jabid.in {
+	respond "Hello, world!"
+}
