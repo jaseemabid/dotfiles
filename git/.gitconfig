@@ -2,6 +2,8 @@
 [user]
     name = Jaseem Abid
     email = me@jabid.in
+[init]
+    defaultBranch = main
 [github]
     username = jaseemabid
 [apply]
@@ -44,8 +46,6 @@
     autostash = true
 [credential]
     helper = cache --timeout 36000
-[merge]
-    tool = meld
 [help]
     autocorrect = 1
 [diff]
@@ -68,5 +68,3 @@
     required = true
 [submodule]
     recurse = true
-[init]
-    defaultBranch = main
