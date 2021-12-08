@@ -78,7 +78,6 @@ This function should only modify configuration layer settings."
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '(cql-mode
-                                      bazel-mode
                                       edit-indirect
                                       highlight-symbol
                                       rainbow-mode)
