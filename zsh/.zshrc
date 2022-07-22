@@ -8,6 +8,12 @@ export TERM="xterm-256color"
 export EDITOR='emacsclient'
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
+# Skip most of shell setup for dumb terminals and IDEs
+if [[ ${INTELLIJ_ENVIRONMENT_READER+x} ]]; then
+    echo "SHELL?, should probably quit"
+    exit 0
+fi
+
 # Path to your oh-my-zsh configuration.
 ZSH_DISABLE_COMPFIX="true"
 ZSH=$HOME/.oh-my-zsh
