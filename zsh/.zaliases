@@ -39,13 +39,12 @@ alias gx='git commit --amend --no-edit'
 # Data recovery is a myth
 alias dd="echo -e '★★★★★★★★★★★★★★★★★★★★★'; echo -e 'Are you fucking sure?\n'; sleep 7; dd "
 
-alias acroread="open"
-alias big="gstat -c %s $1"
+alias big="gstat -c %s $1 | numfmt --to=iec"
 alias die="xset dpms force off"
 alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
 alias genpass="openssl rand -base64 12"
-alias hl="highlight -O ansi"
 alias ll='ranger'
+alias less='less -S' # Chop long lines
 alias mux="tmuxinator"
 alias record="ffmpeg -f x11grab -r 30 -s 1366x768 -i :0.0 -f alsa -ac 2 -i pulse -vcodec libx264 -acodec pcm_s16le screencast.mkv"
 alias rm="trash"
@@ -76,3 +75,19 @@ if (( $+commands[tag] )); then
     tag() { command tag "$@"; source ${TAG_ALIAS_FILE:-/tmp/tag_aliases} 2>/dev/null }
     alias rg='tag --color=always '
 fi
+
+# Pipes
+alias -g L='| less'
+alias -g G='| grep'
+alias -g C='| wc -l'
+alias -g X='| xargs -0'
+
+# Arguments
+alias -g H='--help'
+alias -g V='--version'
+
+# Options
+alias -g h='HEAD'
+alias -g m='master'
+alias -g n='--no-decorate'
+alias -g om='origin/master'
