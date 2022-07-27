@@ -5,7 +5,8 @@ DEFAULT_USER=$(whoami)
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US.UTF-8"
 export TERM="xterm-256color"
-export EDITOR='emacsclient'
+export VISUAL='/usr/local/bin/nvim'
+export EDITOR="$VISUAL"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # Skip most of shell setup for dumb terminals and IDEs
