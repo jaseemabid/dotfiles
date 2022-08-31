@@ -15,6 +15,13 @@ if [[ ${INTELLIJ_ENVIRONMENT_READER+x} ]]; then
     exit 0
 fi
 
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Path to your oh-my-zsh configuration.
 ZSH_DISABLE_COMPFIX="true"
 ZSH=$HOME/.oh-my-zsh
@@ -23,10 +30,6 @@ ZSH=$HOME/.oh-my-zsh
 if [[ "$OSTYPE" == "linux-gnueabihf" ]]; then
     ZSH_THEME="robbyrussell"
 else
-    POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status context dir vcs)
-    POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
-    POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
-    POWERLEVEL9K_STATUS_CROSS=true
     ZSH_THEME="powerlevel10k/powerlevel10k"
 fi
 
@@ -105,6 +108,9 @@ fi
 if [[ -z $TMUX && -z "$SSH_CLIENT" ]]; then
     exec tmux attach
 fi
+
+# To customize prompt, run `p10k configure` or edit ~/dotfiles/p10k/.p10k.zsh.
+[[ ! -f ~/dotfiles/p10k/.p10k.zsh ]] || source ~/dotfiles/p10k/.p10k.zsh
 
 # Return success if everything went right
 true
