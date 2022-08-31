@@ -26,6 +26,10 @@ if [ -x "$(command -v bat)" ]; then
     alias cat='bat'
 fi
 
+if [ -x "$(command -v sdiff)" ]; then
+    alias diff='sdiff -s'
+fi
+
 # git; lot more provided by git plugin
 alias get='git clone '
 alias gg='git checkout'
