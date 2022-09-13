@@ -2,17 +2,9 @@
 
 ℹ http://dotfiles.github.com
 
-### What's included
-
-Usual suspects. Config for my work Mac, personal laptop running Arch Linux and
-the raspberry pi.
-
 ### Installation
 
-Modules are symlinked to where its needed with [GNU Stow].
-
-⚠ _ This will override existing files _
-
+    brew install stow
     git clone --recurse-submodules https://github.com/jaseemabid/dotfiles.git ~/dotfiles
 
 Install a single module:
@@ -30,5 +22,3 @@ Install everything with Make
 ### License
 
 The MIT License (MIT)
-
-[GNU Stow]: https://www.gnu.org/software/stow/
