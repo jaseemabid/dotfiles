@@ -110,7 +110,7 @@ if [[ -z $TMUX && -z "$SSH_CLIENT" ]]; then
 fi
 
 # To customize prompt, run `p10k configure` or edit ~/dotfiles/p10k/.p10k.zsh.
-[[ ! -f ~/dotfiles/p10k/.p10k.zsh ]] || source ~/dotfiles/p10k/.p10k.zsh
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Return success if everything went right
 true
