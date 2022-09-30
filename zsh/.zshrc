@@ -14,10 +14,6 @@ if [[ ${INTELLIJ_ENVIRONMENT_READER+x} ]]; then
     return
 fi
 
-if [[ ${TERMINAL_EMULATOR} == "JetBrains-JediTerm" ]]; then
-    return
-fi
-
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -107,8 +103,9 @@ if [[ $TTY == /dev/tty1 && -z $DISPLAY && -z "$SSH_CLIENT" && -x "$(command -v s
     exec startx
 fi
 
-# Tmux attach by default only local sessions, not for remote ssh
-if [[ -z $TMUX && -z "$SSH_CLIENT" ]]; then
+# Tmux attach by default only local, directly interactive sessions
+if [[ -z $TMUX && -z "$SSH_CLIENT"  ]] &&
+   [[ ${TERMINAL_EMULATOR} != "JetBrains-JediTerm" ]]; then
     exec tmux attach
 fi
 
