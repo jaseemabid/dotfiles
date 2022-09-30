@@ -11,8 +11,11 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # Skip most of shell setup for dumb terminals and IDEs
 if [[ ${INTELLIJ_ENVIRONMENT_READER+x} ]]; then
-    echo "SHELL?, should probably quit"
-    exit 0
+    return
+fi
+
+if [[ ${TERMINAL_EMULATOR} == "JetBrains-JediTerm" ]]; then
+    return
 fi
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
