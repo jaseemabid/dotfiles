@@ -20,7 +20,7 @@ set textwidth=0             " Hard-wrap long lines as you type them.
 set expandtab               " Insert spaces when TAB is pressed.
 set tabstop=4               " Render TABs using this many spaces.
 set shiftwidth=4            " Indentation amount for < and > commands.
-
+set spell spelllang=en_gb   " Spell check locale
 set noerrorbells            " No beeps.
 set modeline                " Enable modeline.
 set linespace=0             " Set line-spacing to minimum.
