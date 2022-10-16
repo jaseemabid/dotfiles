@@ -10,35 +10,34 @@ call plug#end()
 
 let mapleader="\<SPACE>"
 
-set showcmd             " Show (partial) command in status line.
-set showmatch           " Show matching brackets.
-set showmode            " Show current mode.
-set ruler               " Show the line and column numbers of the cursor.
-set number              " Show the line numbers on the left side.
-set formatoptions+=o    " Continue comment marker in new lines.
-set textwidth=0         " Hard-wrap long lines as you type them.
-set expandtab           " Insert spaces when TAB is pressed.
-set tabstop=4           " Render TABs using this many spaces.
-set shiftwidth=4        " Indentation amount for < and > commands.
+set showcmd                 " Show (partial) command in status line.
+set showmatch               " Show matching brackets.
+set showmode                " Show current mode.
+set ruler                   " Show the line and column numbers of the cursor.
+set number                  " Show the line numbers on the left side.
+set formatoptions+=o        " Continue comment marker in new lines.
+set textwidth=0             " Hard-wrap long lines as you type them.
+set expandtab               " Insert spaces when TAB is pressed.
+set tabstop=4               " Render TABs using this many spaces.
+set shiftwidth=4            " Indentation amount for < and > commands.
 
-set noerrorbells        " No beeps.
-set modeline            " Enable modeline.
-set linespace=0         " Set line-spacing to minimum.
+set noerrorbells            " No beeps.
+set modeline                " Enable modeline.
+set linespace=0             " Set line-spacing to minimum.
 
 " More natural splits
-set splitbelow          " Horizontal split below current.
-set splitright          " Vertical split to right of current.
+set splitbelow              " Horizontal split below current.
+set splitright              " Vertical split to right of current.
 
 " Better search
-set ignorecase          " Make searching case insensitive
-set smartcase           " ... unless the query has capital letters.
-set gdefault            " Use 'g' flag by default with :s/foo/bar/.
-set magic               " Use 'magic' patterns (extended regular expressions).
+set ignorecase              " Make searching case insensitive
+set smartcase               " ... unless the query has capital letters.
+set gdefault                " Use 'g' flag by default with :s/foo/bar/.
+set magic                   " Use 'magic' patterns (extended regular expressions).
 
 " Highlight long lines and whitespace
 match ErrorMsg '\%>120v.\+'
 match ErrorMsg '\s\+$'
-
 
 set clipboard=unnamedplus,unnamed
 
