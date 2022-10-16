@@ -32,7 +32,7 @@ bind down:${hyper} throw next resize
 # App bindings
 bind 1:${hyper} focus 'Terminal'
 bind 2:${hyper} focus 'Emacs'
-bind 3:${hyper} focus 'Safari'
+bind 3:${hyper} focus 'Arc'
 bind 4:${hyper} focus 'Bear'
 bind 5:${hyper} focus 'Calendar'
 bind 6:${hyper} focus 'Slack'
