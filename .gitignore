@@ -5,6 +5,7 @@
 *.
 *~
 .DS_Store
+.netrwhist
 /bin/bin/idea
 /git/.config/gh/
 /i3/i3log
