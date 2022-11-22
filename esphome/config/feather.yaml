@@ -1,0 +1,35 @@
+esphome:
+  name: feather
+
+esp32:
+  board: featheresp32
+  framework:
+    type: arduino
+
+logger:
+
+api:
+  password: ""
+
+ota:
+  password: ""
+
+wifi:
+  ssid: "Zelda"
+  password: "REPLACE ME"
+
+# Pins are marked RX/16 & TX/17 on feather, not sure if its GPIO numbers
+uart:
+  tx_pin: GPIO17
+  rx_pin: GPIO16
+  baud_rate: 9600
+
+sensor:
+  - platform: pmsx003
+    type: PMSX003
+    pm_1_0:
+      name: "PM <1.0"
+    pm_2_5:
+      name: "PM <2.5µm"
+    pm_10_0:
+      name: "PM <10.0µm"

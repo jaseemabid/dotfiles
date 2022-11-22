@@ -1,0 +1,15 @@
+version: '3'
+services:
+  esphome:
+    container_name: esphome
+    image: esphome/esphome
+    ports:
+      - "6052:6052"
+    volumes:
+      - ./config:/config
+      - /etc/localtime:/etc/localtime:ro
+    devices:
+      - "/dev/cu.usbserial-0232A4F2:/dev/cu.usbserial-0232A4F2"
+    restart: always
+    privileged: true
+
