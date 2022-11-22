@@ -37,5 +37,6 @@ sensor:
       name: "SCD30 Humidity"
       accuracy_decimals: 1
     address: 0x61
-    update_interval: 10s
+    update_interval: 30s
+    temperature_offset: 2
 
