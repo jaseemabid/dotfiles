@@ -15,8 +15,8 @@ ota:
   password: ""
 
 wifi:
-  ssid: "Zelda"
-  password: "REPLACE ME"
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
 
 # Devkit has 21/22 for SDA/SCL even though there is an extra CLK pin.
 i2c:

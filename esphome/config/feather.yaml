@@ -15,8 +15,8 @@ ota:
   password: ""
 
 wifi:
-  ssid: "Zelda"
-  password: "REPLACE ME"
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
 
 # Pins are marked RX/16 & TX/17 on feather, not sure if its GPIO numbers
 uart:
