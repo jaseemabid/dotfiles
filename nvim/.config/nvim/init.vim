@@ -5,6 +5,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
 Plug 'junegunn/goyo.vim'
+Plug 'tpope/vim-commentary'
 
 call plug#end()
 
