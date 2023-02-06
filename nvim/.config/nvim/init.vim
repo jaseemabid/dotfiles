@@ -1,11 +1,14 @@
 call plug#begin('~/.vim/plugged')
 
-Plug 'neovimhaskell/haskell-vim'
+
+Plug 'tpope/vim-sensible'           " Sensible defaults for everyone
+Plug 'tpope/vim-commentary'         " Comment region with gc
+Plug 'ctrlpvim/ctrlp.vim'           " Fuzzy finder for files and buffers
+Plug 'junegunn/goyo.vim'            " Distraction free writing
+
+Plug 'neovimhaskell/haskell-vim'    " Language bindings
 Plug 'rust-lang/rust.vim'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
-Plug 'junegunn/goyo.vim'
-Plug 'tpope/vim-commentary'
 
 call plug#end()
 
@@ -42,12 +45,10 @@ match ErrorMsg '\s\+$'
 
 set clipboard=unnamedplus,unnamed
 
-" Fix tabs
-filetype plugin indent on
-
 autocmd BufWritePre * %s/\s\+$//e
 
 " CtrlP
+
 " Open file menu
 nnoremap <Leader>o :CtrlP<CR>
 " Open buffer menu
@@ -69,4 +70,3 @@ endfunction
 
 command! ProseMode call ProseMode()
 nmap \p :ProseMode<CR>
-
