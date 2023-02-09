@@ -34,3 +34,6 @@
 [submodule "p10k/.oh-my-zsh/custom/themes/powerlevel10k"]
 	path = p10k/.oh-my-zsh/custom/themes/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k.git
+[submodule "fzf/.oh-my-zsh/custom/plugins/fzf-tab"]
+	path = fzf/.oh-my-zsh/custom/plugins/fzf-tab
+	url = https://github.com/Aloxaf/fzf-tab
