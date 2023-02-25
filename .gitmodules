@@ -37,3 +37,6 @@
 [submodule "fzf/.oh-my-zsh/custom/plugins/fzf-tab"]
 	path = fzf/.oh-my-zsh/custom/plugins/fzf-tab
 	url = https://github.com/Aloxaf/fzf-tab
+[submodule "tmux/.tmux/plugins/tmux-sidebar"]
+	path = tmux/.tmux/plugins/tmux-sidebar
+	url = https://github.com/tmux-plugins/tmux-sidebar
