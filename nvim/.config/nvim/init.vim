@@ -1,5 +1,6 @@
-call plug#begin('~/.vim/plugged')
+" See https://github.com/iggredible/Learn-Vim for a comprehensive vim manual
 
+call plug#begin('~/.vim/plugged')
 
 Plug 'ctrlpvim/ctrlp.vim'           " Fuzzy finder for files and buffers
 Plug 'junegunn/goyo.vim'            " Distraction free writing
@@ -38,6 +39,7 @@ set gdefault                " Use 'g' flag by default with :s/foo/bar/.
 set ignorecase              " Make searching case insensitive
 set magic                   " Use 'magic' patterns (extended regular expressions).
 set smartcase               " ... unless the query has capital letters.
+nnoremap <silent> <Esc><Esc> <Esc>:nohlsearch<CR><Esc> " Clear highlight with ESC ESC
 
 " Highlight long lines and whitespace
 match ErrorMsg '\%>120v.\+'
