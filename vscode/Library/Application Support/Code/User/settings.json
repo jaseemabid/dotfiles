@@ -1,0 +1,90 @@
+{
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "cSpell.customDictionaries": {
+        "custom": true,
+        "jabid": {
+            "addWords": true,
+            "name": "jabid",
+            "path": "~/.dictionary",
+            "scope": "user"
+        }
+    },
+    "editor.accessibilitySupport": "off",
+    "editor.formatOnSave": true,
+    "editor.renderWhitespace": "all",
+    "extensions.autoCheckUpdates": false,
+    "extensions.autoUpdate": false,
+    "files.associations": {
+        "*.tera": "html"
+    },
+    "files.autoSave": "onFocusChange",
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
+    "files.watcherExclude": {
+        "**/.ammonite": true,
+        "**/.bloop": true,
+        "**/.metals": true
+    },
+    "git.confirmSync": false,
+    "prettier.documentSelectors": ["**/*.{html,tera}"],
+    "prettier.tabWidth": 4,
+    "rewrap.autoWrap.enabled": true,
+    "rewrap.wrappingColumn": 120,
+    "ruby.format": "rubocop",
+    "ruby.lint": {
+        "reek": {
+            "useBundler": true
+        },
+        "rubocop": {
+            "useBundler": true
+        }
+    },
+    "ruby.useBundler": true,
+    "ruby.useLanguageServer": true,
+    "security.workspace.trust.untrustedFiles": "open",
+    "typescript.suggest.completeFunctionCalls": true,
+    "vim.handleKeys": {
+        "<C-d>": true
+    },
+    "vim.normalModeKeyBindings": [
+        {
+            "before": ["]"],
+            "commands": ["editor.action.marker.next"],
+            "silent": true
+        },
+        {
+            "before": ["["],
+            "commands": ["editor.action.marker.prev"],
+            "silent": true
+        },
+        {
+            "before": ["r"],
+            "commands": ["editor.action.rename"],
+            "silent": true
+        }
+    ],
+    "vim.statusBarColors.visualline": "",
+    "vim.useSystemClipboard": true,
+    "window.autoDetectColorScheme": true,
+    "window.commandCenter": true,
+    "window.zoomLevel": 1,
+    "workbench.colorTheme": "Default Light+",
+    "workbench.startupEditor": "none"
+}
