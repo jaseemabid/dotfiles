@@ -1,5 +1,5 @@
 {
-    "[css, javascript, json, jsonc, typescript]": {
+    "[css,javascript,json,jsonc,typescript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[html]": {
@@ -93,7 +93,13 @@
     "vim.useSystemClipboard": true,
     "window.autoDetectColorScheme": true,
     "window.commandCenter": true,
-    "window.zoomLevel": 2,
-    "workbench.colorTheme": "Default Light+",
-    "workbench.startupEditor": "none"
+    "window.nativeTabs": true,
+    "window.titleBarStyle": "native",
+    "window.zoomLevel": 1,
+    "workbench.colorTheme": "Nord Light",
+    "workbench.startupEditor": "none",
+    "zenMode.fullScreen": false,
+    "zenMode.hideStatusBar": false,
+    "zenMode.hideTabs": false,
+    "zenMode.restore": false
 }
