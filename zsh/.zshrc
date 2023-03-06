@@ -55,6 +55,8 @@ DISABLE_AUTO_UPDATE="true"
 export HISTSIZE=999999
 export HISTFILESIZE=999999
 
+typeset -U path PATH
+
 cdpath=(~/src)
 path=(~/bin ~/.local/bin ~/.cabal/bin ~/.cargo/bin $path)
 
@@ -70,9 +72,8 @@ else
     elif [[ "$OSTYPE" == "linux-gnu" ]]; then
         plugins=(cargo docker fzf git kubectl rust stack sudo tmux z)
     elif [[ "$OSTYPE" == "darwin"* ]]; then
-        plugins=(cargo docker fzf fzf-tab git kubectl rbenv rust stack tmux z)
-        path=(/opt/brew/bin /usr/local/opt/ruby/bin /usr/local/sbin /usr/local/opt/texinfo/bin $path)
-        [[ -d /opt/brew/share/zsh/site-functions/ ]] && fpath+=(/opt/brew/share/zsh/site-functions/)
+        plugins=(cargo direnv docker fzf fzf-tab git kubectl rbenv rust stack tmux z)
+        path=(/usr/local/opt/ruby/bin /usr/local/sbin /usr/local/opt/texinfo/bin $path)
     else
         echo "Unknown OS"
         exit 1
