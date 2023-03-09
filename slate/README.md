@@ -1,2 +1,5 @@
-$ sudo spctl --master-disable
-Enable accessibility to let the app take over the controls. See screenshot.
+Enable accessibility to let the app take over the controls. 
+
+Preferences > Privacy & Security > Accesibility > Slate 
+
+See screenshot.
