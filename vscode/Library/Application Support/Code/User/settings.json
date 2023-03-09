@@ -96,7 +96,7 @@
     "window.nativeTabs": true,
     "window.titleBarStyle": "native",
     "window.zoomLevel": 1,
-    "workbench.colorTheme": "Nord Light",
+    "workbench.colorTheme": "Default Light+",
     "workbench.startupEditor": "none",
     "zenMode.fullScreen": false,
     "zenMode.hideStatusBar": false,
