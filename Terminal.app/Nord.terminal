@@ -238,6 +238,8 @@
 	<false/>
 	<key>WindowTitle</key>
 	<string></string>
+	<key>columnCount</key>
+	<integer>160</integer>
 	<key>deleteSendsBackspace</key>
 	<true/>
 	<key>keyMapBoundKeys</key>
@@ -357,6 +359,8 @@
 	</dict>
 	<key>name</key>
 	<string>Nord</string>
+	<key>rowCount</key>
+	<integer>1000</integer>
 	<key>shellExitAction</key>
 	<integer>1</integer>
 	<key>type</key>
