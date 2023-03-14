@@ -59,6 +59,8 @@
     "vim.handleKeys": {
         "<C-d>": true
     },
+    "vim.leader": "<SPACE>",
+    "vim.neovimConfigPath": "~/.config/nvim/init.vim",
     "vim.neovimUseConfigFile": true,
     "vim.normalModeKeyBindings": [
         {
@@ -85,6 +87,17 @@
             ],
             "commands": [
                 "editor.action.rename"
+            ],
+            "silent": true
+        },
+        {
+            "before": [
+                "<leader>",
+                "g",
+                "s"
+            ],
+            "commands": [
+                "typescript.goToSourceDefinition"
             ],
             "silent": true
         }
