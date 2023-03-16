@@ -5,7 +5,7 @@ DEFAULT_USER=$(whoami)
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US.UTF-8"
 export TERM="xterm-256color"
-export VISUAL='/usr/local/bin/nvim'
+export VISUAL=$(which nvim)
 export EDITOR="$VISUAL"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
