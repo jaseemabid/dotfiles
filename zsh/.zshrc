@@ -10,7 +10,8 @@ export EDITOR="$VISUAL"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # Skip most of shell setup for dumb terminals and IDEs
-if [[ ${INTELLIJ_ENVIRONMENT_READER+x} ]]; then
+if [[ ${VSCODE_RESOLVING_ENVIRONMENT+x} ]] ||
+   [[ ${INTELLIJ_ENVIRONMENT_READER+x} ]]; then
     return
 fi
 
@@ -106,8 +107,9 @@ fi
 
 # Tmux attach by default only local, directly interactive sessions
 if [[ -z $TMUX && -z "$SSH_CLIENT"  ]] &&
-   [[ ${TERMINAL_EMULATOR} != "JetBrains-JediTerm" ]]; then
-    exec tmux attach
+  [[ ${TERMINAL_EMULATOR} != "JetBrains-JediTerm" ]] &&
+  [[ ${VSCODE_INJECTION} != "1" ]]; then
+   exec tmux attach
 fi
 
 # To customize prompt, run `p10k configure` or edit ~/dotfiles/p10k/.p10k.zsh.
