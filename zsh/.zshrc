@@ -1,21 +1,34 @@
 # -*-sh-*-
 
-DEFAULT_USER=$(whoami)
-
+export DEFAULT_USER=$(whoami)
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US.UTF-8"
 export TERM="xterm-256color"
 export VISUAL=$(which nvim)
 export EDITOR="$VISUAL"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export HISTSIZE=999999
+export HISTFILESIZE=999999
 
-# Skip most of shell setup for dumb terminals and IDEs
+typeset -U path PATH
+cdpath=(~/src)
+path=(~/bin ~/.local/bin ~/.cabal/bin ~/.cargo/bin $path)
+
+# Skip most of shell setup for dumb terminals and IDEs quit early
 if [[ ${VSCODE_RESOLVING_ENVIRONMENT+x} ]] ||
    [[ ${INTELLIJ_ENVIRONMENT_READER+x} ]]; then
     return
 fi
 
-# Path to your oh-my-zsh configuration.
+# Tmux attach by default only local, directly interactive sessions
+if [[ -z $TMUX && -z "$SSH_CLIENT"  ]] &&
+  [[ ${TERMINAL_EMULATOR} != "JetBrains-JediTerm" ]] &&
+  [[ ${VSCODE_INJECTION} != "1" ]]; then
+   exec tmux attach
+fi
+
+# Setup oh-my-zsh
+DISABLE_AUTO_UPDATE="true"
 ZSH_DISABLE_COMPFIX="true"
 ZSH=$HOME/.oh-my-zsh
 
@@ -25,17 +38,6 @@ if [[ "$OSTYPE" == "linux-gnueabihf" ]]; then
 else
     ZSH_THEME="powerlevel10k/powerlevel10k"
 fi
-
-# Comment this out to disable bi-weekly auto-update checks
-DISABLE_AUTO_UPDATE="true"
-
-export HISTSIZE=999999
-export HISTFILESIZE=999999
-
-typeset -U path PATH
-
-cdpath=(~/src)
-path=(~/bin ~/.local/bin ~/.cabal/bin ~/.cargo/bin $path)
 
 # Configure a minimal shell for root user
 if [[ $UID = '0' ]]
@@ -50,7 +52,6 @@ else
         plugins=(cargo docker fzf git kubectl rust stack sudo tmux z)
     elif [[ "$OSTYPE" == "darwin"* ]]; then
         plugins=(cargo direnv docker fzf fzf-tab git kubectl rbenv rust stack tmux z)
-        path=(/usr/local/opt/ruby/bin /usr/local/sbin /usr/local/opt/texinfo/bin $path)
     else
         echo "Unknown OS"
         exit 1
@@ -79,13 +80,6 @@ source ~/.zaliases
 
 if [[ $TTY == /dev/tty1 && -z $DISPLAY && -z "$SSH_CLIENT" && -x "$(command -v startx)" ]]; then
     exec startx
-fi
-
-# Tmux attach by default only local, directly interactive sessions
-if [[ -z $TMUX && -z "$SSH_CLIENT"  ]] &&
-  [[ ${TERMINAL_EMULATOR} != "JetBrains-JediTerm" ]] &&
-  [[ ${VSCODE_INJECTION} != "1" ]]; then
-   exec tmux attach
 fi
 
 # To customize prompt, run `p10k configure` or edit ~/dotfiles/p10k/.p10k.zsh.
