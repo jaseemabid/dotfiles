@@ -43,17 +43,6 @@
     "prettier.tabWidth": 4,
     "rewrap.autoWrap.enabled": true,
     "rewrap.wrappingColumn": 120,
-    "ruby.format": "rubocop",
-    "ruby.lint": {
-        "reek": {
-            "useBundler": true
-        },
-        "rubocop": {
-            "useBundler": true
-        }
-    },
-    "ruby.useBundler": true,
-    "ruby.useLanguageServer": true,
     "security.workspace.trust.untrustedFiles": "open",
     "typescript.suggest.completeFunctionCalls": true,
     "vim.enableNeovim": true,
