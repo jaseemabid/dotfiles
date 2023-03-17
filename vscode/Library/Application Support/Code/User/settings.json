@@ -44,6 +44,9 @@
     "rewrap.autoWrap.enabled": true,
     "rewrap.wrappingColumn": 120,
     "security.workspace.trust.untrustedFiles": "open",
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "terminal.integrated.fontFamily": "MesloLGS NF",
+    "terminal.integrated.showExitAlert": false,
     "typescript.suggest.completeFunctionCalls": true,
     "vim.enableNeovim": true,
     "vim.handleKeys": {
