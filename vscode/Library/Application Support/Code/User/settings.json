@@ -1,6 +1,7 @@
 {
     "[css][javascript][json][jsonc][typescript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "rewrap.autoWrap.enabled": false
     },
     "[html]": {
         "editor.defaultFormatter": "vscode.html-language-features"
