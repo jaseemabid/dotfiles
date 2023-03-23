@@ -1,0 +1,54 @@
+200 metros a km
+
+
+
+100 ftlb to Nm
+100 Nm to ftlb
+100 nm to pm
+
+-25F to C
+
+1,350km m
+1,350.50 km m
+
+1,350,200.50 km m
+
+1 350.50km m
+
+1,350,200.54 km m
+
+1120f c
+
+
+100 btc
+100 btc usd
+100 btc BTT
+100 btc pln
+100 btc btt
+100 usd mxn
+100 usd btc
+100 usd pln
+100 btc pln
+50 btc eth
+
+
+
+--------------
+100 usd - currency to default
+100 usd eur - currency to currency
+100 mxn eur - currency to currency
+2500 usd eth - currency to bitcoin
+45000 mxn eth
+
+2 btc - bitcoint to default
+50 btc eth - bitcoint to bitcoin
+2 eth mxn - bitcoint to currency
+
+2 eth usd = 3,608.16920364
+
+
+
+10 btc pln
+
+
+1000 mxn pln
