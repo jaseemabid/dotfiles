@@ -7,5 +7,14 @@
     {
         "key": "cmd+k z",
         "command": "-workbench.action.toggleZenMode"
+    },
+    {
+        "key": "cmd+o",
+        "command": "-workbench.action.files.openFileFolder",
+        "when": "isMacNative && openFolderWorkspaceSupport"
+    },
+    {
+        "key": "cmd+o",
+        "command": "workbench.action.quickOpen"
     }
 ]
