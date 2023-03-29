@@ -41,6 +41,7 @@
         "**/.metals": true
     },
     "git.confirmSync": false,
+    "jest.autoRun": "off",
     "prettier.documentSelectors": [
         "**/*.{html,tera}"
     ],
@@ -51,6 +52,7 @@
     "terminal.integrated.defaultProfile.osx": "zsh",
     "terminal.integrated.fontFamily": "MesloLGS NF",
     "terminal.integrated.showExitAlert": false,
+    "testing.saveBeforeTest": false,
     "typescript.suggest.completeFunctionCalls": true,
     "vim.enableNeovim": true,
     "vim.handleKeys": {
