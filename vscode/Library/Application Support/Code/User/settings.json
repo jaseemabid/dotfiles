@@ -109,6 +109,25 @@
         },
         {
             "before": [
+                "t"
+            ],
+            "commands": [
+                "editor.action.refactor"
+            ],
+            "silent": true
+        },
+        {
+            "before": [
+                "<leader>",
+                "o"
+            ],
+            "commands": [
+                "workbench.action.gotoSymbol"
+            ],
+            "silent": true
+        },
+        {
+            "before": [
                 "<leader>",
                 "g",
                 "s"
