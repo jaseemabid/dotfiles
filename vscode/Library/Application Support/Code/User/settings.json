@@ -1,6 +1,7 @@
 {
     "[css][javascript][json][jsonc][typescript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.wordWrap": "off",
         "rewrap.autoWrap.enabled": false
     },
     "[html]": {
@@ -9,6 +10,12 @@
     "[python]": {
         "editor.formatOnType": true
     },
+    "bookmarks.experimental.enableNewStickyEngine": false,
+    "bookmarks.saveBookmarksInProject": true,
+    "bookmarks.sideBar.expanded": true,
+    "bookmarks.useWorkaroundForFormatters": true,
+    "breadcrumbs.showProperties": false,
+    "breadcrumbs.showStructs": false,
     "cSpell.customDictionaries": {
         "custom": true,
         "jabid": {
@@ -19,12 +26,17 @@
         }
     },
     "editor.accessibilitySupport": "off",
+    "editor.codeActionsOnSave": {
+        "source.sortImports": true
+    },
     "editor.formatOnSave": true,
+    "editor.inlayHints.enabled": "offUnlessPressed",
+    "editor.inlayHints.padding": true,
     "editor.minimap.enabled": false,
     "editor.minimap.renderCharacters": false,
     "editor.minimap.showSlider": "always",
     "editor.minimap.size": "fit",
-    "editor.renderWhitespace": "all",
+    "editor.renderWhitespace": "boundary",
     "editor.wordWrap": "bounded",
     "editor.wordWrapColumn": 100,
     "extensions.autoCheckUpdates": false,
