@@ -24,7 +24,7 @@
     c = commit
     conflits = diff --name-only --diff-filter=U
     cp = cherry-pick
-    l = log --oneline --no-decorate -10
+    l = log --oneline --no-decorate -20
     ll = log --oneline --graph --decorate -20
     last = log -1 --oneline --no-decorate
     lasttag = describe --tags --abbrev=0
