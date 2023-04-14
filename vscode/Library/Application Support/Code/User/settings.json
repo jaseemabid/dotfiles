@@ -68,10 +68,11 @@
     "typescript.suggest.completeFunctionCalls": true,
     "vim.enableNeovim": true,
     "vim.handleKeys": {
-        "<C-d>": true
+        "<C-<SPACE>>": true,
+        "<C-d>": true,
+        "<C-space>": true
     },
     "vim.leader": "<SPACE>",
-    "vim.neovimConfigPath": "~/.config/nvim/init.vim",
     "vim.neovimUseConfigFile": true,
     "vim.normalModeKeyBindings": [
         {
@@ -81,7 +82,8 @@
             ],
             "commands": [
                 "bookmarks.toggle"
-            ]
+            ],
+            "silent": true
         },
         {
             "before": [
@@ -90,7 +92,8 @@
             ],
             "commands": [
                 "bookmarks.listFromAllFiles"
-            ]
+            ],
+            "silent": true
         },
         {
             "before": [
@@ -148,9 +151,20 @@
                 "typescript.goToSourceDefinition"
             ],
             "silent": true
+        },
+        {
+            "before": [
+                "<leader>",
+                "t"
+            ],
+            "commands": [
+                "workbench.action.showAllSymbols"
+            ],
+            "silent": true
         }
     ],
     "vim.statusBarColors.visualline": "",
+    "vim.useCtrlKeys": true,
     "vim.useSystemClipboard": true,
     "window.autoDetectColorScheme": true,
     "window.commandCenter": true,
