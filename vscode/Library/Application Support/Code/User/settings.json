@@ -65,6 +65,12 @@
     "terminal.integrated.fontFamily": "MesloLGS NF",
     "terminal.integrated.showExitAlert": false,
     "testing.saveBeforeTest": false,
+    "typescript.experimental.tsserver.web.enableProjectWideIntellisense": true,
+    "typescript.implementationsCodeLens.enabled": true,
+    "typescript.inlayHints.enumMemberValues.enabled": true,
+    "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+    "typescript.inlayHints.parameterTypes.enabled": true,
+    "typescript.inlayHints.variableTypes.enabled": true,
     "typescript.suggest.completeFunctionCalls": true,
     "vim.enableNeovim": true,
     "vim.handleKeys": {
