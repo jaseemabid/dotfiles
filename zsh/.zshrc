@@ -49,9 +49,9 @@ else
     if [[ "$OSTYPE" == "linux-gnueabihf" ]]; then
         plugins=(sudo tmux z)
     elif [[ "$OSTYPE" == "linux-gnu" ]]; then
-        plugins=(cargo docker fzf git kubectl rust stack sudo tmux z)
+        plugins=(docker fzf git kubectl rust stack sudo tmux z)
     elif [[ "$OSTYPE" == "darwin"* ]]; then
-        plugins=(cargo direnv docker fzf fzf-tab git kubectl rbenv rust stack tmux z)
+        plugins=(direnv docker fzf fzf-tab git kubectl rbenv rust stack tmux z)
     else
         echo "Unknown OS"
         exit 1
