@@ -168,6 +168,16 @@
                 "workbench.action.showAllSymbols"
             ],
             "silent": true
+        },
+        {
+            "before": [
+                "<leader>",
+                "t"
+            ],
+            "commands": [
+                "workbench.action.showAllSymbols"
+            ],
+            "silent": true
         }
     ],
     "vim.statusBarColors.visualline": "",
@@ -178,7 +188,6 @@
     "window.nativeTabs": true,
     "window.titleBarStyle": "native",
     "window.zoomLevel": 1,
-    "workbench.colorTheme": "Default Light+",
     "workbench.startupEditor": "none",
     "zenMode.fullScreen": false,
     "zenMode.hideStatusBar": false,
