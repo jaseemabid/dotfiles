@@ -53,6 +53,7 @@
         "**/.metals": true
     },
     "git.confirmSync": false,
+    "go.gopath": "~/src/go",
     "jest.autoRun": "off",
     "prettier.documentSelectors": [
         "**/*.{html,tera}"
