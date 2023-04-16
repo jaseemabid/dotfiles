@@ -101,7 +101,10 @@
 			<key>config</key>
 			<dict>
 				<key>tasksettings</key>
-				<dict/>
+				<dict>
+					<key>target_mode</key>
+					<string>on</string>
+				</dict>
 				<key>taskuid</key>
 				<string>com.alfredapp.automation.core/appearance/dark-mode.set</string>
 			</dict>

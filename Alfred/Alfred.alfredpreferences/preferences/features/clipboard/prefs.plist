@@ -23,5 +23,7 @@
 	<integer>3</integer>
 	<key>snippetKeyword</key>
 	<string>!</string>
+	<key>viewerKeywordEnabled</key>
+	<false/>
 </dict>
 </plist>
