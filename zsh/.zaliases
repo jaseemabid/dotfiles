@@ -1,7 +1,4 @@
 # -*- mode: shell-script;-*-
-# zsh aliases
-# Move this file to .oh-my-zsh/custom, not tracked there.
-# Author: Jaseem Abid
 
 # System specific aliases
 if [[ $OSTYPE == linux-* ]]; then
@@ -18,6 +15,7 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
 fi
 
 if [ -x "$(command -v exa)" ]; then
+    alias la='exa --colour=always --long --tree --level=1 --all'
     alias ls='exa --colour=always --long --tree --level=1'
     alias le='exa --colour=always --long --tree --level=2'
 fi
@@ -31,7 +29,7 @@ if [ -x "$(command -v sdiff)" ]; then
 fi
 
 # git; lot more provided by git plugin
-alias get='git clone '
+alias get='git clone'
 alias gg='git checkout'
 alias gl='git l'
 alias got='git'
@@ -81,17 +79,12 @@ if (( $+commands[tag] )); then
 fi
 
 # Pipes
-alias -g L='| less'
-alias -g G='| grep'
 alias -g C='| wc -l'
 alias -g X='| xargs -0'
-
-# Arguments
-alias -g H='--help'
-alias -g V='--version'
 
 # Options
 alias -g h='HEAD'
 alias -g m='master'
 alias -g n='--no-decorate'
 alias -g om='origin/master'
+
