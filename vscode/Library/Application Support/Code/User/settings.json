@@ -162,6 +162,17 @@
         {
             "before": [
                 "<leader>",
+                "g",
+                "i"
+            ],
+            "commands": [
+                "editor.action.goToImplementation"
+            ],
+            "silent": true
+        },
+        {
+            "before": [
+                "<leader>",
                 "t"
             ],
             "commands": [
