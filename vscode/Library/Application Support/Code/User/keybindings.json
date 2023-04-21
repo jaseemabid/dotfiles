@@ -16,5 +16,13 @@
     {
         "key": "cmd+o",
         "command": "workbench.action.quickOpen"
+    },
+    {
+        "key": "shift+cmd+o",
+        "command": "-workbench.action.gotoSymbol"
+    },
+    {
+        "key": "shift+cmd+o",
+        "command": "outline.focus"
     }
 ]
