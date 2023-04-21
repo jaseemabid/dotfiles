@@ -63,6 +63,12 @@
     "terminal.integrated.fontFamily": "MesloLGS NF",
     "terminal.integrated.showExitAlert": false,
     "testing.saveBeforeTest": false,
+    "todohighlight.keywords": [
+        {
+            "color": "red",
+            "text": "TODO(jabid):"
+        }
+    ],
     "typescript.experimental.tsserver.web.enableProjectWideIntellisense": true,
     "typescript.implementationsCodeLens.enabled": true,
     "typescript.inlayHints.enumMemberValues.enabled": true,
