@@ -1,14 +1,13 @@
 {
-    "[css][javascript][json][jsonc][typescript]": {
+    "[css][json][jsonc][javascript][typescript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.wordWrap": "off",
         "rewrap.autoWrap.enabled": false
     },
-    "[html]": {
-        "editor.defaultFormatter": "vscode.html-language-features"
-    },
-    "[python]": {
-        "editor.formatOnType": true
+    "[typescript]": {
+        "editor.codeActionsOnSave": {
+            "source.sortImports": true
+        }
     },
     "bookmarks.experimental.enableNewStickyEngine": false,
     "bookmarks.saveBookmarksInProject": true,
@@ -26,9 +25,6 @@
         }
     },
     "editor.accessibilitySupport": "off",
-    "editor.codeActionsOnSave": {
-        "source.sortImports": true
-    },
     "editor.formatOnSave": true,
     "editor.inlayHints.enabled": "offUnlessPressed",
     "editor.inlayHints.padding": true,
@@ -39,6 +35,7 @@
     "editor.renderWhitespace": "boundary",
     "editor.wordWrap": "bounded",
     "editor.wordWrapColumn": 100,
+    "eslint.run": "onSave",
     "extensions.autoCheckUpdates": false,
     "extensions.autoUpdate": false,
     "files.associations": {
