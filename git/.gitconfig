@@ -72,3 +72,5 @@
 	recurse = false
 [http]
 	postBuffer = 524288000
+[fetch]
+	prune = true
