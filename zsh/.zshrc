@@ -60,6 +60,15 @@ fi
 
 [[ -s "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
 
+# Configure fzf
+export FZF_COMPLETION_OPTS='--border --info=inline'         # Boxy UI
+export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix' # Find files with fd
+export FZF_ALT_C_COMMAND='fd --type d --strip-cwd-prefix'   # Find files with fd
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"            # Ctrl+T with fd
+export FZF_CTRL_T_OPTS="
+  --preview 'bat -n --color=always {}'
+  --bind 'ctrl-/:change-preview-window(down|hidden|)'"      # Preview Ctrl+T with bat
+
 source $ZSH/oh-my-zsh.sh
 
 # A bunch of helpers
