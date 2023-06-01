@@ -1,0 +1,37 @@
+#!/usr/bin/env python3
+
+import subprocess
+import sys
+
+def run_command(command):
+    return subprocess.check_output(command, shell=True).decode().strip().split('\n')
+
+# Ensure we are in a Git repository
+try:
+    run_command("git rev-parse --is-inside-work-tree")
+except subprocess.CalledProcessError:
+    sys.exit("Not inside a Git repository. Exiting.")
+
+# Get the list of changed files
+changed_files = run_command("git diff --name-only")
+
+# If no files are changed, bail out
+if not changed_files or changed_files == ['']:
+    sys.exit("No files are changed. Exiting.")
+
+# Using a set comprehension to get the last commit hash for each changed file
+commit_hashes = {run_command(f"git log -n 1 --pretty=format:'%H' -- {file}")[0] for file in changed_files}
+
+# If the commit hashes set has more than 1 unique value, bail out
+if len(commit_hashes) != 1:
+    sys.exit("Changed files were not all last modified in the same commit. Exiting.")
+
+# The only element in commit_hashes set is the last commit hash
+last_commit_hash = next(iter(commit_hashes))
+
+# Invoke git commit --fixup using the last commit hash
+try:
+    run_command(f"git commit -a --fixup {last_commit_hash}")
+except subprocess.CalledProcessError as e:
+    sys.exit(f"Error executing git commit --fixup. Error: {str(e)}")
+
