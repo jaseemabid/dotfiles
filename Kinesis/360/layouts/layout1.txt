@@ -1,9 +1,10 @@
 <base>
-
+[lctr]>[lwin]
+[rwin]>[rctr]
+[rctr]>[rwin]
+[del]>[lshf]
+[pgup]>[ralt]
 <keypad>
-
 <function1>
-
 <function2>
-
 <function3>
