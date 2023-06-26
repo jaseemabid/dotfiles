@@ -48,9 +48,18 @@ def main():
 
 
 def run(command):
+    top = "git rev-parse --show-toplevel"
+    top = subprocess.check_output(top, shell=True).decode().strip()
+
     if os.environ.get("VERBOSE", False):
-        print("RUN", command)
-    lines = subprocess.check_output(command, shell=True).decode().strip().split("\n")
+        print(f"RUN {command}")
+
+    lines = (
+        subprocess.check_output(command, shell=True, cwd=top)
+        .decode()
+        .strip()
+        .split("\n")
+    )
     return [line for line in lines if line.strip() != ""]
 
 
