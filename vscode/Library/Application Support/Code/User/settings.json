@@ -1,5 +1,5 @@
 {
-    "[css][json][jsonc][javascript][typescript]": {
+    "[css][json][jsonc][typescript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.wordWrap": "off",
         "rewrap.autoWrap.enabled": false
