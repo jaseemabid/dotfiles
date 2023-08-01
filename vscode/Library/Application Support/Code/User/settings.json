@@ -9,10 +9,6 @@
             "source.sortImports": true
         }
     },
-    "bookmarks.experimental.enableNewStickyEngine": false,
-    "bookmarks.saveBookmarksInProject": true,
-    "bookmarks.sideBar.expanded": true,
-    "bookmarks.useWorkaroundForFormatters": true,
     "breadcrumbs.showProperties": false,
     "breadcrumbs.showStructs": false,
     "cSpell.customDictionaries": {
@@ -50,7 +46,6 @@
         "**/.metals": true
     },
     "git.confirmSync": false,
-    "go.gopath": "~/src/go",
     "jest.autoRun": "off",
     "prettier.documentSelectors": [
         "**/*.{html,tera}"
@@ -202,7 +197,7 @@
     "window.nativeTabs": true,
     "window.titleBarStyle": "native",
     "window.zoomLevel": 1,
-    "workbench.colorTheme": "Nord Light",
+    "workbench.colorTheme": "Default Light Modern",
     "workbench.startupEditor": "none",
     "zenMode.fullScreen": false,
     "zenMode.hideStatusBar": false,
