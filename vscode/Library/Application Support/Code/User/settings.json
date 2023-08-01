@@ -82,26 +82,6 @@
     "vim.normalModeKeyBindings": [
         {
             "before": [
-                "<leader>",
-                "m"
-            ],
-            "commands": [
-                "bookmarks.toggle"
-            ],
-            "silent": true
-        },
-        {
-            "before": [
-                "<leader>",
-                "b"
-            ],
-            "commands": [
-                "bookmarks.listFromAllFiles"
-            ],
-            "silent": true
-        },
-        {
-            "before": [
                 "]"
             ],
             "commands": [
@@ -120,6 +100,7 @@
         },
         {
             "before": [
+                "<leader>",
                 "r"
             ],
             "commands": [
@@ -129,6 +110,7 @@
         },
         {
             "before": [
+                "<leader>",
                 "t"
             ],
             "commands": [
@@ -148,7 +130,6 @@
         },
         {
             "before": [
-                "<leader>",
                 "g",
                 "s"
             ],
@@ -159,22 +140,11 @@
         },
         {
             "before": [
-                "<leader>",
                 "g",
                 "i"
             ],
             "commands": [
                 "editor.action.goToImplementation"
-            ],
-            "silent": true
-        },
-        {
-            "before": [
-                "<leader>",
-                "t"
-            ],
-            "commands": [
-                "workbench.action.showAllSymbols"
             ],
             "silent": true
         },
