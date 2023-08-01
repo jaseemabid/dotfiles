@@ -23,6 +23,7 @@
     b = branch
     c = commit
     conflits = diff --name-only --diff-filter=U
+    continue = rebase --continue
     cp = cherry-pick
     l = log --oneline --no-decorate -20
     ll = log --oneline --graph --decorate -20
