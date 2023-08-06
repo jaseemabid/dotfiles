@@ -14,17 +14,17 @@ alias righthalf         move screenOriginX+screenSizeX/2;screenOriginY     scree
 alias center            move screenOriginX+screenSizeX*0.2;screenOriginY   screenSizeX*0.7;screenSizeY
 
 # HYPER KEY
-alias hyper cmd
+alias hyper ctrl;alt
 
 # Location bindings
 bind u:${hyper} ${center}
-bind left:${hyper} ${lefthalf}
-bind right:${hyper} ${righthalf}
+bind j:${hyper} ${lefthalf}
+bind k:${hyper} ${righthalf}
 bind up:${hyper} ${full}
 
 # Nudge left and right
-bind left:cmd,ctrl nudge -100 +0
-bind right:cmd,ctrl nudge +100 +0
+bind h:${hyper} nudge -100 +0
+bind l:${hyper} nudge +100 +0
 
 # Send active window to second monitor
 bind down:${hyper} throw next resize
