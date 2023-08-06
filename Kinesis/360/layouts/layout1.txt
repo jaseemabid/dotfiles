@@ -1,4 +1,6 @@
 <base>
+[hk1]>[caxx]
+[hk3]>[caxx]
 [lctr]>[lwin]
 [rwin]>[rctr]
 [rctr]>[rwin]
