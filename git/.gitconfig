@@ -25,7 +25,7 @@
     conflits = diff --name-only --diff-filter=U
     continue = rebase --continue
     cp = cherry-pick
-    l = log --oneline --no-decorate -20
+    l = log --oneline --no-decorate origin/HEAD..
     ll = log --oneline --graph --decorate -20
     last = log -1 --oneline --no-decorate
     lasttag = describe --tags --abbrev=0
