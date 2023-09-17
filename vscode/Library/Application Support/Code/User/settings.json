@@ -4,9 +4,16 @@
         "editor.wordWrap": "off",
         "rewrap.autoWrap.enabled": false
     },
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": false
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
     "[typescript]": {
         "editor.codeActionsOnSave": {
-            "source.sortImports": true
+            "source.sortImports": false
         }
     },
     "breadcrumbs.showProperties": false,
@@ -47,23 +54,17 @@
     },
     "git.confirmSync": false,
     "jest.autoRun": "off",
-    "prettier.documentSelectors": [
-        "**/*.{html,tera}"
-    ],
+    "prettier.documentSelectors": ["**/*.{html,tera}"],
     "prettier.tabWidth": 4,
     "rewrap.autoWrap.enabled": true,
     "rewrap.wrappingColumn": 120,
+    "rust-analyzer.procMacro.enable": false, // This fails badly on rust nightly.
     "security.workspace.trust.untrustedFiles": "open",
     "terminal.integrated.defaultProfile.osx": "zsh",
     "terminal.integrated.fontFamily": "MesloLGS NF",
     "terminal.integrated.showExitAlert": false,
     "testing.saveBeforeTest": false,
-    "todohighlight.keywords": [
-        {
-            "color": "red",
-            "text": "TODO(jabid):"
-        }
-    ],
+    "typescript.enablePromptUseWorkspaceTsdk": true,
     "typescript.implementationsCodeLens.enabled": true,
     "typescript.inlayHints.enumMemberValues.enabled": true,
     "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
@@ -80,81 +81,43 @@
     "vim.neovimUseConfigFile": true,
     "vim.normalModeKeyBindings": [
         {
-            "before": [
-                "]"
-            ],
-            "commands": [
-                "editor.action.marker.next"
-            ],
+            "before": ["]"],
+            "commands": ["editor.action.marker.next"],
             "silent": true
         },
         {
-            "before": [
-                "["
-            ],
-            "commands": [
-                "editor.action.marker.prev"
-            ],
+            "before": ["["],
+            "commands": ["editor.action.marker.prev"],
             "silent": true
         },
         {
-            "before": [
-                "<leader>",
-                "r"
-            ],
-            "commands": [
-                "editor.action.rename"
-            ],
+            "before": ["g", "s"],
+            "commands": ["typescript.goToSourceDefinition"],
             "silent": true
         },
         {
-            "before": [
-                "<leader>",
-                "t"
-            ],
-            "commands": [
-                "editor.action.refactor"
-            ],
+            "before": ["g", "i"],
+            "commands": ["editor.action.goToImplementation"],
             "silent": true
         },
         {
-            "before": [
-                "<leader>",
-                "o"
-            ],
-            "commands": [
-                "workbench.action.gotoSymbol"
-            ],
+            "before": ["<leader>", "o"],
+            "commands": ["workbench.action.gotoSymbol"],
             "silent": true
         },
         {
-            "before": [
-                "g",
-                "s"
-            ],
-            "commands": [
-                "typescript.goToSourceDefinition"
-            ],
+            "before": ["<leader>", "O"],
+            "commands": ["workbench.action.showAllSymbols"],
             "silent": true
         },
         {
-            "before": [
-                "g",
-                "i"
-            ],
-            "commands": [
-                "editor.action.goToImplementation"
-            ],
+            "before": ["<leader>", "r"],
+            "commands": ["editor.action.rename"],
             "silent": true
         },
         {
-            "before": [
-                "<leader>",
-                "t"
-            ],
-            "commands": [
-                "workbench.action.showAllSymbols"
-            ],
+            "before": ["<leader>", "t"],
+            "commands": ["editor.action.refactor"],
             "silent": true
         }
     ],
