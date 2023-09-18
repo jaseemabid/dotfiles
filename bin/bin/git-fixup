@@ -27,7 +27,7 @@ def main():
         exit(0)
 
     # Get the last commit hash for each changed file
-    commits = {run(f"git log -n 1 --pretty=format:'%H' -- {f}")[0] for f in files}
+    commits = {run(f"git log -n 1 --pretty=format:'%H' -- '{f}'")[0] for f in files}
 
     # If the commit hashes set has more than 1 unique value, bail out
     if len(commits) != 1:
