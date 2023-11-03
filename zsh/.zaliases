@@ -28,6 +28,10 @@ if [ -x "$(command -v sdiff)" ]; then
     alias diff='sdiff -s'
 fi
 
+# Preview with fzf. PS: This is quite similar to Ctrl+T
+# Example $ fd README.md | pf
+alias pf="fzf --reverse --cycle --no-sort  --preview='bat -f {}' --bind shift-up:preview-page-up,shift-down:preview-page-down"
+
 # git; lot more provided by git plugin
 alias get='git clone'
 alias gg='git checkout'
