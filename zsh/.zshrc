@@ -12,7 +12,7 @@ export HISTFILESIZE=999999
 
 typeset -U path PATH
 cdpath=(~/src)
-path=(~/bin ~/.local/bin ~/.cabal/bin ~/.cargo/bin $path)
+path=(~/bin ~/.local/bin ~/.cabal/bin ~/.cargo/bin ~/go/bin $path)
 
 # Skip most of shell setup for dumb terminals and IDEs quit early
 if [[ ${VSCODE_RESOLVING_ENVIRONMENT+x} ]] ||
