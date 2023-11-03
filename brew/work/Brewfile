@@ -28,6 +28,7 @@ brew "glances"
 brew "gnu-sed"
 brew "go"
 brew "pkg-config"
+brew "php" # For alfred workflows
 brew "gobject-introspection"
 brew "highlight"
 brew "htop"
