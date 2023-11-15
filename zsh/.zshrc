@@ -20,12 +20,13 @@ if [[ ${VSCODE_RESOLVING_ENVIRONMENT+x} ]] ||
     return
 fi
 
-# Tmux attach by default only local, directly interactive sessions
-if [[ -z $TMUX && -z "$SSH_CLIENT"  ]] &&
-  [[ ${TERMINAL_EMULATOR} != "JetBrains-JediTerm" ]] &&
-  [[ ${VSCODE_INJECTION} != "1" ]]; then
-   exec tmux attach
-fi
+# # Tmux attach by default only local, directly interactive sessions
+# if [[ -z $TMUX && -z "$SSH_CLIENT"  ]] &&
+#   [[ ${TERMINAL_EMULATOR} != "JetBrains-JediTerm" ]] &&
+#   [[ ${VSCODE_INJECTION} != "1" ]] &&
+#   [[ ${TERMINAL_NO_TMUX} != "1" ]]; then
+#    exec tmux attach
+# fi
 
 # Setup oh-my-zsh
 DISABLE_AUTO_UPDATE="true"

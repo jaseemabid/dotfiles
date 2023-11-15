@@ -168,7 +168,7 @@
 	<key>BellBounce</key>
 	<false/>
 	<key>CommandString</key>
-	<string>exec tmux attach</string>
+	<string></string>
 	<key>CursorBlink</key>
 	<true/>
 	<key>CursorColor</key>
@@ -196,7 +196,7 @@
 	<key>ProfileCurrentVersion</key>
 	<real>2.0699999999999998</real>
 	<key>RunCommandAsShell</key>
-	<false/>
+	<true/>
 	<key>SelectionColor</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMS
@@ -362,7 +362,7 @@
 		<string>[3;5~</string>
 	</dict>
 	<key>name</key>
-	<string>Nord</string>
+	<string>Nord Standalone</string>
 	<key>rowCount</key>
 	<integer>1000</integer>
 	<key>shellExitAction</key>
