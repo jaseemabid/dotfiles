@@ -16,6 +16,9 @@
             "source.sortImports": false
         }
     },
+    "[yaml]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
     "breadcrumbs.showProperties": false,
     "breadcrumbs.showStructs": false,
     "cSpell.customDictionaries": {
