@@ -1,6 +1,7 @@
 {
     "[css][json][jsonc][typescript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true,
         "editor.wordWrap": "off",
         "rewrap.autoWrap.enabled": false
     },
@@ -11,9 +12,13 @@
     "[javascript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
+    "[markdown]": {
+        // This would be great, but breaks markdown tables and readme.com raw mode
+        "rewrap.onSave": false
+    },
     "[typescript]": {
         "editor.codeActionsOnSave": {
-            "source.sortImports": false
+            "source.sortImports": "explicit"
         }
     },
     "[yaml]": {
@@ -31,7 +36,7 @@
         }
     },
     "editor.accessibilitySupport": "off",
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false,
     "editor.inlayHints.enabled": "offUnlessPressed",
     "editor.inlayHints.padding": true,
     "editor.minimap.enabled": false,
@@ -60,7 +65,9 @@
     "json.schemas": [],
     "markdown.editor.pasteUrlAsFormattedLink.enabled": "smart",
     "markdown.occurrencesHighlight.enabled": true,
+    "markdown.preview.breaks": true,
     "markdown.suggest.paths.includeWorkspaceHeaderCompletions": "onSingleOrDoubleHash",
+    "markdown.validate.unusedLinkDefinitions.enabled": "warning",
     "prettier.documentSelectors": ["**/*.{html,tera}"],
     "prettier.tabWidth": 4,
     "rewrap.autoWrap.enabled": true,
@@ -160,7 +167,7 @@
         "!Or mapping",
         "!Or sequence",
         "!FindInMap scalar",
-        "!FindInMap mappping",
+        "!FindInMap mapping",
         "!FindInMap sequence",
         "!Base64 scalar",
         "!Base64 mapping",
@@ -195,6 +202,5 @@
     ],
     "yaml.validate": false,
     "zenMode.fullScreen": false,
-    "zenMode.hideStatusBar": false,
-    "zenMode.restore": false
+    "zenMode.hideStatusBar": false
 }
