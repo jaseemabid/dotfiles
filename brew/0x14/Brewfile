@@ -22,7 +22,7 @@ brew "docker", link: false
 brew "dog"
 brew "dos2unix"
 brew "entr"
-brew "exa"
+brew "eza"
 brew "exiftool"
 brew "fd"
 brew "findutils"

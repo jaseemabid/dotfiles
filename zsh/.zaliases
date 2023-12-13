@@ -14,10 +14,10 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     alias o='open'
 fi
 
-if [ -x "$(command -v exa)" ]; then
-    alias la='exa --colour=always --long --tree --level=1 --all'
-    alias ls='exa --colour=always --long --tree --level=1'
-    alias le='exa --colour=always --long --tree --level=2'
+if [ -x "$(command -v eza)" ]; then
+    alias la='eza --colour=always --long --tree --level=1 --all'
+    alias ls='eza --colour=always --long --tree --level=1'
+    alias le='eza --colour=always --long --tree --level=2'
 fi
 
 if [ -x "$(command -v bat)" ]; then
