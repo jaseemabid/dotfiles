@@ -2,7 +2,7 @@
 	path = emacs/.emacs.d
 	url = https://github.com/jaseemabid/emacs.d/
 [submodule "fonts"]
-	path = fonts
+	path = fonts/powerline
 	url = https://github.com/powerline/fonts
 [submodule "oh-my-zsh"]
 	path = zsh/.oh-my-zsh
