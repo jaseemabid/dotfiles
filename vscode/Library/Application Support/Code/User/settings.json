@@ -16,8 +16,14 @@
         // This would be great, but breaks markdown tables and readme.com raw mode
         "rewrap.onSave": false
     },
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnType": true
+    },
     "[typescript]": {
         "editor.codeActionsOnSave": {
+            // Removing unused imports is too eager and buggy to be useful
+            "source.organizeImports": "never",
             "source.sortImports": "explicit"
         }
     },
