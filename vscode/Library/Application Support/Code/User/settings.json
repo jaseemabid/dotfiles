@@ -36,6 +36,8 @@
         }
     },
     "editor.accessibilitySupport": "off",
+    "editor.codeLensFontFamily": "Monaco, 'Apple Color Emoji'",
+    "editor.fontFamily": "Monaco, 'Apple Color Emoji'",
     "editor.formatOnSave": false,
     "editor.inlayHints.enabled": "offUnlessPressed",
     "editor.inlayHints.padding": true,
