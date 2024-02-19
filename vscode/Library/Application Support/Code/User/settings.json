@@ -153,6 +153,7 @@
     "vim.useSystemClipboard": true,
     "window.autoDetectColorScheme": true,
     "window.commandCenter": true,
+    "window.customTitleBarVisibility": "never",
     "window.nativeTabs": true,
     "window.titleBarStyle": "native",
     "window.zoomLevel": 1,
