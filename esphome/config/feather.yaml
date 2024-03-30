@@ -26,6 +26,7 @@ uart:
 
 sensor:
   - platform: pmsx003
+    update_interval: 30s
     type: PMSX003
     pm_1_0:
       name: "PM <1.0"
