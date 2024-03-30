@@ -2,8 +2,14 @@
 
 ## Setup
 
-1. Docker compose up!
-2. Use web UI to configure stuff up and see logs
+Run with docker compose or local install
+
+```sh
+$ docker compose up
+$ poetry run esphome dashboard ./config
+```
+
+Use web UI to configure stuff up and see logs
 
 ## Notes
 
