@@ -1,0 +1,76 @@
+version: "3"
+
+services:
+  pihole:
+    container_name: pihole
+    image: pihole/pihole:2024.03.1
+    network_mode: "host"
+    environment:
+      PIHOLE_DNS_: '1.1.1.1'
+      PROXY_LOCATION: 'pi.nyx.jabid.in'   # Probably not needed
+      ServerIP: '192.168.1.200'           # Required in host mode
+      ServerIPv6: '2a01:4b00:bf1a:7300:362e:b7ff:fece:4613'
+      TZ: 'Europe/London'
+      VIRTUAL_HOST: 'pi.nyx.jabid.in'   # Web server virtual host
+      WEB_PORT: 8081
+
+    volumes:
+      - '/home/j/pihole/etc-pihole/:/etc/pihole/'
+      - '/home/j/pihole/etc-dnsmasq.d/:/etc/dnsmasq.d/'
+
+    # Recommended but not required (DHCP needs NET_ADMIN)
+    #   https://github.com/pi-hole/docker-pi-hole#note-on-capabilities
+    cap_add:
+      - NET_ADMIN
+
+    restart: unless-stopped
+
+  hass:
+    container_name: hass
+    image: ghcr.io/home-assistant/home-assistant:2022.11.4
+    network_mode: host
+    volumes:
+      - ./hass:/config
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+      TZ: 'Europe/London'
+
+  esphome:
+    container_name: esphome
+    image: ghcr.io/esphome/esphome:2024.3.1
+    volumes:
+      - ./dotfiles/esphome/config:/config
+      - /etc/localtime:/etc/localtime:ro
+    restart: always
+    privileged: true
+    network_mode: host
+
+  deconz:
+    image: deconzcommunity/deconz
+    container_name: deconz
+    restart: always
+    ports:
+      - 4501:4501
+      - 4502:4502
+    volumes:
+      - /home/j/deconz:/opt/deCONZ
+      - /etc/localtime:/etc/localtime:ro
+    devices:
+      - /dev/ttyACM0
+    environment:
+      - DECONZ_WEB_PORT=4501
+      - DECONZ_WS_PORT=4502
+      - DEBUG_INFO=1
+      - DEBUG_APS=0
+      - DEBUG_ZCL=0
+      - DEBUG_ZDP=0
+      - DEBUG_OTAU=0
+
+  simple-dash:
+    image: olifant/simple-dash
+    container_name: simple-dash
+    ports:
+      - 8080:80
+    volumes:
+      - ./dotfiles/simple-dash/config.json:/usr/share/nginx/html/config.json
+
