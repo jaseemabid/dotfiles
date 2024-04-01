@@ -43,3 +43,6 @@
 [submodule "tmux/.tmux/plugins/tmux-fpp"]
 	path = tmux/.tmux/plugins/tmux-fpp
 	url = https://git::@github.com/tmux-plugins/tmux-fpp
+[submodule "tmux/.tmux/plugins/tmux"]
+	path = tmux/.tmux/plugins/tmux
+	url = https://git::@github.com/nordtheme/tmux
