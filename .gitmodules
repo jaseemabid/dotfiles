@@ -40,3 +40,6 @@
 [submodule "tmux/.tmux/plugins/tmux-sidebar"]
 	path = tmux/.tmux/plugins/tmux-sidebar
 	url = https://github.com/tmux-plugins/tmux-sidebar
+[submodule "tmux/.tmux/plugins/tmux-fpp"]
+	path = tmux/.tmux/plugins/tmux-fpp
+	url = https://git::@github.com/tmux-plugins/tmux-fpp
