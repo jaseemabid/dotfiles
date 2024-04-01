@@ -72,7 +72,9 @@ export FZF_CTRL_T_OPTS="
   --bind 'ctrl-/:change-preview-window(down|hidden|)'"      # Preview Ctrl+T with bat
 
 # Brew shell completion
-FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+if [ -x "$(command -v brew)" ]; then
+    FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+fi
 
 source $ZSH/oh-my-zsh.sh
 
