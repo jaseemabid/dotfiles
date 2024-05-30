@@ -13,7 +13,7 @@ export HISTFILESIZE=999999
 
 typeset -U path PATH
 cdpath=(~/src)
-path=(~/bin ~/.local/bin ~/.cabal/bin ~/.cargo/bin ~/go/bin /usr/local/sbin $path)
+path=(~/bin ~/.local/bin ~/.cabal/bin ~/.cargo/bin ~/go/bin $path)
 
 # Skip most of shell setup for dumb terminals and IDEs quit early
 if [[ ${VSCODE_RESOLVING_ENVIRONMENT+x} ]] ||
@@ -53,7 +53,7 @@ else
     elif [[ "$OSTYPE" == "linux-gnu" ]]; then
         plugins=(docker fzf git kubectl rust stack sudo tmux z)
     elif [[ "$OSTYPE" == "darwin"* ]]; then
-        plugins=(aws common-aliases direnv docker fzf fzf-tab git kubectl rbenv rust stack tmux z)
+        plugins=(aws brew common-aliases direnv docker fzf fzf-tab git kubectl rbenv rust stack tmux z)
     else
         echo "Unknown OS"
         exit 1
@@ -70,11 +70,6 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"            # Ctrl+T with fd
 export FZF_CTRL_T_OPTS="
   --preview 'bat -n --color=always {}'
   --bind 'ctrl-/:change-preview-window(down|hidden|)'"      # Preview Ctrl+T with bat
-
-# Brew shell completion
-if [ -x "$(command -v brew)" ]; then
-    FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
-fi
 
 source $ZSH/oh-my-zsh.sh
 
