@@ -18,7 +18,7 @@
     },
     "[python]": {
         "editor.defaultFormatter": "ms-python.black-formatter",
-        "editor.formatOnType": true
+        "editor.formatOnSave": true
     },
     "[typescript]": {
         "editor.codeActionsOnSave": {
@@ -30,6 +30,7 @@
     "[yaml]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
+    "black-formatter.args": ["--line-length", "120"],
     "breadcrumbs.showProperties": false,
     "breadcrumbs.showStructs": false,
     "cSpell.customDictionaries": {
@@ -71,6 +72,7 @@
     "git.confirmSync": false,
     "jest.autoRun": "off",
     "json.schemas": [],
+    "jupyter.askForKernelRestart": false,
     "markdown.editor.pasteUrlAsFormattedLink.enabled": "smart",
     "markdown.occurrencesHighlight.enabled": true,
     "markdown.preview.breaks": true,
