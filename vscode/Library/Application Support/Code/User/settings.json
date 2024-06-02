@@ -42,6 +42,7 @@
             "scope": "user"
         }
     },
+    "D2.previewLayout": "elk",
     "editor.accessibilitySupport": "off",
     "editor.codeLensFontFamily": "Monaco, 'Apple Color Emoji'",
     "editor.fontFamily": "Monaco, 'Apple Color Emoji'",
@@ -58,7 +59,7 @@
     "editor.wordWrapColumn": 100,
     "eslint.run": "onSave",
     "extensions.autoCheckUpdates": false,
-    "extensions.autoUpdate": false,
+    "extensions.autoUpdate": "onlySelectedExtensions",
     "files.associations": {
         "*.tera": "html"
     },
@@ -70,7 +71,12 @@
         "**/.metals": true
     },
     "git.confirmSync": false,
-    "jest.autoRun": "off",
+    "github.copilot.enable": {
+        "*": false,
+        "markdown": false,
+        "plaintext": false,
+        "scminput": false
+    },
     "json.schemas": [],
     "jupyter.askForKernelRestart": false,
     "markdown.editor.pasteUrlAsFormattedLink.enabled": "smart",
@@ -80,10 +86,12 @@
     "markdown.validate.unusedLinkDefinitions.enabled": "warning",
     "prettier.documentSelectors": ["**/*.{html,tera}"],
     "prettier.tabWidth": 4,
+    "redhat.telemetry.enabled": false,
     "rewrap.autoWrap.enabled": true,
     "rewrap.wrappingColumn": 120,
     "rust-analyzer.procMacro.enable": false, // This fails badly on rust nightly.
     "security.workspace.trust.untrustedFiles": "open",
+    "settingsSync.ignoredExtensions": ["coolbear.systemd-unit-file"],
     "terminal.integrated.defaultProfile.osx": "zsh",
     "terminal.integrated.fontFamily": "MesloLGS NF",
     "terminal.integrated.showExitAlert": false,
@@ -104,16 +112,16 @@
     "vim.leader": "<SPACE>",
     "vim.neovimUseConfigFile": true,
     "vim.normalModeKeyBindings": [
-        {
-            "before": ["]"],
-            "commands": ["editor.action.marker.next"],
-            "silent": true
-        },
-        {
-            "before": ["["],
-            "commands": ["editor.action.marker.prev"],
-            "silent": true
-        },
+        // {
+        //     "before": ["]", "]"],
+        //     "commands": ["editor.action.marker.next"],
+        //     "silent": true
+        // },
+        // {
+        //     "before": ["[", "["],
+        //     "commands": ["editor.action.marker.prev"],
+        //     "silent": true
+        // },
         {
             "before": ["g", "s"],
             "commands": ["typescript.goToSourceDefinition"],
@@ -151,6 +159,7 @@
         }
     ],
     "vim.statusBarColors.visualline": "",
+    "vim.textwidth": 80,
     "vim.useCtrlKeys": true,
     "vim.useSystemClipboard": true,
     "window.autoDetectColorScheme": true,
