@@ -34,9 +34,6 @@ arch: fonts
 	stow i3
 	stow latex
 
-mac:
-	stow slate
-
 fonts:
 	cd fonts && ./install.sh
 
