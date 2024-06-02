@@ -3,10 +3,44 @@ groups:
   rules:
   - alert: Machine Offline
     expr: ping_loss_percent{job="ping_exporter",  target="192.168.8.1"} != 0
-    for: 2m
+    for: 10m
     labels:
       severity: page
     annotations:
       summary: Lost connection to router
 
+  - alert: Deconz Exporter Down
+    expr: (up{job="deconz_exporter"} == 0) or absent(up{job="deconz_exporter"})
+    for: 10m
+    labels:
+      tags: rotating_light
+      instance: nyx
+    annotations:
+      description: Deconz exporter is not reachable
 
+  - alert: Ping Exporter Down
+    expr: (up{job="ping_exporter"} == 0) or absent(up{job="ping_exporter"})
+    for: 10m
+    labels:
+      tags: rotating_light
+      instance: nyx
+    annotations:
+      description: Ping exporter is not reachable
+
+  - alert: Target Down
+    expr: up == 0
+    for: 10m
+    labels:
+      severity: high
+    annotations:
+      summary: Target is down
+      description: The target is not reachable
+
+  - alert: High Indoor CO₂
+    expr: esphome_sensor_value{id="scd30_co2"}> 500
+    for: 10m
+    labels:
+      severity: high
+    annotations:
+      summary: High Indoor CO₂
+      description: The CO₂ level is above the threshold of 500 ppm.
