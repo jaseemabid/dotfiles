@@ -168,7 +168,7 @@
     "window.nativeTabs": true,
     "window.titleBarStyle": "native",
     "window.zoomLevel": 1,
-    "workbench.colorTheme": "Default Light Modern",
+    "workbench.preferredLightColorTheme": "GitHub Light",
     "workbench.startupEditor": "none",
     "yaml.customTags": [
         "!And scalar",
