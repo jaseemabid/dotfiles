@@ -42,6 +42,7 @@
             "scope": "user"
         }
     },
+    "D2.execPath": "/opt/homebrew/bin/d2",
     "D2.previewLayout": "elk",
     "editor.accessibilitySupport": "off",
     "editor.codeLensFontFamily": "Monaco, 'Apple Color Emoji'",
@@ -63,6 +64,9 @@
     "extensions.autoUpdate": "onlySelectedExtensions",
     "files.associations": {
         "*.tera": "html"
+    },
+    "files.exclude": {
+        ".venv": true
     },
     "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
