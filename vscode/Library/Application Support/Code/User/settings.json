@@ -55,7 +55,7 @@
     "editor.minimap.renderCharacters": false,
     "editor.minimap.showSlider": "always",
     "editor.minimap.size": "fit",
-    "editor.renderWhitespace": "boundary",
+    "editor.renderWhitespace": "none",
     "editor.unicodeHighlight.ambiguousCharacters": false,
     "editor.wordWrap": "bounded",
     "editor.wordWrapColumn": 100,
@@ -65,10 +65,14 @@
     "files.associations": {
         "*.tera": "html"
     },
+    "files.autoSave": "afterDelay",
     "files.exclude": {
-        ".venv": true
+        "": true
     },
     "files.insertFinalNewline": true,
+    "files.readonlyInclude": {
+        ".venv/**": true
+    },
     "files.trimTrailingWhitespace": true,
     "files.watcherExclude": {
         "**/.ammonite": true,
@@ -117,19 +121,26 @@
     "vim.leader": "<SPACE>",
     "vim.neovimUseConfigFile": true,
     "vim.normalModeKeyBindings": [
-        // {
-        //     "before": ["]", "]"],
-        //     "commands": ["editor.action.marker.next"],
-        //     "silent": true
-        // },
-        // {
-        //     "before": ["[", "["],
-        //     "commands": ["editor.action.marker.prev"],
-        //     "silent": true
-        // },
+        /*
+         * Default keybindings
+         *
+         * gd - jump to definition. https://github.com/VSCodeVim/Vim/blob/e6f171d4f16d258828595f435f373b57425c80a9/src/actions/commands/actions.ts#L1071
+         *
+         *
+         */
+        {
+            "before": ["]", "]"],
+            "commands": ["editor.action.marker.next"],
+            "silent": true
+        },
+        {
+            "before": ["[", "["],
+            "commands": ["editor.action.marker.prev"],
+            "silent": true
+        },
         {
             "before": ["g", "s"],
-            "commands": ["typescript.goToSourceDefinition"],
+            "commands": ["editor.action.revealDefinition"],
             "silent": true
         },
         {
@@ -173,7 +184,7 @@
     "window.nativeTabs": true,
     "window.titleBarStyle": "native",
     "window.zoomLevel": 1,
-    "workbench.preferredLightColorTheme": "GitHub Light",
+    "workbench.preferredLightColorTheme": "GitHub Light Default",
     "workbench.startupEditor": "none",
     "yaml.customTags": [
         "!And scalar",
