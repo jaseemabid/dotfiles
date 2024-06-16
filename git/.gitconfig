@@ -2,23 +2,7 @@
 [user]
     name = Jaseem Abid
     email = me@jabid.in
-[init]
-    defaultBranch = main
-[github]
-    username = jaseemabid
-[apply]
-    whitespace = fix
-[grep]
-    lineNumber = true
-[core]
-    whitespace = trailing-space,space-before-tab
-    excludesfile = ~/.gitignore
-    pager = diff-so-fancy | less --tabs=4 -RFX
-    quotePath = false
-[color]
-	ui = true
-[push]
-    default = current
+
 [alias]
     authors = shortlog -sn
     b = branch
@@ -26,10 +10,10 @@
     conflits = diff --name-only --diff-filter=U
     continue = rebase --continue
     cp = cherry-pick
-    l = log --oneline --no-decorate origin/HEAD..
-    ll = log --oneline --graph --decorate -20
+    l = log --oneline --no-decorate origin/main..
     last = log -1 --oneline --no-decorate
     lasttag = describe --tags --abbrev=0
+    ll = log --oneline --graph --decorate -20
     meh = commit --amend --no-edit
     ours = "!f() { git checkout --ours -- $@ && git add -- $@; }; f"
     pill = pull
@@ -41,45 +25,87 @@
     theirs = "!f() { git checkout --theirs -- $@ && git add -- $@; }; f"
     today = diff @{yesterday}.. --stat
     xxx = !git reset --hard HEAD && git clean -xfd
-[format]
-    signoff = true
-[pull]
-	rebase = true
-[rebase]
-    autosquash = true
-	autoStash = true
-[credential]
-    helper = cache --timeout 36000
-[help]
-    autocorrect = 1
-[diff]
-    compactionHeuristic = true
-	renames = true
-[sendemail]
-    smtpuser = jaseemabid@gmail.com
-    smtpserver = smtp.googlemail.com
-    smtpencryption = tls
-    smtpserverport = 587
-[remote "origin"]
-    prune = true
+
+[apply]
+    whitespace = fix
+
+[color]
+    ui = true
+
 [commit]
     verbose = true
+
+[core]
+    whitespace = trailing-space,space-before-tab
+    excludesFile = ~/.gitignore
+    pager = diff-so-fancy | less --tabs=4 -RFX
+    quotePath = false
+
+[credential]
+    helper = cache --timeout 36000
+
+[diff]
+    compactionHeuristic = true
+    renames = true
+
+[diff "jupyternotebook"]
+    command = git-nbdiffdriver diff
+
+[difftool]
+    prompt = false
+
+[difftool "nbdime"]
+    cmd = git-nbdifftool diff \"$LOCAL\" \"$REMOTE\" \"$BASE\"
+
+[fetch]
+    prune = true
+
+[format]
+    signoff = true
+
+[github]
+    username = jaseemabid
+
+[grep]
+    lineNumber = true
+
+[help]
+    autocorrect = 1
+
+[init]
+    defaultBranch = main
+
+[merge "jupyternotebook"]
+    driver = git-nbmergedriver merge %O %A %B %L %P
+    name = jupyter notebook merge driver
+
+[mergetool]
+    prompt = false
+
+[mergetool "nbdime"]
+    cmd = git-nbmergetool merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+
+[pull]
+    rebase = true
+
+[push]
+    default = current
+
+[rebase]
+    autosquash = true
+    autoStash = true
+
+[remote "origin"]
+    prune = true
+
+[submodule]
+    recurse = false
+
 [tig]
     mailmap = yes
-[filter "lfs"]
-    clean = git-lfs clean -- %f
-    smudge = git-lfs smudge -- %f
-    process = git-lfs filter-process
-    required = true
-[submodule]
-	recurse = false
-[http]
-	postBuffer = 524288000
-[fetch]
-	prune = true
-[absorb]
-	maxStack = 50
+
 [url "https://github.com/"]
-	insteadOf = git@github.com:
+    insteadOf = git@github.com:
+
 [url "https://"]
-	insteadOf = git://
+    insteadOf = git://
