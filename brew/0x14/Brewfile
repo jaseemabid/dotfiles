@@ -4,6 +4,7 @@ tap "christopherthielen/tag-ag"
 tap "noahgorstein/tap"
 
 brew "aspell"
+brew "autoenv"
 brew "automake"
 brew "bash"
 brew "bat"
