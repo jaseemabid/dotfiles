@@ -1,12 +1,6 @@
-#*
-*#
-*.rest
-.#*
+# Global gitignore file
+
 .DS_Store
 .agignore
-.dir-locals.el
-.projectile
-.watsonresults
-TAGS
-refile.org
+.venv
 .vscode
