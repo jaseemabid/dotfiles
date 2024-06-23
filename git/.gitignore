@@ -4,3 +4,6 @@
 .agignore
 .venv
 .vscode
+
+Scratch.*
+
