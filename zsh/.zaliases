@@ -24,6 +24,10 @@ if [ -x "$(command -v bat)" ]; then
     alias cat='bat'
 fi
 
+if [ -x "$(command -v podman)" ]; then
+    alias docker='podman'
+fi
+
 if [ -x "$(command -v sdiff)" ]; then
     alias diff='sdiff -s'
 fi
