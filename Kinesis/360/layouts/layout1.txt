@@ -6,7 +6,8 @@
 [rctr]>[rwin]
 [del]>[lshf]
 [pgup]>[ralt]
-{hk4}>{s5}{x1}{-lctr}{b}{+lctr}
+{hk2}>{s9}{x1}{-lctr}{b}{+lctr}
+{hk4}>{s9}{x1}{-lctr}{b}{+lctr}
 <keypad>
 <function1>
 <function2>
