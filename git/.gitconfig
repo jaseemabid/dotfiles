@@ -10,10 +10,10 @@
     conflits = diff --name-only --diff-filter=U
     continue = rebase --continue
     cp = cherry-pick
-    l = log --oneline --no-decorate origin/main..
+    l = log --oneline -5
+    ll = log --oneline --graph --decorate -25
     last = log -1 --oneline --no-decorate
     lasttag = describe --tags --abbrev=0
-    ll = log --oneline --graph --decorate -20
     meh = commit --amend --no-edit
     ours = "!f() { git checkout --ours -- $@ && git add -- $@; }; f"
     pill = pull
