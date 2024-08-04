@@ -13,7 +13,24 @@ export HISTFILESIZE=999999
 
 typeset -U path PATH
 cdpath=(~/src)
-path=(~/bin ~/.local/bin ~/.cabal/bin ~/.cargo/bin ~/go/bin $path)
+path=(
+    ~/bin
+    ~/.local/bin
+    ~/.cabal/bin
+    ~/.cargo/bin
+    ~/go/bin
+
+    # Ruby Gems
+    /opt/homebrew/lib/ruby/gems/3.3.0/bin
+
+    # 'Optional' brew installations
+    /opt/homebrew/opt/sqlite3/bin
+    /opt/homebrew/opt/ruby/bin
+
+    # Prefer homebrew versions over system. Ex git, python3
+    /opt/homebrew/bin
+
+    $path)
 
 # Skip most of shell setup for dumb terminals and IDEs quit early
 if [[ ${VSCODE_RESOLVING_ENVIRONMENT+x} ]] ||
