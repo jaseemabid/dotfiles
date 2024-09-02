@@ -63,7 +63,7 @@
     "editor.wordWrapColumn": 100,
     "eslint.run": "onSave",
     "extensions.autoCheckUpdates": false,
-    "extensions.autoUpdate": "onlySelectedExtensions",
+    "extensions.autoUpdate": false,
     "files.associations": {
         "*.tera": "html"
     },
@@ -206,7 +206,7 @@
     "window.nativeTabs": true,
     "window.titleBarStyle": "native",
     "window.zoomLevel": 1,
-    "workbench.preferredLightColorTheme": "GitHub Light Default",
+    "workbench.preferredLightColorTheme": "Flexoki Light",
     "workbench.startupEditor": "none",
     "yaml.customTags": [
         "!And scalar",
