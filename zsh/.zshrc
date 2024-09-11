@@ -7,7 +7,8 @@ export TERM="xterm-256color"
 export VISUAL=$(which nvim)
 export EDITOR="$VISUAL"
 export FPP_EDITOR="code"
-export MANPAGER="sh -c 'col -bx | bat --plain --theme=Nord -l man'"; export MANROFFOPT="-c"
+export MANPAGER="sh -c 'col -bx | bat --plain --theme=\"Monokai Extended Bright\" -l man'";
+export MANROFFOPT="-c"
 export HISTSIZE=999999
 export HISTFILESIZE=999999
 
