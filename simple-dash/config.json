@@ -9,17 +9,17 @@
 		{
 			"alt" : "Prometheus",
 			"icon" : "fas fa-fire",
-			"link" : "http://prometheus.nyx.jabid.in/"
+			"link" : "http://prometheus.nyx.jabid.in"
 		},
 		{
 			"alt" : "Grafana",
 			"icon" : "fas fa-chart-area",
-			"link" : "http://grafana.nyx.jabid.in/"
+			"link" : "http://grafana.nyx.jabid.in"
 		},
 		{
 			"alt" : "PiHole",
 			"icon" : "fab fa-raspberry-pi",
-			"link" : "http://pi.hole"
+			"link" : "http://pi.nyx.jabid.in"
 		},
 		{
 			"alt" : "DeConz",

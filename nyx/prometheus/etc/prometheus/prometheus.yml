@@ -9,7 +9,7 @@ alerting:
   alertmanagers:
   - static_configs:
     - targets:
-      # - alertmanager:9093
+      - 127.0.0.1:9093
 
 # Load rules once and periodically evaluate them according to the global 'evaluation_interval'.
 rule_files:
@@ -27,3 +27,11 @@ scrape_configs:
   - job_name: 'ping_exporter'
     static_configs:
     - targets: ['localhost:9427']
+
+  - job_name: 'deconz_exporter'
+    static_configs:
+    - targets: ['localhost:9199']
+
+  - job_name: 'esphome'
+    static_configs:
+    - targets: ['devkit.local', 'feather.local']

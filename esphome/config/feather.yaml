@@ -21,10 +21,12 @@ wifi:
 
 web_server:
   port: 80
+  log: false
+  ota: false
 
 # Activates prometheus /metrics endpoint
 prometheus:
-
+      
 # Pins are marked RX/16 & TX/17 on feather, not sure if its GPIO numbers
 uart:
   tx_pin: GPIO17
@@ -36,7 +38,7 @@ sensor:
     update_interval: 30s
     type: PMSX003
     pm_1_0:
-      name: "PM <1.0"
+      name: "PM <1.0µm"
     pm_2_5:
       name: "PM <2.5µm"
     pm_10_0:

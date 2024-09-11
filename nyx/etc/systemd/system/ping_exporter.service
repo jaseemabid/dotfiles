@@ -1,0 +1,27 @@
+[Unit]
+Description=Ping Exporter
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/ping_exporter --config.path=/etc/ping_exporter/config.yml
+NoNewPrivileges=yes
+CapabilityBoundingSet=CAP_NET_RAW
+AmbientCapabilities=CAP_NET_RAW
+PrivateDevices=true
+PrivateTmp=yes
+ProtectControlGroups=true
+ProtectKernelModules=yes
+ProtectKernelTunables=true
+ProtectSystem=strict
+ProtectClock=true
+ProtectHostname=true
+ProtectHome=true
+DevicePolicy=closed
+RestrictNamespaces=yes
+RestrictRealtime=yes
+RestrictSUIDSGID=yes
+MemoryDenyWriteExecute=yes
+LockPersonality=yes
+
+[Install]
+WantedBy=default.target
