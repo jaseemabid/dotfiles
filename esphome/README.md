@@ -13,7 +13,17 @@ Use web UI to configure stuff up and see logs
 
 ## Notes
 
-1. TODO: Temp isn't calibrated right with scd30, its always a bit more than the real value.
+1. TODO: Temp isn't calibrated right with scd30, its always a bit more than the
+real value.
+
+2. Since pi.hole isn't the DHCP server on home network, force allocate a static
+IP with the DHCP server and add hardcoded DNS A records in pi.hole. Prometheus
+needs a good old A record while some other apps use mDNS.
+
+| Device        | Mac                   | IP Address        |
+|---------------|-----------------------|-------------------|
+| devkit.local  | `AC:67:B2:CC:9D:BC`   | `192.168.1.150`   |
+| feather.local | `7C:87:CE:F7:F0:24`   | `192.168.1.151`   |
 
 ## Sample logs:
 
