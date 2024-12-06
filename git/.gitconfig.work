@@ -1,0 +1,5 @@
+# -*- conf -*-
+[user]
+    name = Jaseem Abid
+    email = jaseem.abid@mongodb.com
+    signingkey = F3B0267B3A8A5718

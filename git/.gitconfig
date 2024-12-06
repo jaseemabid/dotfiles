@@ -109,3 +109,16 @@
 
 [url "https://"]
     insteadOf = git://
+
+# Default to personal, but switch to work profile for whole orgs
+# PS: Negate for anything that's not a personal repo would have been nice,
+# but that didn't work for some reason.
+
+[includeIf "hasconfig:remote.*.url:https://github.com/10gen/**"]
+    path = ~/.gitconfig.work
+
+[includeIf "hasconfig:remote.*.url:https://github.com/mongodb/**"]
+    path = ~/.gitconfig.work
+
+[includeIf "hasconfig:remote.*.url:https://github.com/xgen-*/**"]
+    path = ~/.gitconfig.work
