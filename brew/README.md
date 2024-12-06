@@ -1,1 +1,1 @@
-$ brew bundle
+$ brew bundle dump --no-vscode
