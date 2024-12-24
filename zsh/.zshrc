@@ -71,7 +71,7 @@ else
     elif [[ "$OSTYPE" == "linux-gnu" ]]; then
         plugins=(docker fzf git kubectl rust stack sudo tmux z)
     elif [[ "$OSTYPE" == "darwin"* ]]; then
-        plugins=(aws autoenv brew common-aliases direnv docker fzf fzf-tab git kubectl rbenv rust stack tmux z)
+        plugins=(aws asdf autoenv brew common-aliases direnv docker fzf fzf-tab git kubectl rbenv rust stack tmux z)
     else
         echo "Unknown OS"
         exit 1
