@@ -53,12 +53,13 @@ alias big="gstat -c %s $1 | numfmt --to=iec"
 alias die="xset dpms force off"
 alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
 alias genpass="openssl rand -base64 12"
-alias ll='yazi'
 alias less='less -S' # Chop long lines
+alias ll='yazi'
 alias mux="tmuxinator"
 alias record="ffmpeg -f x11grab -r 30 -s 1366x768 -i :0.0 -f alsa -ac 2 -i pulse -vcodec libx264 -acodec pcm_s16le screencast.mkv"
 alias rm="trash"
 alias t='tmux'
+alias ts="tig status" # Overwrite tmux plugin
 alias ty="yt"
 alias untar="tar -zxvf $1"
 alias vi="emacsclient -n"
