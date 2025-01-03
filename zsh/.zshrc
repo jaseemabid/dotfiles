@@ -80,6 +80,9 @@ fi
 
 [[ -s "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
 
+# Configure homebrew
+export HOMEBREW_BUNDLE_DUMP_NO_VSCODE=1
+
 # Configure fzf
 export FZF_COMPLETION_OPTS='--border --info=inline'         # Boxy UI
 export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix' # Find files with fd
