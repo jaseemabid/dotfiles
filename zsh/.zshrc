@@ -92,6 +92,10 @@ export FZF_CTRL_T_OPTS="
   --preview 'bat -n --color=always {}'
   --bind 'ctrl-/:change-preview-window(down|hidden|)'"      # Preview Ctrl+T with bat
 
+
+export RIPGREP_CONFIG_PATH=~/.ripgreprc
+
+
 source $ZSH/oh-my-zsh.sh
 
 # A bunch of helpers
