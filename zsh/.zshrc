@@ -1,16 +1,6 @@
 # -*-sh-*-
 
-export DEFAULT_USER=$(whoami)
-export LC_ALL="en_US.UTF-8"
-export LANG="en_US.UTF-8"
-export TERM="xterm-256color"
-export VISUAL=$(which nvim)
-export EDITOR="$VISUAL"
-export FPP_EDITOR="code"
-export MANPAGER="sh -c 'col -bx | bat --plain --theme=\"Monokai Extended Bright\" -l man'";
-export MANROFFOPT="-c"
-export HISTSIZE=999999
-export HISTFILESIZE=999999
+# Evaluated after ~/.zshenv
 
 typeset -U path PATH
 cdpath=(~/src)
@@ -79,22 +69,6 @@ else
 fi
 
 [[ -s "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
-
-# Configure homebrew
-export HOMEBREW_BUNDLE_DUMP_NO_VSCODE=1
-
-# Configure fzf
-export FZF_COMPLETION_OPTS='--border --info=inline'         # Boxy UI
-export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix' # Find files with fd
-export FZF_ALT_C_COMMAND='fd --type d --strip-cwd-prefix'   # Find files with fd
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"            # Ctrl+T with fd
-export FZF_CTRL_T_OPTS="
-  --preview 'bat -n --color=always {}'
-  --bind 'ctrl-/:change-preview-window(down|hidden|)'"      # Preview Ctrl+T with bat
-
-
-export RIPGREP_CONFIG_PATH=~/.ripgreprc
-
 
 source $ZSH/oh-my-zsh.sh
 
