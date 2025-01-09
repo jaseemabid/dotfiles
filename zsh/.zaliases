@@ -21,6 +21,7 @@ if [ -x "$(command -v eza)" ]; then
 fi
 
 if [ -x "$(command -v bat)" ]; then
+    export BAT_THEME="gruvbox-dark"
     alias cat='bat'
 fi
 
