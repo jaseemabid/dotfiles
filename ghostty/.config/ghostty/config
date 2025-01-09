@@ -2,4 +2,5 @@
 # https://ghostty.zerebos.com
 
 command = /opt/homebrew/bin/tmux attach
+font-family = MesloLGS NF
 theme = nord
