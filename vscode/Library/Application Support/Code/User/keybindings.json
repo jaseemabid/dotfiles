@@ -24,5 +24,13 @@
     {
         "key": "shift+cmd+o",
         "command": "outline.focus"
+    },
+    {
+        "key": "shift+cmd+n",
+        "command": "-workbench.action.newWindow"
+    },
+    {
+        "key": "shift+cmd+n",
+        "command": "workbench.action.newWindowTab"
     }
 ]
