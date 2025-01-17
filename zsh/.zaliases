@@ -50,6 +50,14 @@ alias gs='git status'
 alias gt='git'
 alias gx='git commit --amend --no-edit'
 
+# Improved git branch management with fzf
+# https://til.jakelazaroff.com/fzf/make-a-tui-for-switching-and-deleting-git-branches
+alias ggg="git branch | fzf --reverse --cycle --height=40% --border --preview \
+    'git log --oneline -5 --color=always {-1}' | cut -c 3- | xargs git switch"
+
+alias gbd="git branch | fzf --reverse --cycle --height=40% --border --preview \
+    'git log --oneline -5 --color=always {-1}' | cut -c 3- | xargs git branch -D"
+
 # Data recovery is a myth
 alias dd="echo -e '★★★★★★★★★★★★★★★★★★★★★'; echo -e 'Are you fucking sure?\n'; sleep 7; dd "
 
