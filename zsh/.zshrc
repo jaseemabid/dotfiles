@@ -37,6 +37,13 @@ fi
 #    exec tmux attach
 # fi
 
+# Ghostty's `command` flag is unable to `exec tmux attach` properly; and  you
+# end up with a tmux server without any config loaded.
+# Tmux replaces `TERM_PROGRAM`, so this will only run once.
+if [[ $TERM_PROGRAM == "ghostty" ]]; then
+    exec tmux attach
+fi
+
 # Setup oh-my-zsh
 DISABLE_AUTO_UPDATE="true"
 ZSH_DISABLE_COMPFIX="true"
