@@ -2,8 +2,6 @@
 
 .DS_Store
 .agignore
+.env
 .venv
 .vscode
-
-Scratch.*
-
