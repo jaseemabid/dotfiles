@@ -21,6 +21,7 @@ brew "gnu-sed"
 brew "go"
 brew "highlight"
 brew "htop"
+brew "imagemagick" # Need this for SVG previews in yazi
 brew "jq"
 brew "ncdu"
 brew "neovim"

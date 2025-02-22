@@ -37,6 +37,7 @@ brew "librsvg"
 brew "graphviz"
 brew "highlight"
 brew "htop"
+brew "imagemagick" # Need this for SVG previews in yazi
 brew "jq"
 brew "lazygit"
 brew "moreutils"
