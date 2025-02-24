@@ -1,6 +1,4 @@
 {
-    "D2.execPath": "/opt/homebrew/bin/d2",
-    "D2.previewLayout": "elk",
     "[css][json][jsonc][scss][typescript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.formatOnSave": true,
@@ -16,6 +14,11 @@
     },
     "[markdown]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.quickSuggestions": {
+            "comments": "off",
+            "other": "off",
+            "strings": "off"
+        },
         // This would be great, but breaks markdown tables, reference links and readme.com raw mode
         "rewrap.onSave": false,
         "rewrap.wrappingColumn": 100
@@ -52,6 +55,8 @@
             "scope": "user"
         }
     },
+    "D2.execPath": "/opt/homebrew/bin/d2",
+    "D2.previewLayout": "elk",
     "editor.accessibilitySupport": "off",
     "editor.codeLensFontFamily": "Monaco, 'Apple Color Emoji'",
     "editor.fontFamily": "'Monaspace Neon', 'Apple Color Emoji', monospace",
@@ -75,9 +80,9 @@
     },
     "files.autoSave": "onFocusChange",
     "files.exclude": {
-        "**/__pycache__": true,
         ".pytest_cache": true,
-        ".venv": true
+        ".venv": true,
+        "**/__pycache__": true
     },
     "files.insertFinalNewline": true,
     "files.readonlyInclude": {
@@ -91,11 +96,22 @@
     },
     "git.confirmSync": false,
     "git.openRepositoryInParentFolders": "always",
+    "github.copilot.enable": {
+        "*": false,
+        "markdown": false,
+        "plaintext": false,
+        "scminput": false
+    },
     "json.schemas": [],
+    "jupyter.askForKernelRestart": false,
     "markdown.editor.pasteUrlAsFormattedLink.enabled": "smart",
     "markdown.occurrencesHighlight.enabled": true,
     "markdown.suggest.paths.includeWorkspaceHeaderCompletions": "onSingleOrDoubleHash",
     "markdown.validate.unusedLinkDefinitions.enabled": "warning",
+    "notebook.codeActionsOnSave": {
+        "source.fixAll": false,
+        "source.organizeImports": true
+    },
     "notebook.dragAndDropEnabled": false,
     "notebook.formatOnSave.enabled": true,
     "notebook.outline.showCodeCells": true,
@@ -105,6 +121,7 @@
     "prettier.documentSelectors": ["**/*.{html,tera}"],
     "prettier.tabWidth": 4,
     "python.analysis.supportRestructuredText": true,
+    "python.missingPackage.severity": "Warning",
     "redhat.telemetry.enabled": false,
     "rewrap.autoWrap.enabled": true,
     "rewrap.wrappingColumn": 120,
@@ -113,7 +130,10 @@
     "rust-analyzer.diagnostics.disabled": ["E0063"],
     "rust-analyzer.procMacro.enable": false, // This fails badly on rust nightly.
     "security.workspace.trust.untrustedFiles": "open",
-    "settingsSync.ignoredExtensions": ["coolbear.systemd-unit-file"],
+    "settingsSync.ignoredExtensions": [
+        "coolbear.systemd-unit-file",
+        "chrischinchilla.vale-vscode"
+    ],
     "terminal.integrated.defaultProfile.osx": "zsh",
     "terminal.integrated.fontFamily": "MesloLGS NF",
     "terminal.integrated.showExitAlert": false,
