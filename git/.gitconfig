@@ -9,8 +9,9 @@
     c = commit
     conflits = diff --name-only --diff-filter=U
     continue = rebase --continue
+    copy = "!git log -1 --format=%H | pbcopy"
     cp = cherry-pick
-    l = log --oneline -5
+    l = log --oneline -10
     ll = log --oneline --graph --decorate -25
     last = log -1 --oneline --no-decorate
     lasttag = describe --tags --abbrev=0
