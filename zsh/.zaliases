@@ -69,6 +69,7 @@ alias die="xset dpms force off"
 alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
 alias genpass="openssl rand -base64 12"
 alias less='less -S' # Chop long lines
+alias lg='lazygit'
 alias ll='yazi'
 alias mux="tmuxinator"
 alias record="ffmpeg -f x11grab -r 30 -s 1366x768 -i :0.0 -f alsa -ac 2 -i pulse -vcodec libx264 -acodec pcm_s16le screencast.mkv"
