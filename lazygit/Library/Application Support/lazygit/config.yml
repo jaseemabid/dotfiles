@@ -1,0 +1,5 @@
+git:
+  # https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md#custom-git-log-command
+  branchLogCmd: "git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=medium --oneline {{branchName}} --"
+  log:
+    showWholeGraph: true
