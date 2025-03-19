@@ -1,1 +1,0 @@
-curl -s http://jiofi.local.html/mark_title.w.xml | awk '/batt_per/{print substr($1,11,2)}'

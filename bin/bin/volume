@@ -1,8 +1,0 @@
-#!/bin/bash
-
-# Return the current volume status of your system in a for xmobar
-if pamixer --get-volume-human > /dev/null ; then
-    echo " `pamixer --get-volume-human`"
-else
-    echo " "
-fi
