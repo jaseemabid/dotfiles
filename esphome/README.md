@@ -6,7 +6,7 @@ Run with docker compose or local install
 
 ```sh
 $ docker compose up
-$ poetry run esphome dashboard ./config
+$ uv run esphome dashboard ./config
 ```
 
 Use web UI to configure stuff up and see logs
@@ -24,6 +24,9 @@ needs a good old A record while some other apps use mDNS.
 |---------------|-----------------------|-------------------|
 | devkit.local  | `AC:67:B2:CC:9D:BC`   | `192.168.1.150`   |
 | feather.local | `7C:87:CE:F7:F0:24`   | `192.168.1.151`   |
+
+3. As of 2025.4.06, feather.local can't read from the PM sensor :/ &
+   Metric `esphome_sensor_failed` is active.
 
 ## Sample logs:
 

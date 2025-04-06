@@ -12,6 +12,7 @@ api:
   password: ""
 
 ota:
+  platform: esphome
   password: ""
 
 wifi:
@@ -26,7 +27,7 @@ web_server:
 
 # Activates prometheus /metrics endpoint
 prometheus:
-      
+
 # Pins are marked RX/16 & TX/17 on feather, not sure if its GPIO numbers
 uart:
   tx_pin: GPIO17
