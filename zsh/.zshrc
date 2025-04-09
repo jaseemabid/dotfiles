@@ -79,6 +79,9 @@ fi
 
 source $ZSH/oh-my-zsh.sh
 
+# Unsure why this is needed to enable completions for just
+autoload -Uz compinit && compinit -C
+
 # A bunch of helpers
 
 # Alt-S inserts "sudo " at the start of line:
