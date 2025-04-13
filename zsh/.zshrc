@@ -53,7 +53,7 @@ ZSH=$HOME/.oh-my-zsh
 if [[ "$OSTYPE" == "linux-gnueabihf" ]]; then
     ZSH_THEME="robbyrussell"
 else
-    ZSH_THEME="powerlevel10k/powerlevel10k"
+    source ~/.p10k/powerlevel10k.zsh-theme
 fi
 
 # Configure a minimal shell for root user
@@ -68,13 +68,15 @@ else
     elif [[ "$OSTYPE" == "linux-gnu" ]]; then
         plugins=(docker fzf git kubectl rust stack sudo tmux z)
     elif [[ "$OSTYPE" == "darwin"* ]]; then
-        plugins=(aws asdf brew common-aliases direnv docker fzf fzf-tab git kubectl rbenv rust stack tmux z)
+        plugins=(aws asdf brew common-aliases direnv docker fzf git kubectl rbenv rust stack tmux z)
     else
         echo "Unknown OS"
         exit 1
     fi
 fi
 
+# Load custom plugins from non std path for simpler stow packages
+source ~/zsh/.fzf-tab/fzf-tab.plugin.zsh
 [[ -s "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
 
 source $ZSH/oh-my-zsh.sh

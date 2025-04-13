@@ -29,10 +29,10 @@
 	path = tmux/.tmux/plugins/tmux-fzf-url
 	url = https://github.com/wfxr/tmux-fzf-url
 [submodule "p10k/.oh-my-zsh/custom/themes/powerlevel10k"]
-	path = p10k/.oh-my-zsh/custom/themes/powerlevel10k
+	path = zsh/.p10k
 	url = https://github.com/romkatv/powerlevel10k.git
 [submodule "fzf/.oh-my-zsh/custom/plugins/fzf-tab"]
-	path = fzf/.oh-my-zsh/custom/plugins/fzf-tab
+	path = zsh/.fzf-tab
 	url = https://github.com/Aloxaf/fzf-tab
 [submodule "tmux/.tmux/plugins/tmux-sidebar"]
 	path = tmux/.tmux/plugins/tmux-sidebar
