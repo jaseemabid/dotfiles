@@ -29,18 +29,12 @@ if [[ ${VSCODE_RESOLVING_ENVIRONMENT+x} ]] ||
     return
 fi
 
-# # Tmux attach by default only local, directly interactive sessions
-# if [[ -z $TMUX && -z "$SSH_CLIENT"  ]] &&
-#   [[ ${TERMINAL_EMULATOR} != "JetBrains-JediTerm" ]] &&
-#   [[ ${VSCODE_INJECTION} != "1" ]] &&
-#   [[ ${TERMINAL_NO_TMUX} != "1" ]]; then
-#    exec tmux attach
-# fi
-
-# Ghostty's `command` flag is unable to `exec tmux attach` properly; and  you
-# end up with a tmux server without any config loaded.
-# Tmux replaces `TERM_PROGRAM`, so this will only run once.
-if [[ $TERM_PROGRAM == "ghostty" ]]; then
+# Tmux attach by default only for local, directly interactive sessions
+# Exclude ghostty, VSCode, JetBrains shells
+if [[ -z "$TMUX" && -z "$SSH_CLIENT" ]] &&
+   [[ "$TERMINAL_EMULATOR" != "JetBrains-JediTerm" ]] &&
+   [[ "$VSCODE_INJECTION" != "1" ]] &&
+   [[ "$TERM_PROGRAM" != "ghostty" ]]; then
     exec tmux attach
 fi
 
