@@ -117,8 +117,9 @@
     "markdown.suggest.paths.includeWorkspaceHeaderCompletions": "onSingleOrDoubleHash",
     "markdown.validate.unusedLinkDefinitions.enabled": "warning",
     "notebook.codeActionsOnSave": {
-        "source.fixAll": false,
-        "source.organizeImports": true
+        // Explict == explicit file save
+        "source.fixAll": "explicit",
+        "source.organizeImports": "explicit"
     },
     "notebook.dragAndDropEnabled": false,
     "notebook.formatOnSave.enabled": true,
