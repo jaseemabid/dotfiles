@@ -3,4 +3,4 @@
 
 font-family = MesloLGS NF
 theme = nord
-initial-command = /bin/zsh -l -c "tmux attach"
+initial-command = /bin/zsh -l -c "/opt/homebrew/bin/tmux attach"
