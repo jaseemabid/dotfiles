@@ -72,6 +72,14 @@
     "editor.unicodeHighlight.ambiguousCharacters": false,
     "editor.wordWrap": "bounded",
     "editor.wordWrapColumn": 100,
+    "emeraldwalk.runonsave": {
+        "commands": [
+            {
+                "cmd": "just --fmt --unstable",
+                "match": "Justfile"
+            }
+        ]
+    },
     "eslint.run": "onSave",
     "extensions.autoCheckUpdates": false,
     "extensions.autoUpdate": false,
