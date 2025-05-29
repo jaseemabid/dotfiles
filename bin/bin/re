@@ -1,15 +1,20 @@
 #!/usr/bin/env bash
 
-# Tweaked version of https://github.com/junegunn/fzf/blob/master/ADVANCED.md#ripgrep-integration
-# re == Ripgrep Edit
+set -euo pipefail
+set -o errexit
+set -o nounset
 
-# 1. Search for text in files using Ripgrep
+# re == Ripgrep Edit
+# Tweaked version of https://github.com/junegunn/fzf/blob/master/ADVANCED.md#ripgrep-integration
+
+# 1. Search for text in files using Ripgrep, passing down all arguments
 # 2. Interactively narrow down the list using fzf
 # 3. Open the file in vscode and jump to the line
-rg --color=always --line-number --no-heading --smart-case "${*:-}" |
+
+rg --color=always --line-number --no-heading --smart-case "$@" |
   fzf --ansi \
       --color "hl:-1:underline,hl+:-1:underline:reverse" \
-      --delimiter : \
+      --delimiter : --reverse \
       --preview 'bat --color=always {1} --highlight-line {2}' \
-      --preview-window 'up,60%,border-bottom,+{2}+3/3,~3' \
-      --bind 'enter:become(code -g {1}:{2})'
+      --preview-window 'down,70%,border-bottom' \
+      --bind 'enter:become(code --reuse-window -g {1}:{2})'
