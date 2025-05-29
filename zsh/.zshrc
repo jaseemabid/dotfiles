@@ -11,15 +11,14 @@ path=(
     ~/.cargo/bin
     ~/go/bin
 
-    # Ruby Gems
-    /opt/homebrew/lib/ruby/gems/3.3.0/bin
-
-    # 'Optional' brew installations
-    /opt/homebrew/opt/sqlite3/bin
-    /opt/homebrew/opt/ruby/bin
-
     # Prefer homebrew versions over system. Ex git, python3
     /opt/homebrew/bin
+    /usr/local/bin
+
+    # Other Optional & Ruby Gems
+    /opt/homebrew/lib/ruby/gems/3.3.0/bin
+    /opt/homebrew/opt/ruby/bin
+    /opt/homebrew/opt/sqlite3/bin
 
     $path)
 
