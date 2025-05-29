@@ -70,7 +70,7 @@ else
 fi
 
 # Load custom plugins from non std path for simpler stow packages
-source ~/.fzf-tab/fzf-tab.plugin.zsh
+source ~/.config/fzf-tab/fzf-tab.plugin.zsh
 
 [[ -s "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
 

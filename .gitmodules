@@ -32,7 +32,7 @@
 	path = zsh/.p10k
 	url = https://github.com/romkatv/powerlevel10k.git
 [submodule "fzf/.oh-my-zsh/custom/plugins/fzf-tab"]
-	path = zsh/.fzf-tab
+	path = zsh/.config/fzf-tab
 	url = https://github.com/Aloxaf/fzf-tab
 [submodule "tmux/.tmux/plugins/tmux-sidebar"]
 	path = tmux/.tmux/plugins/tmux-sidebar
