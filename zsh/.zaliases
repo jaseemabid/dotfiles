@@ -87,7 +87,7 @@ alias vertical='xrandr --output VIRTUAL1 --off --output eDP1 --primary --mode 19
 
 # Remove trailing whitespace
 # http://stackoverflow.com/questions/4438306/removing-trailing-whitespace-with-sed
-alias ws='sed -i '\''s/[ \t]*$//'\'' '
+alias ws='gsed -i '\''s/[ \t]*$//'\'' '
 
 # http://hamberg.no/erlend/posts/2013-01-18-mkcd.html
 mkcd () {
