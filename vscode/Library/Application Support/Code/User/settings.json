@@ -71,7 +71,7 @@
     "editor.renderWhitespace": "none",
     "editor.unicodeHighlight.ambiguousCharacters": false,
     "editor.wordWrap": "bounded",
-    "editor.wordWrapColumn": 100,
+    "editor.wordWrapColumn": 120,
     "emeraldwalk.runonsave": {
         "commands": [
             {
@@ -81,6 +81,7 @@
         ]
     },
     "eslint.run": "onSave",
+    "explorer.excludeGitIgnore": true,
     "extensions.autoCheckUpdates": false,
     "extensions.autoUpdate": false,
     "files.associations": {
@@ -106,6 +107,7 @@
     "git.openRepositoryInParentFolders": "always",
     "github.copilot.enable": {
         "*": false,
+        "go": true,
         "markdown": false,
         "plaintext": false,
         "scminput": false
@@ -144,6 +146,7 @@
         "chrischinchilla.vale-vscode"
     ],
     "terminal.integrated.defaultProfile.osx": "zsh",
+    "terminal.integrated.enableMultiLinePasteWarning": "never",
     "terminal.integrated.fontFamily": "MesloLGS NF",
     "terminal.integrated.showExitAlert": false,
     "testing.saveBeforeTest": false,
