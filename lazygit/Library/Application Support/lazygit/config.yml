@@ -3,3 +3,4 @@ git:
   branchLogCmd: "git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=medium --oneline {{branchName}} --"
   log:
     showWholeGraph: false
+  overrideGpg: true
