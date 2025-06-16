@@ -39,6 +39,17 @@
 [core]
     whitespace = trailing-space,space-before-tab
     excludesFile = ~/.gitignore
+
+    # Notes on diff tools
+    # 1. diff-so-fancy can't support side by side view.
+    # https://github.com/so-fancy/diff-so-fancy/issues/377
+    #
+    # 2. difftastic can't ignore reordering, so still bad for yaml
+    # https://github.com/Wilfred/difftastic/issues/723
+    #
+    # 3. dyff is great, but not a git diff tool yet
+    # https://github.com/homeport/dyff/issues/189
+
     pager = diff-so-fancy | less --tabs=4 -RFX
     quotePath = false
 
@@ -48,15 +59,6 @@
 [diff]
     compactionHeuristic = true
     renames = true
-
-[diff "jupyternotebook"]
-    command = git-nbdiffdriver diff
-
-[difftool]
-    prompt = false
-
-[difftool "nbdime"]
-    cmd = git-nbdifftool diff \"$LOCAL\" \"$REMOTE\" \"$BASE\"
 
 [fetch]
     prune = true
