@@ -42,6 +42,8 @@ DISABLE_AUTO_UPDATE="true"
 ZSH_DISABLE_COMPFIX="true"
 ZSH=$HOME/.oh-my-zsh
 
+# Disable colours from .oh-my-zsh/lib/theme-and-appearance.zsh
+DISABLE_LS_COLORS="true"
 # Theme setup
 if [[ "$OSTYPE" == "linux-gnueabihf" ]]; then
     ZSH_THEME="robbyrussell"
