@@ -27,6 +27,13 @@
     today = diff @{yesterday}.. --stat
     xxx = !git reset --hard HEAD && git clean -xfd
 
+    # Difftastic aliases without making them defaults.
+    # `git dlog` is `git log` with difftastic and so on.
+    # https://difftastic.wilfred.me.uk/git.html#regular-usage
+    dlog = -c diff.external=difft log --ext-diff
+    dshow = -c diff.external=difft show --ext-diff
+    ddiff = -c diff.external=difft diff
+
 [apply]
     whitespace = fix
 
@@ -41,10 +48,12 @@
     excludesFile = ~/.gitignore
 
     # Notes on diff tools
+    #
     # 1. diff-so-fancy can't support side by side view.
     # https://github.com/so-fancy/diff-so-fancy/issues/377
     #
-    # 2. difftastic can't ignore reordering, so still bad for yaml
+    # 2. difftastic can't ignore reordering, so still bad for yaml.
+    # Neat side-by-side view, so enable with aliases but not as default
     # https://github.com/Wilfred/difftastic/issues/723
     #
     # 3. dyff is great, but not a git diff tool yet
