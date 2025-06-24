@@ -101,9 +101,12 @@ bindkey "^[s" insert-sudo
 # Move aliases to custom file. Its hard to track aliases.zsh inside oh-my-zsh
 source ~/.zaliases
 
-# Override eza plugin's ls alias to use long format instead of grid
+# Extend eza plugin aliases with --long and tree variants
 if (( $+commands[eza] )); then
-    alias ls='eza -l --git --icons=auto --color-scale=size --color-scale-mode=gradient --hyperlink --group-directories-first'
+    local _base_cmd="${aliases[ls]} --long"
+    alias ls="${_base_cmd}"
+    alias le="${_base_cmd} --tree --level=1"
+    alias lee="${_base_cmd} --tree --level=2"
 fi
 
 # Make sure tramp wont blow up
