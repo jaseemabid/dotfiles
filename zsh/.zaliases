@@ -14,12 +14,6 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     alias o='open'
 fi
 
-if [ -x "$(command -v eza)" ]; then
-    # https://github.com/eza-community/eza/issues/1499
-    alias la='eza --git --icons=auto --long --tree --level=1 --all'
-    alias ls='eza --git --icons=auto --long --tree --level=0'
-    alias le='eza --git --icons=auto --long --tree --level=1'
-fi
 
 if [ -x "$(command -v bat)" ]; then
     export BAT_THEME="gruvbox-dark"

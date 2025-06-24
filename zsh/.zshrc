@@ -63,12 +63,21 @@ else
     elif [[ "$OSTYPE" == "linux-gnu" ]]; then
         plugins=(docker fzf git kubectl rust stack sudo tmux z)
     elif [[ "$OSTYPE" == "darwin"* ]]; then
-        plugins=(aws asdf brew common-aliases direnv docker fzf git kubectl rbenv rust stack tmux z)
+        plugins=(aws asdf brew common-aliases direnv docker eza fzf git kubectl rbenv rust stack tmux z)
     else
         echo "Unknown OS"
         exit 1
     fi
 fi
+
+# Configure eza plugin
+zstyle ':omz:plugins:eza' 'icons' yes
+zstyle ':omz:plugins:eza' 'git-status' yes
+zstyle ':omz:plugins:eza' 'color-scale' size
+zstyle ':omz:plugins:eza' 'color-scale-mode' gradient
+zstyle ':omz:plugins:eza' 'hyperlink' yes
+zstyle ':omz:plugins:eza' 'show-group' no
+zstyle ':omz:plugins:eza' 'dirs-first' yes
 
 # Load custom plugins from non std path for simpler stow packages
 source ~/.config/fzf-tab/fzf-tab.plugin.zsh
@@ -91,6 +100,11 @@ bindkey "^[s" insert-sudo
 
 # Move aliases to custom file. Its hard to track aliases.zsh inside oh-my-zsh
 source ~/.zaliases
+
+# Override eza plugin's ls alias to use long format instead of grid
+if (( $+commands[eza] )); then
+    alias ls='eza -l --git --icons=auto --color-scale=size --color-scale-mode=gradient --hyperlink --group-directories-first'
+fi
 
 # Make sure tramp wont blow up
 [[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ '
