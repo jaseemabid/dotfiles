@@ -114,6 +114,7 @@
     },
     "json.schemas": [],
     "jupyter.askForKernelRestart": false,
+    "makefile.configureOnOpen": false,
     "markdown.editor.pasteUrlAsFormattedLink.enabled": "smart",
     "markdown.occurrencesHighlight.enabled": true,
     "markdown.suggest.paths.includeWorkspaceHeaderCompletions": "onSingleOrDoubleHash",
