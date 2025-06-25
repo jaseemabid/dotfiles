@@ -9,6 +9,7 @@ path=(
     ~/.local/bin
     ~/.cabal/bin
     ~/.cargo/bin
+    ~/.claude/local
     ~/go/bin
 
     # Prefer homebrew versions over system. Ex git, python3
