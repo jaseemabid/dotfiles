@@ -150,6 +150,7 @@
     "terminal.integrated.enableMultiLinePasteWarning": "never",
     "terminal.integrated.fontFamily": "MesloLGS NF",
     "terminal.integrated.showExitAlert": false,
+    "testing.defaultGutterClickAction": "debug",
     "testing.saveBeforeTest": false,
     "typescript.enablePromptUseWorkspaceTsdk": true,
     "typescript.implementationsCodeLens.enabled": true,
