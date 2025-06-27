@@ -1,7 +1,17 @@
 [[plugin.deps]]
-use = "Reledia/glow"
-rev = "2da96e3"
-hash = "f9ee1436e3b853508d87f7d49dce56e6"
+use = "yazi-rs/plugins:piper"
+rev = "7c174cc"
+hash = "2143a53182dbbe935a1abd1623424aa5"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:no-status"
+rev = "7c174cc"
+hash = "3e023d31f29201efdac2a6ae35fedb78"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:git"
+rev = "7c174cc"
+hash = "e01006bfb38951ea89031bd918b20dbb"
 
 [flavor]
 deps = []
