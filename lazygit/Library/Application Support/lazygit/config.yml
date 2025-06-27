@@ -4,3 +4,9 @@ git:
   log:
     showWholeGraph: false
   overrideGpg: true
+
+customCommands:
+  - key: 'F'
+    command: 'git fixup'
+    context: 'files'
+    description: 'Run git fixup'
