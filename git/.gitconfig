@@ -3,6 +3,9 @@
     name = Jaseem Abid
     email = me@jabid.in
 
+[advice]
+	skippedCherryPicks = false
+
 [alias]
     authors = shortlog -sn
     b = branch
@@ -106,6 +109,7 @@
 [rebase]
     autosquash = true
     autoStash = true
+    keepEmpty = true
 
 [remote "origin"]
     prune = true
