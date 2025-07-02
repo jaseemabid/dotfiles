@@ -13,5 +13,10 @@ use = "yazi-rs/plugins:git"
 rev = "7c174cc"
 hash = "e01006bfb38951ea89031bd918b20dbb"
 
+[[plugin.deps]]
+use = "yazi-rs/plugins:smart-enter"
+rev = "e5f00e2"
+hash = "56fdabc96fc1f4d53c96eb884b02a5be"
+
 [flavor]
 deps = []
