@@ -2,10 +2,12 @@
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'ctrlpvim/ctrlp.vim'           " Fuzzy finder for files and buffers
 Plug 'junegunn/goyo.vim'            " Distraction free writing
 Plug 'tpope/vim-commentary'         " Comment region with gc
 Plug 'tpope/vim-sensible'           " Sensible defaults for everyone
+
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 Plug 'neovimhaskell/haskell-vim'    " Language bindings
 Plug 'rust-lang/rust.vim'
@@ -49,15 +51,13 @@ set clipboard=unnamedplus,unnamed
 
 autocmd BufWritePre * %s/\s\+$//e
 
-" CtrlP
-
-" Open file menu
-nnoremap <Leader>o :CtrlP<CR>
-" Open buffer menu
-nnoremap <Leader>b :CtrlPBuffer<CR>
-" Open most recently used files
-nnoremap <Leader>f :CtrlPMRUFiles<CR>
-
+" Fzf
+nnoremap <leader><leader> :GFiles<CR>
+nnoremap <leader>fi       :Files<CR>
+nnoremap <leader>C        :Colors<CR>
+nnoremap <leader><CR>     :Buffers<CR>
+nnoremap <leader>fl       :Lines<CR>
+nnoremap <leader>m        :History<CR>
 
 function! ProseMode()
   call goyo#execute(0, [])
