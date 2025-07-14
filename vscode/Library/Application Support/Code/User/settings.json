@@ -5,6 +5,9 @@
         "editor.wordWrap": "off",
         "rewrap.autoWrap.enabled": false
     },
+    "[d2]": {
+        "editor.formatOnSave": true
+    },
     "[html]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.formatOnSave": false
@@ -14,14 +17,15 @@
     },
     "[markdown]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true,
         "editor.quickSuggestions": {
             "comments": "off",
             "other": "off",
             "strings": "off"
         },
         // This would be great, but breaks markdown tables, reference links and readme.com raw mode
-        "rewrap.onSave": false,
-        "rewrap.wrappingColumn": 100
+        "rewrap.onSave": true,
+        "rewrap.wrappingColumn": 80
     },
     "[python]": {
         "editor.defaultFormatter": "charliermarsh.ruff",
@@ -117,6 +121,8 @@
     "makefile.configureOnOpen": false,
     "markdown.editor.pasteUrlAsFormattedLink.enabled": "smart",
     "markdown.occurrencesHighlight.enabled": true,
+    "markdown.preview.scrollEditorWithPreview": false,
+    "markdown.preview.scrollPreviewWithEditor": false,
     "markdown.suggest.paths.includeWorkspaceHeaderCompletions": "onSingleOrDoubleHash",
     "markdown.validate.unusedLinkDefinitions.enabled": "warning",
     "notebook.codeActionsOnSave": {
