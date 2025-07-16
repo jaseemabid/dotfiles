@@ -1,4 +1,4 @@
 *.min.js
 *.plist
 node_modules/
-
+.git
