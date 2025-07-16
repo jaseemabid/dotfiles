@@ -19,6 +19,7 @@ export HISTFILESIZE=999999
 export FZF_COMPLETION_OPTS='--border --info=inline'                     # Boxy UI
 export FZF_DEFAULT_COMMAND='fd --hidden --type f --strip-cwd-prefix'    # Find files with fd
 export FZF_ALT_C_COMMAND='fd --type d --strip-cwd-prefix'               # ALT-C - cd into the selected directory
+export FZF_CTRL_R_OPTS="--exact"                                        # Fuzzy match is far too noisy for history
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"                        # CTRL-T - Paste the selected file path(s) to prompt
 export FZF_CTRL_T_OPTS="
   --preview 'bat -n --color=always {}'
