@@ -1,95 +1,185 @@
 tap "homebrew/bundle"
 tap "homebrew/services"
-
+# Codec library for encoding and decoding AV1 video streams
 brew "aom"
-brew "aspell"
-brew "bash"
-brew "bat"
-brew "cairo"
-brew "coreutils"
-brew "d2"
-brew "diff-so-fancy"
-brew "diffutils"
-brew "direnv"
-brew "dust"
-brew "entr"
-brew "exiftool"
-brew "eza"
-brew "fd"
-brew "findutils"
-brew "fpp"
-brew "fzf"
-brew "gawk"
-brew "gh"
-brew "git"
-brew "glances"
-brew "glow"
-brew "gnu-sed"
-brew "gnuplot"
-brew "gnutls"
-brew "go"
-brew "graphviz"
-brew "highlight"
-brew "htop"
-brew "imagemagick" # Need this for SVG previews in yazi
-brew "jq"
-brew "lazygit"
-brew "libavif"
-brew "librsvg"
-brew "moreutils"
-brew "mosh"
-brew "mtr"
-brew "ncdu"
-brew "neofetch"
-brew "neovim"
-brew "netpbm"
-brew "nmap"
-brew "node"
-brew "pipenv"
-brew "podman"
-brew "pv"
+# Interpreted, interactive, object-oriented programming language
 brew "python@3.13"
+# Spell checker with better logic than ispell
+brew "aspell"
+# Bourne-Again SHell, a UNIX command interpreter
+brew "bash"
+# Clone of cat(1) with syntax highlighting and Git integration
+brew "bat"
+# Vector graphics library with cross-device output support
+brew "cairo"
+# GNU File, Shell, and Text utilities
+brew "coreutils"
+# Modern diagram scripting language that turns text to diagrams
+brew "d2"
+# Good-lookin' diffs with diff-highlight and more
+brew "diff-so-fancy"
+# File comparison utilities
+brew "diffutils"
+# Load/unload environment variables based on $PWD
+brew "direnv"
+# More intuitive version of du in rust
+brew "dust"
+# Run arbitrary commands when files change
+brew "entr"
+# Perl lib for reading and writing EXIF metadata
+brew "exiftool"
+# Modern, maintained replacement for ls
+brew "eza"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
+# Collection of GNU find, xargs, and locate
+brew "findutils"
+# CLI program that accepts piped input and presents files for selection
+brew "fpp"
+# Command-line fuzzy finder written in Go
+brew "fzf"
+# GNU awk utility
+brew "gawk"
+# Library for encoding and decoding .avif files
+brew "libavif"
+# GitHub command-line tool
+brew "gh"
+# Distributed revision control system
+brew "git"
+# Alternative to top/htop
+brew "glances"
+# Render markdown on the CLI
+brew "glow"
+# GNU implementation of the famous stream editor
+brew "gnu-sed"
+# Command-driven, interactive function plotting
+brew "gnuplot"
+# GNU Transport Layer Security (TLS) Library
+brew "gnutls"
+# Open source programming language to build simple/reliable/efficient software
+brew "go"
+# Convert source code to formatted text with syntax highlighting
+brew "highlight"
+# Improved top (interactive process viewer)
+brew "htop"
+# Tools and libraries to manipulate images in many formats
+brew "imagemagick"
+# Lightweight and flexible command-line JSON processor
+brew "jq"
+# Handy way to save and run project-specific commands
+brew "just"
+# Simple terminal UI for git commands
+brew "lazygit"
+# Library to render SVG files using Cairo
+brew "librsvg"
+# Collection of tools that nobody wrote when UNIX was young
+brew "moreutils"
+# Remote terminal application
+brew "mosh"
+# 'traceroute' and 'ping' in a single tool
+brew "mtr"
+# NCurses Disk Usage
+brew "ncdu"
+# Fast, highly customisable system info script
+brew "neofetch"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
+# Image manipulation
+brew "netpbm"
+# Port scanning utility for large networks
+brew "nmap"
+# Platform built on V8 to build network applications
+brew "node"
+# Platform built on V8 to build network applications
+brew "node@22"
+# Python dependency management tool
+brew "pipenv"
+# Tool for managing OCI containers and pods
+brew "podman"
+# Monitor data's progress through a pipe
+brew "pv"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.12"
+# Reattach process (e.g., tmux) to background
 brew "reattach-to-user-namespace"
+# Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Utility that provides fast incremental file transfer
 brew "rsync"
+# Powerful, clean, object-oriented scripting language
 brew "ruby"
+# Rust toolchain installer
 brew "rustup"
+# 7-Zip is a file archiver with a high compression ratio
 brew "sevenzip"
+# Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
+# SOcket CAT: netcat on steroids
 brew "socat"
+# Organize software neatly under a single directory tree (e.g. /usr/local)
 brew "stow"
+# User interface to the TELNET protocol
 brew "telnet"
+# Text interface for Git repositories
 brew "tig"
+# Simplified and community-driven man pages
 brew "tldr"
+# Terminal multiplexer
 brew "tmux"
+# Command-line interface to the freedesktop.org trashcan
 brew "trash-cli", link: true
+# Extremely fast Python package installer and resolver, written in Rust
 brew "uv"
+# Internet file retriever
 brew "wget"
+# Tools for the WireGuard secure network tunnel
 brew "wireguard-tools"
+# Blazing fast terminal file manager written in Rust, based on async I/O
 brew "yazi"
+# UNIX shell (command interpreter)
 brew "zsh"
-
+# Password manager that keeps all passwords secure behind one password
 cask "1password"
+# Command-line interface for 1Password
 cask "1password-cli"
+# Anthropic's official Claude AI desktop app
 cask "claude"
 cask "font-jetbrains-mono"
 cask "font-meslo-lg-nerd-font"
 cask "font-monaspace"
+# Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
+# Web browser
 cask "google-chrome"
+# Software for Logitech devices
 cask "logi-options+"
+# Free and open-source RSS reader
 cask "netnewswire"
+# Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
-cask "ollama"
+# Get up and running with large language models locally
+cask "ollama-app"
+# Instant messaging application focusing on security
 cask "signal"
+# Team communication and collaboration software
 cask "slack"
+# Music streaming service
 cask "spotify"
+# Video game digital distribution service
 cask "steam"
-cask "tailscale"
+# Mesh VPN based on WireGuard
+cask "tailscale-app"
+# Open-source BitTorrent client
 cask "transmission"
+# Open-source code editor
 cask "visual-studio-code"
+# Multimedia player
 cask "vlc"
+# Native desktop client for WhatsApp
 cask "whatsapp"
+# Multiplayer code editor
 cask "zed"
+# Video communication and virtual meeting platform
 cask "zoom"
+# Desktop client for the Zulip team chat platform
 cask "zulip"

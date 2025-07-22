@@ -1,0 +1,6 @@
+dump:
+    /bin/rm Brewfile >&2 || true
+    brew bundle dump --no-vscode  --describe
+
+install:
+    brew bundle
