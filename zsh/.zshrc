@@ -23,6 +23,9 @@ path=(
 
     $path)
 
+# Homebrew's shell completions aren't in path by default
+fpath=(/opt/homebrew/share/zsh/site-functions $fpath)
+
 # Skip most of shell setup for dumb terminals and IDEs quit early
 if [[ ${VSCODE_RESOLVING_ENVIRONMENT+x} ]] ||
    [[ ${INTELLIJ_ENVIRONMENT_READER+x} ]]; then
@@ -86,9 +89,6 @@ source ~/.config/fzf-tab/fzf-tab.plugin.zsh
 [[ -s "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
 
 source $ZSH/oh-my-zsh.sh
-
-# Unsure why this is needed to enable completions for just
-autoload -Uz compinit && compinit -C
 
 # A bunch of helpers
 
