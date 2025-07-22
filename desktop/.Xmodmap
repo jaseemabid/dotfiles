@@ -1,6 +1,0 @@
-!Make delete a window key
-keycode 119 = Alt_L NoSymbol Alt_L NoSymbol Alt_L
-
-!Clear lock and map to escape
-clear lock
-keycode 66 = Escape

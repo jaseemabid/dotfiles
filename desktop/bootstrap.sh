@@ -1,1 +1,0 @@
-../nyx/bootstrap.sh
