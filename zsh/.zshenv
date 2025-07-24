@@ -16,14 +16,16 @@ export HISTFILESIZE=999999
 # fzf
 # See /opt/homebrew/opt/fzf/shell/key-bindings.zsh for docs
 #
-export FZF_COMPLETION_OPTS='--border --info=inline'                     # Boxy UI
-export FZF_DEFAULT_COMMAND='fd --hidden --type f --strip-cwd-prefix'    # Find files with fd
-export FZF_ALT_C_COMMAND='fd --type d --strip-cwd-prefix'               # ALT-C - cd into the selected directory
-export FZF_CTRL_R_OPTS="--exact"                                        # Fuzzy match is far too noisy for history
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"                        # CTRL-T - Paste the selected file path(s) to prompt
+
+export FZF_DEFAULT_OPTS=''
+export FZF_COMPLETION_OPTS='--info=inline' # Show the 30/434 info inline
+export FZF_DEFAULT_COMMAND='fd --hidden --type f --strip-cwd-prefix' # Find files with f
+export FZF_ALT_C_COMMAND='fd --hidden --type d --strip-cwd-prefix' # ALT-C - cd into the selected director
+export FZF_CTRL_R_OPTS="--exact" # Fuzzy match is far too noisy for history
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND" # CTRL-T - Paste the selected file path(s) to prompt
 export FZF_CTRL_T_OPTS="
   --preview 'bat -n --color=always {}'
-  --bind 'ctrl-/:change-preview-window(down|hidden|)'"      # Preview Ctrl+T with bat
+  --bind 'ctrl-/:change-preview-window(down|hidden|)'" # Preview Ctrl+T with bat
 
 # homebrew
 export HOMEBREW_BUNDLE_DUMP_NO_VSCODE=1
