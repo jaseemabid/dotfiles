@@ -76,7 +76,7 @@ fi
 
 # Configure eza plugin
 zstyle ':omz:plugins:eza' 'icons' yes
-zstyle ':omz:plugins:eza' 'git-status' yes
+zstyle ':omz:plugins:eza' 'git-status' no # Way too slow for large repos
 zstyle ':omz:plugins:eza' 'color-scale' size
 zstyle ':omz:plugins:eza' 'color-scale-mode' gradient
 zstyle ':omz:plugins:eza' 'hyperlink' yes
