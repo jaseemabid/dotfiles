@@ -165,7 +165,6 @@
     "typescript.inlayHints.parameterTypes.enabled": true,
     "typescript.inlayHints.variableTypes.enabled": true,
     "typescript.suggest.completeFunctionCalls": true,
-    "vale.doNotShowWarningForFileToBeSavedBeforeLinting": true,
     "vim.enableNeovim": true,
     "vim.handleKeys": {
         "<C-<SPACE>>": true,
