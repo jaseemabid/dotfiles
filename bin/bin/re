@@ -16,5 +16,5 @@ rg --color=always --line-number --no-heading --smart-case "$@" |
       --color "hl:-1:underline,hl+:-1:underline:reverse" \
       --delimiter : --reverse \
       --preview 'bat --color=always {1} --highlight-line {2}' \
-      --preview-window 'down,70%,border-bottom' \
+      --tmux 'center,95%,50%' \
       --bind 'enter:become(code --reuse-window -g {1}:{2})'
