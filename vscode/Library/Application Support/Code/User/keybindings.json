@@ -1,36 +1,40 @@
 // Place your key bindings in this file to override the defaultsauto[]
 [
     {
-        "key": "shift+alt+z",
-        "command": "workbench.action.toggleZenMode"
+        "command": "workbench.action.toggleZenMode",
+        "key": "shift+alt+z"
     },
     {
-        "key": "cmd+k z",
-        "command": "-workbench.action.toggleZenMode"
+        "command": "-workbench.action.toggleZenMode",
+        "key": "cmd+k z"
     },
     {
-        "key": "cmd+o",
         "command": "-workbench.action.files.openFileFolder",
+        "key": "cmd+o",
         "when": "isMacNative && openFolderWorkspaceSupport"
     },
     {
-        "key": "cmd+o",
-        "command": "workbench.action.quickOpen"
+        "command": "workbench.action.quickOpen",
+        "key": "cmd+o"
     },
     {
-        "key": "shift+cmd+o",
-        "command": "-workbench.action.gotoSymbol"
+        "command": "-workbench.action.gotoSymbol",
+        "key": "shift+cmd+o"
     },
     {
-        "key": "shift+cmd+o",
-        "command": "outline.focus"
+        "command": "outline.focus",
+        "key": "shift+cmd+o"
     },
     {
-        "key": "shift+cmd+n",
-        "command": "-workbench.action.newWindow"
+        "command": "-workbench.action.newWindow",
+        "key": "shift+cmd+n"
     },
     {
-        "key": "shift+cmd+n",
-        "command": "workbench.action.newWindowTab"
+        "command": "workbench.action.newWindowTab",
+        "key": "shift+cmd+n"
+    },
+    {
+        "command": "workbench.action.replaceInFiles",
+        "key": "shift+alt+cmd+f"
     }
 ]
