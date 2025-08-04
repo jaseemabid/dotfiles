@@ -21,6 +21,10 @@ path=(
     /opt/homebrew/opt/ruby/bin
     /opt/homebrew/opt/sqlite3/bin
 
+    # System admin path
+    /sbin
+    /usr/sbin
+
     $path)
 
 # Homebrew's shell completions aren't in path by default
