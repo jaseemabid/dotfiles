@@ -67,9 +67,9 @@ then
 else
     # Non root users
     if [[ "$OSTYPE" == "linux-gnueabihf" ]]; then
-        plugins=(sudo tmux z)
+        plugins=(eza sudo tmux z)
     elif [[ "$OSTYPE" == "linux-gnu" ]]; then
-        plugins=(docker fzf git kubectl rust stack sudo tmux z)
+        plugins=(docker eza fzf git kubectl rust stack sudo tmux z)
     elif [[ "$OSTYPE" == "darwin"* ]]; then
         plugins=(aws asdf brew common-aliases direnv docker eza fzf git kubectl rbenv rust stack tmux z)
     else
