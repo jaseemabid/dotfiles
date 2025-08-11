@@ -76,14 +76,18 @@ else
     if [[ "$OSTYPE" == "linux-gnueabihf" ]]; then
         plugins=(eza sudo tmux z)
     elif [[ "$OSTYPE" == "linux-gnu" ]]; then
-        plugins=(docker eza fzf git kubectl rust stack sudo tmux z)
+        plugins=(common-aliases docker eza fzf git rust stack sudo tmux z)
     elif [[ "$OSTYPE" == "darwin"* ]]; then
-        plugins=(aws asdf brew common-aliases direnv docker eza fzf git kubectl rbenv rust stack tmux z)
+        plugins=(brew common-aliases direnv docker eza fzf git rust tmux z)
     else
         echo "Unknown OS"
         exit 1
     fi
 fi
+
+# Optional plugins (added if command is available)
+(( $+commands[aws] )) && plugins+=(aws)
+(( $+commands[kubectl] )) && plugins+=(kubectl)
 
 # Configure eza plugin
 zstyle ':omz:plugins:eza' 'icons' yes
