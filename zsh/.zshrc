@@ -30,26 +30,20 @@ path=(
 # Homebrew's shell completions aren't in path by default
 fpath=(/opt/homebrew/share/zsh/site-functions $fpath)
 
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # Skip most of shell setup for dumb terminals and IDEs quit early
 if [[ ${VSCODE_RESOLVING_ENVIRONMENT+x} ]] ||
    [[ ${INTELLIJ_ENVIRONMENT_READER+x} ]]; then
     return
 fi
 
-# Tmux attach by default only for local, directly interactive sessions
-# Exclude ghostty, VSCode, JetBrains shells
+# Tmux session groups for shared windows with independent views
+# Exclude VSCode, JetBrains shells
 if [[ -z "$TMUX" && -z "$SSH_CLIENT" ]] &&
    [[ "$TERMINAL_EMULATOR" != "JetBrains-JediTerm" ]] &&
-   [[ "$VSCODE_INJECTION" != "1" ]] &&
-   [[ "$TERM_PROGRAM" != "ghostty" ]]; then
-    exec tmux attach
+   [[ "$VSCODE_INJECTION" != "1" ]]; then
+    # Create main session if it doesn't exist, then attach to session group
+    tmux has-session -t main 2>/dev/null || tmux new-session -d -s main -c ~
+    exec tmux new-session -t main
 fi
 
 # Setup oh-my-zsh
@@ -59,6 +53,7 @@ ZSH=$HOME/.oh-my-zsh
 
 # Disable colours from .oh-my-zsh/lib/theme-and-appearance.zsh
 DISABLE_LS_COLORS="true"
+
 # Theme setup
 if [[ "$OSTYPE" == "linux-gnueabihf" ]]; then
     ZSH_THEME="robbyrussell"
@@ -74,11 +69,11 @@ then
 else
     # Non root users
     if [[ "$OSTYPE" == "linux-gnueabihf" ]]; then
-        plugins=(eza sudo tmux z)
+        plugins=(eza sudo z)
     elif [[ "$OSTYPE" == "linux-gnu" ]]; then
-        plugins=(common-aliases docker eza fzf git rust stack sudo tmux z)
+        plugins=(common-aliases docker eza fzf git rust stack sudo z)
     elif [[ "$OSTYPE" == "darwin"* ]]; then
-        plugins=(brew common-aliases direnv docker eza fzf git rust tmux z)
+        plugins=(brew common-aliases direnv docker eza fzf git rust z)
     else
         echo "Unknown OS"
         exit 1
