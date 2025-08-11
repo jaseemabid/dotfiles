@@ -110,6 +110,7 @@
     autosquash = true
     autoStash = true
     keepEmpty = true
+    updateRefs = true
 
 [remote "origin"]
     prune = true
@@ -119,12 +120,6 @@
 
 [tig]
     mailmap = yes
-
-[url "https://github.com/"]
-    insteadOf = git@github.com:
-
-[url "https://"]
-    insteadOf = git://
 
 # Default to personal, but switch to work profile for whole orgs
 # PS: Negate for anything that's not a personal repo would have been nice,
