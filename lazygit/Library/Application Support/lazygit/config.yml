@@ -1,12 +1,21 @@
+# Lazygit
+
 git:
   # https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md#custom-git-log-command
+  # Add --oneline to default command
   branchLogCmd: "git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=medium --oneline {{branchName}} --"
   log:
     showWholeGraph: false
   overrideGpg: true
+  branchPrefix: "jabid/"
 
 customCommands:
   - key: 'F'
     command: 'git fixup'
     context: 'files'
     description: 'Run git fixup'
+
+gui:
+  nerdFontsVersion: "3"
+
+notARepository: skip
