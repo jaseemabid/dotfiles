@@ -38,7 +38,8 @@ fi
 
 # Tmux session groups for shared windows with independent views
 # Exclude VSCode, JetBrains shells
-if [[ -z "$TMUX" && -z "$SSH_CLIENT" ]] &&
+if [[ -z "$TMUX" ]] &&
+   [[ -z "$SSH_CLIENT" ]] &&
    [[ "$TERMINAL_EMULATOR" != "JetBrains-JediTerm" ]] &&
    [[ "$VSCODE_INJECTION" != "1" ]]; then
     # Create main session if it doesn't exist, then attach to session group

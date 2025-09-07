@@ -168,7 +168,7 @@
 	<key>BellBounce</key>
 	<false/>
 	<key>CommandString</key>
-	<string>exec tmux attach</string>
+	<string></string>
 	<key>CursorBlink</key>
 	<true/>
 	<key>CursorColor</key>
@@ -181,14 +181,12 @@
 	AAAZAAAAAAAAAAAAAAAAAAAA2Q==
 	</data>
 	<key>CursorType</key>
-	<integer>2</integer>
-	<key>EastAsianAmbiguousWide</key>
-	<false/>
+	<integer>1</integer>
 	<key>Font</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMS
 	AAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVRyb290gAGkCwwVFlUkbnVsbNQNDg8QERIT
-	FFZOU1NpemVYTlNmRmxhZ3NWTlNOYW1lViRjbGFzcyNAKgAAAAAAABAQgAKAA18QE01l
+	FFZOU1NpemVYTlNmRmxhZ3NWTlNOYW1lViRjbGFzcyNAKAAAAAAAABAQgAKAA18QE01l
 	c2xvTEdTLU5GLVJlZ3VsYXLSFxgZGlokY2xhc3NuYW1lWCRjbGFzc2VzVk5TRm9udKIZ
 	G1hOU09iamVjdAgRGiQpMjdJTFFTWF5nbnd+hY6QkpSqr7rDys0AAAAAAAABAQAAAAAA
 	AAAcAAAAAAAAAAAAAAAAAAAA1g==
@@ -196,9 +194,9 @@
 	<key>FontAntialias</key>
 	<true/>
 	<key>ProfileCurrentVersion</key>
-	<real>2.0699999999999998</real>
+	<real>2.0800000000000001</real>
 	<key>RunCommandAsShell</key>
-	<false/>
+	<true/>
 	<key>SelectionColor</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMS
