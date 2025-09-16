@@ -42,7 +42,6 @@ alias gl='git l'
 alias got='git'
 alias gr='git rebase'
 alias gs='git status'
-alias gt='git'
 alias gx='git commit --amend --no-edit'
 
 # Improved git branch management with fzf
