@@ -101,10 +101,3 @@ fi
 # Pipes
 alias -g C='| wc -l'
 alias -g X='| xargs -0'
-
-# Options
-alias -g h='HEAD'
-alias -g m='master'
-alias -g n='--no-decorate'
-alias -g om='origin/master'
-
