@@ -29,6 +29,9 @@ export FZF_CTRL_T_OPTS="
 
 # homebrew
 export HOMEBREW_BUNDLE_DUMP_NO_VSCODE=1
+export HOMEBREW_NO_AUTO_UPDATE=1
+export HOMEBREW_NO_ENV_HINTS=1
+
 
 # rg
 export RIPGREP_CONFIG_PATH=~/.ripgreprc
