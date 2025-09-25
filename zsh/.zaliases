@@ -72,7 +72,8 @@ alias t='tmux'
 alias ts="tig status" # Overwrite tmux plugin
 alias ty="yt"
 alias untar="tar -zxvf $1"
-alias vi="emacsclient -n"
+alias vi="nvim"
+alias vim="nvim"
 alias yt="youtube-dl -wci -o '%(title)s-%(id)s.%(ext)s'"
 
 # Screensetup
