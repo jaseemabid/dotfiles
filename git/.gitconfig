@@ -12,12 +12,12 @@
     c = commit
     conflits = diff --name-only --diff-filter=U
     continue = rebase --continue
-    copy = "!git log -1 --format=%H | pbcopy"
+    copy = "git rev-parse HEAD | pbcopy"
     cp = cherry-pick
     l = log --oneline -10
-    ll = log --oneline --graph --decorate -25
     last = log -1 --oneline --no-decorate
     lasttag = describe --tags --abbrev=0
+    ll = log --oneline --graph --decorate -25
     meh = commit --amend --no-edit
     ours = "!f() { git checkout --ours -- $@ && git add -- $@; }; f"
     pill = pull
@@ -28,6 +28,7 @@
     sync = !git pull --rebase && git push
     theirs = "!f() { git checkout --theirs -- $@ && git add -- $@; }; f"
     today = diff @{yesterday}.. --stat
+    what = rev-parse HEAD
     xxx = !git reset --hard HEAD && git clean -xfd
 
     # Difftastic aliases without making them defaults.
