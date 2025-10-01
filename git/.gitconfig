@@ -12,7 +12,7 @@
     c = commit
     conflits = diff --name-only --diff-filter=U
     continue = rebase --continue
-    copy = "git rev-parse HEAD | pbcopy"
+    copy = !"git rev-parse HEAD | pbcopy"
     cp = cherry-pick
     l = log --oneline -10
     last = log -1 --oneline --no-decorate
