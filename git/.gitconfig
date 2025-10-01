@@ -25,7 +25,6 @@
     s = status -uno
     serve = !git daemon --base-path=. --export-all --reuseaddr --informative-errors --verbose
     set-upstream = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
-    sync = !git pull --rebase && git push
     theirs = "!f() { git checkout --theirs -- $@ && git add -- $@; }; f"
     today = diff @{yesterday}.. --stat
     what = rev-parse HEAD
