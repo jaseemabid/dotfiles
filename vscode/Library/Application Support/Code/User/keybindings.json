@@ -36,5 +36,15 @@
     {
         "command": "workbench.action.replaceInFiles",
         "key": "shift+alt+cmd+f"
+    },
+    {
+        "command": "-python.execSelectionInTerminal",
+        "key": "shift+enter",
+        "when": "editorTextFocus && !findInputFocussed && !isCompositeNotebook && !jupyter.ownsSelection && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python'"
+    },
+    {
+        "command": "-python.execInREPL",
+        "key": "shift+enter",
+        "when": "config.python.REPL.sendToNativeREPL && editorTextFocus && !isCompositeNotebook && !jupyter.ownsSelection && !notebookEditorFocused && editorLangId == 'python'"
     }
 ]
