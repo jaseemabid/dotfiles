@@ -7,6 +7,7 @@
 	skippedCherryPicks = false
 
 [alias]
+    abort = rebase --continue
     authors = shortlog -sn
     b = branch
     c = commit
@@ -28,7 +29,7 @@
     theirs = "!f() { git checkout --theirs -- $@ && git add -- $@; }; f"
     today = diff @{yesterday}.. --stat
     what = rev-parse HEAD
-    xxx = !git reset --hard HEAD && git clean -xfd
+    xxx = !"git reset --hard HEAD && git clean -xfd"
 
     # Difftastic aliases without making them defaults.
     # `git dlog` is `git log` with difftastic and so on.
