@@ -37,11 +37,12 @@ if [[ ${VSCODE_RESOLVING_ENVIRONMENT+x} ]] ||
 fi
 
 # Tmux session groups for shared windows with independent views
-# Exclude VSCode, JetBrains shells
+# Exclude VSCode, JetBrains shells, Apple Terminal
 if [[ -z "$TMUX" ]] &&
    [[ -z "$SSH_CLIENT" ]] &&
    [[ "$TERMINAL_EMULATOR" != "JetBrains-JediTerm" ]] &&
-   [[ "$VSCODE_INJECTION" != "1" ]]; then
+   [[ "$VSCODE_INJECTION" != "1" ]] &&
+   [[ "$TERM_PROGRAM" != "Apple_Terminal" ]]; then
     # Create main session if it doesn't exist, then attach to session group
     tmux has-session -t main 2>/dev/null || tmux new-session -d -s main -c ~
     exec tmux new-session -t main
