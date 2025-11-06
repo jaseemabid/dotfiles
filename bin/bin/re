@@ -10,11 +10,25 @@ set -o nounset
 # 1. Search for text in files using Ripgrep, passing down all arguments
 # 2. Interactively narrow down the list using fzf
 # 3. Open the file in vscode and jump to the line
+#
+#
+# ** NOTES **
+#
+# 1. --preview-window controls the scroll, such that the matched line appears centered
+#    with context; especially for large files.
+#      - The '+{2}+3/3' means: scroll to line {2} (the match)
+#      - add 3 lines to compensate for bat's header + first few lines of file
+#      - and position at 1/3 down the viewport.
+#    The '~6' keeps the first 6 lines fixed (bat's header) while scrolling.
+#
+# 2. --terminal-width $FZF_PREVIEW_COLUMNS ensures bat uses the full width of the
+#    preview pane (60% of terminal width).
 
 rg --color=always --line-number --no-heading --smart-case "$@" |
   fzf --ansi \
       --color "hl:-1:underline,hl+:-1:underline:reverse" \
       --delimiter : --reverse \
-      --preview 'bat --color=always {1} --highlight-line {2}' \
+      --preview 'bat --color=always {1} --highlight-line {2} --terminal-width $FZF_PREVIEW_COLUMNS' \
+      --preview-window 'right,60%,border-left,+{2}+3/3,~6' \
       --tmux 'center,95%,50%' \
       --bind 'enter:become(code --reuse-window -g {1}:{2})'
