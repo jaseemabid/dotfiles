@@ -66,6 +66,11 @@
     "editor.fontFamily": "'Monaspace Neon', 'Apple Color Emoji', monospace",
     "editor.fontLigatures": "'calt', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'ss09', 'liga'",
     "editor.formatOnSave": false,
+    // These 2 options allow vim's `g d` to be dual purpose; jump to source and then see references.
+    // Alternative command id that is being executed when the result of 'Go to Declaration' is the current location.
+    "editor.gotoLocation.alternativeDeclarationCommand": "editor.action.goToReferences",
+    // Alternative command id that is being executed when the result of 'Go to Definition' is the current location.
+    "editor.gotoLocation.alternativeDefinitionCommand": "editor.action.goToReferences",
     "editor.inlayHints.enabled": "offUnlessPressed",
     "editor.inlayHints.padding": true,
     "editor.minimap.enabled": false,
@@ -177,10 +182,43 @@
     "vim.neovimUseConfigFile": true,
     "vim.normalModeKeyBindings": [
         /*
-         * Default keybindings
+         * Keybinding Philosophy:
          *
-         * gd - Jump to definition. https://github.com/VSCodeVim/Vim/blob/e6f171d/src/actions/commands/actions.ts#L1071
-         * gh - Hover over symbol. https://github.com/VSCodeVim/Vim/blob/e6f171d/src/actions/commands/actions.ts#L2491
+         * g prefix - Pure navigation (read-only):
+         *   Navigation & jumping:
+         *   - gd - definition (VSCode native, smart: shows references if already at definition)
+         *   - gs - reveal definition (explicit, always goes to definition)
+         *   - gi - implementation
+         *   - gt - type definition
+         *   - gr - references (custom)
+         *   - gf - go to file under cursor
+         *   - gh - hover (show type/error info)
+         *   - gb - add cursor to next word match (like Cmd+D)
+         *   - gx - open link under cursor
+         *   - g; / g, - navigate changelist backward/forward
+         *
+         *   Other built-in g commands:
+         *   - gv - reselect last visual selection
+         *   - gq - format/reflow text (respects comments)
+         *   - gJ - join lines without space
+         *   - gc / gC - toggle line/block comment
+         *   - gu / gU / g~ - lowercase/uppercase/toggle case (operators)
+         *   - gp / gP - put and move cursor after pasted text
+         *   - g0 / g$ / g^ / g_ / gm - wrapped line movements
+         *   - ge / gE - backward to end of word/WORD
+         *   - g* / g# - search word under cursor (partial match)
+         *   - gn / gN - go to next/previous match and select
+         *
+         * <leader> prefix - Actions that modify or affect workspace:
+         *   - <leader>r - rename (modifies code)
+         *   - <leader>t - refactor (modifies code)
+         *   - <leader>o - go to symbol in file (workspace action)
+         *   - <leader>O - go to symbol in workspace (workspace action)
+         *   - <leader>p - peek declaration (opens UI element)
+         *
+         * Rule of Thumb:
+         *   - g = "Go/Get" - Pure navigation, doesn't change anything, just moves cursor or shows info
+         *   - <leader> = "Do/Act" - Performs an action, opens a tool, modifies code, or triggers complex behavior
          *
          */
         {
@@ -206,6 +244,11 @@
         {
             "before": ["g", "t"],
             "commands": ["editor.action.goToTypeDefinition"],
+            "silent": true
+        },
+        {
+            "before": ["g", "r"],
+            "commands": ["editor.action.goToReferences"],
             "silent": true
         },
         {
