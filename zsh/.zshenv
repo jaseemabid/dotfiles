@@ -10,8 +10,12 @@ export EDITOR="$VISUAL"
 export FPP_EDITOR="code"
 export MANPAGER="sh -c 'col -bx | bat --plain --theme=\"Monokai Extended Bright\" -l man'";
 export MANROFFOPT="-c"
+
+# ZSH History
+setopt HIST_FCNTL_LOCK
 export HISTSIZE=999999
 export HISTFILESIZE=999999
+export SAVEHIST=100000
 
 # fzf
 # See /opt/homebrew/opt/fzf/shell/key-bindings.zsh for docs
