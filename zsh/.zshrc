@@ -129,5 +129,7 @@ fi
 # To customize prompt, run `p10k configure` or edit ~/dotfiles/p10k/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+eval "$(atuin init zsh)"
+
 # Return success if everything went right
 true
