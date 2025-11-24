@@ -32,10 +32,11 @@ export FZF_CTRL_T_OPTS="
   --bind 'ctrl-/:change-preview-window(down|hidden|)'" # Preview Ctrl+T with bat
 
 # homebrew
+export HOMEBREW_BUNDLE_DUMP_DESCRIBE=1
+export HOMEBREW_BUNDLE_DUMP_NO_GO=1
 export HOMEBREW_BUNDLE_DUMP_NO_VSCODE=1
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_ENV_HINTS=1
-
 
 # rg
 export RIPGREP_CONFIG_PATH=~/.ripgreprc

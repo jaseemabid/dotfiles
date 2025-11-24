@@ -1,55 +1,219 @@
-tap "homebrew/bundle"
-tap "homebrew/services"
+tap "azure/kubelogin"
+tap "fluxcd/tap"
+tap "homeport/tap"
+tap "mongodb/brew"
+tap "sst/tap"
+tap "withered-magic/brew"
+tap "withgraphite/tap"
+tap "xgen-cloud/tap", "https://github.com/xgen-cloud/homebrew-tap.git"
 
-brew "autoenv"
-brew "bash"
+# Get stuff done with container-native workflows for Kubernetes
+brew "argo"
+# GitOps Continuous Delivery for Kubernetes
+brew "argocd"
+# Improved shell history for zsh, bash, fish and nushell
+brew "atuin"
+# Use AWS IAM credentials to authenticate to Kubernetes
+brew "aws-iam-authenticator"
+# Official Amazon AWS command-line interface
+brew "awscli"
+# Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# User-friendly launcher for Bazel
 brew "bazelisk"
+# Format bazel BUILD files with a standard convention
+brew "buildifier"
+# Mozilla CA bundle for Python
+brew "certifi"
+# Formatting tools for C, C++, Obj-C, Java, JavaScript, TypeScript
+brew "clang-format"
+# GNU File, Shell, and Text utilities
 brew "coreutils"
+# Validate and define text-based and dynamic configuration
+brew "cue"
+# Modern diagram scripting language that turns text to diagrams
+brew "d2"
+# Good-lookin' diffs with diff-highlight and more
 brew "diff-so-fancy"
+# Load/unload environment variables based on $PWD
 brew "direnv"
+# Tool for exploring each layer in a docker image
+brew "dive"
+# Docker Credential Helper for Amazon ECR
+brew "docker-credential-helper-ecr"
+# Simple command-line tool for creating clusters on Amazon EKS
+brew "eksctl"
+# Run arbitrary commands when files change
 brew "entr"
+# Modern, maintained replacement for ls
 brew "eza"
+# Simple, fast and user-friendly alternative to find
 brew "fd"
+# Collection of GNU find, xargs, and locate
 brew "findutils"
+# CLI program that accepts piped input and presents files for selection
 brew "fpp"
+# Command-line fuzzy finder written in Go
 brew "fzf"
+# GNU awk utility
 brew "gawk"
+# GitHub command-line tool
 brew "gh"
+# Distributed revision control system
 brew "git"
+# Render markdown on the CLI
+brew "glow"
+# GNU implementation of the famous stream editor
 brew "gnu-sed"
+# GNU Pretty Good Privacy (PGP) package
+brew "gnupg"
+# Open source programming language to build simple/reliable/efficient software
 brew "go"
-brew "highlight"
+# Kubernetes package manager
+brew "helm"
+# Improved top (interactive process viewer)
 brew "htop"
-brew "imagemagick" # Need this for SVG previews in yazi
+# Tools for building Bazel targets when source files change
+brew "ibazel"
+# Tools and libraries to manipulate images in many formats
+brew "imagemagick"
+# Istio configuration command-line utility
+brew "istioctl"
+# Lightweight and flexible command-line JSON processor
 brew "jq"
+# TUI playground to experiment and play with jq
+brew "jqp"
+# Handy way to save and run project-specific commands
+brew "just"
+# Package manager for kubectl plugins
+brew "krew"
+# FAST Kubernetes manifests validator, with support for Custom Resources!
+brew "kubeconform"
+# Tool that can switch between kubectl contexts easily and create aliases
+brew "kubectx"
+# OpenID Connect authentication plugin for kubectl
+brew "kubelogin"
+# Template-free customization of Kubernetes YAML manifests
+brew "kustomize"
+# Lazier way to manage everything docker
+brew "lazydocker"
+# Simple terminal UI for git commands
+brew "lazygit"
+# Next-gen compiler infrastructure
+brew "llvm"
+# Mac App Store command-line interface
+brew "mas"
+# Run a Kubernetes cluster locally
+brew "minikube"
+# Remote terminal application
+brew "mosh"
+# NCurses Disk Usage
 brew "ncdu"
+# Fast, highly customisable system info script
+brew "neofetch"
+# Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
-brew "poetry"
+# Open source, general-purpose policy engine
+brew "opa"
+# Pinentry for GPG on Mac
+brew "pinentry-mac"
+# Fast, disk space efficient package manager
+brew "pnpm"
+# Framework for managing multi-language pre-commit hooks
+brew "pre-commit"
+# Service monitoring system and time series database
+brew "prometheus"
+# Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Rust toolchain installer
 brew "rustup"
+# 7-Zip is a file archiver with a high compression ratio
+brew "sevenzip"
+# Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
+# Soak up standard input and write to a file
 brew "sponge"
+# Tail multiple Kubernetes pods & their containers
+brew "stern"
+# Organize software neatly under a single directory tree (e.g. /usr/local)
 brew "stow"
+# Change macOS audio source from the command-line
+brew "switchaudio-osx"
+# User interface to the TELNET protocol
 brew "telnet"
+# Text interface for Git repositories
 brew "tig"
-brew "tldr"
+# Official tldr client written in Rust
+brew "tlrc"
+# Terminal multiplexer
 brew "tmux"
-brew "trash-cli"
+# Fast Xcode unarchiver
+brew "unxip"
+# Extremely fast Python package installer and resolver, written in Rust
 brew "uv"
+# Syntax-aware linter for prose
+brew "vale"
+# Executes a program periodically, showing output fullscreen
 brew "watch"
+# Execute commands when watched files change
+brew "watchexec"
+# Internet file retriever
 brew "wget"
+# Linter for YAML files
+brew "yamllint"
+# Blazing fast terminal file manager written in Rust, based on async I/O
 brew "yazi"
+# Process YAML, JSON, XML, CSV and properties documents from the CLI
+brew "yq"
+# UNIX shell (command interpreter)
 brew "zsh"
-
+# δyƒƒ /ˈdʏf/ - A diff tool for YAML files, and sometimes JSON
+brew "homeport/tap/dyff"
+# High-performance, schema-free, document-oriented database
+brew "mongodb/brew/mongodb-community"
+# The AI coding agent built for the terminal.
+brew "sst/tap/opencode"
+# A language server for Starlark, the configuration language used by Bazel and Buck2.
+brew "withered-magic/brew/starpls"
+# Allows you to manage your stacked changes and submit them for review on GitHub
+brew "withgraphite/tap/graphite"
+# Asso tool from gosre project
+brew "xgen-cloud/tap/asso"
+# Language Server for protocol buffers
+brew "xgen-cloud/tap/xgen-protols"
+# Standard unix software packaging tool
+brew "xgen-cloud/tap/xgen-rpm"
+# Password manager that keeps all passwords secure behind one password
 cask "1password"
+# Chromium based browser
 cask "arc"
+# OpenAI's official ChatGPT desktop app
+cask "chatgpt"
+# Anthropic's official Claude AI desktop app
+cask "claude"
 cask "font-inconsolata"
 cask "font-monaspace"
-cask "font-monaspace-nerd-font"
+cask "font-monaspice-nerd-font"
 cask "font-source-code-pro"
+# Terminal emulator that uses platform-native UI and GPU acceleration
+cask "ghostty"
+# Software for Logitech devices
 cask "logi-options+"
+# Free and open-source RSS reader
+cask "netnewswire"
+# Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
+# Control your tools with a few keystrokes
 cask "raycast"
+# Instant messaging application focusing on security
+cask "signal"
+# Music streaming service
+cask "spotify"
+# To-do & task list manager
+cask "ticktick"
+# Open-source code editor
 cask "visual-studio-code"
+# Native desktop client for WhatsApp
 cask "whatsapp"
+# Video communication and virtual meeting platform
+cask "zoom"
