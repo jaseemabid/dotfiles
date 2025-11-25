@@ -1,5 +1,27 @@
 " See https://github.com/iggredible/Learn-Vim for a comprehensive vim manual
 
+" Keybindings:
+"   <leader> = <Space>
+"
+"   Fzf:
+"     <leader><leader> - Search git files
+"     <leader>fi       - Search all files
+"     <leader><CR>     - Search buffers
+"     <leader>fl       - Search lines in current buffer
+"     <leader>m        - Search file history
+"     <leader>C        - Change color scheme
+"
+"   Spell checking:
+"     <leader>s  - Toggle spell checking
+"     <leader>ss - Show spelling suggestions (fzf)
+"     <leader>sa - Add word to dictionary
+"     <leader>sw - Mark word as wrong
+"
+"   Other:
+"     <Esc><Esc> - Clear search highlight
+"     \p         - Enable prose mode (Goyo + spell check)
+"     gc         - Toggle comment (visual mode)
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/goyo.vim'            " Distraction free writing
@@ -58,6 +80,21 @@ nnoremap <leader>C        :Colors<CR>
 nnoremap <leader><CR>     :Buffers<CR>
 nnoremap <leader>fl       :Lines<CR>
 nnoremap <leader>m        :History<CR>
+
+" Spell checking with fzf
+function! FzfSpellSink(word)
+  exe 'normal! "_ciw'.a:word
+endfunction
+
+function! FzfSpell()
+  let suggestions = spellsuggest(expand("<cword>"))
+  return fzf#run({'source': suggestions, 'sink': function("FzfSpellSink"), 'down': '40%'})
+endfunction
+
+nnoremap <leader>s :setlocal spell!<CR>
+nnoremap <leader>ss :call FzfSpell()<CR>
+nnoremap <leader>sa zg
+nnoremap <leader>sw zw
 
 function! ProseMode()
   call goyo#execute(0, [])
