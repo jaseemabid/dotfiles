@@ -70,7 +70,6 @@ alias record="ffmpeg -f x11grab -r 30 -s 1366x768 -i :0.0 -f alsa -ac 2 -i pulse
 alias t='tmux'
 alias ts="tig status" # Overwrite tmux plugin
 alias ty="yt"
-alias untar="tar -zxvf $1"
 alias vi="nvim"
 alias vim="nvim"
 alias yt="youtube-dl -wci -o '%(title)s-%(id)s.%(ext)s'"
@@ -87,6 +86,15 @@ alias ws='gsed -i '\''s/[ \t]*$//'\'' '
 mkcd () {
     mkdir -p "${1}"
     cd "${1}"
+}
+
+# Untar to a local folder of the same name
+untar() {
+    local archive="$1"
+    local dest="${2:-${archive%.tar.gz}}"
+    dest="${dest%.tgz}"
+    mkdir -p "$dest"
+    tar --directory "$dest" --extract --verbose --file "$archive"
 }
 
 # https://github.com/aykamko/tag
