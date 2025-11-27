@@ -59,6 +59,7 @@
             "scope": "user"
         }
     },
+    "cue.cueCommand": "/Users/j/bin/cue15",
     "D2.execPath": "/opt/homebrew/bin/d2",
     "D2.previewLayout": "elk",
     "editor.accessibilitySupport": "off",
