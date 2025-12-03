@@ -8,6 +8,7 @@ git:
     showWholeGraph: false
   overrideGpg: true
   branchPrefix: "jabid/"
+  autoFetch: false
 
 customCommands:
   - key: 'F'
