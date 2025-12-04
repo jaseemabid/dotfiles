@@ -15,10 +15,10 @@
     continue = rebase --continue
     copy = !"git rev-parse HEAD | pbcopy"
     cp = cherry-pick
-    l = log --oneline -10
+    l = smartlog --no-decorate
     last = log -1 --oneline --no-decorate
     lasttag = describe --tags --abbrev=0
-    ll = log --oneline --graph --decorate -25
+    ll = smartlog --graph --decorate
     meh = commit --amend --no-edit
     ours = "!f() { git checkout --ours -- $@ && git add -- $@; }; f"
     pill = pull
