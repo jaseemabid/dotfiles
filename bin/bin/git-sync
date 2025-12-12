@@ -2,6 +2,7 @@
 
 # Rebase all unmerged branches matching a pattern onto the main branch
 # Skips branches with conflicts and branches not based on main branch
+# Delete empty branches after rebase
 
 set -e
 
@@ -38,3 +39,8 @@ done
 
 # Return to base branch
 git checkout -q "$BASE_BRANCH"
+
+# Check for empty branches (same commit as base) and delete them
+git branch --merged | grep jabid | while read -r branch; do
+    git branch --delete "$branch"
+done
