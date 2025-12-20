@@ -38,6 +38,12 @@
     dshow = -c diff.external=difft show --ext-diff
     ddiff = -c diff.external=difft diff
 
+    # Sync PR title and body with current commit message
+    pr-sync = "!f() { \
+        git show -s --format='%s' | { read title; gh pr edit --title \"$title\"; } && \
+        git show -s --format='%b' | gh pr edit --body-file -; \
+    }; f"
+
 [apply]
     whitespace = fix
 
