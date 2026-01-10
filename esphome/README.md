@@ -11,6 +11,12 @@ $ uv run esphome dashboard ./config
 
 Use web UI to configure stuff up and see logs
 
+## Logs
+
+```
+uv run esphome --dashboard logs ./config/devkit.yaml --device OTA
+```
+
 ## Notes
 
 1. TODO: Temp isn't calibrated right with scd30, its always a bit more than the

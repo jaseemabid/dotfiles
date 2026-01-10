@@ -1,8 +1,8 @@
 # https://just.systems
 
 # Show available commands
-default:
-    @just -u --list
+@_default:
+    just -u --list
 
 # Targets that need manual installation:
 # zsh theme, iterm2, solarized, brew
