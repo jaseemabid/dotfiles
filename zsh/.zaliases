@@ -8,6 +8,10 @@ if [[ $OSTYPE == linux-* ]]; then
     alias open="xdg-open"
     alias o="xdg-open"
 
+    # systemd shortcuts
+    alias jctl='journalctl'
+    alias sctl='systemctl'
+
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     alias c='pbcopy'
     alias p='pbpaste'
