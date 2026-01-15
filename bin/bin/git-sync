@@ -6,6 +6,9 @@
 
 set -e
 
+# Remember current branch to return to later
+ORIGINAL_BRANCH=$(git branch --show-current)
+
 # Check if working tree is clean
 if [[ -n $(git status --porcelain) ]]; then
     echo "Error: Working tree is dirty. Commit or stash your changes first."
@@ -26,6 +29,7 @@ echo "Using base branch: $BASE_BRANCH"
 
 # Checkout to base branch first
 git checkout -q "$BASE_BRANCH"
+git pull -q
 
 # Get all branches not merged to base, filter by pattern, and rebase
 git branch --no-merged "$BASE_BRANCH" | grep jabid | while read -r branch; do
@@ -37,10 +41,12 @@ git branch --no-merged "$BASE_BRANCH" | grep jabid | while read -r branch; do
     fi
 done
 
-# Return to base branch
-git checkout -q "$BASE_BRANCH"
+# Return to original branch
+git checkout -q "$ORIGINAL_BRANCH"
 
 # Check for empty branches (same commit as base) and delete them
-git branch --merged | grep jabid | while read -r branch; do
-    git branch --delete "$branch"
+git branch --merged | grep jabid | sed 's/^[* ]*//' | while read -r branch; do
+    if [[ "$branch" != "$ORIGINAL_BRANCH" ]]; then
+        git branch --delete "$branch"
+    fi
 done
