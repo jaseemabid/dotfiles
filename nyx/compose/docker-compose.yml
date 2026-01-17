@@ -35,16 +35,6 @@ services:
     environment:
       TZ: 'Europe/London'
 
-  esphome:
-    container_name: esphome
-    image: ghcr.io/esphome/esphome:2024.3.1
-    volumes:
-      - ./dotfiles/esphome/config:/config
-      - /etc/localtime:/etc/localtime:ro
-    restart: always
-    privileged: true
-    network_mode: host
-
   deconz:
     image: deconzcommunity/deconz
     container_name: deconz
