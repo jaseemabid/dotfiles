@@ -1,9 +1,0 @@
-# https://just.systems
-
-# Show available commands
-@_default:
-    just -u --list
-
-# Run ESPHome dashboard
-run:
-    uv run esphome dashboard ./config
