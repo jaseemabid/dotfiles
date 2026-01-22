@@ -122,8 +122,9 @@
         "plaintext": false,
         "scminput": false
     },
+    "githubPullRequests.pullBranch": "never",
+    "go.toolsManagement.autoUpdate": true,
     "json.schemas": [],
-    "jupyter.askForKernelRestart": false,
     "makefile.configureOnOpen": false,
     "markdown.editor.pasteUrlAsFormattedLink.enabled": "smart",
     "markdown.occurrencesHighlight.enabled": true,
@@ -145,6 +146,7 @@
     "prettier.documentSelectors": ["**/*.{html,tera}"],
     "prettier.tabWidth": 4,
     "python.analysis.supportRestructuredText": true,
+    "python.analysis.typeCheckingMode": "strict",
     "python.missingPackage.severity": "Warning",
     "redhat.telemetry.enabled": false,
     "rewrap.autoWrap.enabled": true,
@@ -224,12 +226,12 @@
          */
         {
             "before": ["]", "]"],
-            "commands": ["editor.action.marker.next"],
+            "commands": ["editor.action.marker.nextInFiles"], // Or editor.action.marker.next
             "silent": true
         },
         {
             "before": ["[", "["],
-            "commands": ["editor.action.marker.prev"],
+            "commands": ["editor.action.marker.prevInFiles"], // Or editor.action.marker.prev
             "silent": true
         },
         {
@@ -294,7 +296,7 @@
     "yaml.disableAdditionalProperties": true,
     "yaml.disableDefaultProperties": true,
     "yaml.format.printWidth": 120,
-    "yaml.maxItemsComputed": 40000,
+    "yaml.maxItemsComputed": 50000,
     "zenMode.fullScreen": false,
     "zenMode.hideStatusBar": false
 }
