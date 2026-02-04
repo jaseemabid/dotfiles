@@ -5,25 +5,19 @@
 typeset -U path PATH
 cdpath=(~/src)
 path=(
-    ~/bin
     ~/.local/bin
-    ~/.cabal/bin
     ~/.cargo/bin
-    ~/.claude/local
     ~/go/bin
 
     # Prefer homebrew versions over system. Ex git, python3
     /opt/homebrew/bin
-    /usr/local/bin
-
-    # Other Optional & Ruby Gems
     /opt/homebrew/lib/ruby/gems/3.3.0/bin
+    /opt/homebrew/opt/bison/bin
     /opt/homebrew/opt/ruby/bin
     /opt/homebrew/opt/sqlite3/bin
 
     # System admin path
-    /sbin
-    /usr/sbin
+    /sbin /usr/local/bin /usr/sbin
 
     $path)
 

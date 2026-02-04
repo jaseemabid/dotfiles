@@ -1,0 +1,11 @@
+#!/bin/sh
+# Smart git log: shows HEAD...default when on a branch, last 10 commits when on default
+
+branch=$(git symbolic-ref --short HEAD 2>/dev/null)
+default=$(git rev-parse --abbrev-ref origin/HEAD 2>/dev/null | sed 's|^origin/||')
+
+if [ "$branch" = "$default" ]; then
+    git log --oneline -10 "$@"
+else
+    git log --oneline HEAD...${default} "$@"
+fi

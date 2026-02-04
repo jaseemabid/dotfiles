@@ -1,0 +1,52 @@
+#!/bin/bash
+
+# Rebase all unmerged branches matching a pattern onto the main branch
+# Skips branches with conflicts and branches not based on main branch
+# Delete empty branches after rebase
+
+set -e
+
+# Remember current branch to return to later
+ORIGINAL_BRANCH=$(git branch --show-current)
+
+# Check if working tree is clean
+if [[ -n $(git status --porcelain) ]]; then
+    echo "Error: Working tree is dirty. Commit or stash your changes first."
+    exit 1
+fi
+
+# Infer the main branch (main or master)
+if git show-ref --verify --quiet refs/heads/main; then
+    BASE_BRANCH="main"
+elif git show-ref --verify --quiet refs/heads/master; then
+    BASE_BRANCH="master"
+else
+    echo "Error: Could not find main or master branch"
+    exit 1
+fi
+
+echo "Using base branch: $BASE_BRANCH"
+
+# Checkout to base branch first
+git checkout -q "$BASE_BRANCH"
+git pull -q
+
+# Get all branches not merged to base, filter by pattern, and rebase
+git branch --no-merged "$BASE_BRANCH" | grep jabid | while read -r branch; do
+    if git checkout -q "$branch" 2>/dev/null && git rebase --quiet "$BASE_BRANCH" >/dev/null 2>&1; then
+        echo "✓ $branch"
+    else
+        git rebase --abort >/dev/null 2>&1
+        echo "✗ $branch"
+    fi
+done
+
+# Return to original branch
+git checkout -q "$ORIGINAL_BRANCH"
+
+# Check for empty branches (same commit as base) and delete them
+git branch --merged | grep jabid | sed 's/^[* ]*//' | while read -r branch; do
+    if [[ "$branch" != "$ORIGINAL_BRANCH" ]]; then
+        git branch --delete "$branch"
+    fi
+done
