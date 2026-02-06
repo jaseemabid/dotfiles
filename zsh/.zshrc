@@ -31,12 +31,10 @@ if [[ ${VSCODE_RESOLVING_ENVIRONMENT+x} ]] ||
 fi
 
 # Tmux session groups for shared windows with independent views
-# Exclude VSCode, JetBrains shells, Apple Terminal
+# Only start in Ghostty to exclude the numerous embedded shells in various IDEs
 if [[ -z "$TMUX" ]] &&
    [[ -z "$SSH_CLIENT" ]] &&
-   [[ "$TERMINAL_EMULATOR" != "JetBrains-JediTerm" ]] &&
-   [[ "$VSCODE_INJECTION" != "1" ]] &&
-   [[ "$TERM_PROGRAM" != "Apple_Terminal" ]]; then
+   [[ "$TERM_PROGRAM" == "ghostty" ]]; then
     # Create main session if it doesn't exist, then attach to session group
     tmux has-session -t main 2>/dev/null || tmux new-session -d -s main -c ~
     exec tmux new-session -t main
