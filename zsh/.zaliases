@@ -77,7 +77,6 @@ alias mux="tmuxinator"
 alias record="ffmpeg -f x11grab -r 30 -s 1366x768 -i :0.0 -f alsa -ac 2 -i pulse -vcodec libx264 -acodec pcm_s16le screencast.mkv"
 alias t='tmux'
 alias ts="tig status" # Overwrite tmux plugin
-alias ty="yt"
 alias vi="nvim"
 alias vim="nvim"
 alias yt="youtube-dl -wci -o '%(title)s-%(id)s.%(ext)s'"
