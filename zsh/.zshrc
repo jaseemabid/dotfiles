@@ -31,14 +31,16 @@ if [[ ${VSCODE_RESOLVING_ENVIRONMENT+x} ]] ||
     return
 fi
 
-# Tmux session groups for shared windows with independent views
-# Only start in Ghostty to exclude the numerous embedded shells in various IDEs
+# Auto-attach to tmux in first Ghostty terminal only
+# Additional tabs/windows get a plain shell
 if [[ -z "$TMUX" ]] &&
    [[ -z "$SSH_CLIENT" ]] &&
    [[ "$TERM_PROGRAM" == "ghostty" ]]; then
-    # Create main session if it doesn't exist, then attach to session group
-    tmux has-session -t main 2>/dev/null || tmux new-session -d -s main -c ~
-    exec tmux new-session -t main
+    if ! tmux has-session -t main 2>/dev/null; then
+        exec tmux new-session -s main -c ~
+    elif [[ -z "$(tmux list-clients -t main 2>/dev/null)" ]]; then
+        exec tmux attach-session -t main
+    fi
 fi
 
 # Setup oh-my-zsh
