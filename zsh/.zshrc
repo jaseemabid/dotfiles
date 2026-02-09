@@ -13,6 +13,7 @@ path=(
     /opt/homebrew/bin
     /opt/homebrew/lib/ruby/gems/3.3.0/bin
     /opt/homebrew/opt/bison/bin
+    /opt/homebrew/opt/openjdk/bin
     /opt/homebrew/opt/ruby/bin
     /opt/homebrew/opt/sqlite3/bin
 
