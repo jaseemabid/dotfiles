@@ -18,5 +18,8 @@ customCommands:
 
 gui:
   nerdFontsVersion: "3"
+  authorColors:
+    'Jaseem Abid': '#32F5DD'
+    '*':           '#D7A94F'
 
 notARepository: skip
