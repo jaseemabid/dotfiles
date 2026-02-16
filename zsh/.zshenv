@@ -41,5 +41,10 @@ export HOMEBREW_NO_ENV_HINTS=1
 # rg
 export RIPGREP_CONFIG_PATH=~/.ripgreprc
 
+# Mac Specific
+if [[ "$(uname)" == "Darwin" ]]; then
+  export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
+fi
+
 [[ -s "$HOME/.zshenv.local" ]] && source "$HOME/.zshenv.local"
 
