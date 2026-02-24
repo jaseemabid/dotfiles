@@ -328,18 +328,7 @@ keybinds clear-defaults=true {
         }
     }
     shared_except "locked" {
-        bind "Alt left" {
-            MoveFocusOrTab "left"
-        }
-        bind "Alt down" {
-            MoveFocus "down"
-        }
-        bind "Alt up" {
-            MoveFocus "up"
-        }
-        bind "Alt right" {
-            MoveFocusOrTab "right"
-        }
+        unbind "Alt left" "Alt right" "Alt up" "Alt down"
         bind "Alt +" {
             Resize "Increase"
         }
@@ -354,9 +343,6 @@ keybinds clear-defaults=true {
         }
         bind "Alt ]" {
             NextSwapLayout
-        }
-        bind "Alt f" {
-            ToggleFloatingPanes
         }
         bind "Ctrl g" {
             SwitchToMode "locked"
@@ -547,15 +533,15 @@ keybinds clear-defaults=true {
         bind "space" {
             NextSwapLayout
         }
-        bind "\"" {
+        bind "-" {
             NewPane "down"
             SwitchToMode "normal"
         }
-        bind "%" {
+        bind "|" {
             NewPane "right"
             SwitchToMode "normal"
         }
-        bind "," {
+        bind "," "r" {
             SwitchToMode "renametab"
         }
         bind "[" {
@@ -638,9 +624,8 @@ web_client {
  
 // Choose the theme that is specified in the themes section.
 // Default: default
-// 
-// theme "dracula"
- 
+//
+theme "nord"
 // Choose the base input mode of zellij.
 // Default: normal
 // 
@@ -657,9 +642,8 @@ web_client {
  
 // The name of the default layout to load on startup
 // Default: "default"
-// 
-// default_layout "compact"
- 
+//
+default_layout "compact"
 // The folder in which Zellij will look for layouts
 // (Requires restart)
 // 
@@ -683,9 +667,8 @@ web_client {
 // Options:
 //   - true (default, enabled)
 //   - false
-// 
-// pane_frames false
- 
+//
+pane_frames false
 // When attaching to an existing session with other users,
 // should the session be mirrored (true)
 // or should each user have their own cursor (false)
