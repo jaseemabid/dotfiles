@@ -31,6 +31,7 @@ fi
 # Auto-attach to tmux in first Ghostty terminal only
 # Additional tabs/windows get a plain shell
 if [[ -z "$TMUX" ]] &&
+   [[ -z "$ZELLIJ" ]] &&
    [[ -z "$SSH_CLIENT" ]] &&
    [[ "$TERM_PROGRAM" == "ghostty" ]]; then
     if ! tmux has-session -t main 2>/dev/null; then
