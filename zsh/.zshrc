@@ -2,7 +2,7 @@
 
 # Evaluated after ~/.zshenv
 
-typeset -U path PATH
+typeset -U path PATH fpath FPATH
 cdpath=(~/src)
 path=(
     ~/.local/bin
@@ -21,9 +21,6 @@ path=(
     /sbin /usr/local/bin /usr/sbin
 
     $path)
-
-# Homebrew's shell completions aren't in path by default
-fpath=(/opt/homebrew/share/zsh/site-functions $fpath)
 
 # Skip most of shell setup for dumb terminals and IDEs quit early
 if [[ ${VSCODE_RESOLVING_ENVIRONMENT+x} ]] ||
