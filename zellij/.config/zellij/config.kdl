@@ -344,6 +344,9 @@ keybinds clear-defaults=true {
         bind "Alt ]" {
             NextSwapLayout
         }
+        bind "Alt t" {
+            ToggleFloatingPanes
+        }
         bind "Ctrl g" {
             SwitchToMode "locked"
         }
@@ -396,11 +399,6 @@ keybinds clear-defaults=true {
     shared_except "locked" "scroll" "search" {
         bind "Ctrl s" {
             SwitchToMode "scroll"
-        }
-    }
-    shared_except "locked" "tab" {
-        bind "Ctrl t" {
-            SwitchToMode "tab"
         }
     }
     shared_except "locked" "pane" {
@@ -548,11 +546,47 @@ keybinds clear-defaults=true {
             SwitchToMode "scroll"
         }
         bind "Ctrl b" {
-            Write 2
+            FocusNextPane
             SwitchToMode "normal"
         }
         bind "c" {
             NewTab
+            SwitchToMode "normal"
+        }
+        bind "1" {
+            GoToTab 1
+            SwitchToMode "normal"
+        }
+        bind "2" {
+            GoToTab 2
+            SwitchToMode "normal"
+        }
+        bind "3" {
+            GoToTab 3
+            SwitchToMode "normal"
+        }
+        bind "4" {
+            GoToTab 4
+            SwitchToMode "normal"
+        }
+        bind "5" {
+            GoToTab 5
+            SwitchToMode "normal"
+        }
+        bind "6" {
+            GoToTab 6
+            SwitchToMode "normal"
+        }
+        bind "7" {
+            GoToTab 7
+            SwitchToMode "normal"
+        }
+        bind "8" {
+            GoToTab 8
+            SwitchToMode "normal"
+        }
+        bind "9" {
+            GoToTab 9
             SwitchToMode "normal"
         }
         bind "h" {
@@ -580,6 +614,22 @@ keybinds clear-defaults=true {
         }
         bind "p" {
             GoToPreviousTab
+            SwitchToMode "normal"
+        }
+        bind "X" {
+            CloseTab
+            SwitchToMode "normal"
+        }
+        bind "b" {
+            BreakPane
+            SwitchToMode "normal"
+        }
+        bind "s" {
+            ToggleActiveSyncTab
+            SwitchToMode "normal"
+        }
+        bind "tab" {
+            ToggleTab
             SwitchToMode "normal"
         }
         bind "z" {
@@ -639,7 +689,7 @@ theme "nord"
 // The name of the default layout to load on startup
 // Default: "default"
 //
-default_layout "compact"
+// default_layout "compact"
 // The folder in which Zellij will look for layouts
 // (Requires restart)
 //
