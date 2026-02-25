@@ -145,6 +145,7 @@
     "notebook.undoRedoPerCell": false,
     "prettier.documentSelectors": ["**/*.{html,tera}"],
     "prettier.tabWidth": 4,
+    "prettier.trailingComma": "none",
     "python.analysis.supportRestructuredText": true,
     "python.analysis.typeCheckingMode": "strict",
     "python.missingPackage.severity": "Warning",
