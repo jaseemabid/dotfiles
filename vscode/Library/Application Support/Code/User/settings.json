@@ -50,6 +50,7 @@
     "bazel.buildifierExecutable": "/opt/homebrew/bin/buildifier",
     "breadcrumbs.showProperties": false,
     "breadcrumbs.showStructs": false,
+    "claudeCode.preferredLocation": "panel",
     "cSpell.customDictionaries": {
         "custom": true,
         "jabid": {
@@ -163,6 +164,7 @@
         "chrischinchilla.vale-vscode",
         "textualize.textual-syntax-highlighter"
     ],
+    "task.allowAutomaticTasks": "on",
     "terminal.integrated.defaultProfile.osx": "zsh",
     "terminal.integrated.enableMultiLinePasteWarning": "never",
     "terminal.integrated.fontFamily": "MesloLGS NF",
