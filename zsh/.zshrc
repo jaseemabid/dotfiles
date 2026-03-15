@@ -68,7 +68,7 @@ else
     elif [[ "$OSTYPE" == "linux-gnu" ]]; then
         plugins=(common-aliases docker eza fzf git rust stack sudo z)
     elif [[ "$OSTYPE" == "darwin"* ]]; then
-        plugins=(brew common-aliases direnv docker eza fzf git rust z)
+        plugins=(brew common-aliases docker eza fzf git rust z)
     else
         echo "Unknown OS"
         exit 1

@@ -1,5 +1,20 @@
+# https://just.systems
+
+# Show available commands
+@_default:
+    just -u --list
+
+# Dump to Brewfile
 dump:
     /bin/rm -f Brewfile && brew bundle dump
+    awk 'NR>1 && /^#/{print ""} 1' Brewfile > Brewfile.tmp && mv Brewfile.tmp Brewfile
 
-install:
-    brew bundle
+# Install from Brewfile
+alias install := cleanup
+
+# Install from Brewfile, removing unlisted packages
+cleanup:
+    brew bundle --cleanup
+
+watch:
+    echo Brewfile | entr -c brew bundle --cleanup -q

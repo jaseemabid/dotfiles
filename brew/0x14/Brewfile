@@ -1,185 +1,309 @@
 tap "homebrew/bundle"
 tap "homebrew/services"
+tap "mongodb/brew"
+tap "terror/tap"
+tap "xcodesorg/made"
+
 # Codec library for encoding and decoding AV1 video streams
 brew "aom"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.13"
+
 # Spell checker with better logic than ispell
 brew "aspell"
+
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
+
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+
 # Vector graphics library with cross-device output support
 brew "cairo"
+
 # GNU File, Shell, and Text utilities
 brew "coreutils"
+
 # Modern diagram scripting language that turns text to diagrams
 brew "d2"
+
 # Good-lookin' diffs with diff-highlight and more
 brew "diff-so-fancy"
+
 # File comparison utilities
 brew "diffutils"
-# Load/unload environment variables based on $PWD
-brew "direnv"
+
 # More intuitive version of du in rust
 brew "dust"
+
 # Run arbitrary commands when files change
 brew "entr"
+
 # Perl lib for reading and writing EXIF metadata
 brew "exiftool"
+
 # Modern, maintained replacement for ls
 brew "eza"
+
 # Simple, fast and user-friendly alternative to find
 brew "fd"
+
 # Collection of GNU find, xargs, and locate
 brew "findutils"
+
 # CLI program that accepts piped input and presents files for selection
 brew "fpp"
+
 # Command-line fuzzy finder written in Go
 brew "fzf"
+
 # GNU awk utility
 brew "gawk"
+
 # Library for encoding and decoding .avif files
 brew "libavif"
+
+# Open-source, cross-platform JavaScript runtime environment
+brew "node"
+
+# Interact with Google Gemini AI models from the command-line
+brew "gemini-cli"
+
 # GitHub command-line tool
 brew "gh"
+
 # Distributed revision control system
 brew "git"
-# Alternative to top/htop
-brew "glances"
+
 # Render markdown on the CLI
 brew "glow"
+
 # GNU implementation of the famous stream editor
 brew "gnu-sed"
+
 # Command-driven, interactive function plotting
 brew "gnuplot"
+
 # GNU Transport Layer Security (TLS) Library
 brew "gnutls"
+
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
-# Convert source code to formatted text with syntax highlighting
-brew "highlight"
+
+# Google Suite CLI
+brew "gogcli"
+
 # Improved top (interactive process viewer)
 brew "htop"
-# Tools and libraries to manipulate images in many formats
+
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.14"
+
+# User-friendly cURL replacement (command-line HTTP client)
+brew "httpie"
+
+# Command-line benchmarking tool
+brew "hyperfine"
+
+# Tools and libraries to manipulate images in select formats
 brew "imagemagick"
+
 # Lightweight and flexible command-line JSON processor
 brew "jq"
+
 # Handy way to save and run project-specific commands
 brew "just"
+
+# SDK for building Kubernetes APIs using CRDs
+brew "kubebuilder"
+
+# Kubernetes command-line interface
+brew "kubernetes-cli"
+
 # Simple terminal UI for git commands
 brew "lazygit"
+
 # Library to render SVG files using Cairo
 brew "librsvg"
+
 # Collection of tools that nobody wrote when UNIX was young
 brew "moreutils"
+
 # Remote terminal application
 brew "mosh"
+
 # 'traceroute' and 'ping' in a single tool
 brew "mtr"
+
 # NCurses Disk Usage
 brew "ncdu"
+
 # Fast, highly customisable system info script
 brew "neofetch"
+
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
-# Image manipulation
-brew "netpbm"
-# Port scanning utility for large networks
-brew "nmap"
-# Platform built on V8 to build network applications
-brew "node"
-# Platform built on V8 to build network applications
-brew "node@22"
-# Python dependency management tool
-brew "pipenv"
-# Tool for managing OCI containers and pods
-brew "podman"
-# Monitor data's progress through a pipe
-brew "pv"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.12"
-# Reattach process (e.g., tmux) to background
-brew "reattach-to-user-namespace"
+
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
+
+# AI coding agent, built for the terminal
+brew "opencode"
+
+# Development kit for the Java programming language
+brew "openjdk"
+
+# CLI for the Pkl programming language
+brew "pkl"
+
+# Tool for managing OCI containers and pods
+brew "podman"
+
+# Monitor data's progress through a pipe
+brew "pv"
+
+# Reattach process (e.g., tmux) to background
+brew "reattach-to-user-namespace"
+
+# SVG rendering tool and library
+brew "resvg"
+
 # Utility that provides fast incremental file transfer
 brew "rsync"
+
 # Powerful, clean, object-oriented scripting language
 brew "ruby"
+
 # Rust toolchain installer
 brew "rustup"
+
 # 7-Zip is a file archiver with a high compression ratio
 brew "sevenzip"
+
 # Static analysis and lint tool, for (ba)sh scripts
 brew "shellcheck"
+
 # SOcket CAT: netcat on steroids
 brew "socat"
+
+# Tail multiple Kubernetes pods & their containers
+brew "stern"
+
 # Organize software neatly under a single directory tree (e.g. /usr/local)
 brew "stow"
+
 # User interface to the TELNET protocol
 brew "telnet"
+
 # Text interface for Git repositories
 brew "tig"
-# Simplified and community-driven man pages
-brew "tldr"
+
+# Official tldr client written in Rust
+brew "tlrc"
+
 # Terminal multiplexer
 brew "tmux"
+
 # Command-line interface to the freedesktop.org trashcan
-brew "trash-cli", link: true
+brew "trash-cli"
+
 # Extremely fast Python package installer and resolver, written in Rust
 brew "uv"
+
+# Execute commands when watched files change
+brew "watchexec"
+
+# Command-line client for WebSockets
+brew "websocat"
+
 # Internet file retriever
 brew "wget"
+
 # Tools for the WireGuard secure network tunnel
 brew "wireguard-tools"
+
 # Blazing fast terminal file manager written in Rust, based on async I/O
 brew "yazi"
+
 # UNIX shell (command interpreter)
 brew "zsh"
+
+# High-performance, schema-free, document-oriented database
+brew "mongodb/brew/mongodb-community"
+
+# Language server for just
+brew "terror/tap/just-lsp"
+
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
+
 # Command-line interface for 1Password
 cask "1password-cli"
+
 # Anthropic's official Claude AI desktop app
 cask "claude"
+
+# OpenAI's coding agent that runs in your terminal
+cask "codex"
+
+# OpenAI's Codex desktop app for managing coding agents
+cask "codex-app"
+
+# Brings the power of Copilot coding agent directly to your terminal
+cask "copilot-cli"
+
+# Write, edit, and chat about your code with AI
+cask "cursor"
 cask "font-jetbrains-mono"
 cask "font-meslo-lg-nerd-font"
 cask "font-monaspace"
+cask "font-terminus"
+
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
+
 # Web browser
-cask "google-chrome"
-# Software for Logitech devices
-cask "logi-options+"
+cask "google-chrome@beta"
+
+# Interactive tool for analyzing MongoDB data
+cask "mongodb-compass"
+
 # Free and open-source RSS reader
 cask "netnewswire"
+
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
-# Get up and running with large language models locally
-cask "ollama-app"
+
 # Instant messaging application focusing on security
 cask "signal"
-# Team communication and collaboration software
-cask "slack"
+
 # Music streaming service
 cask "spotify"
+
 # Video game digital distribution service
 cask "steam"
+
 # Mesh VPN based on WireGuard
 cask "tailscale-app"
+
+# To-do & task list manager
+cask "ticktick"
+
 # Open-source BitTorrent client
 cask "transmission"
+
 # Open-source code editor
 cask "visual-studio-code"
+
 # Multimedia player
 cask "vlc"
+
 # Native desktop client for WhatsApp
 cask "whatsapp"
+
 # Multiplayer code editor
 cask "zed"
+
 # Video communication and virtual meeting platform
 cask "zoom"
+
 # Desktop client for the Zulip team chat platform
 cask "zulip"

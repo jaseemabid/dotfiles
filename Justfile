@@ -38,3 +38,6 @@ macos: _setup
     stow lazygit
     stow vscode
 
+# Setup and install packages with Homebrew
+brew:
+    brew bundle install  --file brew/0x14/Brewfile
