@@ -4,6 +4,7 @@
 
 typeset -U path PATH fpath FPATH
 cdpath=(~/src)
+fpath=(/opt/homebrew/share/zsh/site-functions $fpath)
 path=(
     ~/.local/bin
     ~/.cargo/bin
