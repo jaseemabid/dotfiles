@@ -28,6 +28,10 @@ if [ -x "$(command -v podman)" ]; then
     alias docker='podman'
 fi
 
+if [ -x "$(command -v doggo)" ]; then
+    alias dig='doggo'
+fi
+
 if [ -x "$(command -v sdiff)" ]; then
     alias diff='sdiff -s'
 fi
