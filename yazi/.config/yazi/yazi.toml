@@ -8,6 +8,10 @@ prepend_fetchers = [
   { id = "git", name = "*/", run = "git" },
 ]
 
+[preview]
+max_width  = 2000
+max_height = 2000
+
 [mgr]
 show_hidden = true
 ratio = [1, 2, 4]
