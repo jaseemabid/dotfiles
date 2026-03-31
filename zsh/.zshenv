@@ -32,7 +32,8 @@ export FZF_CTRL_T_OPTS="
   --bind 'ctrl-/:change-preview-window(down|hidden|)'" # Preview Ctrl+T with bat
 
 # homebrew
-export HOMEBREW_BUNDLE_DUMP_DESCRIBE=1
+
+export HOMEBREW_BUNDLE_DESCRIBE=1
 export HOMEBREW_BUNDLE_DUMP_NO_CARGO=1
 export HOMEBREW_BUNDLE_DUMP_NO_GO=1
 export HOMEBREW_BUNDLE_DUMP_NO_UV=1
