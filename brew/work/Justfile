@@ -1,5 +1,0 @@
-dump:
-    /bin/rm -f Brewfile && brew bundle dump
-
-install:
-    brew bundle
