@@ -7,5 +7,5 @@ default=$(git rev-parse --abbrev-ref origin/HEAD 2>/dev/null | sed 's|^origin/||
 if [ "$branch" = "$default" ]; then
     git log --oneline -10 "$@"
 else
-    git log --oneline HEAD...${default} "$@"
+    git log --oneline ${default}..HEAD "$@"
 fi
