@@ -1,142 +1,129 @@
 # -*- conf -*-
-[user]
-    name = Jaseem Abid
-    email = me@jabid.in
 
+# Identity
+[user]
+	name = Jaseem Abid
+	email = me@jabid.in
+[github]
+	username = jaseemabid
+
+# Core
+[init]
+	defaultBranch = main
+[core]
+	excludesFile = ~/.gitignore
+	quotePath = false
+	whitespace = trailing-space,space-before-tab
+
+	# Notes on diff tools
+	#
+	# 1. diff-so-fancy can't support side by side view.
+	# https://github.com/so-fancy/diff-so-fancy/issues/377
+	#
+	# 2. difftastic can't ignore reordering, so still bad for yaml.
+	# Neat side-by-side view, so enable with aliases but not as default
+	# https://github.com/Wilfred/difftastic/issues/723
+	#
+	# 3. dyff is great, but not a git diff tool yet
+	# https://github.com/homeport/dyff/issues/189
+	pager = diff-so-fancy | less --tabs=4 -RFX
+[color]
+	ui = true
 [advice]
 	skippedCherryPicks = false
-
-[alias]
-    abort = rebase --continue
-    authors = shortlog -sn
-    b = branch
-    c = commit
-    conflits = diff --name-only --diff-filter=U
-    continue = rebase --continue
-    copy = !"git rev-parse HEAD | pbcopy"
-    cp = cherry-pick
-    l = smartlog --no-decorate
-    last = log -1 --oneline --no-decorate
-    lasttag = describe --tags --abbrev=0
-    ll = smartlog --graph --decorate
-    meh = commit --amend --no-edit
-    ours = "!f() { git checkout --ours -- $@ && git add -- $@; }; f"
-    pill = pull
-    r = rebase
-    s = status -uno
-    serve = !git daemon --base-path=. --export-all --reuseaddr --informative-errors --verbose
-    set-upstream = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
-    theirs = "!f() { git checkout --theirs -- $@ && git add -- $@; }; f"
-    today = diff @{yesterday}.. --stat
-    what = rev-parse HEAD
-    xxx = !"git reset --hard HEAD && git clean -xfd"
-
-    # Difftastic aliases without making them defaults.
-    # `git dlog` is `git log` with difftastic and so on.
-    # https://difftastic.wilfred.me.uk/git.html#regular-usage
-    dlog = -c diff.external=difft log --ext-diff
-    dshow = -c diff.external=difft show --ext-diff
-    ddiff = -c diff.external=difft diff
-
-    # Sync PR title and body with current commit message
-    pr-sync = "!f() { \
-        git show -s --format='%s' | { read title; gh pr edit --title \"$title\"; } && \
-        git show -s --format='%b' | gh pr edit --body-file -; \
-    }; f"
-
-[apply]
-    whitespace = fix
-
-[color]
-    ui = true
-
-[commit]
-    verbose = true
-
-[core]
-    whitespace = trailing-space,space-before-tab
-    excludesFile = ~/.gitignore
-
-    # Notes on diff tools
-    #
-    # 1. diff-so-fancy can't support side by side view.
-    # https://github.com/so-fancy/diff-so-fancy/issues/377
-    #
-    # 2. difftastic can't ignore reordering, so still bad for yaml.
-    # Neat side-by-side view, so enable with aliases but not as default
-    # https://github.com/Wilfred/difftastic/issues/723
-    #
-    # 3. dyff is great, but not a git diff tool yet
-    # https://github.com/homeport/dyff/issues/189
-
-    pager = diff-so-fancy | less --tabs=4 -RFX
-    quotePath = false
-
-[credential]
-    helper = cache --timeout 36000
-
-[diff]
-    compactionHeuristic = true
-    renames = true
-
-[fetch]
-    prune = true
-
-[format]
-    signoff = true
-
-[github]
-    username = jaseemabid
-
-[grep]
-    lineNumber = true
-
 [help]
-    autocorrect = 1
+	autocorrect = 1
 
-[init]
-    defaultBranch = main
-
-[merge "jupyternotebook"]
-    driver = git-nbmergedriver merge %O %A %B %L %P
-    name = jupyter notebook merge driver
-
-[mergetool]
-    prompt = false
-
-[mergetool "nbdime"]
-    cmd = git-nbmergetool merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
-
+# Commits & workflow
+[commit]
+	verbose = true
+[format]
+	signoff = true
+[apply]
+	whitespace = fix
 [pull]
-    rebase = true
-
+	rebase = true
 [push]
-    default = current
-
+	default = current
+[fetch]
+	prune = true
 [rebase]
-    autosquash = true
-    autoStash = true
-    keepEmpty = true
-    updateRefs = true
+	autosquash = true
+	autoStash = true
+	keepEmpty = true
+	updateRefs = true
 
-[remote "origin"]
-    prune = true
+# Diff & merge
+[diff]
+	compactionHeuristic = true
+	renames = true
+[merge "jupyternotebook"]
+	driver = git-nbmergedriver merge %O %A %B %L %P
+	name = jupyter notebook merge driver
+[mergetool]
+	prompt = false
+[mergetool "nbdime"]
+	cmd = git-nbmergetool merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
 
-[submodule]
-    recurse = false
-
+# Misc
+[grep]
+	lineNumber = true
 [tig]
-    mailmap = yes
+	mailmap = yes
+[submodule]
+	recurse = false
+[remote "origin"]
+	prune = true
+
+# Aliases
+[alias]
+	abort = rebase --continue
+	authors = shortlog -sn
+	b = branch
+	c = commit
+	conflits = diff --name-only --diff-filter=U
+	continue = rebase --continue
+	copy = !"git rev-parse HEAD | pbcopy"
+	cp = cherry-pick
+	l = smartlog --no-decorate
+	last = log -1 --oneline --no-decorate
+	lasttag = describe --tags --abbrev=0
+	ll = smartlog --graph --decorate
+	meh = commit --amend --no-edit
+	ours = "!f() { git checkout --ours -- $@ && git add -- $@; }; f"
+	pill = pull
+	r = rebase
+	s = status -uno
+	serve = !git daemon --base-path=. --export-all --reuseaddr --informative-errors --verbose
+	set-upstream = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
+	theirs = "!f() { git checkout --theirs -- $@ && git add -- $@; }; f"
+	today = diff @{yesterday}.. --stat
+	what = rev-parse HEAD
+	xxx = !"git reset --hard HEAD && git clean -xfd"
+
+	# Difftastic aliases without making them defaults.
+	# `git dlog` is `git log` with difftastic and so on.
+	# https://difftastic.wilfred.me.uk/git.html#regular-usage
+	dlog = -c diff.external=difft log --ext-diff
+	dshow = -c diff.external=difft show --ext-diff
+	ddiff = -c diff.external=difft diff
+
+	# Sync PR title and body with current commit message
+	pr-sync = "!f() { \
+		git show -s --format='%s' | { read title; gh pr edit --title \"$title\"; } && \
+		git show -s --format='%b' | gh pr edit --body-file -; \
+	}; f"
+
+# Credentials
+[credential]
+	helper = cache --timeout 36000
 
 # Default to personal, but switch to work profile for whole orgs
 # PS: Negate for anything that's not a personal repo would have been nice,
 # but that didn't work for some reason.
-
 [includeIf "hasconfig:remote.*.url:https://github.com/10gen/**"]
-    path = ~/.gitconfig.work
-
+	path = ~/.gitconfig.work
 [includeIf "hasconfig:remote.*.url:https://github.com/mongodb/**"]
-    path = ~/.gitconfig.work
-
+	path = ~/.gitconfig.work
 [includeIf "hasconfig:remote.*.url:https://github.com/xgen-*/**"]
-    path = ~/.gitconfig.work
+	path = ~/.gitconfig.work
