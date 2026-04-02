@@ -43,8 +43,14 @@ brew "exiftool"
 # Modern, maintained replacement for ls
 brew "eza"
 
+# Like neofetch, but much faster because written mostly in C
+brew "fastfetch"
+
 # Simple, fast and user-friendly alternative to find
 brew "fd"
+
+# Play, record, convert, and stream select audio and video codecs
+brew "ffmpeg"
 
 # Collection of GNU find, xargs, and locate
 brew "findutils"
@@ -64,9 +70,6 @@ brew "libavif"
 # Open-source, cross-platform JavaScript runtime environment
 brew "node"
 
-# Interact with Google Gemini AI models from the command-line
-brew "gemini-cli"
-
 # GitHub command-line tool
 brew "gh"
 
@@ -78,9 +81,6 @@ brew "glow"
 
 # GNU implementation of the famous stream editor
 brew "gnu-sed"
-
-# Command-driven, interactive function plotting
-brew "gnuplot"
 
 # GNU Transport Layer Security (TLS) Library
 brew "gnutls"
@@ -118,11 +118,17 @@ brew "kubebuilder"
 # Kubernetes command-line interface
 brew "kubernetes-cli"
 
+# Lazier way to manage everything docker
+brew "lazydocker"
+
 # Simple terminal UI for git commands
 brew "lazygit"
 
 # Library to render SVG files using Cairo
 brew "librsvg"
+
+# Polyglot runtime manager (asdf rust clone)
+brew "mise"
 
 # Collection of tools that nobody wrote when UNIX was young
 brew "moreutils"
@@ -136,9 +142,6 @@ brew "mtr"
 # NCurses Disk Usage
 brew "ncdu"
 
-# Fast, highly customisable system info script
-brew "neofetch"
-
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 
@@ -151,8 +154,14 @@ brew "opencode"
 # Development kit for the Java programming language
 brew "openjdk"
 
+# Reads arbitrary PDF files and generates an XML file readable by Ipe
+brew "pdftoipe"
+
 # CLI for the Pkl programming language
 brew "pkl"
+
+# Fast, disk space efficient package manager
+brew "pnpm"
 
 # Tool for managing OCI containers and pods
 brew "podman"
@@ -168,9 +177,6 @@ brew "resvg"
 
 # Utility that provides fast incremental file transfer
 brew "rsync"
-
-# Powerful, clean, object-oriented scripting language
-brew "ruby"
 
 # Rust toolchain installer
 brew "rustup"
@@ -193,9 +199,6 @@ brew "stow"
 # User interface to the TELNET protocol
 brew "telnet"
 
-# Text interface for Git repositories
-brew "tig"
-
 # Official tldr client written in Rust
 brew "tlrc"
 
@@ -207,6 +210,9 @@ brew "trash-cli"
 
 # Extremely fast Python package installer and resolver, written in Rust
 brew "uv"
+
+# Pager/text based browser
+brew "w3m"
 
 # Execute commands when watched files change
 brew "watchexec"
@@ -228,9 +234,6 @@ brew "zsh"
 
 # High-performance, schema-free, document-oriented database
 brew "mongodb/brew/mongodb-community"
-
-# Language server for just
-brew "terror/tap/just-lsp"
 
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
@@ -259,9 +262,6 @@ cask "font-terminus"
 
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
-
-# Web browser
-cask "google-chrome@beta"
 
 # Interactive tool for analyzing MongoDB data
 cask "mongodb-compass"
@@ -298,9 +298,6 @@ cask "vlc"
 
 # Native desktop client for WhatsApp
 cask "whatsapp"
-
-# Multiplayer code editor
-cask "zed"
 
 # Video communication and virtual meeting platform
 cask "zoom"
