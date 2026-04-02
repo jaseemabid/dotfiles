@@ -1,4 +1,9 @@
 [[mgr.prepend_keymap]]
+on   = "?"
+run  = "help"
+desc = "Open help"
+
+[[mgr.prepend_keymap]]
 on   = "<Enter>"
 run  = "plugin smart-enter"
 desc = "Enter the child directory, or open the file"

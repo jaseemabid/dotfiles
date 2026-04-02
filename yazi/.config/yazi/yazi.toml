@@ -1,6 +1,7 @@
 [plugin]
 prepend_previewers = [
-  { name = "*.md", run = 'piper -- CLICOLOR_FORCE=1 glow -w=$w -s=dark "$1"' },
+  { name = "*.md",   run = 'piper -- CLICOLOR_FORCE=1 glow -w=$w -s=dark "$1"' },
+  { mime = "text/html", run = 'piper -- w3m -T text/html -dump "$1"' },
 ]
 
 prepend_fetchers = [
