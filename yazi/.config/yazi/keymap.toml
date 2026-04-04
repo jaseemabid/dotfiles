@@ -1,19 +1,29 @@
 [[mgr.prepend_keymap]]
-on   = "?"
-run  = "help"
+on = "?"
+run = "help"
 desc = "Open help"
 
 [[mgr.prepend_keymap]]
-on   = "<Enter>"
-run  = "plugin smart-enter"
+on = "<Enter>"
+run = "plugin smart-enter"
 desc = "Enter the child directory, or open the file"
 
 [[mgr.prepend_keymap]]
-on   = "+"
-run  = "plugin zoom 1"
+on = "+"
+run = "plugin zoom 1"
 desc = "Zoom in hovered file"
 
 [[mgr.prepend_keymap]]
-on   = "-"
-run  = "plugin zoom -1"
+on = "-"
+run = "plugin zoom -1"
 desc = "Zoom out hovered file"
+
+[[mgr.prepend_keymap]]
+on = "t"
+run = "plugin toggle-pane min-preview"
+desc = "Show or hide the preview pane"
+
+[[mgr.prepend_keymap]]
+on = ["g", "r"]
+run = 'shell -- ya emit cd "$(git rev-parse --show-toplevel)"'
+desc = "Go to git repository root"

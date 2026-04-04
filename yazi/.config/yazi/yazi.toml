@@ -1,16 +1,23 @@
-[plugin]
-prepend_previewers = [
-  { name = "*.md",   run = 'piper -- CLICOLOR_FORCE=1 glow -w=$w -s=dark "$1"' },
-  { mime = "text/html", run = 'piper -- w3m -T text/html -dump "$1"' },
-]
+[[plugin.prepend_previewers]]
+url = "*.md"
+run = 'piper -- CLICOLOR_FORCE=1 glow -w=$w -s=dark "$1"'
 
-prepend_fetchers = [
-  { id = "git", name = "*", run = "git" },
-  { id = "git", name = "*/", run = "git" },
-]
+[[plugin.prepend_previewers]]
+mime = "text/html"
+run = 'piper -- w3m -T text/html -dump "$1"'
+
+[[plugin.prepend_fetchers]]
+id = "git"
+url = "*"
+run = "git"
+
+[[plugin.prepend_fetchers]]
+id = "git"
+url = "*/"
+run = "git"
 
 [preview]
-max_width  = 2000
+max_width = 2000
 max_height = 2000
 
 [mgr]
