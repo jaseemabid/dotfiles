@@ -15,7 +15,12 @@ customCommands:
     command: 'git fixup'
     context: 'files'
     description: 'Run git fixup'
-
+  - key: 'R'
+    command: 'gh pr create --fill'
+    context: 'localBranches'
+    description: 'Create GitHub PR'
+    loadingText: 'Creating PR...'
+    output: terminal
 gui:
   nerdFontsVersion: "3"
   authorColors:
