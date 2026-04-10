@@ -3,6 +3,7 @@
 .DS_Store
 .agignore
 .claude
+CLAUDE.local.md
 .env
 .venv
 .vscode

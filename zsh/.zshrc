@@ -45,7 +45,7 @@ fi
 # Setup oh-my-zsh
 DISABLE_AUTO_UPDATE="true"
 ZSH_DISABLE_COMPFIX="true"
-ZSH=$HOME/.oh-my-zsh
+ZSH=$HOME/.config/zsh/oh-my-zsh
 
 # Disable colours from .oh-my-zsh/lib/theme-and-appearance.zsh
 DISABLE_LS_COLORS="true"
@@ -54,7 +54,7 @@ DISABLE_LS_COLORS="true"
 if [[ "$OSTYPE" == "linux-gnueabihf" ]]; then
     ZSH_THEME="robbyrussell"
 else
-    source ~/.p10k/powerlevel10k.zsh-theme
+    source ~/.config/zsh/p10k/powerlevel10k.zsh-theme
 fi
 
 # Configure a minimal shell for root user

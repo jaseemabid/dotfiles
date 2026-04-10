@@ -2,38 +2,38 @@
 	path = fonts/powerline
 	url = https://github.com/powerline/fonts
 [submodule "oh-my-zsh"]
-	path = zsh/.oh-my-zsh
+	path = zsh/.config/zsh/oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh
 [submodule "tmux/.tmux/plugins/tpm"]
-	path = tmux/.tmux/plugins/tpm
+	path = tmux/.config/tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
 [submodule "tmux/.tmux/plugins/tmux-open"]
-	path = tmux/.tmux/plugins/tmux-open
+	path = tmux/.config/tmux/plugins/tmux-open
 	url = https://github.com/tmux-plugins/tmux-open
 [submodule "tmux/.tmux/plugins/tmux-sensible"]
-	path = tmux/.tmux/plugins/tmux-sensible
+	path = tmux/.config/tmux/plugins/tmux-sensible
 	url = https://github.com/tmux-plugins/tmux-sensible
 [submodule "tmux/.tmux/plugins/tmux-yank"]
-	path = tmux/.tmux/plugins/tmux-yank
+	path = tmux/.config/tmux/plugins/tmux-yank
 	url = https://github.com/tmux-plugins/tmux-yank
 [submodule "tmux/.tmux/plugins/tmux-pain-control"]
-	path = tmux/.tmux/plugins/tmux-pain-control
+	path = tmux/.config/tmux/plugins/tmux-pain-control
 	url = https://github.com/tmux-plugins/tmux-pain-control
 [submodule "tmux/.tmux/plugins/tmux-fzf-url"]
-	path = tmux/.tmux/plugins/tmux-fzf-url
+	path = tmux/.config/tmux/plugins/tmux-fzf-url
 	url = https://github.com/wfxr/tmux-fzf-url
 [submodule "p10k/.oh-my-zsh/custom/themes/powerlevel10k"]
-	path = zsh/.p10k
+	path = zsh/.config/zsh/p10k
 	url = https://github.com/romkatv/powerlevel10k.git
 [submodule "fzf/.oh-my-zsh/custom/plugins/fzf-tab"]
 	path = zsh/.config/fzf-tab
 	url = https://github.com/Aloxaf/fzf-tab
 [submodule "tmux/.tmux/plugins/tmux-sidebar"]
-	path = tmux/.tmux/plugins/tmux-sidebar
+	path = tmux/.config/tmux/plugins/tmux-sidebar
 	url = https://github.com/tmux-plugins/tmux-sidebar
 [submodule "tmux/.tmux/plugins/tmux-fpp"]
-	path = tmux/.tmux/plugins/tmux-fpp
+	path = tmux/.config/tmux/plugins/tmux-fpp
 	url = https://git::@github.com/tmux-plugins/tmux-fpp
 [submodule "tmux/.tmux/plugins/tmux"]
-	path = tmux/.tmux/plugins/tmux
+	path = tmux/.config/tmux/plugins/tmux
 	url = https://git::@github.com/nordtheme/tmux

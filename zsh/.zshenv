@@ -32,6 +32,7 @@ export FZF_CTRL_T_OPTS="
   --bind 'ctrl-/:change-preview-window(down|hidden|)'" # Preview Ctrl+T with bat
 
 # homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 export HOMEBREW_BUNDLE_DESCRIBE=1
 export HOMEBREW_BUNDLE_DUMP_NO_CARGO=1
@@ -42,7 +43,12 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_ENV_HINTS=1
 
 # rg
-export RIPGREP_CONFIG_PATH=~/.ripgreprc
+export RIPGREP_CONFIG_PATH=~/.config/ripgrep/config
+
+# Move dotfile clutter out of ~/
+export ZSH_COMPDUMP=~/.cache/zsh/zcompdump
+export ZSHZ_DATA=~/.local/share/z/data
+export LESSHISTFILE=~/.cache/less/history
 
 # Mac Specific
 if [[ "$(uname)" == "Darwin" ]]; then

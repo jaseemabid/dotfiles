@@ -11,7 +11,7 @@
 [init]
 	defaultBranch = main
 [core]
-	excludesFile = ~/.gitignore
+	excludesFile = ~/.config/git/ignore
 	quotePath = false
 	whitespace = trailing-space,space-before-tab
 
@@ -129,8 +129,8 @@
 # PS: Negate for anything that's not a personal repo would have been nice,
 # but that didn't work for some reason.
 [includeIf "hasconfig:remote.*.url:https://github.com/10gen/**"]
-	path = ~/.gitconfig.work
+	path = ~/.config/git/config.work
 [includeIf "hasconfig:remote.*.url:https://github.com/mongodb/**"]
-	path = ~/.gitconfig.work
+	path = ~/.config/git/config.work
 [includeIf "hasconfig:remote.*.url:https://github.com/xgen-*/**"]
-	path = ~/.gitconfig.work
+	path = ~/.config/git/config.work
