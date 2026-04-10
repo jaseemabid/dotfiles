@@ -114,6 +114,13 @@
 		git show -s --format='%b' | gh pr edit --body-file -; \
 	}; f"
 
+# Colours for diff-so-fancy to not fail on new-files
+[color "diff-highlight"]
+	newHighlight = green bold 22
+	newNormal = green bold
+	oldHighlight = red bold 52
+	oldNormal = red bold
+
 # Credentials
 [credential]
 	helper = cache --timeout 36000
