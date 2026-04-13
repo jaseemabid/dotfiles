@@ -86,6 +86,7 @@ require("lazy").setup({
   { "junegunn/fzf", build = ":call fzf#install()" },
   { "junegunn/fzf.vim" },
   { "echasnovski/mini.nvim" },
+  { "tpope/vim-fugitive" },
 })
 
 -- Mini modules
