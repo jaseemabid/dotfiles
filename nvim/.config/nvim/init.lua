@@ -107,6 +107,26 @@ miniclue.setup({
     { mode = "i", keys = "<C-x>" },
     { mode = { "i", "c" }, keys = "<C-r>" },
   },
+  clues = {
+    -- Built-in vim prefixes
+    miniclue.gen_clues.builtin_completion(),  -- Insert completions
+    miniclue.gen_clues.g(),                    -- Goto
+    miniclue.gen_clues.marks(),                -- Marks (line/exact position)
+    miniclue.gen_clues.registers(),            -- Register selection
+    miniclue.gen_clues.square_brackets(),      -- Navigation (next/prev)
+    miniclue.gen_clues.windows(),              -- Window management
+    miniclue.gen_clues.z(),                    -- Folds/View
+    -- Custom insert mode prefixes
+    { mode = { "i", "c" }, keys = "<C-r>", desc = "+Insert Register" },
+    -- Fzf keybinding groups
+    { mode = "n", keys = "<Leader>f", desc = "+Files" },
+    { mode = "n", keys = "<Leader>s", desc = "+Search" },
+    { mode = "n", keys = "<Leader>l", desc = "+Lines" },
+    { mode = "n", keys = "<Leader>h", desc = "+History" },
+    { mode = "n", keys = "<Leader>c", desc = "+Code/Commits" },
+    { mode = "n", keys = "<Leader>m", desc = "+Misc" },
+    { mode = "n", keys = "<Leader>z", desc = "+Spell" },
+  },
   window = {
     config = function(bufnr)
       local lines = vim.api.nvim_buf_get_lines(bufnr, 0, -1, false)
@@ -122,23 +142,6 @@ miniclue.setup({
         width = width,
       }
     end,
-  },
-  clues = {
-    miniclue.gen_clues.builtin_completion(),
-    miniclue.gen_clues.g(),
-    miniclue.gen_clues.marks(),
-    miniclue.gen_clues.registers(),
-    miniclue.gen_clues.square_brackets(),
-    miniclue.gen_clues.windows(),
-    miniclue.gen_clues.z(),
-    -- Fzf keybinding groups
-    { mode = "n", keys = "<Leader>f", desc = "+Files" },
-    { mode = "n", keys = "<Leader>s", desc = "+Search" },
-    { mode = "n", keys = "<Leader>l", desc = "+Lines" },
-    { mode = "n", keys = "<Leader>h", desc = "+History" },
-    { mode = "n", keys = "<Leader>c", desc = "+Code/Commits" },
-    { mode = "n", keys = "<Leader>m", desc = "+Misc" },
-    { mode = "n", keys = "<Leader>z", desc = "+Spell" },
   },
 })
 
