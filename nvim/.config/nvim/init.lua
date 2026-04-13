@@ -3,25 +3,58 @@
 -- Keybindings:
 --   <leader> = <Space>
 --
---   Fzf:
---     <leader><leader> - Search git files
---     <leader>fi       - Search all files
---     <leader>b        - Search buffers
---     <leader>x        - Close buffer
---     <leader>fl       - Search lines in current buffer
---     <leader>m        - Search file history
---     <leader>C        - Change color scheme
+--   Fzf - Files:
+--     <leader> f f - All files
+--     <leader> f g - Git files
+--     <leader> f b - Buffers
+--
+--   Fzf - Search:
+--     <leader> s s - Search text in files (ripgrep)
+--     <leader> s g - Search git files by content
+--     <leader> s / - Search history
+--
+--   Fzf - Lines:
+--     <leader> l l - Lines in current buffer
+--     <leader> l b - Lines in all buffers
+--     <leader> l m - Marks
+--     <leader> l j - Jumps
+--
+--   Fzf - History:
+--     <leader> h f - File history
+--     <leader> h : - Command history
+--     <leader> h / - Search history
+--
+--   Fzf - Code/Commits:
+--     <leader> c c - Git commits
+--     <leader> c b - Buffer commits
+--
+--   Fzf - Misc:
+--     <leader> : - Commands
+--     <leader> m m - Keybindings
+--     <leader> m c - Color schemes
+--     <leader> m w - Windows
+--     <leader> m t - Tags
+--
+--   Insert mode (standard vim completions):
+--     <C-x> <C-f> - File path completion
+--     <C-x> <C-l> - Line completion
 --
 --   Spell checking:
---     <leader>s  - Toggle spell checking
---     <leader>ss - Show spelling suggestions (fzf)
---     <leader>sa - Add word to dictionary
---     <leader>sw - Mark word as wrong
+--     <leader> z s - Toggle spell
+--     <leader> z z - Spelling suggestions (fzf)
+--     <leader> z a - Add to dictionary
+--     <leader> z w - Mark as wrong
 --
 --   Mini:
 --     gc         - Toggle comment
 --     ga         - Align text
 --     sa/sd/sr   - Add/delete/replace surroundings
+--
+--   Navigation (via mini.clue on [ and ]):
+--     ]h / [h   - Next/prev diff hunk (mini.diff)
+--     ]q / [q   - Next/prev quickfix error
+--     ]l / [l   - Next/prev location item
+--     ]s / [s   - Next/prev spelling error
 --
 --   Other:
 --     <Esc><Esc> - Clear search highlight
@@ -97,6 +130,14 @@ miniclue.setup({
     miniclue.gen_clues.square_brackets(),
     miniclue.gen_clues.windows(),
     miniclue.gen_clues.z(),
+    -- Fzf keybinding groups
+    { mode = "n", keys = "<Leader>f", desc = "+Files" },
+    { mode = "n", keys = "<Leader>s", desc = "+Search" },
+    { mode = "n", keys = "<Leader>l", desc = "+Lines" },
+    { mode = "n", keys = "<Leader>h", desc = "+History" },
+    { mode = "n", keys = "<Leader>c", desc = "+Code/Commits" },
+    { mode = "n", keys = "<Leader>m", desc = "+Misc" },
+    { mode = "n", keys = "<Leader>z", desc = "+Spell" },
   },
 })
 
@@ -157,22 +198,58 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 -- Clipboard
 vim.opt.clipboard = "unnamedplus,unnamed"
 
--- Fzf
-vim.keymap.set("n", "<leader><leader>", ":GFiles<CR>", { desc = "Git files" })
-vim.keymap.set("n", "<leader>fi", ":Files<CR>", { desc = "All files" })
-vim.keymap.set("n", "<leader>C", ":Colors<CR>", { desc = "Color schemes" })
-vim.keymap.set("n", "<leader>b", ":Buffers<CR>", { desc = "Buffers" })
-vim.keymap.set("n", "<leader>x", function() MiniBufremove.delete() end, { desc = "Close buffer" })
-vim.keymap.set("n", "<leader>fl", ":Lines<CR>", { desc = "Lines in buffer" })
-vim.keymap.set("n", "<leader>m", ":History<CR>", { desc = "File history" })
+-- Helper to reduce keybinding boilerplate
+local function keymap(mode, lhs, rhs, desc)
+  vim.keymap.set(mode, lhs, rhs, { desc = desc, noremap = true })
+end
+
+-- Fzf - Files
+keymap("n", "<leader>ff", ":Files<CR>", "All files")
+keymap("n", "<leader>fg", ":GFiles<CR>", "Git files")
+keymap("n", "<leader>fb", ":Buffers<CR>", "Buffers")
+
+-- Fzf - Search
+keymap("n", "<leader>ss", ":Rg<CR>", "Search text in files")
+keymap("n", "<leader>sg", function()
+  vim.fn["fzf#run"]({
+    source = "git ls-files",
+    sink = function(file)
+      vim.cmd("edit " .. file)
+    end,
+    down = "40%",
+  })
+end, "Search git files by content")
+keymap("n", "<leader>s/", ":History/<CR>", "Search history")
+
+-- Fzf - Lines
+keymap("n", "<leader>ll", ":Lines<CR>", "Lines in all buffers")
+keymap("n", "<leader>lb", ":BLines<CR>", "Lines in current buffer")
+keymap("n", "<leader>lm", ":Marks<CR>", "Marks")
+keymap("n", "<leader>lj", ":Jumps<CR>", "Jumps")
+
+-- Fzf - History
+keymap("n", "<leader>hf", ":History<CR>", "File history")
+keymap("n", "<leader>h:", ":History:<CR>", "Command history")
+keymap("n", "<leader>h/", ":History/<CR>", "Search history")
+
+-- Fzf - Code/Commits
+keymap("n", "<leader>cc", ":Commits<CR>", "Git commits")
+keymap("n", "<leader>cb", ":BCommits<CR>", "Buffer commits")
+
+-- Fzf - Misc
+keymap("n", "<leader>:", ":Commands<CR>", "Commands")
+keymap("n", "<leader>mm", ":Maps<CR>", "Keybindings")
+keymap("n", "<leader>mc", ":Colors<CR>", "Color schemes")
+keymap("n", "<leader>mw", ":Windows<CR>", "Windows")
+keymap("n", "<leader>mt", ":Tags<CR>", "Tags")
 
 -- Spell checking
-vim.keymap.set("n", "<leader>s", ":setlocal spell!<CR>", { desc = "Toggle spell" })
-vim.keymap.set("n", "<leader>sa", "zg", { desc = "Add to dictionary" })
-vim.keymap.set("n", "<leader>sw", "zw", { desc = "Mark as wrong" })
+keymap("n", "<leader>zs", ":setlocal spell!<CR>", "Toggle spell")
+keymap("n", "<leader>za", "zg", "Add to dictionary")
+keymap("n", "<leader>zw", "zw", "Mark as wrong")
 
 -- Spell suggestions via fzf
-vim.keymap.set("n", "<leader>ss", function()
+keymap("n", "<leader>zz", function()
   local suggestions = vim.fn.spellsuggest(vim.fn.expand("<cword>"))
   vim.fn["fzf#run"]({
     source = suggestions,
@@ -181,4 +258,11 @@ vim.keymap.set("n", "<leader>ss", function()
     end,
     down = "40%",
   })
-end, { desc = "Spelling suggestions" })
+end, "Spelling suggestions")
+
+-- Close buffer (mini)
+keymap("n", "<leader>x", function() MiniBufremove.delete() end, "Close buffer")
+
+-- Insert mode completions (standard vim convention)
+keymap("i", "<C-x><C-f>", "<plug>(fzf-complete-path)", "File path completion")
+keymap("i", "<C-x><C-l>", "<plug>(fzf-complete-line)", "Line completion")
