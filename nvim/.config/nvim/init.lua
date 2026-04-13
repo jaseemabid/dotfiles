@@ -24,9 +24,12 @@
 --     <leader> h : - Command history
 --     <leader> h / - Search history
 --
---   Fzf - Code/Commits:
---     <leader> c c - Git commits
---     <leader> c b - Buffer commits
+--   Git:
+--     <leader> c c - Commits (all)
+--     <leader> c b - Commits (buffer)
+--     <leader> c d - Diff
+--     <leader> c s - Status
+--     <leader> c l - Log
 --
 --   Fzf - Misc:
 --     <leader> : - Commands
@@ -123,7 +126,7 @@ miniclue.setup({
     { mode = "n", keys = "<Leader>s", desc = "+Search" },
     { mode = "n", keys = "<Leader>l", desc = "+Lines" },
     { mode = "n", keys = "<Leader>h", desc = "+History" },
-    { mode = "n", keys = "<Leader>c", desc = "+Code/Commits" },
+    { mode = "n", keys = "<Leader>c", desc = "+Git" },
     { mode = "n", keys = "<Leader>m", desc = "+Misc" },
     { mode = "n", keys = "<Leader>z", desc = "+Spell" },
   },
@@ -236,9 +239,12 @@ keymap("n", "<leader>hf", ":History<CR>", "File history")
 keymap("n", "<leader>h:", ":History:<CR>", "Command history")
 keymap("n", "<leader>h/", ":History/<CR>", "Search history")
 
--- Fzf - Code/Commits
+-- Git
 keymap("n", "<leader>cc", ":Commits<CR>", "Git commits")
 keymap("n", "<leader>cb", ":BCommits<CR>", "Buffer commits")
+keymap("n", "<leader>cd", ":Git diff<CR>", "Git diff")
+keymap("n", "<leader>cs", ":Git<CR>", "Git status")
+keymap("n", "<leader>cl", ":Git log<CR>", "Git log")
 
 -- Fzf - Misc
 keymap("n", "<leader>:", ":Commands<CR>", "Commands")
