@@ -84,10 +84,6 @@ alias vi="nvim"
 alias vim="nvim"
 alias yt="youtube-dl -wci -o '%(title)s-%(id)s.%(ext)s'"
 
-# Screensetup
-alias horizontal='xrandr --output VIRTUAL1 --off --output eDP1 --primary --mode 1920x1080 --pos 1920x0 --rotate normal --output DP1 --off --output DP2-1 --off --output DP2-2 --mode 1920x1080 --pos 0x0 --rotate normal --output DP2-3 --off --output HDMI2 --off --output HDMI1 --off --output DP2 --off'
-alias vertical='xrandr --output VIRTUAL1 --off --output eDP1 --primary --mode 1920x1080 --pos 1080x0 --rotate normal --output DP1 --off --output DP2-1 --off --output DP2-2 --mode 1920x1080 --pos 0x0 --rotate right --output DP2-3 --off --output HDMI2 --off --output HDMI1 --off --output DP2 --off'
-
 # Remove trailing whitespace
 # http://stackoverflow.com/questions/4438306/removing-trailing-whitespace-with-sed
 alias ws='gsed -i '\''s/[ \t]*$//'\'' '
@@ -106,14 +102,6 @@ untar() {
     mkdir -p "$dest"
     tar --directory "$dest" --extract --verbose --file "$archive"
 }
-
-# https://github.com/aykamko/tag
-if (( $+commands[tag] )); then
-    export TAG_CMD_FMT_STRING="code -g '{{.Filename}}:{{.LineNumber}}:{{.ColumnNumber}}'"
-    export TAG_SEARCH_PROG=rg
-    tag() { command tag "$@"; source ${TAG_ALIAS_FILE:-/tmp/tag_aliases} 2>/dev/null }
-    alias rg='tag --color=always '
-fi
 
 # Pipes
 alias -g C='| wc -l'
