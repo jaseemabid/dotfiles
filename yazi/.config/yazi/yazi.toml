@@ -1,4 +1,8 @@
 [[plugin.prepend_previewers]]
+url = "*Justfile"
+run = 'piper -- bat --file-name "$1" --color=always "$1"'
+
+[[plugin.prepend_previewers]]
 url = "*.md"
 run = 'piper -- CLICOLOR_FORCE=1 glow -w=$w -s=dark "$1"'
 
