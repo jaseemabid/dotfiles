@@ -9,6 +9,7 @@ git:
   overrideGpg: true
   branchPrefix: "jabid/"
   autoFetch: false
+  diffContextSize: 5
 
 customCommands:
   - key: 'F'
@@ -21,10 +22,28 @@ customCommands:
     description: 'Create GitHub PR'
     loadingText: 'Creating PR...'
     output: terminal
+  - key: 'e'
+    command: 'if [ -d "{{.SelectedPath}}" ]; then yazi "{{.SelectedPath}}"; else nvim "{{.SelectedPath}}"; fi'
+    context: 'files'
+    description: 'Open in yazi'
+    output: terminal
+  - key: 'O'
+    command: 'git open'
+    context: 'global'
+    description: 'Open repo on GitHub'
+
 gui:
   nerdFontsVersion: "3"
   authorColors:
     'Jaseem Abid': '#32F5DD'
     '*':           '#D7A94F'
+  showDivergenceFromBaseBranch: arrowAndNumber
+  filterMode: fuzzy
 
+os:
+  editPreset: 'nvim'
+  openDirInEditor: "yazi {{dir}}"
+
+disableStartupPopups: true
+promptToReturnFromSubprocess: false
 notARepository: skip
