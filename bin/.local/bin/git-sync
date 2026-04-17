@@ -33,7 +33,8 @@ git pull -q
 
 # Get all branches not merged to base, filter by pattern, and rebase
 git branch --no-merged "$BASE_BRANCH" | grep jabid | while read -r branch; do
-    if git checkout -q "$branch" 2>/dev/null && git rebase --quiet "$BASE_BRANCH" >/dev/null 2>&1; then
+    if git checkout -q "$branch" 2>/dev/null \
+        && git rebase --quiet "$BASE_BRANCH" >/dev/null 2>&1; then
         echo "✓ $branch"
     else
         git rebase --abort >/dev/null 2>&1
@@ -44,9 +45,10 @@ done
 # Return to original branch
 git checkout -q "$ORIGINAL_BRANCH"
 
-# Check for empty branches (same commit as base) and delete them
-git branch --merged | grep jabid | sed 's/^[* ]*//' | while read -r branch; do
-    if [[ "$branch" != "$ORIGINAL_BRANCH" ]]; then
-        git branch --delete "$branch"
+# Delete branches with no diff against base (merged, or only empty commits)
+git branch | grep jabid | sed 's/^[* ]*//' | while read -r branch; do
+    if [[ "$branch" != "$ORIGINAL_BRANCH" ]] \
+        && [[ -z "$(git diff "$BASE_BRANCH" "$branch")" ]]; then
+        git branch --delete --force "$branch"
     fi
 done
