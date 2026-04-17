@@ -2,10 +2,10 @@
 
 .DS_Store
 .agignore
-.claude
-CLAUDE.local.md
 .env
 .venv
 .vscode
+CLAUDE.local.md
 __pycache__
 out
+settings.local.json
