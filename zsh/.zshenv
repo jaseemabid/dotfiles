@@ -50,6 +50,10 @@ export ZSH_COMPDUMP=~/.cache/zsh/zcompdump
 export ZSHZ_DATA=~/.local/share/z/data
 export LESSHISTFILE=~/.cache/less/history
 
+# Node, npm and all JS things.
+export NPM_CONFIG_CACHE="$HOME/.cache/npm"
+export NPM_CONFIG_USERCONFIG="$HOME/.config/npm/npmrc"
+
 # Mac Specific
 if [[ "$(uname)" == "Darwin" ]]; then
   export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
