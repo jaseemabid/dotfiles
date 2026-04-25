@@ -18,16 +18,30 @@ def main():
 
     files = staged_files if staged_files else changed_files
 
-    # Find default branch - master/main or something else
-    remote = run("git rev-parse --abbrev-ref origin/HEAD")[0]
+    # Find default branch - prefer remote HEAD, fall back to local main/master
+    remote = None
+    for candidate in ["origin/HEAD", "main", "master"]:
+        try:
+            run(f"git rev-parse --verify {candidate}", quiet=True)
+            remote = candidate
+            break
+        except subprocess.CalledProcessError:
+            continue
+    if remote is None:
+        sys.exit("Could not determine default branch. Exiting.")
 
     # If no files are changed, perform non-interactive rebase
     if not files:
         run(f"GIT_SEQUENCE_EDITOR=true git rebase -i {remote}")
         exit(0)
 
-    # Get the last commit hash for each changed file
-    commits = {run(f"git log -n 1 --pretty=format:'%H' -- '{f}'")[0] for f in files}
+    commits = {
+        (
+            run(f"git log -n 1 --pretty=format:'%H' -- '{f}'")
+            or sys.exit(f"'{f}' has no commits")
+        )[0]
+        for f in files
+    }
 
     # If the commit hashes set has more than 1 unique value, bail out
     if len(commits) != 1:
@@ -47,15 +61,16 @@ def main():
         sys.exit(f"Error executing git commit --fixup. Error: {str(e)}")
 
 
-def run(command):
+def run(command, quiet=False):
     top = "git rev-parse --show-toplevel"
     top = subprocess.check_output(top, shell=True).decode().strip()
 
     if os.environ.get("VERBOSE", False):
         print(f"RUN {command}")
 
+    stderr = subprocess.DEVNULL if quiet else None
     lines = (
-        subprocess.check_output(command, shell=True, cwd=top)
+        subprocess.check_output(command, shell=True, cwd=top, stderr=stderr)
         .decode()
         .strip()
         .split("\n")
