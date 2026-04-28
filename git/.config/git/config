@@ -92,6 +92,7 @@
 	meh = commit --amend --no-edit
 	ours = "!f() { git checkout --ours -- $@ && git add -- $@; }; f"
 	pill = pull
+	pdiff = !git --no-pager diff --ws-error-highlight=all # Plain diff
 	r = rebase
 	s = status -uno
 	serve = !git daemon --base-path=. --export-all --reuseaddr --informative-errors --verbose
