@@ -31,6 +31,7 @@ common: _setup
     stow sqlite
     stow tmux
     stow yazi
+    stow zed
     stow zsh
 
 # Install macOS-specific dotfiles
