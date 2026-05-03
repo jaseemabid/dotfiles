@@ -27,6 +27,7 @@ common: _setup
     stow git
     stow lazygit
     stow nvim
+    stow podman
     stow rg
     stow sqlite
     stow tmux
