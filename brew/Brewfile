@@ -1,7 +1,7 @@
+tap "arthur-ficial/tap"
 tap "homebrew/bundle"
 tap "homebrew/services"
 tap "mongodb/brew"
-tap "terror/tap"
 tap "xcodesorg/made"
 
 # Codec library for encoding and decoding AV1 video streams
@@ -55,20 +55,11 @@ brew "ffmpeg"
 # Collection of GNU find, xargs, and locate
 brew "findutils"
 
-# CLI program that accepts piped input and presents files for selection
-brew "fpp"
-
 # Command-line fuzzy finder written in Go
 brew "fzf"
 
 # GNU awk utility
 brew "gawk"
-
-# Library for encoding and decoding .avif files
-brew "libavif"
-
-# Open-source, cross-platform JavaScript runtime environment
-brew "node"
 
 # GitHub command-line tool
 brew "gh"
@@ -124,11 +115,17 @@ brew "lazydocker"
 # Simple terminal UI for git commands
 brew "lazygit"
 
+# Library for encoding and decoding .avif files
+brew "libavif"
+
 # Library to render SVG files using Cairo
 brew "librsvg"
 
-# Polyglot runtime manager (asdf rust clone)
-brew "mise"
+# LLM inference in C/C++
+brew "llama.cpp"
+
+# Open-source, cross-platform JavaScript runtime environment
+brew "node"
 
 # Collection of tools that nobody wrote when UNIX was young
 brew "moreutils"
@@ -159,9 +156,6 @@ brew "pdftoipe"
 
 # CLI for the Pkl programming language
 brew "pkl"
-
-# Fast, disk space efficient package manager
-brew "pnpm"
 
 # Tool for managing OCI containers and pods
 brew "podman"
@@ -232,6 +226,9 @@ brew "yazi"
 # UNIX shell (command interpreter)
 brew "zsh"
 
+# On-device Apple FoundationModels CLI and OpenAI-compatible server
+brew "arthur-ficial/tap/apfel"
+
 # High-performance, schema-free, document-oriented database
 brew "mongodb/brew/mongodb-community"
 
@@ -251,10 +248,6 @@ cask "codex"
 cask "codex-app"
 
 # Brings the power of Copilot coding agent directly to your terminal
-cask "copilot-cli"
-
-# Write, edit, and chat about your code with AI
-cask "cursor"
 cask "font-jetbrains-mono"
 cask "font-meslo-lg-nerd-font"
 cask "font-monaspace"
@@ -262,6 +255,9 @@ cask "font-terminus"
 
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
+
+# Native desktop AI assistant from Google
+cask "google-gemini"
 
 # Interactive tool for analyzing MongoDB data
 cask "mongodb-compass"

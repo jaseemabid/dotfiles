@@ -5,7 +5,7 @@
     just -u --list
 
 # Dump to Brewfile
-dump:
+@dump:
     /bin/rm -f Brewfile && brew bundle dump
     awk 'NR>1 && /^#/{print ""} 1' Brewfile > Brewfile.tmp && mv Brewfile.tmp Brewfile
 
@@ -13,8 +13,9 @@ dump:
 alias install := cleanup
 
 # Install from Brewfile, removing unlisted packages
-cleanup:
+@cleanup:
     brew bundle --cleanup
 
-watch:
+# Watch for Brewfile changes and cleanup
+@watch:
     echo Brewfile | entr -c brew bundle --cleanup -q
