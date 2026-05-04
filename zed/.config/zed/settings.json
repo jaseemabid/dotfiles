@@ -7,18 +7,27 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "cli_default_open_behavior": "existing_window",
-  "vim_mode": true,
   "agent_servers": {
-    "claude-acp": {
-      "type": "registry"
-    }
+    "pi-acp": { "type": "registry" },
+    "claude-acp": { "type": "registry" },
   },
-  "ui_font_size": 16,
+  "autosave": "on_focus_change",
+  "base_keymap": "VSCode",
+  "buffer_font_fallbacks": ["Apple Color Emoji", "Source Code Pro"],
+  "buffer_font_family": "Monaspace Neon",
   "buffer_font_size": 15,
-  "theme": {
-    "mode": "system",
-    "light": "One Light",
-    "dark": "One Dark",
-  },
+  "cli_default_open_behavior": "existing_window",
+  "ensure_final_newline_on_save": true,
+  "file_types": { "html": ["*.tera"] },
+  "icon_theme": "Zed (Default)",
+  "minimap": { "show": "never", "thumb": "always" },
+  "preferred_line_length": 120,
+  "project_panel": { "hide_gitignore": true },
+  "show_whitespaces": "none",
+  "soft_wrap": "bounded",
+  "terminal": { "font_family": "MesloLGS NF" },
+  "theme": { "mode": "light", "light": "Flexoki Light", "dark": "Gruvbox Dark" },
+  "ui_font_size": 16,
+  "use_system_window_tabs": true,
+  "vim_mode": true,
 }
