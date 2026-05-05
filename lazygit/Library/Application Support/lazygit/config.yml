@@ -21,12 +21,12 @@ customCommands:
     context: 'localBranches'
     description: 'Create GitHub PR'
     loadingText: 'Creating PR...'
-    output: terminal
+    output: none
   - key: 'e'
-    command: 'if [ -d "{{.SelectedPath}}" ]; then yazi "{{.SelectedPath}}"; else nvim "{{.SelectedPath}}"; fi'
+    command: 'if [ -d "{{.SelectedPath}}" ]; then yazi "{{.SelectedPath}}"; else zed "{{.SelectedPath}}"; fi'
     context: 'files'
-    description: 'Open in yazi'
-    output: terminal
+    description: 'Open in yazi/zed'
+    output: none
   - key: 'O'
     command: 'git open'
     context: 'global'
@@ -41,7 +41,7 @@ gui:
   filterMode: fuzzy
 
 os:
-  editPreset: 'nvim'
+  editPreset: 'zed'
   openDirInEditor: "yazi {{dir}}"
 
 disableStartupPopups: true

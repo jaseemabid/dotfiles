@@ -1,7 +1,13 @@
 [
   {
     "bindings": {
-      "cmd-o": "file_finder::Toggle"
-    }
-  }
+      "cmd-o": "file_finder::Toggle",
+    },
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-b": "command_palette::Toggle",
+    },
+  },
 ]

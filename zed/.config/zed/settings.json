@@ -8,8 +8,8 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   "agent_servers": {
-    "pi-acp": { "type": "registry" },
     "claude-acp": { "type": "registry" },
+    "pi-acp": { "type": "registry" },
   },
   "autosave": "on_focus_change",
   "base_keymap": "VSCode",
@@ -42,5 +42,6 @@
   "theme": { "mode": "light", "light": "Flexoki Light", "dark": "Gruvbox Dark" },
   "ui_font_size": 16,
   "use_system_window_tabs": true,
+  // See https://zed.dev/docs/vim for keybindings
   "vim_mode": true,
 }
