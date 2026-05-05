@@ -5,8 +5,8 @@ export DEFAULT_USER=$(whoami)
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US.UTF-8"
 export TERM="xterm-256color"
-export VISUAL=$(which zed)
-export EDITOR="$VISUAL"
+export EDITOR="/usr/local/bin/zed --wait"
+export VISUAL="$EDITOR"
 export FPP_EDITOR="zed"
 export MANPAGER="sh -c 'col -bx | bat --plain --theme=\"Monokai Extended Bright\" -l man'";
 export MANROFFOPT="-c"
