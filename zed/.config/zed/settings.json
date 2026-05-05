@@ -7,20 +7,22 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "agent": { "notify_when_agent_waiting": "never" },
   "agent_servers": {
     "claude-acp": { "type": "registry" },
     "pi-acp": { "type": "registry" },
   },
-  "autosave": "on_focus_change",
   "base_keymap": "VSCode",
-  "buffer_font_fallbacks": ["Apple Color Emoji", "Source Code Pro"],
-  "buffer_font_family": "Monaspace Neon",
   "buffer_font_size": 15,
-  "cli_default_open_behavior": "existing_window",
-  "ensure_final_newline_on_save": true,
+  "cli_default_open_behavior": "new_window",
+  "collaboration_panel": { "button": false },
+  "colorize_brackets": true,
   "file_types": { "html": ["*.tera"] },
-  "icon_theme": "Zed (Default)",
+  "indent_guides": { "coloring": "indent_aware" },
   "languages": {
+    "Git Commit": {
+      "wrap_guides": [50, 72],
+    },
     "Python": {
       "code_actions_on_format": {
         "source.fixAll.ruff": true,
@@ -33,15 +35,32 @@
       "language_servers": ["ty", "ruff", "!basedpyright", "!pyright", "..."],
     },
   },
-  "minimap": { "show": "never", "thumb": "always" },
-  "preferred_line_length": 120,
-  "project_panel": { "hide_gitignore": true },
-  "show_whitespaces": "none",
+  "project_panel": { "hide_root": true, "button": true },
+  "search": { "button": false },
+  "show_whitespaces": "trailing",
   "soft_wrap": "bounded",
-  "terminal": { "font_family": "MesloLGS NF" },
-  "theme": { "mode": "light", "light": "Flexoki Light", "dark": "Gruvbox Dark" },
+  "status_bar": {
+    "active_language_button": true,
+    "cursor_position_button": false,
+  },
+  "tab_bar": { "show_nav_history_buttons": false },
+  "tabs": { "file_icons": true, "git_status": true },
+  "terminal": {
+    "button": true,
+    "env": { "GIT_EDITOR": "zed --wait" },
+    "font_family": "MesloLGS NF",
+  },
+  "theme": {
+    "mode": "system",
+    "light": "Flexoki Light",
+    "dark": "One Dark",
+  },
   "ui_font_size": 16,
+  "use_smartcase_search": true,
   "use_system_window_tabs": true,
-  // See https://zed.dev/docs/vim for keybindings
-  "vim_mode": true,
+  "use_system_prompts": false,
+  "use_system_path_prompts": false,
+  "vim": { "gdefault": true, "use_smartcase_find": true },
+  "vim_mode": true, //  See https://zed.dev/docs/vim for keybindings
+  "which_key": { "delay_ms": 500, "enabled": true },
 }
