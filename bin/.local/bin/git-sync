@@ -31,6 +31,13 @@ echo "Using base branch: $BASE_BRANCH"
 git checkout -q "$BASE_BRANCH"
 git pull -q
 
+# Delete local jabid/ branches whose upstream is gone (squash-merged PRs)
+git for-each-ref --format '%(refname:short) %(upstream:track)' refs/heads/jabid \
+    | awk '$2 == "[gone]" {print $1}' \
+    | while read -r branch; do
+        git branch -D "$branch"
+    done
+
 # Get all branches not merged to base, filter by pattern, and rebase
 git branch --no-merged "$BASE_BRANCH" | grep jabid | while read -r branch; do
     if git checkout -q "$branch" 2>/dev/null \
