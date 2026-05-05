@@ -20,6 +20,19 @@
   "ensure_final_newline_on_save": true,
   "file_types": { "html": ["*.tera"] },
   "icon_theme": "Zed (Default)",
+  "languages": {
+    "Python": {
+      "code_actions_on_format": {
+        "source.fixAll.ruff": true,
+        "source.organizeImports.ruff": true,
+      },
+      "format_on_save": "on",
+      "formatter": {
+        "language_server": { "name": "ruff" },
+      },
+      "language_servers": ["ty", "ruff", "!basedpyright", "!pyright", "..."],
+    },
+  },
   "minimap": { "show": "never", "thumb": "always" },
   "preferred_line_length": 120,
   "project_panel": { "hide_gitignore": true },
