@@ -65,11 +65,11 @@ then
 else
     # Non root users
     if [[ "$OSTYPE" == "linux-gnueabihf" ]]; then
-        plugins=(eza sudo z)
+        plugins=(eza sudo zoxide)
     elif [[ "$OSTYPE" == "linux-gnu" ]]; then
-        plugins=(common-aliases docker eza fzf git rust stack sudo z)
+        plugins=(common-aliases docker eza fzf git rust stack sudo zoxide)
     elif [[ "$OSTYPE" == "darwin"* ]]; then
-        plugins=(brew common-aliases docker eza fzf git rust z)
+        plugins=(brew common-aliases docker eza fzf git rust zoxide)
     else
         echo "Unknown OS"
         exit 1
