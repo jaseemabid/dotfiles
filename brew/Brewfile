@@ -2,6 +2,7 @@ tap "arthur-ficial/tap"
 tap "homebrew/bundle"
 tap "homebrew/services"
 tap "mongodb/brew"
+tap "oven-sh/bun"
 tap "xcodesorg/made"
 
 # Codec library for encoding and decoding AV1 video streams
@@ -18,6 +19,12 @@ brew "bat"
 
 # Vector graphics library with cross-device output support
 brew "cairo"
+
+# Open-source, cross-platform JavaScript runtime environment
+brew "node"
+
+# Package acting as bridge between Node projects and their package managers
+brew "corepack"
 
 # GNU File, Shell, and Text utilities
 brew "coreutils"
@@ -124,9 +131,6 @@ brew "librsvg"
 # LLM inference in C/C++
 brew "llama.cpp"
 
-# Open-source, cross-platform JavaScript runtime environment
-brew "node"
-
 # Collection of tools that nobody wrote when UNIX was young
 brew "moreutils"
 
@@ -154,11 +158,17 @@ brew "openjdk"
 # Reads arbitrary PDF files and generates an XML file readable by Ipe
 brew "pdftoipe"
 
+# AI agent toolkit
+brew "pi-coding-agent"
+
 # CLI for the Pkl programming language
 brew "pkl"
 
 # Tool for managing OCI containers and pods
 brew "podman"
+
+# Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML
+brew "prettier"
 
 # Monitor data's progress through a pipe
 brew "pv"
@@ -189,6 +199,9 @@ brew "stern"
 
 # Organize software neatly under a single directory tree (e.g. /usr/local)
 brew "stow"
+
+# Utility-first CSS framework
+brew "tailwindcss"
 
 # User interface to the TELNET protocol
 brew "telnet"
@@ -223,6 +236,9 @@ brew "wireguard-tools"
 # Blazing fast terminal file manager written in Rust, based on async I/O
 brew "yazi"
 
+# Shell extension to navigate your filesystem faster
+brew "zoxide"
+
 # UNIX shell (command interpreter)
 brew "zsh"
 
@@ -231,6 +247,9 @@ brew "arthur-ficial/tap/apfel"
 
 # High-performance, schema-free, document-oriented database
 brew "mongodb/brew/mongodb-community"
+
+# Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
+brew "oven-sh/bun/bun"
 
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
@@ -241,13 +260,8 @@ cask "1password-cli"
 # Anthropic's official Claude AI desktop app
 cask "claude"
 
-# OpenAI's coding agent that runs in your terminal
-cask "codex"
-
 # OpenAI's Codex desktop app for managing coding agents
 cask "codex-app"
-
-# Brings the power of Copilot coding agent directly to your terminal
 cask "font-jetbrains-mono"
 cask "font-meslo-lg-nerd-font"
 cask "font-monaspace"
@@ -255,9 +269,6 @@ cask "font-terminus"
 
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
-
-# Native desktop AI assistant from Google
-cask "google-gemini"
 
 # Interactive tool for analyzing MongoDB data
 cask "mongodb-compass"
@@ -286,14 +297,14 @@ cask "ticktick"
 # Open-source BitTorrent client
 cask "transmission"
 
-# Open-source code editor
-cask "visual-studio-code"
-
 # Multimedia player
 cask "vlc"
 
 # Native desktop client for WhatsApp
 cask "whatsapp"
+
+# Multiplayer code editor
+cask "zed"
 
 # Video communication and virtual meeting platform
 cask "zoom"
