@@ -1,21 +1,26 @@
 [[plugin.prepend_previewers]]
+group = "file"
 url = "*Justfile"
 run = 'piper -- bat --file-name "$1" --color=always "$1"'
 
 [[plugin.prepend_previewers]]
+group = "file"
 url = "*.md"
 run = 'piper -- CLICOLOR_FORCE=1 glow -w=$w -s=dark "$1"'
 
 [[plugin.prepend_previewers]]
+group = "file"
 mime = "text/html"
 run = 'piper -- w3m -T text/html -dump "$1"'
 
 [[plugin.prepend_fetchers]]
+group = "file"
 id = "git"
 url = "*"
 run = "git"
 
 [[plugin.prepend_fetchers]]
+group = "file"
 id = "git"
 url = "*/"
 run = "git"

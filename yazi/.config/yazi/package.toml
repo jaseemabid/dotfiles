@@ -1,21 +1,21 @@
 [[plugin.deps]]
 use = "yazi-rs/plugins:piper"
-rev = "4ffa48f"
+rev = "1db18bb"
 hash = "384464b6df8cb807425c521f8cd790f3"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:no-status"
-rev = "4ffa48f"
+rev = "1db18bb"
 hash = "3e023d31f29201efdac2a6ae35fedb78"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:git"
-rev = "4ffa48f"
-hash = "6849444b7c2df08eace83f3f86fb55a3"
+rev = "1db18bb"
+hash = "c8d30a70659f1b880407e61c564ab4e8"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:smart-enter"
-rev = "4ffa48f"
+rev = "1db18bb"
 hash = "187cc58ba7ac3befd49c342129e6f1b6"
 
 [[plugin.deps]]
