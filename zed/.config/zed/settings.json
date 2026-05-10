@@ -17,25 +17,48 @@
   "cli_default_open_behavior": "new_window",
   "collaboration_panel": { "button": false },
   "colorize_brackets": true,
+  "ensure_final_newline_on_save": true,
   "file_types": { "html": ["*.tera"] },
   "indent_guides": { "coloring": "indent_aware" },
   "languages": {
-    "Git Commit": {
-      "wrap_guides": [50, 72],
+    "CSS": {
+      "language_servers": [
+        "tailwindcss-intellisense-css",
+        "!vscode-css-language-server",
+        "...",
+      ],
     },
+    "Git Commit": { "wrap_guides": [50, 72] },
     "Python": {
       "code_actions_on_format": {
         "source.fixAll.ruff": true,
-        "source.organizeImports.ruff": true,
+        "source.organizeImports": true,
       },
       "format_on_save": "on",
-      "formatter": {
-        "language_server": { "name": "ruff" },
-      },
-      "language_servers": ["ty", "ruff", "!basedpyright", "!pyright", "..."],
+      "formatter": { "language_server": { "name": "ruff" } },
+      "language_servers": ["ty", "ruff", "!basedpyright", "!pyright"],
     },
   },
-  "project_panel": { "hide_root": true, "button": true },
+  "lsp": {
+    "ty": {},
+    "ruff": {
+      "initialization_options": {
+        "settings": {
+          "lint": { "enable": true },
+          "format": { "enable": true },
+          "organizeImports": true,
+        },
+      },
+    },
+  },
+  "project_panel": {
+    "diagnostic_badges": true,
+    "file_icons": false,
+    "git_status_indicator": true,
+    "hide_gitignore": true,
+    "hide_hidden": true,
+    "hide_root": true,
+  },
   "search": { "button": false },
   "show_whitespaces": "trailing",
   "soft_wrap": "bounded",
@@ -58,7 +81,7 @@
   "ui_font_size": 16,
   "use_smartcase_search": true,
   "use_system_window_tabs": true,
-  "use_system_prompts": false,
+  "use_system_prompts": true,
   "use_system_path_prompts": false,
   "vim": { "gdefault": true, "use_smartcase_find": true },
   "vim_mode": true, //  See https://zed.dev/docs/vim for keybindings
