@@ -16,7 +16,7 @@ customCommands:
     command: 'git fixup'
     context: 'files'
     description: 'Run git fixup'
-  - key: 'R'
+  - key: 'U'
     command: 'gh pr create --fill'
     context: 'localBranches'
     description: 'Create GitHub PR'
