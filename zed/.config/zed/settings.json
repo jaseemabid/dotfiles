@@ -13,20 +13,20 @@
     "pi-acp": { "type": "registry" },
   },
   "base_keymap": "VSCode",
-  "buffer_font_size": 15,
   "cli_default_open_behavior": "new_window",
   "collaboration_panel": { "button": false },
   "colorize_brackets": true,
-  "ensure_final_newline_on_save": true,
-  "file_types": { "html": ["*.tera"] },
+  "file_types": {
+    "Git Attributes": ["**/{git,.git,.git/info}/attributes"],
+    "Git Config": ["*.gitconfig", "**/{git,.git,.git/modules,.git/modules/*}/config"],
+    "Git Ignore": ["**/{git,.git}/ignore", "**/.git/info/exclude"],
+    "html": ["*.tera"],
+  },
+  "git_panel": { "tree_view": true },
   "indent_guides": { "coloring": "indent_aware" },
   "languages": {
     "CSS": {
-      "language_servers": [
-        "tailwindcss-intellisense-css",
-        "!vscode-css-language-server",
-        "...",
-      ],
+      "language_servers": ["tailwindcss-intellisense-css", "!vscode-css-language-server", "..."],
     },
     "Git Commit": { "wrap_guides": [50, 72] },
     "Python": {
@@ -38,52 +38,47 @@
       "formatter": { "language_server": { "name": "ruff" } },
       "language_servers": ["ty", "ruff", "!basedpyright", "!pyright"],
     },
+    "TSX": { "wrap_guides": [80, 100] },
   },
   "lsp": {
-    "ty": {},
     "ruff": {
       "initialization_options": {
         "settings": {
-          "lint": { "enable": true },
           "format": { "enable": true },
+          "lint": { "enable": true },
           "organizeImports": true,
         },
       },
     },
   },
+  "preferred_line_length": 100,
   "project_panel": {
     "diagnostic_badges": true,
     "file_icons": false,
     "git_status_indicator": true,
     "hide_gitignore": true,
-    "hide_hidden": true,
+    "hide_hidden": false,
     "hide_root": true,
   },
   "search": { "button": false },
   "show_whitespaces": "trailing",
   "soft_wrap": "bounded",
-  "status_bar": {
-    "active_language_button": true,
-    "cursor_position_button": false,
-  },
   "tab_bar": { "show_nav_history_buttons": false },
   "tabs": { "file_icons": true, "git_status": true },
   "terminal": {
-    "button": true,
     "env": { "GIT_EDITOR": "zed --wait" },
-    "font_family": "MesloLGS NF",
   },
   "theme": {
-    "mode": "system",
-    "light": "Flexoki Light",
     "dark": "One Dark",
+    "light": "Flexoki Light",
+    "mode": "system",
   },
   "ui_font_size": 16,
   "use_smartcase_search": true,
-  "use_system_window_tabs": true,
-  "use_system_prompts": true,
   "use_system_path_prompts": false,
+  "use_system_prompts": true,
+  "use_system_window_tabs": true,
   "vim": { "gdefault": true, "use_smartcase_find": true },
-  "vim_mode": true, //  See https://zed.dev/docs/vim for keybindings
+  "vim_mode": true, // See https://zed.dev/docs/vim for keybindings
   "which_key": { "delay_ms": 500, "enabled": true },
 }
