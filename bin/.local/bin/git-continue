@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# https://github.com/casey/dotfiles/blob/master/bin/git-continue
+
+set -euo pipefail
+
+cont() {
+  if git rev-parse --verify $1 > /dev/null 2> /dev/null; then
+    echo "Continuing $2…"
+    git $2 --continue
+  fi
+}
+
+cont CHERRY_PICK_HEAD cherry-pick
+
+cont MERGE_HEAD merge
+
+cont REBASE_HEAD rebase
+
+cont REVERT_HEAD revert

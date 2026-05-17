@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# https://github.com/casey/dotfiles/blob/master/bin/git-abort
+
+set -euo pipefail
+
+abort() {
+  if git rev-parse --verify $1 > /dev/null 2> /dev/null; then
+    echo "Aborting $2…"
+    git $2 --abort
+  fi
+}
+
+abort CHERRY_PICK_HEAD cherry-pick
+
+abort MERGE_HEAD merge
+
+abort REBASE_HEAD rebase
+
+abort REVERT_HEAD revert

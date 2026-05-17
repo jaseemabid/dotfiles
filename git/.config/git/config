@@ -75,7 +75,6 @@
 
 # Aliases
 [alias]
-	abort = rebase --continue
 	authors = shortlog -sn
 	b = branch
 	c = commit
