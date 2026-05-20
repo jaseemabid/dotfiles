@@ -2,5 +2,4 @@
 set -euo pipefail
 
 
-# Need the pipe to cat to prevent the silly progress view
-prettier --tab-width 4 --write --list-different "$@" | /bin/cat
+prettier --tab-width 4 --write --log-level warn "$@"
