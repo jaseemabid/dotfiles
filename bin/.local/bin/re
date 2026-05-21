@@ -32,4 +32,4 @@ rg --color=always --line-number --no-heading --smart-case "$@" |
       --preview 'bat --color=always {1} --highlight-line {2} --terminal-width $FZF_PREVIEW_COLUMNS' \
       --preview-window 'right,60%,border-left,+{2}+3/3,~6' \
       --tmux 'center,95%,50%' \
-      --bind 'enter:become(code --reuse-window -g {1}:{2})'
+      --bind 'enter:become(zed {1}:{2})'
