@@ -105,6 +105,20 @@ insert_sudo () {
 zle -N insert-sudo insert_sudo
 bindkey "^[s" insert-sudo
 
+# Alt-Z opens zed at the git root (falls back to cwd if not in a repo).
+run_zed_at_root() {
+    local root
+    root=$(git rev-parse --show-toplevel 2>/dev/null) || root=.
+    zle push-input
+    BUFFER="zed ${root}"
+    zle accept-line
+}
+zle -N run-zed-at-root run_zed_at_root
+bindkey '^[z' run-zed-at-root
+
+# Alt-G launches lazygit. ^Q stashes the current line and restores it after.
+bindkey -s '^[g' '^Qlazygit^M'
+
 # Alt-Y copies last command + output to clipboard (Zellij only)
 if [[ -n "$ZELLIJ" ]]; then
     copy_last_command () {
