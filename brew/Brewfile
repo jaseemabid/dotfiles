@@ -270,6 +270,9 @@ cask "font-terminus"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
 
+# Speech to text application
+cask "handy"
+
 # Interactive tool for analyzing MongoDB data
 cask "mongodb-compass"
 
