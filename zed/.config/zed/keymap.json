@@ -11,5 +11,13 @@
       "cmd-o": "file_finder::Toggle",
       "shift shift": "file_finder::Toggle"
     }
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "y l": ["task::Spawn", { "task_name": "Copy zed:// link" }],
+      "alt-c": ["task::Spawn", { "task_name": "Copy zed:// link" }],
+      "space t": "task::Spawn"
+    }
   }
 ]

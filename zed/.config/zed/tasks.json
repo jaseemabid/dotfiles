@@ -1,0 +1,8 @@
+[
+  {
+    "label": "Copy zed:// link",
+    "command": "printf 'zed://file%s:%s:%s' \"$ZED_FILE\" \"$ZED_ROW\" \"$ZED_COLUMN\" | pbcopy",
+    "reveal": "never",
+    "hide": "always",
+  },
+]
