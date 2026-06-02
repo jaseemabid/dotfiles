@@ -107,10 +107,8 @@ bindkey "^[s" insert-sudo
 
 # Alt-Z opens zed at the git root (falls back to cwd if not in a repo).
 run_zed_at_root() {
-    local root
-    root=$(git rev-parse --show-toplevel 2>/dev/null) || root=.
     zle push-input
-    BUFFER="zed ${root}"
+    BUFFER="zed"
     zle accept-line
 }
 zle -N run-zed-at-root run_zed_at_root

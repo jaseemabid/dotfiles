@@ -90,6 +90,16 @@ alias t='tmux'
 alias ts="tig status" # Overwrite tmux plugin
 alias vi="nvim"
 alias vim="nvim"
+
+zed() {
+    local root
+    root=$(git rev-parse --show-toplevel 2>/dev/null)
+    if [[ -n "$root" ]]; then
+        command zed "$root" "$@"
+    else
+        command zed "${@:-.}"
+    fi
+}
 alias yt="youtube-dl -wci -o '%(title)s-%(id)s.%(ext)s'"
 
 # Remove trailing whitespace
