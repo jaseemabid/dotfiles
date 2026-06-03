@@ -46,6 +46,15 @@ pf() {
         --bind shift-up:preview-page-up,shift-down:preview-page-down
 }
 
+figlet-preview() {
+    local args=$(printf '%q ' "$@")
+    fd -e flf --max-depth 1 . "$(figlet -I2)" --exec basename {} .flf | sort \
+        | fzf --reverse --cycle --no-sort \
+            --preview="figlet -w 120 -f {} $args" \
+            --bind shift-up:preview-page-up,shift-down:preview-page-down \
+            --header "Previewing: $*"
+}
+
 # git; lot more provided by git plugin
 alias get='git clone'
 alias gg='git checkout'
