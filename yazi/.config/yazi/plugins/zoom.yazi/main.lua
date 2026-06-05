@@ -76,7 +76,7 @@ local function peek(_, job)
 		end
 	end
 
-	local tmp = "/tmp/yazi/" .. tostring(math.random(2^31))
+	local tmp = os.tmpname()
 	-- stylua: ignore
 	local output, err = Command("magick"):arg {
 		tostring(job.file.path),
@@ -92,7 +92,6 @@ local function peek(_, job)
 		end_(job, Err("`magick` exited with error code %s: %s", output.status.code, output.stderr))
 	elseif sync() then
 		ya.image_show(Url(tmp), job.area)
-		os.remove(tmp)
 	end
 	end_(job)
 end
