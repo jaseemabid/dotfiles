@@ -27,3 +27,13 @@ desc = "Show or hide the preview pane"
 on = ["g", "r"]
 run = 'shell -- ya emit cd "$(git rev-parse --show-toplevel)"'
 desc = "Go to git repository root"
+
+[[mgr.prepend_keymap]]
+on = ["g", "n"]
+run = 'cd sftp://nyx/'
+desc = "Go to nyx over SFTP"
+
+[[mgr.prepend_keymap]]
+on = ["g", "p"]
+run = 'cd sftp://nyx//Plex'
+desc = "Go to /Plex on nyx over SFTP"
