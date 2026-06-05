@@ -76,22 +76,34 @@ local function peek(_, job)
 		end
 	end
 
-	local tmp = os.tmpname()
-	-- stylua: ignore
-	local output, err = Command("magick"):arg {
-		tostring(job.file.path),
-		"-auto-orient", "-strip",
-		"-sample", string.format("%dx%d", new_w, new_h),
-		"-quality", rt.preview.image_quality,
-		string.format("JPG:%s", tmp),
-	}:output()
+	-- Encode zoom level in skip (offset by 10 so range -10..10 maps to 0..20)
+	local cache = ya.file_cache { file = job.file, skip = level + 10 }
+	if not cache then
+		return end_(job, Err("File not cacheable"))
+	end
 
-	if not output then
-		end_(job, Err("Failed to start `magick`, error: %s", err))
-	elseif not output.status.success then
-		end_(job, Err("`magick` exited with error code %s: %s", output.status.code, output.stderr))
-	elseif sync() then
-		ya.image_show(Url(tmp), job.area)
+	local ok = fs.cha(cache, false) ~= nil
+	if not ok then
+		-- stylua: ignore
+		local output, err = Command("magick"):arg {
+			tostring(job.file.path),
+			"-auto-orient", "-strip",
+			"-sample", string.format("%dx%d", new_w, new_h),
+			"-quality", rt.preview.image_quality,
+			string.format("JPG:%s", cache),
+		}:output()
+
+		if not output then
+			end_(job, Err("Failed to start `magick`, error: %s", err))
+		elseif not output.status.success then
+			end_(job, Err("`magick` exited with error code %s: %s", output.status.code, output.stderr))
+		else
+			ok = true
+		end
+	end
+
+	if ok and sync() then
+		ya.image_show(cache, job.area)
 	end
 	end_(job)
 end
