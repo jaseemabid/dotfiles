@@ -34,7 +34,6 @@ export FZF_CTRL_T_OPTS="
 # homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-export HOMEBREW_BUNDLE_DESCRIBE=1
 export HOMEBREW_BUNDLE_DUMP_NO_CARGO=1
 export HOMEBREW_BUNDLE_DUMP_NO_GO=1
 export HOMEBREW_BUNDLE_DUMP_NO_NPM=1
