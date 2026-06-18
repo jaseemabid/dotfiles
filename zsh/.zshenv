@@ -53,6 +53,9 @@ export LESSHISTFILE=~/.cache/less/history
 export NPM_CONFIG_CACHE="$HOME/.cache/npm"
 export NPM_CONFIG_USERCONFIG="$HOME/.config/npm/npmrc"
 
+# AWS falls back to $PAGER annoyingly otherwise
+export AWS_PAGER="jq ."
+
 # Mac Specific
 if [[ "$(uname)" == "Darwin" ]]; then
   export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
