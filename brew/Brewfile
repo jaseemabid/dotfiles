@@ -1,9 +1,9 @@
-tap "arthur-ficial/tap"
 tap "homebrew/bundle"
 tap "homebrew/services"
-tap "mongodb/brew"
+tap "mongodb/brew", trusted: true
 tap "oven-sh/bun"
-tap "xcodesorg/made"
+tap "philpennock/protocols", trusted: true
+tap "xcodesorg/made", trusted: true
 
 # Codec library for encoding and decoding AV1 video streams
 brew "aom"
@@ -28,6 +28,9 @@ brew "corepack"
 
 # GNU File, Shell, and Text utilities
 brew "coreutils"
+
+# Get, unpack, build, and install modules from CPAN
+brew "cpanminus"
 
 # Modern diagram scripting language that turns text to diagrams
 brew "d2"
@@ -109,6 +112,9 @@ brew "jq"
 
 # Handy way to save and run project-specific commands
 brew "just"
+
+# Kubernetes CLI To Manage Your Clusters In Style!
+brew "k9s"
 
 # SDK for building Kubernetes APIs using CRDs
 brew "kubebuilder"
@@ -242,14 +248,11 @@ brew "zoxide"
 # UNIX shell (command interpreter)
 brew "zsh"
 
-# On-device Apple FoundationModels CLI and OpenAI-compatible server
-brew "arthur-ficial/tap/apfel"
-
 # High-performance, schema-free, document-oriented database
-brew "mongodb/brew/mongodb-community"
+brew "mongodb/brew/mongodb-community", trusted: true
 
 # Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
-brew "oven-sh/bun/bun"
+brew "oven-sh/bun/bun", trusted: true
 
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
@@ -308,6 +311,9 @@ cask "whatsapp"
 
 # Multiplayer code editor
 cask "zed"
+
+# Gecko based web browser
+cask "zen"
 
 # Video communication and virtual meeting platform
 cask "zoom"
