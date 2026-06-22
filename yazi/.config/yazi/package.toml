@@ -28,5 +28,10 @@ use = "yazi-rs/plugins:toggle-pane"
 rev = "598cdb6"
 hash = "9c7987da2d2a2120dac33abb64132004"
 
+[[plugin.deps]]
+use = "Lil-Dank/lazygit"
+rev = "e73fd74"
+hash = "6ea5f37c7f219671ec504cb8311f889d"
+
 [flavor]
 deps = []

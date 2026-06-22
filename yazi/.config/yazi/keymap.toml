@@ -24,6 +24,11 @@ run = "plugin toggle-pane min-preview"
 desc = "Show or hide the preview pane"
 
 [[mgr.prepend_keymap]]
+on = ["g", "i"]
+run = "plugin lazygit"
+desc = "Run lazygit"
+
+[[mgr.prepend_keymap]]
 on = ["g", "r"]
 run = 'shell -- ya emit cd "$(git rev-parse --show-toplevel)"'
 desc = "Go to git repository root"
