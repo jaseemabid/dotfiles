@@ -9,6 +9,11 @@ run = "plugin smart-enter"
 desc = "Enter the child directory, or open the file"
 
 [[mgr.prepend_keymap]]
+on = "e"
+run = "plugin smart-enter"
+desc = "Enter the child directory, or open the file"
+
+[[mgr.prepend_keymap]]
 on = "+"
 run = "plugin zoom 1"
 desc = "Zoom in hovered file"
