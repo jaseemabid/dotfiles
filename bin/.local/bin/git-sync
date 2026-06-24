@@ -1,61 +1,66 @@
 #!/bin/bash
-
-# Rebase all unmerged branches matching a pattern onto the main branch
-# Skips branches with conflicts and branches not based on main branch
-# Delete empty branches after rebase
-
 set -e
 
-# Remember current branch to return to later
 ORIGINAL_BRANCH=$(git branch --show-current)
 
-# Check if working tree is clean
 if [[ -n $(git status --porcelain) ]]; then
-    echo "Error: Working tree is dirty. Commit or stash your changes first."
+    echo "✗ Working tree is dirty; commit or stash first"
     exit 1
 fi
 
-# Infer the main branch (main or master)
 if git show-ref --verify --quiet refs/heads/main; then
-    BASE_BRANCH="main"
+    BASE="main"
 elif git show-ref --verify --quiet refs/heads/master; then
-    BASE_BRANCH="master"
+    BASE="master"
 else
-    echo "Error: Could not find main or master branch"
+    echo "✗ No main or master branch found; aborting"
     exit 1
 fi
 
-echo "Using base branch: $BASE_BRANCH"
+git checkout -q "$BASE"
+git pull -q origin "$BASE"
 
-# Checkout to base branch first
-git checkout -q "$BASE_BRANCH"
-git pull -q
-
-# Delete local jabid/ branches whose upstream is gone (squash-merged PRs)
-git for-each-ref --format '%(refname:short) %(upstream:track)' refs/heads/jabid \
+# Delete jabid/ branches whose upstream is gone (squash-merged PRs)
+git for-each-ref --format '%(refname:short) %(upstream:track)' refs/heads/jabid/ \
     | awk '$2 == "[gone]" {print $1}' \
     | while read -r branch; do
         git branch -D "$branch"
+        echo "✗ $branch (upstream gone)"
     done
 
-# Get all branches not merged to base, filter by pattern, and rebase
-git branch --no-merged "$BASE_BRANCH" | grep jabid | while read -r branch; do
+if git show-ref --verify --quiet refs/heads/local; then
+    OLD_LOCAL=$(git rev-parse local)
+    git checkout -q local
+    if git rebase -q "$BASE" >/dev/null 2>&1; then
+        echo "✓ local"
+    else
+        git rebase --abort >/dev/null 2>&1
+        git checkout -q "$ORIGINAL_BRANCH" 2>/dev/null || git checkout -q "$BASE"
+        echo "✗ Failed to rebase local; aborting"
+        exit 1
+    fi
+    REBASE=(-q --onto local "$OLD_LOCAL")
+else
+    REBASE=(-q "$BASE")
+fi
+
+while IFS= read -r branch; do
     if git checkout -q "$branch" 2>/dev/null \
-        && git rebase --quiet "$BASE_BRANCH" >/dev/null 2>&1; then
+        && git rebase "${REBASE[@]}" >/dev/null 2>&1; then
         echo "✓ $branch"
     else
         git rebase --abort >/dev/null 2>&1
         echo "✗ $branch"
     fi
-done
+done < <(git branch --no-merged "$BASE" | grep 'jabid/' | sed 's/^[* ]*//')
 
-# Return to original branch
-git checkout -q "$ORIGINAL_BRANCH"
+git checkout -q "$ORIGINAL_BRANCH" 2>/dev/null || git checkout -q "$BASE"
 
-# Delete branches with no diff against base (merged, or only empty commits)
-git branch | grep jabid | sed 's/^[* ]*//' | while read -r branch; do
+# Delete jabid/ branches with no diff against base (effectively merged)
+while IFS= read -r branch; do
     if [[ "$branch" != "$ORIGINAL_BRANCH" ]] \
-        && [[ -z "$(git diff "$BASE_BRANCH" "$branch")" ]]; then
+        && [[ -z "$(git diff "$BASE" "$branch")" ]]; then
         git branch --delete --force "$branch"
+        echo "✗ $branch (empty, deleted)"
     fi
-done
+done < <(git for-each-ref --format='%(refname:short)' refs/heads/jabid/)
