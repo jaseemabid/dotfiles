@@ -39,8 +39,10 @@ if git show-ref --verify --quiet refs/heads/local; then
         echo "✗ Failed to rebase local; aborting"
         exit 1
     fi
+    TARGET="local"
     REBASE=(-q --onto local "$OLD_LOCAL")
 else
+    TARGET="$BASE"
     REBASE=(-q "$BASE")
 fi
 
@@ -59,7 +61,7 @@ git checkout -q "$ORIGINAL_BRANCH" 2>/dev/null || git checkout -q "$BASE"
 # Delete jabid/ branches with no diff against base (effectively merged)
 while IFS= read -r branch; do
     if [[ "$branch" != "$ORIGINAL_BRANCH" ]] \
-        && [[ -z "$(git diff "$BASE" "$branch")" ]]; then
+        && [[ -z "$(git diff "$TARGET" "$branch")" ]]; then
         git branch --delete --force "$branch"
         echo "✗ $branch (empty, deleted)"
     fi
