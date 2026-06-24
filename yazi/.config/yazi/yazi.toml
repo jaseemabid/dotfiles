@@ -1,7 +1,7 @@
 [[plugin.prepend_previewers]]
 group = "file"
 url = "*Justfile"
-run = 'piper -- bat --language make --style plain --color=always "$1"'
+run = 'piper -- bat --style plain --color=always "$1"'
 
 [[plugin.prepend_previewers]]
 group = "file"
