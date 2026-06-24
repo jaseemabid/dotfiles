@@ -9,7 +9,15 @@
 {
   "agent": { "notify_when_agent_waiting": "never" },
   "agent_servers": {
-    "claude-acp": { "type": "registry" },
+    "claude-acp": {
+      "default_config_options": { "model": "opus[1m]", "mode": "auto" },
+      "type": "registry",
+    },
+    "opencode": {
+      "default_config_options": { "effort": "medium", "model": "grove-openai/gpt-5.3-codex" },
+      "favorite_config_option_values": { "model": ["grove-openai/gpt-5.3-codex"] },
+      "type": "registry",
+    },
     "pi-acp": { "type": "registry" },
   },
   "base_keymap": "VSCode",
