@@ -1,0 +1,25 @@
+#!/bin/sh
+
+G=$(printf '\033[38;2;163;190;140m')   # Nord14 green  - mainline
+B=$(printf '\033[38;2;129;161;193m')   # Nord9  blue   - jabid branches
+Y=$(printf '\033[38;2;235;203;139m')   # Nord13 yellow - local
+H=$(printf '\033[1m')                   # bold          - HEAD
+R=$(printf '\033[0m')                   # reset
+
+git log --graph --simplify-by-decoration --all \
+    --decorate-refs='refs/heads/main' \
+    --decorate-refs='refs/heads/master' \
+    --decorate-refs='refs/heads/jabid/*' \
+    --decorate-refs='refs/heads/local' \
+    --decorate-refs='HEAD' \
+    --format='%D' \
+    "$@" \
+| sed -E \
+    -e 's/\*/●/g' \
+    -e 's/(^|[^[:alnum:]_])\//\1⤴/g' \
+    -e 's/\|/│/g' \
+    -e 's/\\/╲/g' \
+    -e "s/(jabid[╱\/][^[:space:],)>]*)/${B}\1${R}/g" \
+    -e "s/[[:<:]](main|master)[[:>:]]/${G}\1${R}/g" \
+    -e "s/[[:<:]]local[[:>:]]/${Y}local${R}/g" \
+    -e "s/[[:<:]]HEAD[[:>:]]/${H}HEAD${R}/g"
