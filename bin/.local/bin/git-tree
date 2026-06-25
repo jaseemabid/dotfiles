@@ -15,10 +15,11 @@ git log --graph --simplify-by-decoration --all \
     --format='%D' \
     "$@" \
 | sed -E \
+    -e '/^[|\/\\ ]*\*[[:space:]]*$/d' \
     -e 's/\*/●/g' \
-    -e 's/(^|[^[:alnum:]_])\//\1⤴/g' \
+    -e 's/(^|[^[:alnum:]_])\//\1╯/g' \
     -e 's/\|/│/g' \
-    -e 's/\\/╲/g' \
+    -e 's/\\/╮/g' \
     -e "s/(jabid[╱\/][^[:space:],)>]*)/${B}\1${R}/g" \
     -e "s/[[:<:]](main|master)[[:>:]]/${G}\1${R}/g" \
     -e "s/[[:<:]]local[[:>:]]/${Y}local${R}/g" \
