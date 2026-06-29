@@ -1,34 +1,19 @@
 # https://just.systems
-# Dependencies: op (1Password CLI), openssl, jq, python3, gzip
+# Dependencies: op (1Password CLI), openssl, uv
+
+set lazy
+
+PASSWORD := `op read "op://Private/Raycast Settings Export/password"`
+OUT := "/Users/j/Notes/Styx/Files/Raycast"
 
 # Show available commands
 @_default:
     just -u --list
 
-# Decode a rayconfig file to JSON file
-decode file:
-    #!/usr/bin/env bash
-    set -euo pipefail
-    if [[ ! -f "{{ file }}" ]]; then
-        echo "Error: File not found: {{ file }}" >&2
-        exit 1
-    fi
-    just _decode-json "{{ file }}" > "$(basename "{{ file }}" .rayconfig).json"
+# Decode v1.rayconfig to v1.config.json and v1.keys.txt
+@decode_1:
+    PASSWORD="{{ PASSWORD }}" ./main.py --from v1 --out {{ OUT }}
 
-# Extract keybindings with decoded keycodes from a rayconfig file
-keycodes file:
-    @just _decode-json "{{ file }}" | ./keycodes.py
-
-# Get the decryption password
-@_password:
-    op read "op://Private/Raycast Settings Export/password"
-
-# Decrypt and decompress rayconfig to JSON
-_decode-json file:
-    #!/usr/bin/env bash
-    set -euo pipefail
-    PASSWORD=$(just _password)
-    openssl enc -d -aes-256-cbc -nosalt -in "{{ file }}" -k "$PASSWORD" 2>/dev/null \
-        | tail -c +17 \
-        | gunzip \
-        | jq .
+# Decode V2.rayconfig to v2.config.json and v2.keys.txt
+@decode_2:
+    PASSWORD="{{ PASSWORD }}" ./main.py --from v2 --out {{ OUT }}
