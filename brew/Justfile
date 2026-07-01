@@ -7,15 +7,15 @@
 # Dump to Brewfile
 @dump:
     /bin/rm -f Brewfile && brew bundle dump
-    awk 'NR>1 && /^#/{print ""} 1' Brewfile > Brewfile.tmp && mv Brewfile.tmp Brewfile
-
-# Install from Brewfile
-alias install := cleanup
+    # Blank line before each section comment for readability
+    awk 'NR>1 && /^#/{print ""} 1' Brewfile | sponge Brewfile
 
 # Install from Brewfile, removing unlisted packages
-@cleanup:
-    brew bundle --cleanup
+@install:
+    brew update && brew upgrade --yes
+    brew bundle --jobs $(sysctl -n hw.logicalcpu)
+    brew bundle cleanup --force && brew cleanup
 
-# Watch for Brewfile changes and cleanup
+# Watch for Brewfile and keep syncing
 @watch:
-    echo Brewfile | entr -c brew bundle --cleanup -q
+    echo Brewfile | entr -c brew bundle -q

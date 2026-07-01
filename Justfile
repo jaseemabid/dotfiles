@@ -4,6 +4,9 @@
 @_default:
     just -u --list
 
+# Setup and install packages with Homebrew
+mod brew
+
 # Targets that need manual installation:
 # zsh theme, iterm2, solarized, brew
 
@@ -41,6 +44,4 @@ macos: _setup
     stow lazygit
     stow vscode
 
-# Setup and install packages with Homebrew
-brew:
-    brew bundle install  --file brew/0x14/Brewfile
+
