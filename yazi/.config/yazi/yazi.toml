@@ -32,6 +32,14 @@ max_height = 2000
 [opener]
 edit = [{ run = 'zed "$@"', desc = "Zed" }]
 
+[[opener.bulk-rename]]
+run = 'nvim "%s"'
+block = true
+
+[[open.prepend_rules]]
+url = "bulk-rename.txt"
+use = "bulk-rename"
+
 [mgr]
 show_hidden = true
 ratio = [1, 2, 4]
