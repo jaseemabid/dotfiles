@@ -11,6 +11,9 @@ export FPP_EDITOR="zed"
 export MANPAGER="sh -c 'col -bx | bat --plain --theme=\"Monokai Extended Bright\" -l man'";
 export MANROFFOPT="-c"
 
+# Lazygit needs this extra config for clean paths
+export XDG_CONFIG_HOME="$HOME/.config"
+
 # ZSH History
 setopt HIST_FCNTL_LOCK
 export HISTSIZE=999999

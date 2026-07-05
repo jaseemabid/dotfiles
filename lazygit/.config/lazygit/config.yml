@@ -1,0 +1,50 @@
+# Lazygit
+
+git:
+  # https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md#custom-git-log-command
+  # Add --oneline to default command
+  branchLogCmd: "git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=medium --oneline {{branchName}} --"
+  log:
+    showWholeGraph: false
+  overrideGpg: true
+  branchPrefix: "jabid/"
+  autoFetch: false
+  diffContextSize: 5
+
+customCommands:
+  - key: "F"
+    command: "git fixup"
+    context: "files"
+    description: "Run git fixup"
+  - key: "U"
+    command: "gh pr create --fill"
+    context: "localBranches"
+    description: "Create GitHub PR"
+    loadingText: "Creating PR..."
+    output: none
+  - key: "e"
+    command: 'if [ -d "{{.SelectedPath}}" ]; then yazi "{{.SelectedPath}}"; else zed "{{.SelectedPath}}"; fi'
+    context: "files"
+    description: "Open in yazi/zed"
+    output: none
+  - key: "O"
+    command: "git open"
+    context: "global"
+    description: "Open repo on GitHub"
+
+gui:
+  nerdFontsVersion: "3"
+  authorColors:
+    "Jaseem Abid": "#32F5DD"
+    "*": "#D7A94F"
+  showDivergenceFromBaseBranch: arrowAndNumber
+  filterMode: fuzzy
+  shrinkSidePanelsToContent: true
+
+os:
+  editPreset: "zed"
+  openDirInEditor: "yazi {{dir}}"
+
+disableStartupPopups: true
+promptToReturnFromSubprocess: false
+notARepository: skip
