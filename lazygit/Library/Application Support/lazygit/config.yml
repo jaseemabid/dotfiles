@@ -39,6 +39,7 @@ gui:
     "*": "#D7A94F"
   showDivergenceFromBaseBranch: arrowAndNumber
   filterMode: fuzzy
+  shrinkSidePanelsToContent: true
 
 os:
   editPreset: "zed"
