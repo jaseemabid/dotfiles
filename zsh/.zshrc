@@ -29,7 +29,6 @@ fi
 # Auto-attach to tmux in first Ghostty terminal only
 # Additional tabs/windows get a plain shell
 if [[ -z "$TMUX" ]] &&
-   [[ -z "$ZELLIJ" ]] &&
    [[ -z "$SSH_CLIENT" ]] &&
    [[ "$TERM_PROGRAM" == "ghostty" ]]; then
     if ! tmux has-session -t main 2>/dev/null; then
@@ -113,32 +112,6 @@ bindkey '^[z' run-zed-at-root
 
 # Alt-G launches lazygit. ^Q stashes the current line and restores it after.
 bindkey -s '^[g' '^Qlazygit^M'
-
-# Alt-Y copies last command + output to clipboard (Zellij only)
-if [[ -n "$ZELLIJ" ]]; then
-    copy_last_command () {
-        local tmp=$(mktemp)
-        zellij action dump-screen --full "$tmp"
-        awk '
-            /^❯/ {
-                if (cmd != "") prev = buf
-                cmd = $0; sub(/^❯ ?/, "", cmd)
-                buf = (cmd != "" ? "$ " cmd "\n" : "")
-                held = ""; collecting = 1; next
-            }
-            collecting { buf = buf held; held = $0 "\n" }
-            END {
-                result = (cmd != "" ? buf : prev)
-                sub(/\n+$/, "\n", result)
-                printf "%s", result
-            }
-        ' "$tmp" | pbcopy
-        rm -f "$tmp"
-        zle reset-prompt
-    }
-    zle -N copy-last-command copy_last_command
-    bindkey "^[y" copy-last-command
-fi
 
 # Move aliases to custom file. Its hard to track aliases.zsh inside oh-my-zsh
 source ~/.zaliases
