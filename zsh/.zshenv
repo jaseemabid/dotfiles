@@ -34,19 +34,7 @@ export FZF_CTRL_T_OPTS="
   --preview 'bat -n --color=always {}'
   --bind 'ctrl-/:change-preview-window(down|hidden|)'" # Preview Ctrl+T with bat
 
-# homebrew
-eval "$(/opt/homebrew/bin/brew shellenv)"
 
-export HOMEBREW_BUNDLE_DUMP_NO_CARGO=1
-export HOMEBREW_BUNDLE_DUMP_NO_FLATPAK=1
-export HOMEBREW_BUNDLE_DUMP_NO_GO=1
-export HOMEBREW_BUNDLE_DUMP_NO_KREW=1
-export HOMEBREW_BUNDLE_DUMP_NO_NPM=1
-export HOMEBREW_BUNDLE_DUMP_NO_UV=1
-export HOMEBREW_BUNDLE_DUMP_NO_VSCODE=1
-export HOMEBREW_BUNDLE_DUMP_NO_WINGET=1
-export HOMEBREW_NO_AUTO_UPDATE=1
-export HOMEBREW_NO_ENV_HINTS=1
 
 # rg
 export RIPGREP_CONFIG_PATH=~/.config/ripgrep/config
@@ -65,7 +53,20 @@ export AWS_PAGER="jq ."
 # Mac Specific
 if [[ "$(uname)" == "Darwin" ]]; then
   export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
+
+  # homebrew
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+
+  export HOMEBREW_BUNDLE_DUMP_NO_CARGO=1
+  export HOMEBREW_BUNDLE_DUMP_NO_FLATPAK=1
+  export HOMEBREW_BUNDLE_DUMP_NO_GO=1
+  export HOMEBREW_BUNDLE_DUMP_NO_KREW=1
+  export HOMEBREW_BUNDLE_DUMP_NO_NPM=1
+  export HOMEBREW_BUNDLE_DUMP_NO_UV=1
+  export HOMEBREW_BUNDLE_DUMP_NO_VSCODE=1
+  export HOMEBREW_BUNDLE_DUMP_NO_WINGET=1
+  export HOMEBREW_NO_AUTO_UPDATE=1
+  export HOMEBREW_NO_ENV_HINTS=1
 fi
 
 [[ -s "$HOME/.zshenv.local" ]] && source "$HOME/.zshenv.local"
-
