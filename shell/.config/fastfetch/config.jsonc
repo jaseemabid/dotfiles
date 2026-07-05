@@ -26,6 +26,7 @@
     "physicalmemory",
     "swap",
     "disk",
+    "zpool",
     "physicaldisk",
     "localip",
     "dns",
