@@ -17,7 +17,25 @@
     "bindings": {
       "y l": ["task::Spawn", { "task_name": "Copy zed:// link" }],
       "alt-c": ["task::Spawn", { "task_name": "Copy zed:// link" }],
-      "space t": "task::Spawn"
+      "space t": "task::Spawn",
+
+      // Leader (space) actions — mirrors the VSCode space-prefix table
+      "space r": "editor::Rename",
+      "space shift-r": "editor::ReloadFile",
+      "space a": "editor::ToggleCodeActions",
+      "space o": "outline::Toggle",
+      "space shift-o": "project_symbols::Toggle",
+      "space p": "editor::GoToDefinitionSplit"
+    }
+  },
+  {
+    // Unbind default "g r" LSP subgroup entirely — now covered by space-prefix
+    "context": "VimControl && !menu",
+    "bindings": {
+      "g r n": null,
+      "g r r": null,
+      "g r i": null,
+      "g r a": null
     }
   }
 ]
