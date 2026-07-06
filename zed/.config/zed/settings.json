@@ -7,6 +7,7 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "auto_update": false,
   "agent": { "notify_when_agent_waiting": "never" },
   "agent_servers": {
     "claude-acp": {
@@ -22,14 +23,33 @@
   },
   "base_keymap": "VSCode",
   "cli_default_open_behavior": "new_window",
+  "close_on_file_delete": true,
   "collaboration_panel": { "button": false },
   "colorize_brackets": true,
+  "file_finder": { "file_icons": true, "include_ignored": "all" },
   "file_types": {
     "Git Attributes": ["**/{git,.git,.git/info}/attributes"],
     "Git Config": ["*.gitconfig", "**/{git,.git,.git/modules,.git/modules/*}/config"],
     "Git Ignore": ["**/{git,.git}/ignore", "**/.git/info/exclude"],
     "html": ["*.tera"],
   },
+  "file_scan_exclusions": [
+    "**/.DS_Store",
+    "**/.classpath",
+    "**/.git",
+    "**/.mypy_cache",
+    "**/.pytest_cache",
+    "**/.ruff_cache",
+    "**/.settings",
+    "**/.venv",
+    "**/Thumbs.db",
+    "**/__pycache__",
+    "**/build",
+    "**/dist",
+    "**/node_modules",
+    "**/target",
+    "**/venv",
+  ],
   "git_panel": { "tree_view": true },
   "indent_guides": { "coloring": "indent_aware" },
   "languages": {
@@ -59,12 +79,13 @@
       },
     },
   },
+  "on_last_window_closed": "quit_app",
   "preferred_line_length": 100,
   "project_panel": {
     "diagnostic_badges": true,
     "file_icons": false,
     "git_status_indicator": true,
-    "hide_gitignore": true,
+    "hide_gitignore": false,
     "hide_hidden": false,
     "hide_root": true,
   },
@@ -88,5 +109,6 @@
   "use_system_window_tabs": true,
   "vim": { "gdefault": true, "use_smartcase_find": true },
   "vim_mode": true, // See https://zed.dev/docs/vim for keybindings
+  "when_closing_with_no_tabs": "close_window",
   "which_key": { "delay_ms": 500, "enabled": true },
 }
