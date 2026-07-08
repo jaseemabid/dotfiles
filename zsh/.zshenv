@@ -40,7 +40,7 @@ export FZF_CTRL_T_OPTS="
 export RIPGREP_CONFIG_PATH=~/.config/ripgrep/config
 
 # Move dotfile clutter out of ~/
-export ZSH_COMPDUMP=~/.cache/zsh/zcompdump
+export ZSH_COMPDUMP=~/.cache/zsh/zcompdump-${ZSH_VERSION}
 export LESSHISTFILE=~/.cache/less/history
 
 # Node, npm and all JS things.
