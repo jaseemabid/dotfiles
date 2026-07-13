@@ -262,9 +262,6 @@ cask "1password-cli"
 
 # Anthropic's official Claude AI desktop app
 cask "claude"
-
-# OpenAI's Codex desktop app for managing coding agents
-cask "codex-app"
 cask "font-jetbrains-mono"
 cask "font-meslo-lg-nerd-font"
 cask "font-monaspace"
