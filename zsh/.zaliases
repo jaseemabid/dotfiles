@@ -82,6 +82,7 @@ alias big="gstat -c %s $1 | numfmt --to=iec"
 alias die="xset dpms force off"
 alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
 alias genpass="openssl rand -base64 12"
+alias l='command ls -1'
 alias less='less -S' # Chop long lines
 alias lg='lazygit'
 unalias ll 2>/dev/null
