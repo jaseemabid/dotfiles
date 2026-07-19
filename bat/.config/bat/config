@@ -1,2 +1,3 @@
 --theme=gruvbox-dark
 --map-syntax "Justfile:Makefile"
+--map-syntax "*.just:Makefile"
