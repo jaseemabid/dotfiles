@@ -270,6 +270,9 @@ cask "font-terminus"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
 
+# GPU-based terminal emulator (tmux-free workflow, see kitty/)
+cask "kitty"
+
 # Speech to text application
 cask "handy"
 

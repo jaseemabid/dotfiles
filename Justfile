@@ -29,6 +29,7 @@ common: _setup
     stow ghostty
     stow git
     stow k9s
+    stow kitty
     stow lazygit
     stow nvim
     stow podman
