@@ -41,6 +41,8 @@
     "**/.pytest_cache",
     "**/.ruff_cache",
     "**/.settings",
+    "**/.terraform",
+    "**/.terraform.lock.hcl",
     "**/.venv",
     "**/Thumbs.db",
     "**/__pycache__",
