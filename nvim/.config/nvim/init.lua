@@ -86,6 +86,15 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Plugins
 require("lazy").setup({
+  {
+    "gbprod/nord.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("nord").setup({})
+      vim.cmd.colorscheme("nord")
+    end,
+  },
   { "junegunn/fzf", build = ":call fzf#install()" },
   { "junegunn/fzf.vim" },
   { "echasnovski/mini.nvim" },
@@ -171,6 +180,7 @@ vim.opt.showcmd = true
 vim.opt.showmatch = true
 vim.opt.showmode = true
 vim.opt.spell = true
+vim.opt.spellfile = vim.fn.stdpath("config") .. "/spell/en.utf-8.add"
 vim.opt.spelllang = "en_gb"
 vim.opt.tabstop = 4
 vim.opt.textwidth = 0
