@@ -40,6 +40,7 @@ fi
 
 # Setup oh-my-zsh
 DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_TITLE="true"
 ZSH_DISABLE_COMPFIX="true"
 ZSH=$HOME/.config/zsh/oh-my-zsh
 
