@@ -17,6 +17,8 @@
     "bindings": {
       "y l": ["task::Spawn", { "task_name": "Copy zed:// link" }],
       "alt-c": ["task::Spawn", { "task_name": "Copy zed:// link" }],
+      "y p": "editor::CopyRelativePath",
+      "y shift-p": "editor::CopyPath",
       "space t": "task::Spawn",
 
       // Leader (space) actions — mirrors the VSCode space-prefix table
