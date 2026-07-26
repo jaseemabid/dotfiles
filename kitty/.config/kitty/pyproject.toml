@@ -1,0 +1,23 @@
+[project]
+name = "kitty-conf"
+version = "0.1.1"
+requires-python = ">=3.14"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "ruff>=0.16.0",
+    "ty>=0.0.63",
+]
+
+# `uv format` and `uv check` are still experimental; opting in here silences the
+# warning each run prints.
+[tool.uv]
+preview-features = ["format-command", "check-command"]
+
+# kitty ships its Python API inside the app bundle as frozen bytecode, so it is
+# unimportable here. Resolve it from a source checkout instead, kept on the tag
+# matching the installed kitty (0.48.1) so the types match what actually runs.
+[tool.ty.environment]
+extra-paths = ["/Users/j/src/kovidgoyal/kitty"]
+python-version = "3.14"
