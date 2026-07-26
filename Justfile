@@ -2,13 +2,10 @@
 
 # Show available commands
 @_default:
-    just -u --list
+    just --list --list-submodules --unsorted
 
 # Setup and install packages with Homebrew
 mod brew
-
-# Targets that need manual installation:
-# zsh theme, iterm2, solarized, brew
 
 # Shared setup
 @_setup:
@@ -45,4 +42,6 @@ macos: _setup
     stow lazygit
     stow vscode
 
-
+# Autoformat
+@fmt:
+    just --fmt
