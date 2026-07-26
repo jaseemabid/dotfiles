@@ -112,5 +112,5 @@
   "vim": { "gdefault": true, "use_smartcase_find": true },
   "vim_mode": true, // See https://zed.dev/docs/vim for keybindings
   "when_closing_with_no_tabs": "close_window",
-  "which_key": { "delay_ms": 500, "enabled": true },
+  "which_key": { "delay_ms": 150, "enabled": true },
 }
