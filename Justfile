@@ -21,26 +21,22 @@ mod brew
 # Install common dotfiles
 common: _setup
     stow bin
-    stow curl
-    stow dig
-    stow ghostty
     stow git
-    stow k9s
-    stow kitty
     stow lazygit
     stow nvim
     stow podman
-    stow rg
-    stow sqlite
+    stow shell
     stow tmux
     stow yazi
-    stow zed
     stow zsh
 
 # Install macOS-specific dotfiles
 macos: _setup
+    stow ghostty
+    stow kitty
     stow lazygit
     stow vscode
+    stow zed
 
 # Autoformat
 @fmt:

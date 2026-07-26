@@ -1,5 +1,1 @@
-#!/usr/bin/env bash
-set -euo pipefail
-
-
 prettier --tab-width 4 --write --log-level warn "$@"
