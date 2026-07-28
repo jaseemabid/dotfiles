@@ -32,6 +32,7 @@
     "Git Config": ["*.gitconfig", "**/{git,.git,.git/modules,.git/modules/*}/config"],
     "Git Ignore": ["**/{git,.git}/ignore", "**/.git/info/exclude"],
     "html": ["*.tera"],
+    "Shell Script": ["**/kitty.conf"],
   },
   "file_scan_exclusions": [
     "**/.DS_Store",
