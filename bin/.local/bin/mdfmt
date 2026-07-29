@@ -1,1 +1,5 @@
-prettier --tab-width 4 --write --log-level warn "$@"
+#!/bin/sh
+
+# Reflow text to 100. Code fences, tables and link targets are left alone.
+exec prettier --tab-width 4 --prose-wrap always --print-width 100 \
+  --write --log-level warn "$@"

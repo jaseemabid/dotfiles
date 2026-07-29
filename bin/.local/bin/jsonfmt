@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# Collapse objects onto one line where they fit, wrap at 120.
+exec prettier --print-width 120 --object-wrap collapse \
+  --write --log-level warn "$@"
