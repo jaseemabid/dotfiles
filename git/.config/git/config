@@ -107,10 +107,10 @@
 	ddiff = -c diff.external=difft diff
 
 	# Sync PR title and body with current commit message
-	pr-sync = "!f() { \
-		git show -s --format='%s' | { read title; gh pr edit --title \"$title\"; } && \
-		git show -s --format='%b' | gh pr edit --body-file -; \
-	}; f"
+	pr-sync = "!git show -s --format='%b' | \
+		gh pr edit \
+			--title \"$(git show -s --format='%s')\" \
+			--body-file -"
 
 # Colours for diff-so-fancy to not fail on new-files
 [color "diff-highlight"]
