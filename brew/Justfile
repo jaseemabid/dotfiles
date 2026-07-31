@@ -14,7 +14,7 @@
 @install:
     brew update && brew upgrade --yes
     brew bundle --jobs $(sysctl -n hw.logicalcpu)
-    brew bundle cleanup --force && brew cleanup
+    brew bundle cleanup --force && brew cleanup --scrub --prune=all
 
 # Watch for Brewfile and keep syncing
 @watch:
