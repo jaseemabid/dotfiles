@@ -137,6 +137,9 @@ brew "librsvg"
 # LLM inference in C/C++
 brew "llama.cpp"
 
+# Deep clean and optimize your Mac
+brew "mole"
+
 # Collection of tools that nobody wrote when UNIX was young
 brew "moreutils"
 
@@ -270,11 +273,11 @@ cask "font-terminus"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
 
-# GPU-based terminal emulator (tmux-free workflow, see kitty/)
-cask "kitty"
-
 # Speech to text application
 cask "handy"
+
+# GPU-based terminal emulator
+cask "kitty"
 
 # Interactive tool for analyzing MongoDB data
 cask "mongodb-compass"
@@ -317,6 +320,3 @@ cask "zen"
 
 # Video communication and virtual meeting platform
 cask "zoom"
-
-# Desktop client for the Zulip team chat platform
-cask "zulip"
