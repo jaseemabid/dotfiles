@@ -89,7 +89,10 @@ zstyle ':omz:plugins:eza' 'dirs-first' yes
 # Load custom plugins from non std path for simpler stow packages
 source ~/.config/fzf-tab/fzf-tab.plugin.zsh
 
-[[ -s "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
+for file in ~/.config/zshrc.d/*.zsh(N.); do
+    source "$file"
+done
+unset file
 
 source $ZSH/oh-my-zsh.sh
 
