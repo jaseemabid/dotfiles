@@ -1,10 +1,12 @@
-# -*-sh-*-
-
-# Evaluated after ~/.zshenv
+# Interactive shell configuration, loaded after .zshenv.
+#
+# Prompts, plugins, command initialization, and interactive-only variables.
 
 typeset -U path PATH fpath FPATH
+
 cdpath=(~/src)
 fpath=(/opt/homebrew/share/zsh/site-functions $fpath)
+
 path=(
     ~/.local/bin
     ~/.cargo/bin
@@ -20,10 +22,60 @@ path=(
 
     $path)
 
-# Skip most of shell setup for dumb terminals and IDEs quit early
+# Skip most shell setup for IDE environment readers.
 if [[ ${VSCODE_RESOLVING_ENVIRONMENT+x} ]] ||
    [[ ${INTELLIJ_ENVIRONMENT_READER+x} ]]; then
     return
+fi
+
+# Environment used by interactive tools and shell features.
+export EDITOR="/opt/homebrew/bin/zed --wait"
+export VISUAL="$EDITOR"
+export MANPAGER="sh -c 'col -bx | bat --plain --theme=\"Monokai Extended Bright\" -l man'"
+export MANROFFOPT="-c"
+
+# Zsh history
+setopt HIST_FCNTL_LOCK
+export HISTSIZE=999999
+export HISTFILESIZE=999999
+export SAVEHIST=100000
+
+# fzf
+# See /opt/homebrew/opt/fzf/shell/key-bindings.zsh for docs.
+export FZF_DEFAULT_OPTS=''
+export FZF_COMPLETION_OPTS='--info=inline' # Show the 30/434 info inline
+export FZF_DEFAULT_COMMAND='fd --hidden --type f --strip-cwd-prefix' # Find files with f
+export FZF_ALT_C_COMMAND='fd --hidden --type d --strip-cwd-prefix' # ALT-C - cd into the dir
+export FZF_CTRL_R_OPTS='--exact' # Fuzzy match is far too noisy for history
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND" # CTRL-T - Paste the selected files to prompt
+export FZF_CTRL_T_OPTS="
+  --preview 'bat -n --color=always {}'
+  --bind 'ctrl-/:change-preview-window(down|hidden|)'" # Preview Ctrl+T with bat
+
+# Command-line tool configuration.
+export RIPGREP_CONFIG_PATH=~/.config/ripgrep/config
+export ZSH_COMPDUMP=~/.cache/zsh/zcompdump-${ZSH_VERSION}
+export LESSHISTFILE=~/.cache/less/history
+export NPM_CONFIG_CACHE="$HOME/.cache/npm"
+export NPM_CONFIG_USERCONFIG="$HOME/.config/npm/npmrc"
+export AWS_PAGER='jq .'
+
+if [[ "$OSTYPE" == darwin* ]]; then
+    export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
+
+    # Homebrew's dynamic environment setup is intentionally interactive-only.
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+
+    export HOMEBREW_BUNDLE_DUMP_NO_CARGO=1
+    export HOMEBREW_BUNDLE_DUMP_NO_FLATPAK=1
+    export HOMEBREW_BUNDLE_DUMP_NO_GO=1
+    export HOMEBREW_BUNDLE_DUMP_NO_KREW=1
+    export HOMEBREW_BUNDLE_DUMP_NO_NPM=1
+    export HOMEBREW_BUNDLE_DUMP_NO_UV=1
+    export HOMEBREW_BUNDLE_DUMP_NO_VSCODE=1
+    export HOMEBREW_BUNDLE_DUMP_NO_WINGET=1
+    export HOMEBREW_NO_AUTO_UPDATE=1
+    export HOMEBREW_NO_ENV_HINTS=1
 fi
 
 # Auto-attach to tmux in first Ghostty terminal only
