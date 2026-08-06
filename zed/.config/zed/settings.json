@@ -94,7 +94,7 @@
   },
   "search": { "button": false },
   "show_whitespaces": "selection",
-  "soft_wrap": "bounded",
+  "soft_wrap": "none",
   "tab_bar": { "show_nav_history_buttons": false },
   "tabs": { "file_icons": true, "git_status": true },
   "terminal": {
