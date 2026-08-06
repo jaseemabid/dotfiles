@@ -90,6 +90,12 @@ if [[ -z "$TMUX" ]] &&
     fi
 fi
 
+# Enable Powerlevel10k instant prompt. This stays after the tmux handoff so a
+# Ghostty launch doesn't render a prompt immediately before exec'ing tmux.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Setup oh-my-zsh
 DISABLE_AUTO_UPDATE="true"
 DISABLE_AUTO_TITLE="true"
