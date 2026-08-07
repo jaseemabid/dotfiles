@@ -1,0 +1,16 @@
+#!/usr/bin/env python3
+
+"""Percent-decode URLs from stdin (or argv) for readability"""
+
+import sys
+from urllib.parse import unquote
+
+
+def main() -> None:
+    lines = sys.argv[1:] or sys.stdin
+    for line in lines:
+        print(unquote(line.rstrip("\n"), errors="replace"))
+
+
+if __name__ == "__main__":
+    main()
