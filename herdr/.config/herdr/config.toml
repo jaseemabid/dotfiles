@@ -1,0 +1,30 @@
+onboarding = false
+
+[keys]
+prefix = "f3"
+last_pane = "prefix+u"
+split_vertical = ["prefix+|", "prefix+\\"]
+
+[[keys.command]]
+key = "prefix+shift+v"
+type = "popup"
+command = "$SHELL"
+width = "95%"
+height = "95%"
+
+[[keys.command]]
+key = "prefix+v"
+type = "popup"
+command = "lazygit"
+width = "95%"
+height = "95%"
+
+[theme]
+auto_switch = false
+name = "gruvbox"
+
+[ui.sound]
+enabled = false
+
+[ui.toast]
+delivery = "terminal"
