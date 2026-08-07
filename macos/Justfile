@@ -1,0 +1,10 @@
+# https://just.systems
+
+# Show available commands
+@_default:
+    just -u --list
+
+# Reload custom key bindings
+@reload-keys:
+    launchctl bootout "gui/$(id -u)/com.local.KeyRemapping" 2>/dev/null || true
+    launchctl bootstrap "gui/$(id -u)" "$HOME/Library/LaunchAgents/com.local.KeyRemapping.plist"
