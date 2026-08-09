@@ -122,9 +122,9 @@ else
     if [[ "$OSTYPE" == "linux-gnueabihf" ]]; then
         plugins=(eza sudo zoxide)
     elif [[ "$OSTYPE" == "linux-gnu" ]]; then
-        plugins=(common-aliases docker eza fzf git rust stack sudo zoxide)
+        plugins=(docker eza fzf git rust sudo zoxide)
     elif [[ "$OSTYPE" == "darwin"* ]]; then
-        plugins=(brew common-aliases docker eza fzf git rust zoxide)
+        plugins=(brew docker eza fzf git rust sudo zoxide)
     else
         echo "Unknown OS"
         exit 1
