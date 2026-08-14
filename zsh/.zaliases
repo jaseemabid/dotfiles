@@ -84,7 +84,10 @@ alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
 alias genpass="openssl rand -base64 12"
 alias l='command ls -1'
 alias less='less -S' # Chop long lines
+
 alias lg='lazygit'
+alias lgf='lazygit -f $(pwd)/.'
+
 unalias ll 2>/dev/null
 ll() {
     local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
