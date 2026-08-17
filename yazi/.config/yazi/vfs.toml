@@ -1,5 +1,4 @@
-[services.nyx]
-type = "sftp"
+[sftp.nyx]
 host = "nyx.jabid.in"
 user = "j"
 port = 22

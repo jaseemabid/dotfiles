@@ -1,10 +1,5 @@
 [[plugin.prepend_previewers]]
 group = "file"
-url = "*Justfile"
-run = 'piper -- bat --style plain --color=always "$1"'
-
-[[plugin.prepend_previewers]]
-group = "file"
 url = "*.md"
 run = 'piper -- CLICOLOR_FORCE=1 glow -w=$w -s=dark "$1"'
 
@@ -12,6 +7,11 @@ run = 'piper -- CLICOLOR_FORCE=1 glow -w=$w -s=dark "$1"'
 group = "file"
 mime = "text/html"
 run = 'piper -- w3m -T text/html -dump "$1"'
+
+# Bat for all text files not matched by one of the rules above
+[[plugin.prepend_previewers]]
+mime = "text/*"
+run = 'piper -- bat --plain --color=always --paging=never --terminal-width="$w" "$1"'
 
 [[plugin.prepend_fetchers]]
 group = "file"
@@ -30,7 +30,7 @@ max_width = 2000
 max_height = 2000
 
 [opener]
-edit = [{ run = 'zed "$@"', desc = "Zed" }]
+edit = [{ run = '/opt/homebrew/bin/zed %s', desc = "Zed" }]
 
 [[opener.bulk-rename]]
 run = 'nvim "%s"'
