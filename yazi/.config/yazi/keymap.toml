@@ -4,6 +4,16 @@ run = "help"
 desc = "Open help"
 
 [[mgr.prepend_keymap]]
+on = "["
+run = "back"
+desc = "Go to previous location"
+
+[[mgr.prepend_keymap]]
+on = "]"
+run = "forward"
+desc = "Go to next location"
+
+[[mgr.prepend_keymap]]
 on = "<Enter>"
 run = "plugin smart-enter"
 desc = "Enter the child directory, or open the file"
