@@ -1,19 +1,19 @@
 onboarding = false
 
 [keys]
-prefix = "f3"
-last_pane = "prefix+u"
+prefix = "ctrl+g"
+goto = "prefix+t"
 split_vertical = ["prefix+|", "prefix+\\"]
 
 [[keys.command]]
-key = "prefix+shift+v"
+key = "prefix+v"
 type = "popup"
 command = "$SHELL"
 width = "95%"
 height = "95%"
 
 [[keys.command]]
-key = "prefix+v"
+key = "prefix+g"
 type = "popup"
 command = "lazygit"
 width = "95%"
@@ -27,4 +27,4 @@ name = "gruvbox"
 enabled = false
 
 [ui.toast]
-delivery = "terminal"
+delivery = "herdr"
