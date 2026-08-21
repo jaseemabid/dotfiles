@@ -1,0 +1,10 @@
+@_default:
+    just --list
+
+# Download everything from Kinesis
+download:
+    rsync -r /Volumes/ADV360/ .
+
+# Upload layout1 to Kinesis
+upload:
+   cp layouts/layout1.txt /Volumes/ADV360/layouts/layout1.txt
