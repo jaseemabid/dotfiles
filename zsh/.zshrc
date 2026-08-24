@@ -156,6 +156,11 @@ source $ZSH/oh-my-zsh.sh
 
 # A bunch of helpers
 
+# Kitty sends Option/Alt+Arrow as modified-arrow sequences. Bind them explicitly
+# because terminal multiplexers such as Herdr do not load kitty's zsh integration.
+bindkey $'\e[1;3D' backward-word
+bindkey $'\e[1;3C' forward-word
+
 # Alt-S inserts "sudo " at the start of line:
 insert_sudo () {
     zle beginning-of-line; zle -U "sudo "
