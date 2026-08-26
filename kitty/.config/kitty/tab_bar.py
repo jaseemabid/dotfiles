@@ -28,9 +28,8 @@ RED, ORANGE, YELLOW, GREEN, PURPLE = 0xBF616A, 0xD08770, 0xEBCB8B, 0xA3BE8C, 0xB
 POLAR_NIGHT_0, POLAR_NIGHT_1, POLAR_NIGHT_2 = 0x2E3440, 0x3B4252, 0x434C5E
 SNOW_STORM_1, SNOW_STORM_3 = 0xD8DEE9, 0xECEFF4
 
-# These terminal apps publish useful, self-managed titles. Match their full
-# foreground command lines so Node-based wrappers are included as well.
-TITLE_OWNING_PROGRAMS = frozenset({"yazi", "claude", "codex"})
+# These terminal apps publish useful, self-managed titles. Don't mess with them.
+TITLE_OWNING_PROGRAMS = frozenset({"herdr", "yazi", "claude", "codex"})
 
 # A hue per layout, so the active one is recognisable by colour alone.
 # No entry uses FROST_CYAN, PURPLE or RED: those mean active tab, activity and

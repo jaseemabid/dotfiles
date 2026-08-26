@@ -23,8 +23,14 @@ height = "95%"
 auto_switch = false
 name = "gruvbox"
 
+[ui]
+window_title = "🐏 {workspace} · {terminal_title}"
+
 [ui.sound]
 enabled = false
 
 [ui.toast]
 delivery = "herdr"
+
+[experimental]
+kitty_graphics = true
