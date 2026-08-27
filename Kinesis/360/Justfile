@@ -1,10 +1,29 @@
 @_default:
-    just --list
+    just -u --list
 
-# Download everything from Kinesis
-download:
-    rsync -r /Volumes/ADV360/ .
+mount_path := "/Volumes/ADV360"
 
-# Upload layout1 to Kinesis
-upload:
-   cp layouts/layout1.txt /Volumes/ADV360/layouts/layout1.txt
+# Block until the keyboard's USB volume is mounted.
+wait-for-mount:
+    @if [ ! -d "{{mount_path}}" ]; then \
+        echo "Waiting for {{mount_path}}…"; \
+        while [ ! -d "{{mount_path}}" ]; do sleep 1; done; \
+    fi
+    @echo "Found {{mount_path}}"
+
+# Download keyboard files from Kinesis, excluding OS volume metadata.
+download: wait-for-mount
+    rsync -r \
+        --exclude='.fseventsd/' \
+        --exclude='System Volume Information/' \
+        --exclude='._*' \
+        {{mount_path}}/ .
+
+# Remove OS metadata files from the keyboard volume.
+clean: wait-for-mount
+    find {{mount_path}} -type f -name '._*' -delete
+    rm -rf {{mount_path}}/.fseventsd "{{mount_path}}/System Volume Information"
+
+# Upload config files to Kinesis
+upload: wait-for-mount
+   cp layouts/layout1.txt {{mount_path}}/layouts/layout1.txt
