@@ -276,6 +276,9 @@ cask "font-terminus"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
 
+# Web browser
+cask "google-chrome"
+
 # Speech to text application
 cask "handy"
 

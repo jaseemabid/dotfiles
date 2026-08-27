@@ -33,8 +33,8 @@
 --
 --   Fzf - Misc:
 --     <leader> : - Commands
---     <leader> m m - Keybindings
---     <leader> m c - Color schemes
+--     <leader> m m - Key bindings
+--     <leader> m c - Colour schemes
 --     <leader> m w - Windows
 --     <leader> m t - Tags
 --
@@ -163,6 +163,10 @@ require("mini.diff").setup()
 require("mini.icons").setup()
 require("mini.pairs").setup()
 require("mini.statusline").setup()
+require("mini.tabline").setup({
+  -- List open buffers and show `Tab current/total` when using tabpages.
+  tabpage_section = "right",
+})
 require("mini.surround").setup()
 require("mini.trailspace").setup()
 
@@ -224,6 +228,12 @@ end
 keymap("n", "<leader>ff", ":Files<CR>", "All files")
 keymap("n", "<leader>fg", ":GFiles<CR>", "Git files")
 keymap("n", "<leader>fb", ":Buffers<CR>", "Buffers")
+
+-- Tabs
+keymap("n", "<leader>tn", ":tabnew<CR>", "New tab")
+keymap("n", "<leader>tc", ":tabclose<CR>", "Close current tab")
+keymap("n", "<leader>t[", ":tabprevious<CR>", "Previous tab")
+keymap("n", "<leader>t]", ":tabnext<CR>", "Next tab")
 
 -- Fzf - Search
 keymap("n", "<leader>ss", ":Rg<CR>", "Search text in files")
