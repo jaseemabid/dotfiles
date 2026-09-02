@@ -6,15 +6,37 @@ else
     color=never
 fi
 
-git log \
+# Find all remote HEADS
+remote_head_targets=$(git for-each-ref --format='%(symref)' 'refs/remotes/*/HEAD')
+mainline_refs=
+mainline_decorate_refs=
+
+# For each remote head,
+for mainline_ref in $remote_head_targets; do
+    # Does the mainline ref resolve locally?
+    if git rev-parse --verify --quiet "$mainline_ref" >/dev/null; then
+        # If so, collect to a list
+        mainline_refs="$mainline_refs $mainline_ref"
+        # Add a git-log --decorate-refs option for it. Restricting decorations
+        # also limits --simplify-by-decoration to these selected refs, not tags.
+        mainline_decorate_refs="$mainline_decorate_refs --decorate-refs=$mainline_ref"
+    fi
+done
+
+# Args intentionally unquoted: these expand into individual git-log arguments.
+# Limit decorations too: --simplify-by-decoration would otherwise retain every tag.
+# shellcheck disable=SC2086
+git log $mainline_decorate_refs $mainline_refs \
     --graph \
     --boundary \
     --simplify-by-decoration \
+    --decorate-refs='refs/heads/*' \
+    --decorate-refs='refs/remotes/*/jabid/*' \
     --branches \
-    --remotes \
-    "$@" \
+    --remotes='*/jabid/*' \
     --color="$color" \
     --format='%x1f%C(auto)%h%d %s' \
+    "$@" \
 | perl -Mutf8 -CSD -pe '
     if (s/^([^\x1f]*)\x1f//) {
         $graph = $1;
