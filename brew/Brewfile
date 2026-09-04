@@ -35,9 +35,6 @@ brew "cpanminus"
 # Modern diagram scripting language that turns text to diagrams
 brew "d2"
 
-# Good-lookin' diffs with diff-highlight and more
-brew "diff-so-fancy"
-
 # File comparison utilities
 brew "diffutils"
 
@@ -127,9 +124,6 @@ brew "kubernetes-cli"
 
 # Lazier way to manage everything docker
 brew "lazydocker"
-
-# Simple terminal UI for git commands
-brew "lazygit"
 
 # Library for encoding and decoding .avif files
 brew "libavif"
