@@ -41,3 +41,4 @@ macos: _setup
 # Autoformat
 @fmt:
     just --fmt
+    RUST_LOG=warn taplo fmt -o reorder_keys=true herdr/.config/herdr/config.toml
