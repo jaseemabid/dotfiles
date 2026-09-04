@@ -1,36 +1,50 @@
 onboarding = false
 
+[experimental]
+kitty_graphics = true
+
 [keys]
-prefix = "ctrl+g"
 goto = "prefix+t"
+prefix = "ctrl+g"
 split_vertical = ["prefix+|", "prefix+\\"]
 
 [[keys.command]]
+command = "$SHELL"
+height = "95%"
 key = "prefix+v"
 type = "popup"
-command = "$SHELL"
 width = "95%"
-height = "95%"
 
 [[keys.command]]
+command = "lazygit"
+height = "95%"
 key = "prefix+g"
 type = "popup"
-command = "lazygit"
 width = "95%"
-height = "95%"
+
+[session]
+resume_agents_on_restore = false
 
 [theme]
 auto_switch = false
 name = "gruvbox"
 
 [ui]
+agent_panel_sort = "priority"
+prompt_new_tab_name = false
+sidebar_max_width = 40
+sidebar_min_width = 40
 window_title = "🐏 {workspace} · {terminal_title}"
+
+[ui.sidebar.agents]
+row_gap = 1
+rows = [["state_icon", "workspace", "tab"], ["terminal_title_stripped"]]
+
+[ui.sidebar.spaces]
+row_gap = 1
 
 [ui.sound]
 enabled = false
 
 [ui.toast]
 delivery = "herdr"
-
-[experimental]
-kitty_graphics = true
