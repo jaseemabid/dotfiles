@@ -27,25 +27,72 @@ git:
       command: difft --color=always --context={{diffContext}}
 
 customCommands:
+
   - key: "F"
     command: "git fixup"
     context: "files"
     description: "Run git fixup"
-  - key: "U"
-    command: "gh pr create --fill"
-    context: "localBranches"
-    description: "Create GitHub PR"
-    loadingText: "Creating PR..."
-    output: none
+
   - key: "e"
     command: 'if [ -d "{{.SelectedPath}}" ]; then yazi "{{.SelectedPath}}"; else zed "{{.SelectedPath}}"; fi'
     context: "files"
     description: "Open in yazi/zed"
     output: none
-  - key: "O"
-    command: "git open"
-    context: "global"
-    description: "Open repo on GitHub"
+
+  # https://github.com/jesseduffield/lazygit/blob/master/docs/Custom_Command_Keybindings.md#menus-of-custom-commands
+  - key: "h" # h for hub in Github.
+    description: "GitHub"
+    commandMenu:
+      - key: "c"
+        command: "gh pr create --fill"
+        context: "localBranches"
+        description: "Create PR"
+        loadingText: "Creating PR..."
+        output: none
+      - key: "v"
+        command: "gh pr view --web"
+        context: "global"
+        description: "View PR in browser"
+        output: none
+      - key: "l"
+        command: "gh pr list --limit 50"
+        context: "global"
+        description: "List PRs"
+        output: popup
+        outputTitle: "Pull requests"
+      - key: "i"
+        command: "gh issue list --limit 50"
+        context: "global"
+        description: "List issues"
+        output: popup
+        outputTitle: "Issues"
+      - key: "w"
+        command: "gh run list --limit 15"
+        context: "global"
+        description: "Workflow runs"
+        output: popup
+        outputTitle: "Workflow runs"
+      - key: "k"
+        command: "gh pr checks"
+        context: "global"
+        description: "PR checks"
+        output: popup
+        outputTitle: "PR checks"
+      - key: "y"
+        command: "gh pr view --json url --jq .url | tr -d '\n' | pbcopy"
+        context: "global"
+        description: "Copy PR URL"
+        output: none
+      - key: "o"
+        command: "git open"
+        context: "global"
+        description: "Open repo on GitHub"
+        output: none
+      - key: "b"
+        command: "gh browse {{.SelectedPath}}"
+        context: "files"
+        description: "Open selected file on GitHub"
+        output: none
 
 gui:
   nerdFontsVersion: "3"
@@ -59,6 +106,15 @@ gui:
 os:
   editPreset: "zed"
   openDirInEditor: "yazi {{dir}}"
+
+# https://github.com/jesseduffield/lazygit/blob/master/docs/keybindings/Custom_Keybindings.md
+# Disable h/l for panel movement (arrows and tab still work)
+keybinding:
+  universal:
+    prevBlock-alt: <disabled>
+    nextBlock-alt: <disabled>
+  files:
+    toggleStagedAll: <disabled>
 
 disableStartupPopups: true
 promptToReturnFromSubprocess: false
