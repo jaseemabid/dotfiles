@@ -113,5 +113,7 @@
   "vim": { "gdefault": true, "use_smartcase_find": true },
   "vim_mode": true, // See https://zed.dev/docs/vim for keybindings
   "when_closing_with_no_tabs": "close_window",
-  "which_key": { "delay_ms": 150, "enabled": true },
+  // Feature request: which-key popup should persist until next keystroke or Escape
+  // https://github.com/zed-industries/zed/issues/48783
+  "which_key": { "delay_ms": 100, "enabled": true },
 }
