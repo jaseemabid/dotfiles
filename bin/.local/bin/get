@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+# Smarter git clone. Wrapped by a shell function that cds to the printed path:
+#
+#   get() { local d; d=$(command get "$@") && cd "$d"; }
+#
+set -euo pipefail
+
+input="${1:-}"
+shift || true
+if [[ -z "$input" ]]; then
+    echo "usage: get <url|owner/repo> [git-clone-args...]" >&2
+    exit 2
+fi
+
+host="github.com"
+if [[ "$input" == git@*:* ]]; then
+    # scp-style: git@host:owner/repo
+    host="${input#git@}"; host="${host%%:*}"
+    spec="${input#git@*:}"
+elif [[ "$input" == *://* ]]; then
+    # https://host/owner/repo[.git][/blob/...]
+    spec="${input#*://}"
+    host="${spec%%/*}"
+    spec="${spec#*/}"
+else
+    # bare owner/repo shorthand -> github.com
+    spec="$input"
+fi
+
+spec="${spec%.git}"
+spec="${spec%/}"
+owner="${spec%%/*}"
+rest="${spec#*/}"
+repo="${rest%%/*}"
+if [[ -z "$owner" || -z "$repo" || "$owner" == "$spec" ]]; then
+    echo "get: cannot parse '$input'" >&2
+    exit 1
+fi
+
+dest="$HOME/src/$owner/$repo"
+if [[ -d "$dest" ]]; then
+    :
+else
+    mkdir -p "$HOME/src/$owner"
+    git clone "https://$host/$owner/$repo.git" "$dest" "$@"
+fi
+echo "$dest"

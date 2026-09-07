@@ -56,7 +56,8 @@ figlet-preview() {
 }
 
 # git; lot more provided by git plugin
-alias get='git clone'
+# shellcheck disable=SC2164
+get() { local d; d=$(command get "$@"); cd "$d"; }
 alias gg='git checkout'
 alias gl='git l'
 alias got='git'
