@@ -208,5 +208,14 @@ fi
 
 eval "$(atuin init zsh)"
 
+# Disable plain Enter on an empty line.
+_accept-line() {
+  if [[ -z $BUFFER && $CONTEXT == start ]]; then
+    return 0
+  fi
+  zle .accept-line
+}
+zle -N accept-line _accept-line
+
 # Return success if everything went right
 true
