@@ -48,15 +48,16 @@ export FZF_DEFAULT_COMMAND='fd --hidden --type f --strip-cwd-prefix' # Find file
 export FZF_ALT_C_COMMAND='fd --hidden --type d --strip-cwd-prefix' # ALT-C - cd into the dir
 export FZF_CTRL_R_OPTS='--exact' # Fuzzy match is far too noisy for history
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND" # CTRL-T - Paste the selected files to prompt
-# Ctrl+T opens fzf; Alt-A/G/D switch all / git-tracked / dirty; Alt-E open in Zed; Alt-Y copy path
+# Ctrl+T opens fzf; ⌥f files · ⌥d dirs · ⌥g tracked · ⌥c dirty · ⌥e edit · ⌥y yank
 export FZF_CTRL_T_OPTS="
-  --prompt 'All> '
-  --header 'All files · Alt-G tracked · Alt-D dirty'
+  --prompt 'Files> '
+  --header '⌥f files · ⌥d dirs · ⌥g tracked · ⌥c dirty · ⌥e edit · ⌥y yank'
   --preview 'bat -n --color=always {}'
   --bind 'ctrl-/:change-preview-window(down|hidden|)'
-  --bind 'alt-a:reload(fd --hidden --type f --strip-cwd-prefix | sort)+change-prompt(All> )+change-header(All files · Alt-G tracked · Alt-D dirty)'
-  --bind 'alt-g:reload(git ls-files)+change-prompt(Tracked> )+change-header(Git-tracked · Alt-A all · Alt-D dirty)'
-  --bind 'alt-d:reload(git status --porcelain | cut -c4-)+change-prompt(Dirty> )+change-header(Dirty files · Alt-A all · Alt-G tracked)'
+  --bind 'alt-f:reload(fd --hidden --type f --strip-cwd-prefix | sort)+change-prompt(Files> )'
+  --bind 'alt-d:reload(fd --hidden --type d --strip-cwd-prefix | sort)+change-prompt(Dirs> )'
+  --bind 'alt-g:reload(git ls-files)+change-prompt(Tracked> )'
+  --bind 'alt-c:reload(git status --porcelain | cut -c4-)+change-prompt(Dirty> )'
   --bind 'alt-e:execute-silent(zed {} 2>/dev/null)+abort'
   --bind 'alt-y:execute-silent(echo {} | pbcopy)'"
 
