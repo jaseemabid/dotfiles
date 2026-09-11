@@ -28,6 +28,12 @@ git:
 
 customCommands:
 
+  - key: "y"
+    command: "printf %s {{.SelectedLocalBranch.Name | quote}} | pbcopy"
+    context: "localBranches"
+    description: "Copy branch name"
+    output: none
+
   - key: "F"
     command: "git fixup"
     context: "files"
