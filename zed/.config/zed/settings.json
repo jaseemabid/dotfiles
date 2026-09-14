@@ -59,7 +59,8 @@
     "CSS": {
       "language_servers": ["tailwindcss-intellisense-css", "!vscode-css-language-server", "..."],
     },
-    "Git Commit": { "wrap_guides": [50, 72] },
+    // `gq` reflows at preferred_line_length; wrap_guides are visual rulers only.
+    "Git Commit": { "preferred_line_length": 72, "wrap_guides": [50, 72] },
     "Python": {
       "code_actions_on_format": {
         "source.fixAll.ruff": true,
