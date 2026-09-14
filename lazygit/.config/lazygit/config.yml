@@ -8,6 +8,10 @@
 # cargo install --git ssh://git@github.com/stefanhaller/delta.git --branch osc-1717-metadata
 # diff-so-fancy fork: ~/src/stefanhaller/diff-so-fancy (osc-1717-metadata), linked into ~/.local/bin via stow
 
+disableStartupPopups: true
+notARepository: skip
+promptToReturnFromSubprocess: false
+
 git:
   # https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md#custom-git-log-command
   # Add --oneline to default command
@@ -101,12 +105,9 @@ customCommands:
         output: none
 
 gui:
-  nerdFontsVersion: "3"
-  authorColors:
-    "Jaseem Abid": "#32F5DD"
-    "*": "#D7A94F"
-  showDivergenceFromBaseBranch: arrowAndNumber
   filterMode: fuzzy
+  nerdFontsVersion: "3"
+  showDivergenceFromBaseBranch: arrowAndNumber
   shrinkSidePanelsToContent: true
 
 os:
@@ -121,7 +122,3 @@ keybinding:
     nextBlock-alt: <disabled>
   files:
     toggleStagedAll: <disabled>
-
-disableStartupPopups: true
-promptToReturnFromSubprocess: false
-notARepository: skip
