@@ -47,4 +47,6 @@ row_gap = 1
 enabled = false
 
 [ui.toast]
+clipboard.enabled = false
 delivery = "herdr"
+herdr.position = "bottom-left"
