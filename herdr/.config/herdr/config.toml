@@ -9,12 +9,12 @@ prefix = "ctrl+g"
 split_vertical = ["prefix+|", "prefix+\\"]
 
 # Jump jump
-switch_workspace = "ctrl+1..9" # Index jump spaces with `⌃n
-focus_agent = "prefix+1..9"    # Index jump agents with `⌃G n`
-next_tab = ["alt+right"]       # Next and prev tabs with → ←
-previous_tab = ["alt+left"]
-next_agent = "alt+down"        # agents: next # Next and prev agents with ↓ ↑
-previous_agent = "alt+up"      # agents: previous
+switch_workspace = "ctrl+1..9"      # Index jump spaces with `⌃n
+focus_agent = "prefix+1..9"         # Index jump agents with `⌃G n`
+next_tab = ["alt+shift+right"]      # Next and prev tabs with ⌥⇧→←, ⌥→← is jump words
+previous_tab = ["alt+shift+left"]
+next_agent = "alt+down"             # agents: next # Next and prev agents with ↓ ↑
+previous_agent = "alt+up"           # agents: previous
 
 [[keys.command]]
 command = "$SHELL"
