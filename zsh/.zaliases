@@ -83,9 +83,7 @@ alias gbc="git branch | fzf --reverse --cycle --height=40% --border --preview \
 alias dd="echo -e '★★★★★★★★★★★★★★★★★★★★★'; echo -e 'Are you fucking sure?\n'; sleep 7; dd "
 
 alias big="gstat -c %s $1 | numfmt --to=iec"
-alias die="xset dpms force off"
 alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
-alias genpass="openssl rand -base64 12"
 alias l='command ls -1'
 alias less='less -S' # Chop long lines
 
@@ -102,9 +100,7 @@ ll() {
     rm -f -- "$tmp"
 }
 alias mux="tmuxinator"
-alias record="ffmpeg -f x11grab -r 30 -s 1366x768 -i :0.0 -f alsa -ac 2 -i pulse -vcodec libx264 -acodec pcm_s16le screencast.mkv"
 alias t='tmux'
-alias ts="tig status" # Overwrite tmux plugin
 alias vi="nvim"
 alias vim="nvim"
 
@@ -122,21 +118,6 @@ alias yt="youtube-dl -wci -o '%(title)s-%(id)s.%(ext)s'"
 # Remove trailing whitespace
 # http://stackoverflow.com/questions/4438306/removing-trailing-whitespace-with-sed
 alias ws='gsed -i '\''s/[ \t]*$//'\'' '
-
-# http://hamberg.no/erlend/posts/2013-01-18-mkcd.html
-mkcd () {
-    mkdir -p "${1}"
-    cd "${1}"
-}
-
-# Untar to a local folder of the same name
-untar() {
-    local archive="$1"
-    local dest="${2:-${archive%.tar.gz}}"
-    dest="${dest%.tgz}"
-    mkdir -p "$dest"
-    tar --directory "$dest" --extract --verbose --file "$archive"
-}
 
 # Pipes
 alias -g C='| wc -l'
