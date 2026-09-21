@@ -58,6 +58,9 @@ figlet-preview() {
 # git; lot more provided by git plugin
 # shellcheck disable=SC2164
 get() { local d; d=$(command get "$@"); cd "$d"; }
+
+alias zz='cd "$(git rev-parse --show-toplevel 2>/dev/null || echo .)"'
+
 alias gg='git checkout'
 alias gl='git l'
 alias got='git'
