@@ -38,6 +38,14 @@ macos: _setup
     stow vscode
     stow zed
 
+# Re-render and reload the HID key remapping launch agent
+@rebind-keys:
+    pkl eval macos/Library/LaunchAgents/com.local.KeyRemapping.pkl \
+        -o macos/Library/LaunchAgents/com.local.KeyRemapping.plist
+    launchctl bootout "gui/$(id -u)/com.local.KeyRemapping" 2>/dev/null || true
+    launchctl bootstrap "gui/$(id -u)" \
+        macos/Library/LaunchAgents/com.local.KeyRemapping.plist
+
 # Autoformat
 @fmt:
     just --fmt

@@ -1,0 +1,76 @@
+// Remap keys with hidutil
+//
+// MissionControl → F3
+// Spotlight → F4
+// Dictation → F5
+//
+// Standard HID names and values come from:
+// https://www.usb.org/sites/default/files/hut1_7.pdf
+// https://github.com/apple-oss-distributions/IOHIDFamily/blob/main/IOHIDFamily/IOHIDUsageTables.h
+//
+// The built-in keyboard driver reveals its top-row sources with:
+// ioreg -r -c AppleHIDKeyboardEventDriverV2 -l | grep FnFunctionUsageMap
+//
+// Its relevant pairs are (standard function-key usage, default top-row usage):
+//   0x0007003C, 0xFF010010  // F3, Mission Control
+//   0x0007003D, 0x000C0221  // F4, Spotlight / AC Search
+//   0x0007003E, 0x000C00CF  // F5, Dictation / Voice Command
+//
+// ioreg encodes a usage as (page << 16) | usage. hidutil instead requires
+// (page << 32) | usage, which is what hidUsage produces below.
+local function hidUsage(page: Int, usage: Int): Int = page * 4_294_967_296 + usage
+
+// Source: https://github.com/apple-oss-distributions/IOHIDFamily/blob/main/IOHIDFamily/IOHIDUsageTables.h#L43
+local keyboardPage = 0x0007
+// Source: https://github.com/apple-oss-distributions/IOHIDFamily/blob/main/IOHIDFamily/IOHIDUsageTables.h#L48
+local consumerPage = 0x000C
+// Vendor-defined page; the source usages below come from this Mac's keyboard driver.
+local appleVendorPage = 0xFF01
+
+// Source: https://github.com/apple-oss-distributions/IOHIDFamily/blob/main/IOHIDFamily/IOHIDUsageTables.h#L452-L454
+local f3 = hidUsage(keyboardPage, 0x003C)
+local f4 = hidUsage(keyboardPage, 0x003D)
+local f5 = hidUsage(keyboardPage, 0x003E)
+
+// These values were read from the built-in keyboard's FnFunctionUsageMap:
+// ioreg -r -c AppleHIDKeyboardEventDriverV2 -l | grep FnFunctionUsageMap
+local missionControl = hidUsage(appleVendorPage, 0x0010)
+// Source: https://github.com/apple-oss-distributions/IOHIDFamily/blob/main/IOHIDFamily/IOHIDUsageTables.h#L1327
+local spotlight = hidUsage(consumerPage, 0x0221)
+// Source: https://github.com/apple-oss-distributions/IOHIDFamily/blob/main/IOHIDFamily/IOHIDUsageTables.h#L1172
+local dictation = hidUsage(consumerPage, 0x00CF)
+
+local mappings =
+  List(
+    // Remove default special actions on F3, F4 & F5 so that they can be bound elsewhere.
+    new Dynamic { source = missionControl; destination = f3 },
+    new Dynamic { source = spotlight; destination = f4 },
+    new Dynamic { source = dictation; destination = f5 },
+  )
+
+local mappingJson =
+  new JsonRenderer {}.renderDocument(new Dynamic {
+    UserKeyMapping =
+      mappings.map((mapping) -> new Dynamic {
+        HIDKeyboardModifierMappingSrc = mapping.source
+        HIDKeyboardModifierMappingDst = mapping.destination
+      })
+  })
+
+local launchAgent = new Dynamic {
+  Label = "com.local.KeyRemapping"
+  ProgramArguments = List("/usr/bin/hidutil", "property", "--set", mappingJson)
+  RunAtLoad = true
+}
+
+local plist = new PListRenderer {}.renderDocument(launchAgent)
+
+output {
+  text =
+    plist
+      .replaceFirst(
+        "?>\n",
+        "?>\n<!-- Generated from com.local.KeyRemapping.pkl; do not edit directly. -->\n",
+      )
+      .replaceAll("&quot;", "\"")
+}
