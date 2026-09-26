@@ -7,8 +7,7 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "auto_update": false,
-  "agent": { "notify_when_agent_waiting": "never" },
+  "agent": { "dock": "right", "notify_when_agent_waiting": "never" },
   "agent_servers": {
     "claude-acp": {
       "default_config_options": { "model": "opus[1m]", "mode": "auto" },
@@ -21,10 +20,14 @@
     },
     "pi-acp": { "type": "registry" },
   },
+  "agent_ui_font_size": 14.0,
+  "auto_update": false,
   "base_keymap": "VSCode",
+  "buffer_font_family": "MesloLGS NF",
+  "buffer_font_size": 14.0,
   "cli_default_open_behavior": "new_window",
   "close_on_file_delete": true,
-  "collaboration_panel": { "button": false },
+  "collaboration_panel": { "dock": "left", "button": false },
   "colorize_brackets": true,
   "file_finder": { "file_icons": true, "include_ignored": "all" },
   "file_types": {
@@ -65,7 +68,7 @@
     "**/target",
     "**/venv",
   ],
-  "git_panel": { "tree_view": true },
+  "git_panel": { "dock": "left", "tree_view": true },
   "indent_guides": { "coloring": "indent_aware" },
   "languages": {
     "CSS": {
@@ -95,9 +98,12 @@
       },
     },
   },
+  "markdown_preview": { "font_size": 15.0, "font_family": "MesloLGS NF" },
   "on_last_window_closed": "quit_app",
+  "outline_panel": { "dock": "left" },
   "preferred_line_length": 100,
   "project_panel": {
+    "dock": "left",
     "diagnostic_badges": true,
     "file_icons": false,
     "git_status_indicator": true,
@@ -108,9 +114,12 @@
   "search": { "button": false },
   "show_whitespaces": "selection",
   "soft_wrap": "none",
+  "status_bar": { "cursor_position_button": false },
   "tab_bar": { "show_nav_history_buttons": false },
-  "tabs": { "file_icons": true, "git_status": true },
+  "tabs": { "close_position": "left", "file_icons": true, "git_status": true },
+  "title_bar": { "show_user_picture": false, "show_branch_status_icon": true },
   "terminal": {
+    "button": true,
     "env": { "GIT_EDITOR": "zed --wait" },
   },
   "theme": {
