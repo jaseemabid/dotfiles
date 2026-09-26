@@ -1,5 +1,5 @@
 # https://just.systems
-# Dependencies: op (1Password CLI), openssl, uv
+# Dependencies: op (1Password CLI), uv
 
 set lazy
 
@@ -10,10 +10,6 @@ OUT := "/Users/j/Notes/Styx/Files/Raycast"
 @_default:
     just -u --list
 
-# Decode v1.rayconfig to v1.config.json and v1.keys.txt
-@decode_1:
-    PASSWORD="{{ PASSWORD }}" ./main.py --from v1 --out {{ OUT }}
-
-# Decode V2.rayconfig to v2.config.json and v2.keys.txt
-@decode_2:
-    PASSWORD="{{ PASSWORD }}" ./main.py --from v2 --out {{ OUT }}
+# Decode config.data to config.json and keys.txt
+@decode:
+    PASSWORD="{{ PASSWORD }}" ./main.py --out {{ OUT }}

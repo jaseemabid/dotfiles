@@ -6,11 +6,11 @@
 #     "cryptography",
 # ]
 # ///
-"""Decode a Raycast rayconfig export (v1 or v2) into JSON + keybindings.
+"""Decode a Raycast rayconfig export into JSON + keybindings.
 
-v1 exports are AES-256-CBC (EVP_BytesToKey, no salt) + gzip, decrypted via openssl.
-v2 exports are gzip-wrapped JSON with the payload AES-256-GCM encrypted, keyed by
-scrypt(password, salt), then gzip again.
+The RAYCFG3 container: b"RAYCFG3\\n" + u32le (gzip header member size) +
+gzip(header JSON: encryption.iv/salt) + AES-256-GCM(gzip(payload),
+scrypt(password, salt)) ciphertext + 16-byte tag.
 """
 
 import gzip
@@ -18,8 +18,8 @@ import hashlib
 import json
 import os
 import re
-import subprocess
-from enum import StrEnum
+import struct
+import zlib
 from pathlib import Path
 from typing import Optional
 
@@ -127,14 +127,6 @@ KEYCODES = {
 }
 
 
-class Version(StrEnum):
-    v1 = "v1"
-    v2 = "v2"
-
-
-DEFAULT_FILES = {Version.v1: "v1.rayconfig", Version.v2: "V2.rayconfig"}
-
-
 def decode_keycode(hotkey: str) -> str:
     return re.sub(
         r"-(\d+)$",
@@ -143,7 +135,7 @@ def decode_keycode(hotkey: str) -> str:
     )
 
 
-def v2_hotkey(node: dict) -> Optional[str]:
+def parse_hotkey(node: dict) -> Optional[str]:
     shortcut = node.get("kind", {}).get("shortcut")
     if not shortcut:
         return None
@@ -158,9 +150,9 @@ def extract_keybindings(obj):
             yield {"hotkey": obj["hotkey"], "key": obj.get("key") or obj.get("alias")}
         for hotkey_field in ("macosHotkey", "globalHotkey"):
             if hotkey_field in obj:
-                hotkey = v2_hotkey(obj[hotkey_field])
-                if hotkey is not None:
-                    yield {"hotkey": hotkey, "key": obj.get("id", "global")}
+                hk = parse_hotkey(obj[hotkey_field])
+                if hk is not None:
+                    yield {"hotkey": hk, "key": obj.get("id", "global")}
         for value in obj.values():
             yield from extract_keybindings(value)
     elif isinstance(obj, list):
@@ -168,35 +160,17 @@ def extract_keybindings(obj):
             yield from extract_keybindings(item)
 
 
-def decrypt_v1(file: Path, password: str) -> bytes:
-    proc = subprocess.run(
-        [
-            "openssl",
-            "enc",
-            "-d",
-            "-aes-256-cbc",
-            "-nosalt",
-            "-in",
-            str(file),
-            "-pass",
-            f"pass:{password}",
-        ],
-        stdout=subprocess.PIPE,
-        stderr=subprocess.DEVNULL,
-        check=True,
-    )
-    return gzip.decompress(proc.stdout[16:])
+def decrypt(file: Path, password: str) -> bytes:
+    raw = file.read_bytes()
+    if not raw.startswith(b"RAYCFG3\n"):
+        raise ValueError(f"not a RAYCFG3 export (magic {raw[:8]!r})")
 
-
-def decrypt_v2(file: Path, password: str) -> bytes:
-    with gzip.open(file, "rb") as f:
-        envelope = json.load(f)
-
-    enc = envelope["encryption"]
+    (n,) = struct.unpack("<I", raw[8:12])
+    header = json.loads(zlib.decompressobj(wbits=31).decompress(raw[12 : 12 + n]))
+    enc = header["encryption"]
     salt = bytes.fromhex(enc["salt"])
     iv = bytes.fromhex(enc["iv"])
-    tag = bytes.fromhex(enc["authTag"])
-    data = bytes.fromhex(envelope["data"])
+    data, tag = raw[12 + n : -16], raw[-16:]
 
     key = hashlib.scrypt(password.encode(), salt=salt, n=16384, r=8, p=1, dklen=32)
     plaintext = AESGCM(key).decrypt(iv, data + tag, None)
@@ -208,9 +182,8 @@ app = typer.Typer(add_completion=False)
 
 @app.command(no_args_is_help=True)
 def main(
-    from_: Version = typer.Option(..., "--from", help="Rayconfig export version"),
-    file: Optional[Path] = typer.Option(
-        None, "--file", help="rayconfig file to decode"
+    file: Path = typer.Option(
+        Path("config.data"), "--file", help="rayconfig file to decode"
     ),
     out: Path = typer.Option(
         Path("."),
@@ -222,19 +195,23 @@ def main(
         exists=True,
     ),
 ) -> None:
-    file = file or Path(DEFAULT_FILES[from_])
     password = os.environ["PASSWORD"]
-
-    decrypt = decrypt_v1 if from_ == Version.v1 else decrypt_v2
     data = json.loads(decrypt(file, password))
 
-    (out / f"{from_.value}.config.json").write_text(
-        json.dumps(data, indent=2) + "\n"
-    )
+    # history/telemetry/chat bloat, not config
+    for k in ("userActivity", "clipboardHistory", "ai", "emoji", "notes"):
+        data.pop(k, None)
+
+    # usage state, not config
+    data.get("settings", {}).pop("frecency", None)
+    for cmd in data.get("settings", {}).get("commands", []):
+        cmd.pop("meta", None)
+
+    (out / "config.json").write_text(json.dumps(data, indent=2) + "\n")
 
     bindings = sorted(extract_keybindings(data), key=lambda b: b["hotkey"])
     lines = [f"{decode_keycode(b['hotkey'])}\t{b['key']}" for b in bindings]
-    (out / f"{from_.value}.keys.txt").write_text("\n".join(lines) + "\n")
+    (out / "keys.txt").write_text("\n".join(lines) + "\n")
 
 
 if __name__ == "__main__":
