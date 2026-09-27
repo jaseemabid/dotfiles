@@ -35,7 +35,7 @@ resume_agents_on_restore = false
 
 [theme]
 auto_switch = false
-name = "gruvbox"
+name = "catppuccin"
 
 [ui]
 agent_panel_sort = "priority"
