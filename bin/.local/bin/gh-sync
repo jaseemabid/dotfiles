@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# gh sync — sync PR title and body with current commit message.
+set -euo pipefail
+
+git show -s --format='%b' | gh pr edit --title "$(git show -s --format='%s')" --body-file -

@@ -108,12 +108,6 @@
 	dshow = -c diff.external=difft show --ext-diff
 	ddiff = -c diff.external=difft diff
 
-	# Sync PR title and body with current commit message
-	pr-sync = "!git show -s --format='%b' | \
-		gh pr edit \
-			--title \"$(git show -s --format='%s')\" \
-			--body-file -"
-
 # Colours for diff-so-fancy to not fail on new-files
 [color "diff-highlight"]
 	newHighlight = green bold 22

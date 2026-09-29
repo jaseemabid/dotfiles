@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# gh copy — copy a markdown link to the current PR.
+set -euo pipefail
+
+gh pr view --json title,url -q '"🐙 [\(.title)](\(.url))"' | tee /dev/fd/3 3>&1 1>&2 | pbcopy
