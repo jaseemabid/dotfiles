@@ -32,8 +32,14 @@ brew "coreutils"
 # Get, unpack, build, and install modules from CPAN
 brew "cpanminus"
 
+# Tool for interacting with remote images and registries
+brew "crane"
+
 # Modern diagram scripting language that turns text to diagrams
 brew "d2"
+
+# Good-lookin' diffs with diff-highlight and more
+brew "diff-so-fancy"
 
 # File comparison utilities
 brew "diffutils"
@@ -68,6 +74,9 @@ brew "fzf"
 # GNU awk utility
 brew "gawk"
 
+# CLI for managing Grafana Cloud resources
+brew "gcx"
+
 # GitHub command-line tool
 brew "gh"
 
@@ -85,9 +94,6 @@ brew "gnutls"
 
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
-
-# Google Suite CLI
-brew "gogcli"
 
 # Agent multiplexer that lives in your terminal
 brew "herdr"
@@ -152,11 +158,11 @@ brew "ncdu"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 
+# Port scanning utility for large networks
+brew "nmap"
+
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
-
-# AI coding agent, built for the terminal
-brew "opencode"
 
 # Development kit for the Java programming language
 brew "openjdk"
@@ -187,6 +193,9 @@ brew "resvg"
 
 # Utility that provides fast incremental file transfer
 brew "rsync"
+
+# Safe, concurrent, practical language
+brew "rust"
 
 # Rust toolchain installer
 brew "rustup"
@@ -227,6 +236,9 @@ brew "uv"
 # Pager/text based browser
 brew "w3m"
 
+# Executes a program periodically, showing output fullscreen
+brew "watch"
+
 # Execute commands when watched files change
 brew "watchexec"
 
@@ -262,6 +274,7 @@ cask "1password-cli"
 
 # Anthropic's official Claude AI desktop app
 cask "claude"
+
 cask "font-jetbrains-mono"
 cask "font-meslo-lg-nerd-font"
 cask "font-monaspace"
@@ -317,6 +330,3 @@ cask "zed"
 
 # Gecko based web browser
 cask "zen"
-
-# Video communication and virtual meeting platform
-cask "zoom"
