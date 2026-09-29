@@ -4,12 +4,26 @@
 @_default:
     just --list --list-submodules --unsorted
 
-# Setup and install packages with Homebrew
-mod brew
-
 # Shared setup
 @_setup:
     mkdir -p ~/.config
+
+_common := 'bin git lazygit nvim podman shell tmux yazi zsh'
+_macos := _common + ' ghostty kitty vscode zed'
+_linux := _common
+_targets := if os() == 'macos' { _macos } else if os() == 'linux' { _linux } else { error('Unsupported OS: ' + os()) }
+
+# Install dotfiles for the current OS
+@stow: _setup
+    stow {{ _targets }}
+
+# Autoformat
+@fmt:
+    just --fmt
+    RUST_LOG=warn taplo fmt -o reorder_keys=true herdr/.config/herdr/config.toml
+
+# Setup and install packages with Homebrew
+mod brew
 
 # Install fonts
 @fonts: _setup
@@ -18,35 +32,10 @@ mod brew
     cd fonts/p10k && cp *.ttf ~/Library/Fonts/
     fc-cache
 
-# Install common dotfiles
-common: _setup
-    stow bin
-    stow git
-    stow lazygit
-    stow nvim
-    stow podman
-    stow shell
-    stow tmux
-    stow yazi
-    stow zsh
-
-# Install macOS-specific dotfiles
-macos: _setup
-    stow ghostty
-    stow kitty
-    stow lazygit
-    stow vscode
-    stow zed
-
-# Re-render and reload the HID key remapping launch agent
+# Rebind macOS keys with hidutil
 @rebind-keys:
     pkl eval macos/Library/LaunchAgents/com.local.KeyRemapping.pkl \
         -o macos/Library/LaunchAgents/com.local.KeyRemapping.plist
     launchctl bootout "gui/$(id -u)/com.local.KeyRemapping" 2>/dev/null || true
     launchctl bootstrap "gui/$(id -u)" \
         macos/Library/LaunchAgents/com.local.KeyRemapping.plist
-
-# Autoformat
-@fmt:
-    just --fmt
-    RUST_LOG=warn taplo fmt -o reorder_keys=true herdr/.config/herdr/config.toml
