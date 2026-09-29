@@ -1,0 +1,8 @@
+#!/usr/bin/env zsh
+# zed — open Zed, preferring the git repository root when inside one.
+root=$(git rev-parse --show-toplevel 2>/dev/null)
+if [[ -n "$root" ]]; then
+    exec /opt/homebrew/bin/zed "$root" "$@"
+else
+    exec /opt/homebrew/bin/zed "${@:-.}"
+fi

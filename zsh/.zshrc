@@ -10,6 +10,7 @@ fpath=(/opt/homebrew/share/zsh/site-functions $fpath)
 path=(
     ~/.local/bin
     ~/.cargo/bin
+    ~/.krew/bin
     ~/go/bin
 
     # Prefer homebrew versions over system. Ex git, python3
@@ -74,6 +75,10 @@ if [[ "$OSTYPE" == darwin* ]]; then
 
     # Homebrew's dynamic environment setup is intentionally interactive-only.
     eval "$(/opt/homebrew/bin/brew shellenv)"
+
+    # brew shellenv prepends /opt/homebrew/{s,}bin to PATH; re-assert user paths
+    # ahead of it. typeset -U (top of file) dedupes any repeats.
+    path=(~/.local/bin $path)
 
     export HOMEBREW_BUNDLE_DUMP_NO_CARGO=1
     export HOMEBREW_BUNDLE_DUMP_NO_FLATPAK=1

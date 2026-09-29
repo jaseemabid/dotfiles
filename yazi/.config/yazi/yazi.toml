@@ -29,8 +29,14 @@ run = "git"
 max_width = 2000
 max_height = 2000
 
-[opener]
-edit = [{ run = '/opt/homebrew/bin/zed %s', desc = "Zed" }]
+[[opener.edit]]
+run = '$HOME/.local/bin/zed %s'
+desc = "Zed"
+
+[[opener.edit]]
+run = 'nvim "%s"'
+block = true
+desc = "Neovim"
 
 [[opener.bulk-rename]]
 run = 'nvim "%s"'
