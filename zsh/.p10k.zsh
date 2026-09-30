@@ -33,6 +33,7 @@
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
     # =========================[ Line #1 ]=========================
     # os_icon               # os identifier
+    host                    # hostname (SSH only)
     dir                     # current directory
     vcs                     # git status
     status                  # exit code of the last command
@@ -851,6 +852,12 @@
 
   # Custom icon.
   # typeset -g POWERLEVEL9K_CPU_ARCH_VISUAL_IDENTIFIER_EXPANSION='⭐'
+
+  ##################################[ host: hostname ]##################################
+  # Show hostname only in SSH sessions.
+  typeset -g POWERLEVEL9K_HOST_LOCAL_{CONTENT,VISUAL_IDENTIFIER}_EXPANSION=
+  # Hide the SSH icon, keeping only the hostname.
+  typeset -g POWERLEVEL9K_HOST_REMOTE_VISUAL_IDENTIFIER_EXPANSION=
 
   ##################################[ context: user@hostname ]##################################
   # Context color when running with privileges.
