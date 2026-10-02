@@ -1,8 +1,17 @@
-#!/usr/bin/env zsh
+#!/bin/sh
 # zed — open Zed, preferring the git repository root when inside one.
+# '-' reads stdin; don't add a directory when it is present.
+for arg do
+    if [ "$arg" = '-' ]; then
+        exec /opt/homebrew/bin/zed "$@"
+    fi
+done
+
 root=$(git rev-parse --show-toplevel 2>/dev/null)
-if [[ -n "$root" ]]; then
+if [ -n "$root" ]; then
     exec /opt/homebrew/bin/zed "$root" "$@"
-else
-    exec /opt/homebrew/bin/zed "${@:-.}"
 fi
+if [ "$#" -eq 0 ]; then
+    exec /opt/homebrew/bin/zed .
+fi
+exec /opt/homebrew/bin/zed "$@"
