@@ -1,13 +1,5 @@
 # Lazygit
 
-# Custom build for stage-hunks-in-main-view feature
-# https://github.com/jesseduffield/lazygit/issues/5974
-#
-# go install github.com/jesseduffield/lazygit@sh-integration
-# cargo install --git ssh://git@github.com/stefanhaller/difftastic.git --branch osc-1717-metadata
-# cargo install --git ssh://git@github.com/stefanhaller/delta.git --branch osc-1717-metadata
-# diff-so-fancy fork: ~/src/stefanhaller/diff-so-fancy (osc-1717-metadata), linked into ~/.local/bin via stow
-
 disableStartupPopups: true
 notARepository: skip
 promptToReturnFromSubprocess: false
@@ -26,12 +18,8 @@ git:
   # Cycle renderers with the `|` key
   diffRenderers:
     - command: diff-so-fancy
-    - command: delta --dark --paging=never
-    - type: extDiff
-      command: difft --color=always --context={{diffContext}}
 
 customCommands:
-
   - key: "y"
     command: "printf %s {{.SelectedLocalBranch.Name | quote}} | pbcopy"
     context: "localBranches"
