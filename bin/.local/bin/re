@@ -38,7 +38,7 @@ rg --color=always --line-number --no-heading --smart-case "$@" |
   fzf --ansi \
       --color "hl:-1:underline,hl+:-1:underline:reverse" \
       --delimiter : --reverse \
+      --bind 'ctrl-/:change-preview-window(down|hidden|)' \
+      --bind 'enter:become(zed {1}:{2})' \
       --preview 'bat --color=always {1} --highlight-line {2} --wrap=never --line-range {2}::$(( (FZF_PREVIEW_LINES - 4) / 2 ))' \
-      --preview-window 'bottom,60%,border-none' \
-      --tmux 'center,95%,50%' \
-      --bind 'enter:become(zed {1}:{2})'
+      --tmux 'center,95%,50%'
