@@ -54,6 +54,11 @@ run = "plugin lazygit"
 desc = "Run lazygit"
 
 [[mgr.prepend_keymap]]
+on = ["g", "f"]
+run = "shell --block -- lazygit -f %h"
+desc = "Run lazygit for the hovered file"
+
+[[mgr.prepend_keymap]]
 on = ["g", "r"]
 run = 'shell -- ya emit cd "$(git rev-parse --show-toplevel)"'
 desc = "Go to git repository root"
