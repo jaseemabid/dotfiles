@@ -41,7 +41,7 @@ name = "catppuccin"
 agent_panel_sort = "priority"
 prompt_new_tab_name = false
 sidebar_max_width = 40
-sidebar_min_width = 40
+sidebar_min_width = 20
 window_title = "🐏 {workspace} · {terminal_title}"
 
 [ui.sidebar.agents]
