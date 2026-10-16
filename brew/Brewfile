@@ -1,7 +1,6 @@
 tap "homebrew/bundle"
 tap "homebrew/services"
 tap "mongodb/brew", trusted: true
-tap "oven-sh/bun"
 tap "philpennock/protocols", trusted: true
 tap "xcodesorg/made", trusted: true
 
@@ -131,6 +130,9 @@ brew "kubernetes-cli"
 # Lazier way to manage everything docker
 brew "lazydocker"
 
+# Simple terminal UI for git commands
+brew "lazygit"
+
 # Library for encoding and decoding .avif files
 brew "libavif"
 
@@ -161,14 +163,8 @@ brew "neovim"
 # Port scanning utility for large networks
 brew "nmap"
 
-# Search tool like grep and The Silver Searcher
-brew "ripgrep"
-
 # Development kit for the Java programming language
 brew "openjdk"
-
-# Reads arbitrary PDF files and generates an XML file readable by Ipe
-brew "pdftoipe"
 
 # AI agent toolkit
 brew "pi-coding-agent"
@@ -190,6 +186,9 @@ brew "reattach-to-user-namespace"
 
 # SVG rendering tool and library
 brew "resvg"
+
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
 
 # Utility that provides fast incremental file transfer
 brew "rsync"
@@ -217,6 +216,9 @@ brew "stow"
 
 # Utility-first CSS framework
 brew "tailwindcss"
+
+# TOML toolkit written in Rust
+brew "taplo"
 
 # User interface to the TELNET protocol
 brew "telnet"
@@ -263,9 +265,6 @@ brew "zsh"
 # High-performance, schema-free, document-oriented database
 brew "mongodb/brew/mongodb-community", trusted: true
 
-# Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
-brew "oven-sh/bun/bun", trusted: true
-
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
 
@@ -274,7 +273,6 @@ cask "1password-cli"
 
 # Anthropic's official Claude AI desktop app
 cask "claude"
-
 cask "font-jetbrains-mono"
 cask "font-meslo-lg-nerd-font"
 cask "font-monaspace"
@@ -292,8 +290,8 @@ cask "handy"
 # GPU-based terminal emulator
 cask "kitty"
 
-# Interactive tool for analyzing MongoDB data
-cask "mongodb-compass"
+# Menu bar app for running local LLMs
+cask "llama-app"
 
 # Free and open-source RSS reader
 cask "netnewswire"
