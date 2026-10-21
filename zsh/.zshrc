@@ -42,6 +42,16 @@ export HISTSIZE=999999
 export HISTFILESIZE=999999
 export SAVEHIST=100000
 
+# Misc tools
+export AWS_PAGER='jq .'
+export LESSHISTFILE=~/.cache/less/history
+export NPM_CONFIG_CACHE="$HOME/.cache/npm"
+export NPM_CONFIG_USERCONFIG="$HOME/.config/npm/npmrc"
+export PI_CODING_AGENT_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/pi"
+export PI_OFFLINE=1 # Disable automatic network activity.
+export RIPGREP_CONFIG_PATH=~/.config/ripgrep/config
+export ZSH_COMPDUMP=~/.cache/zsh/zcompdump-${ZSH_VERSION}
+
 # FZF. See /opt/homebrew/opt/fzf/shell/key-bindings.zsh for docs.
 export FZF_DEFAULT_OPTS=''
 export FZF_COMPLETION_OPTS='--info=inline' # Show the 30/434 info inline
@@ -61,13 +71,6 @@ export FZF_CTRL_T_OPTS="
   --bind 'alt-c:reload(git status --porcelain | cut -c4-)+change-prompt(Dirty> )'
   --bind 'alt-e:execute-silent(zed {} 2>/dev/null)+abort'
   --bind 'alt-y:execute-silent(echo {} | pbcopy)'"
-
-export RIPGREP_CONFIG_PATH=~/.config/ripgrep/config
-export ZSH_COMPDUMP=~/.cache/zsh/zcompdump-${ZSH_VERSION}
-export LESSHISTFILE=~/.cache/less/history
-export NPM_CONFIG_CACHE="$HOME/.cache/npm"
-export NPM_CONFIG_USERCONFIG="$HOME/.config/npm/npmrc"
-export AWS_PAGER='jq .'
 
 # Auto-attach to tmux in first Ghostty terminal only.
 # Do this before tool initialization so a shell replaced by tmux doesn't do that work twice.
