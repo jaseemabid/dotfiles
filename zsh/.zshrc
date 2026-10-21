@@ -15,6 +15,7 @@ path=(
 
     # Prefer homebrew versions over system. Ex git, python3
     /opt/homebrew/bin
+    /opt/homebrew/sbin
     /opt/homebrew/opt/openjdk/bin
     /opt/homebrew/opt/sqlite3/bin
 
@@ -41,8 +42,7 @@ export HISTSIZE=999999
 export HISTFILESIZE=999999
 export SAVEHIST=100000
 
-# fzf
-# See /opt/homebrew/opt/fzf/shell/key-bindings.zsh for docs.
+# FZF. See /opt/homebrew/opt/fzf/shell/key-bindings.zsh for docs.
 export FZF_DEFAULT_OPTS=''
 export FZF_COMPLETION_OPTS='--info=inline' # Show the 30/434 info inline
 export FZF_DEFAULT_COMMAND='fd --hidden --type f --strip-cwd-prefix' # Find files with f
@@ -62,7 +62,6 @@ export FZF_CTRL_T_OPTS="
   --bind 'alt-e:execute-silent(zed {} 2>/dev/null)+abort'
   --bind 'alt-y:execute-silent(echo {} | pbcopy)'"
 
-# Command-line tool configuration.
 export RIPGREP_CONFIG_PATH=~/.config/ripgrep/config
 export ZSH_COMPDUMP=~/.cache/zsh/zcompdump-${ZSH_VERSION}
 export LESSHISTFILE=~/.cache/less/history
@@ -70,15 +69,31 @@ export NPM_CONFIG_CACHE="$HOME/.cache/npm"
 export NPM_CONFIG_USERCONFIG="$HOME/.config/npm/npmrc"
 export AWS_PAGER='jq .'
 
+# Auto-attach to tmux in first Ghostty terminal only.
+# Do this before tool initialization so a shell replaced by tmux doesn't do that work twice.
+if [[ -z "$TMUX" ]] &&
+   [[ -z "$SSH_CLIENT" ]] &&
+   [[ "$TERM_PROGRAM" == "ghostty" ]]; then
+    if ! tmux has-session -t main 2>/dev/null; then
+        exec tmux new-session -s main -c ~
+    elif [[ -z "$(tmux list-clients -t main 2>/dev/null)" ]]; then
+        exec tmux attach-session -t main
+    fi
+fi
+
+# Render the cached prompt before tool initialization, but after the tmux handoff.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 if [[ "$OSTYPE" == darwin* ]]; then
     export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
 
-    # Homebrew's dynamic environment setup is intentionally interactive-only.
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-
-    # brew shellenv prepends /opt/homebrew/{s,}bin to PATH; re-assert user paths
-    # ahead of it. typeset -U (top of file) dedupes any repeats.
-    path=(~/.local/bin $path)
+    # Homebrew installation paths, without spawning brew on every startup.
+    # PATH and fpath are already configured above, with user binaries first.
+    export HOMEBREW_PREFIX=/opt/homebrew
+    export HOMEBREW_CELLAR=/opt/homebrew/Cellar
+    export HOMEBREW_REPOSITORY=/opt/homebrew
 
     export HOMEBREW_BUNDLE_DUMP_NO_CARGO=1
     export HOMEBREW_BUNDLE_DUMP_NO_FLATPAK=1
@@ -92,35 +107,13 @@ if [[ "$OSTYPE" == darwin* ]]; then
     export HOMEBREW_NO_ENV_HINTS=1
 fi
 
-# Auto-attach to tmux in first Ghostty terminal only
-# Additional tabs/windows get a plain shell
-if [[ -z "$TMUX" ]] &&
-   [[ -z "$SSH_CLIENT" ]] &&
-   [[ "$TERM_PROGRAM" == "ghostty" ]]; then
-    if ! tmux has-session -t main 2>/dev/null; then
-        exec tmux new-session -s main -c ~
-    elif [[ -z "$(tmux list-clients -t main 2>/dev/null)" ]]; then
-        exec tmux attach-session -t main
-    fi
-fi
-
-# Enable Powerlevel10k instant prompt. This stays after the tmux handoff so a
-# Ghostty launch doesn't render a prompt immediately before exec'ing tmux.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # Setup oh-my-zsh
-DISABLE_AUTO_UPDATE="true"
 DISABLE_AUTO_TITLE="true"
-ZSH_DISABLE_COMPFIX="true"
+DISABLE_AUTO_UPDATE="true"
+DISABLE_LS_COLORS="true" # Disable colours from .oh-my-zsh/lib/theme-and-appearance.zsh
 ZSH=$HOME/.config/zsh/oh-my-zsh
-
-# Disable colours from .oh-my-zsh/lib/theme-and-appearance.zsh
-DISABLE_LS_COLORS="true"
-
-# Powerlevel10k is loaded directly after OMZ; don't load an OMZ theme.
-ZSH_THEME=""
+ZSH_DISABLE_COMPFIX="true"
+ZSH_THEME="" # Powerlevel10k is loaded directly after OMZ; don't load an OMZ theme.
 
 # Configure a minimal shell for root user
 if [[ $UID = '0' ]]
@@ -130,11 +123,11 @@ then
 else
     # Non root users
     if [[ "$OSTYPE" == "linux-gnueabihf" ]]; then
-        plugins=(eza sudo zoxide)
+        plugins=(sudo zoxide)
     elif [[ "$OSTYPE" == "linux-gnu" ]]; then
-        plugins=(docker eza fzf git rust sudo zoxide)
+        plugins=(docker fzf git rust sudo zoxide)
     elif [[ "$OSTYPE" == "darwin"* ]]; then
-        plugins=(brew docker eza fzf git rust sudo zoxide)
+        plugins=(brew docker git rust sudo zoxide)
     else
         echo "Unknown OS"
         exit 1
@@ -145,24 +138,25 @@ fi
 (( $+commands[aws] )) && plugins+=(aws)
 (( $+commands[kubectl] )) && plugins+=(kubectl)
 
-# Configure eza plugin
-zstyle ':omz:plugins:eza' 'icons' yes
-zstyle ':omz:plugins:eza' 'git-status' no # Way too slow for large repos
-zstyle ':omz:plugins:eza' 'color-scale' size
-zstyle ':omz:plugins:eza' 'color-scale-mode' gradient
-zstyle ':omz:plugins:eza' 'hyperlink' yes
-zstyle ':omz:plugins:eza' 'show-group' no
-zstyle ':omz:plugins:eza' 'dirs-first' yes
-
-# Load custom plugins from non std path for simpler stow packages
-source ~/.config/fzf-tab/fzf-tab.plugin.zsh
-
+# Zsh glob qualifiers: N allows no matches; . selects regular files.
+# shellcheck disable=SC1036,SC1058,SC1072,SC1073
 for file in ~/.config/zshrc.d/*.zsh(N.); do
     source "$file"
 done
 unset file
 
 source $ZSH/oh-my-zsh.sh
+
+# Load Homebrew's fzf scripts directly after compinit (from OMZ).
+if [[ "$OSTYPE" == darwin* && $UID != 0 ]]; then
+    [[ "$DISABLE_FZF_AUTO_COMPLETION" == true ]] ||
+        source /opt/homebrew/opt/fzf/shell/completion.zsh
+    [[ "$DISABLE_FZF_KEY_BINDINGS" == true ]] ||
+        source /opt/homebrew/opt/fzf/shell/key-bindings.zsh
+fi
+
+# Load after compinit and fzf so Tab remains bound to fzf-tab.
+source ~/.config/fzf-tab/fzf-tab.plugin.zsh
 
 # A bunch of helpers
 
@@ -193,12 +187,22 @@ bindkey -s '^[g' '^Qlazygit^M'
 # Move aliases to custom file. Its hard to track aliases.zsh inside oh-my-zsh
 source ~/.zaliases
 
-# Extend eza plugin aliases with --long and tree variants
+# eza aliases; omit --git because it's slow in large repositories.
+# Keep l (system ls) and ll (yazi) from .zaliases.
 if (( $+commands[eza] )); then
-    local _base_cmd="${aliases[ls]} --long"
-    alias ls="${_base_cmd}"
-    alias le="${_base_cmd} --tree --level=1"
-    alias lee="${_base_cmd} --tree --level=2"
+    local _eza='eza --group-directories-first --icons=auto --color-scale=size --color-scale-mode=gradient --hyperlink=auto'
+    alias ls="$_eza --long"
+    alias la="$_eza --long --all"
+    alias ldot="$_eza --long --treat-dirs-as-files .*"
+    alias lD="$_eza --long --only-dirs"
+    alias lDD="$_eza --long --only-dirs --all"
+    alias lsd="$_eza --treat-dirs-as-files"
+    alias lsdl="$_eza --treat-dirs-as-files --long"
+    alias lS="$_eza --long --sort=size"
+    alias lT="$_eza --long --sort=newest"
+    alias le="$_eza --long --tree --level=1"
+    alias lee="$_eza --long --tree --level=2"
+    unset _eza
 fi
 
 # Make sure tramp wont blow up
