@@ -119,12 +119,8 @@ ZSH=$HOME/.config/zsh/oh-my-zsh
 # Disable colours from .oh-my-zsh/lib/theme-and-appearance.zsh
 DISABLE_LS_COLORS="true"
 
-# Theme setup
-if [[ "$OSTYPE" == "linux-gnueabihf" ]]; then
-    ZSH_THEME="robbyrussell"
-else
-    source ~/.config/zsh/p10k/powerlevel10k.zsh-theme
-fi
+# Powerlevel10k is loaded directly after OMZ; don't load an OMZ theme.
+ZSH_THEME=""
 
 # Configure a minimal shell for root user
 if [[ $UID = '0' ]]
@@ -209,8 +205,10 @@ fi
 [[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ '
 [[ $EMACS = t ]] && unsetopt zle && PS1='$ '
 
-# To customize prompt, run `p10k configure` or edit ~/dotfiles/p10k/.p10k.zsh.
+# Load settings before the theme so Powerlevel10k starts with our configuration.
+# To customize prompt, run `p10k configure` or edit ~/dotfiles/zsh/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+source ~/.config/zsh/p10k/powerlevel10k.zsh-theme
 
 eval "$(atuin init zsh)"
 
