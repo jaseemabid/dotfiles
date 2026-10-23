@@ -175,6 +175,9 @@ brew "pkl"
 # Tool for managing OCI containers and pods
 brew "podman"
 
+# PDF rendering library (based on the xpdf-3.0 code base)
+brew "poppler"
+
 # Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML
 brew "prettier"
 
@@ -273,6 +276,9 @@ cask "1password-cli"
 
 # Anthropic's official Claude AI desktop app
 cask "claude"
+
+# Web browser
+cask "firefox"
 cask "font-jetbrains-mono"
 cask "font-meslo-lg-nerd-font"
 cask "font-monaspace"
