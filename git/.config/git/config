@@ -51,7 +51,7 @@
 	autosquash = true
 	autoStash = true
 	keepEmpty = true
-	updateRefs = true
+	updateRefs = false
 
 # Diff & merge
 [diff]
