@@ -1,10 +1,15 @@
 #!/bin/bash
 set -e
 
-ORIGINAL_BRANCH=$(git branch --show-current)
-
 if [[ -n $(git status --porcelain) ]]; then
     echo "✗ Working tree is dirty; commit or stash first"
+    exit 1
+fi
+
+ORIGINAL_BRANCH=$(git branch --show-current)
+
+if [[ -z "$ORIGINAL_BRANCH" ]]; then
+    echo "✗ Detached HEAD; switch to a branch first"
     exit 1
 fi
 
@@ -20,12 +25,27 @@ fi
 # Update the base branch and prune stale remote refs.
 git checkout -q "$BASE" && git pull -q --prune origin "$BASE"
 
-# Delete branches whose upstream is gone (for example, squash-merged PRs).
+# Delete branches whose upstream is gone, except the branch we're syncing.
 git for-each-ref --format '%(refname:short) %(upstream:track)' refs/heads/ \
     | awk '$2 == "[gone]" {print $1}' \
     | while read -r branch; do
-        printf '✗ ' && git branch -D "$branch"
+        if [[ "$branch" != "$ORIGINAL_BRANCH" && "$branch" != "$BASE" ]]; then
+            printf '✗ ' && git branch -D "$branch"
+        fi
     done
+
+# From a topic branch, only rebase that branch.
+if [[ "$ORIGINAL_BRANCH" != "$BASE" ]]; then
+    git checkout -q "$ORIGINAL_BRANCH"
+    if git rebase -q "$BASE"; then
+        echo "✓ $ORIGINAL_BRANCH"
+    else
+        git rebase --abort >/dev/null 2>&1 || true
+        echo "✗ $ORIGINAL_BRANCH"
+        exit 1
+    fi
+    exit 0
+fi
 
 while IFS= read -r branch; do
     if git checkout -q "$branch" 2>/dev/null \
