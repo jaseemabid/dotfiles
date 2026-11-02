@@ -1,8 +1,13 @@
 {
   "zoom": 1,
   "sounds": {
-    "enabled": true
+    "enabled": false
   },
+  "font": "MesloLGS NF",
+  "font_ligatures": false,
+  "ui_font": "Geist Mono",
   "minimum_contrast": 1,
-  "appearance": "dark"
+  "appearance": "dark",
+  "theme": "catppuccin-mocha",
+  "font_size": 13
 }
