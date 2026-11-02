@@ -35,8 +35,8 @@ if [ -x "$(command -v sdiff)" ]; then
     alias diff='sdiff -s'
 fi
 
-# Copy a command from history. hc for history copy
-alias hc=" fc -l -r -n -25 | grep -v fc | fzf --reverse --cycle --no-sort --height=20% --border | c"
+# Copy a command from history.
+alias hcopy="fc -l -r -n -25 | grep -v fc | fzf --reverse --cycle --no-sort --height=20% --border | c"
 
 # Preview with fzf. PS: This is quite similar to Ctrl+T
 # Example $ fd README.md | pf
