@@ -72,19 +72,7 @@ export FZF_CTRL_T_OPTS="
   --bind 'alt-e:execute-silent(zed {} 2>/dev/null)+abort'
   --bind 'alt-y:execute-silent(echo {} | pbcopy)'"
 
-# Auto-attach to tmux in first Ghostty terminal only.
-# Do this before tool initialization so a shell replaced by tmux doesn't do that work twice.
-if [[ -z "$TMUX" ]] &&
-   [[ -z "$SSH_CLIENT" ]] &&
-   [[ "$TERM_PROGRAM" == "ghostty" ]]; then
-    if ! tmux has-session -t main 2>/dev/null; then
-        exec tmux new-session -s main -c ~
-    elif [[ -z "$(tmux list-clients -t main 2>/dev/null)" ]]; then
-        exec tmux attach-session -t main
-    fi
-fi
-
-# Render the cached prompt before tool initialization, but after the tmux handoff.
+# Render the cached prompt before tool initialization.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
     source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
