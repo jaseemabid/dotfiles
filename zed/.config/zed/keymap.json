@@ -1,34 +1,45 @@
 // Zed keymap
 //
-// For information on binding keys, see the Zed
-// documentation: https://zed.dev/docs/key-bindings
-//
-// To see the default key bindings run `zed: open default keymap`
-// from the command palette.
+// Zed docs: https://zed.dev/docs/key-bindings
+// Run `vim::OpenDefaultKeymap` to see vim key map
+// Run `zed::OpenDefaultKeymap` for default key map
+
 [
   {
     "bindings": {
       "cmd-alt-o": null, // Use ⌃r or Space+p+r for projects::OpenRecent
       "cmd-o": "file_finder::Toggle",
-      "shift shift": "file_finder::Toggle"
-    }
+      "shift shift": "file_finder::Toggle",
+    },
   },
   {
     "context": "Editor && vim_mode == normal",
     "bindings": {
-      "alt-c": ["task::Spawn", { "task_name": "Copy zed:// link" }],
-      "space a": "editor::ToggleCodeActions",
+      // Navigation and projects
+      "space O": "project_symbols::Toggle",
+      "space P": "editor::GoToDefinitionSplit",
+      "space g o": "editor::OpenPermalinkToLine", // Open Git line/selection permalink
       "space o": "outline::Toggle",
-      "space shift-p": "editor::GoToDefinitionSplit",
       "space p r": "projects::OpenRecent",
+
+      // Editing and tasks
+      "space a": "editor::ToggleCodeActions",
       "space r": "editor::Rename",
-      "space shift-o": "project_symbols::Toggle",
-      "space shift-r": "editor::ReloadFile",
+      "space R": "editor::ReloadFile",
       "space t": "task::Spawn",
-      "space y l": ["task::Spawn", { "task_name": "Copy zed:// link" }],
+
+      // Copy zed:// links
+      "alt-c": ["task::Spawn", { "task_name": "Copy zed:// link" }],
+      "space y l": ["task::Spawn", { "task_name": "Copy zed:// link" }], // Local file + line + column
+
+      // Copy absolute and relative file paths
+      "space y P": "workspace::CopyPath",
       "space y p": "workspace::CopyRelativePath",
-      "space y shift-p": "workspace::CopyPath",
-    }
+
+      // Copy git permalink
+      // NOTE: git::CopyFilePermalink and git::OpenFilePermalink are panel-only actions.
+      "space y g": "editor::CopyPermalinkToLine",
+    },
   },
   {
     "context": "VimControl && !menu",
@@ -41,7 +52,7 @@
       "g r n": null,
       "g r r": null,
       "g r i": null,
-      "g r a": null
-    }
-  }
+      "g r a": null,
+    },
+  },
 ]
