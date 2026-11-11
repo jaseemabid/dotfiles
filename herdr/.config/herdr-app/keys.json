@@ -2,6 +2,7 @@
   "global": {
     "cmd-q": "app.quit",
     "cmd-h": "app.hide",
+    "cmd-m": "window.minimize",
     "cmd-alt-h": "app.hide_others",
     "cmd-t": "tab.new",
     "cmd-w": "tab.close",
