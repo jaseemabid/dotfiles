@@ -100,9 +100,6 @@ brew "herdr"
 # Improved top (interactive process viewer)
 brew "htop"
 
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.14"
-
 # User-friendly cURL replacement (command-line HTTP client)
 brew "httpie"
 
@@ -183,6 +180,9 @@ brew "prettier"
 
 # Monitor data's progress through a pipe
 brew "pv"
+
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.14"
 
 # Reattach process (e.g., tmux) to background
 brew "reattach-to-user-namespace"
@@ -293,6 +293,9 @@ cask "google-chrome"
 # Speech to text application
 cask "handy"
 
+# Desktop app for terminals and coding agents
+cask "herdr-app"
+
 # GPU-based terminal emulator
 cask "kitty"
 
@@ -331,6 +334,3 @@ cask "whatsapp"
 
 # Multiplayer code editor
 cask "zed"
-
-# Gecko based web browser
-cask "zen"

@@ -9,12 +9,13 @@
     mkdir -p ~/.config
 
 _common := 'bin git lazygit nvim podman shell tmux yazi zsh'
-_macos := _common + ' ghostty kitty vscode zed'
+_macos := _common + ' herdr ghostty kitty vscode zed macos'
 _linux := _common
 _targets := if os() == 'macos' { _macos } else if os() == 'linux' { _linux } else { error('Unsupported OS: ' + os()) }
 
 # Install dotfiles for the current OS
-@stow: _setup
+@stow:
+    mkdir -p ~/.config ~/.config/herdr ~/.config/herdr-app
     stow {{ _targets }}
 
 # Autoformat
@@ -26,7 +27,7 @@ _targets := if os() == 'macos' { _macos } else if os() == 'linux' { _linux } els
 mod brew
 
 # Install fonts
-@fonts: _setup
+@fonts:
     cd fonts/powerline && ./install.sh
     cd fonts/fontawesome && ./install.sh
     cd fonts/p10k && cp *.ttf ~/Library/Fonts/
