@@ -1,47 +1,99 @@
-#!/usr/bin/env bash
-# Smarter git clone. Wrapped by a shell function that cds to the printed path:
-#
-#   get() { local d; d=$(command get "$@") && cd "$d"; }
-#
-set -euo pipefail
+#!/usr/bin/env -S uv run --script
+# /// script
+# requires-python = ">=3.15"
+# ///
+"""Smarter git clone into ~/src/<owner>/<repo>. Prints the checkout path.
 
-input="${1:-}"
-shift || true
-if [[ -z "$input" ]]; then
-    echo "usage: get <url|owner/repo> [git-clone-args...]" >&2
-    exit 2
-fi
+Wrapped by a shell function that cds to the printed path:
 
-host="github.com"
-if [[ "$input" == git@*:* ]]; then
-    # scp-style: git@host:owner/repo
-    host="${input#git@}"; host="${host%%:*}"
-    spec="${input#git@*:}"
-elif [[ "$input" == *://* ]]; then
-    # https://host/owner/repo[.git][/blob/...]
-    spec="${input#*://}"
-    host="${spec%%/*}"
-    spec="${spec#*/}"
-else
-    # bare owner/repo shorthand -> github.com
-    spec="$input"
-fi
+    get() { local d; d=$(command get "$@") && cd "$d"; }
+"""
 
-spec="${spec%.git}"
-spec="${spec%/}"
-owner="${spec%%/*}"
-rest="${spec#*/}"
-repo="${rest%%/*}"
-if [[ -z "$owner" || -z "$repo" || "$owner" == "$spec" ]]; then
-    echo "get: cannot parse '$input'" >&2
-    exit 1
-fi
+import re
+import subprocess
+import sys
+from dataclasses import dataclass
+from pathlib import Path
+from urllib.parse import urlparse
 
-dest="$HOME/src/$owner/$repo"
-if [[ -d "$dest" ]]; then
-    :
-else
-    mkdir -p "$HOME/src/$owner"
-    git clone "https://$host/$owner/$repo.git" "$dest" "$@"
-fi
-echo "$dest"
+SRC = Path.home() / "src"
+
+# Local directory name overrides for GitHub owners.
+OWNER_ALIASES = {"jaseemabid": "j"}
+
+
+@dataclass(frozen=True)
+class Repo:
+    host: str
+    owner: str
+    name: str
+
+    def url(self) -> str:
+        return f"https://{self.host}/{self.owner}/{self.name}.git"
+
+    def path(self) -> Path:
+        return SRC / OWNER_ALIASES.get(self.owner.lower(), self.owner) / self.name
+
+    def exists(self) -> bool:
+        return self.path().is_dir()
+
+    def clone(self) -> None:
+        self.path().parent.mkdir(parents=True, exist_ok=True)
+        # stdout is reserved for the path; send git's output to stderr
+        subprocess.run(
+            ["git", "clone", self.url(), self.path()],
+            stdout=sys.stderr,
+            check=True,
+        )
+
+    def pull(self) -> None:
+        subprocess.run(
+            ["git", "-C", self.path(), "pull", "--ff-only"],
+            stdout=sys.stderr,
+            check=True,
+        )
+
+
+def parse(spec: str) -> Repo:
+    """Parse a URL, scp-style address or owner/repo shorthand."""
+    if m := re.fullmatch(r"[\w.-]+@([^:/]+):(.+)", spec):
+        host, path = m.groups()  # git@host:owner/repo
+    elif "://" in spec:
+        url = urlparse(spec)  # https://host/owner/repo[.git][/blob/...]
+        host, path = url.hostname or "", url.path
+    else:
+        host, path = "github.com", spec
+
+    match path.strip("/").split("/"):
+        case [owner, name, *_] if host:
+            return Repo(host, owner, name.removesuffix(".git"))
+        case _:
+            raise ValueError(f"cannot parse '{spec}'")
+
+
+def main() -> None:
+    if len(sys.argv) < 2:
+        sys.exit("usage: get <url|owner/repo>")
+
+    try:
+        repo = parse(sys.argv[1])
+    except ValueError as e:
+        sys.exit(f"get: {e}")
+
+    if repo.exists():
+        # Best effort: a failed pull (dirty tree, offline) shouldn't block the cd
+        try:
+            repo.pull()
+        except subprocess.CalledProcessError:
+            print(f"get: pull failed in {repo.path()}", file=sys.stderr)
+    else:
+        try:
+            repo.clone()
+        except subprocess.CalledProcessError as e:
+            sys.exit(e.returncode)
+
+    print(repo.path())
+
+
+if __name__ == "__main__":
+    main()
