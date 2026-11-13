@@ -15,9 +15,10 @@ path=(
 
     # Prefer homebrew versions over system. Ex git, python3
     /opt/homebrew/bin
-    /opt/homebrew/sbin
     /opt/homebrew/opt/openjdk/bin
     /opt/homebrew/opt/sqlite3/bin
+    /opt/homebrew/sbin
+    /opt/homebrew/share/google-cloud-sdk/bin
 
     # System admin path
     /sbin /usr/local/bin /usr/sbin
