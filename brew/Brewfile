@@ -279,9 +279,15 @@ cask "claude"
 
 # Web browser
 cask "firefox"
+
+cask "font-ibm-plex-sans"
+cask "font-ibm-plex-sans-condensed"
+cask "font-inconsolata"
 cask "font-jetbrains-mono"
-cask "font-meslo-lg-nerd-font"
+cask "font-meslo-for-powerlevel10k"
 cask "font-monaspace"
+cask "font-monaspice-nerd-font"
+cask "font-source-code-pro"
 cask "font-terminus"
 
 # Terminal emulator that uses platform-native UI and GPU acceleration
