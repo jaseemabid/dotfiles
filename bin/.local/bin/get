@@ -18,8 +18,11 @@ from urllib.parse import urlparse
 
 SRC = Path.home() / "src"
 
-# Local directory name overrides for GitHub owners.
-OWNER_ALIASES = {"jaseemabid": "j"}
+# Local directory name overrides by host and owner.
+OWNER_ALIASES = {
+    ("github.com", "jaseemabid"): "j",
+    ("code.nyx.jabid.in", "jabid"): "j",
+}
 
 
 @dataclass(frozen=True)
@@ -32,7 +35,9 @@ class Repo:
         return f"https://{self.host}/{self.owner}/{self.name}.git"
 
     def path(self) -> Path:
-        return SRC / OWNER_ALIASES.get(self.owner.lower(), self.owner) / self.name
+        slug = (self.host.lower(), self.owner.lower())
+        owner = OWNER_ALIASES.get(slug, self.owner)
+        return SRC / owner / self.name
 
     def exists(self) -> bool:
         return self.path().is_dir()
