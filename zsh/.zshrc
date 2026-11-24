@@ -45,6 +45,7 @@ export SAVEHIST=100000
 
 # Misc tools
 export AWS_PAGER='jq .'
+export GLOW_PAGER=false
 export LESSHISTFILE=~/.cache/less/history
 export NPM_CONFIG_CACHE="$HOME/.cache/npm"
 export NPM_CONFIG_USERCONFIG="$HOME/.config/npm/npmrc"
