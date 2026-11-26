@@ -7,7 +7,11 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "agent": { "dock": "right", "notify_when_agent_waiting": "never" },
+  "agent": {
+    "dock": "right",
+    "notify_when_agent_waiting": "never",
+    "threads_sidebar": { "auto_open": false },
+  },
   "agent_servers": {
     "claude-acp": {
       "default_config_options": { "model": "opus[1m]", "mode": "auto" },
@@ -116,7 +120,7 @@
   "soft_wrap": "none",
   "status_bar": { "cursor_position_button": false },
   "tab_bar": { "show_nav_history_buttons": false },
-  "tabs": {"git_status": true },
+  "tabs": { "git_status": true },
   "title_bar": { "show_user_picture": false, "show_branch_status_icon": true },
   "terminal": {
     "button": true,
