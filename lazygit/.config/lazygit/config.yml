@@ -1,5 +1,8 @@
 # Lazygit
 
+# Notes & Wishlist
+# Can't turn off commit icons yet: https://github.com/jesseduffield/lazygit/issues/5923
+
 disableStartupPopups: true
 notARepository: skip
 promptToReturnFromSubprocess: false
@@ -35,6 +38,12 @@ customCommands:
     command: 'if [ -d "{{.SelectedPath}}" ]; then yazi "{{.SelectedPath}}"; else zed "{{.SelectedPath}}"; fi'
     context: "files"
     description: "Open in yazi/zed"
+    output: none
+
+  - key: "S"
+    command: "git sync"
+    context: "localBranches"
+    description: "Run git sync"
     output: none
 
   # https://github.com/jesseduffield/lazygit/blob/master/docs/Custom_Command_Keybindings.md#menus-of-custom-commands
